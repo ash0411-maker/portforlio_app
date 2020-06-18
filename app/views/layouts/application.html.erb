@@ -10,6 +10,18 @@
   </head>
 
   <body>
+  <header>
+    <nav>
+      <%= link_to "FANTRA", admin_home_top_path, class: "logo" %>
+      <% if admin_signed_in? %>
+        <ul>
+          <li>
+            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+          </li>
+        </ul>
+      <% end %>
+    </nav>
+  </header>
     <%= yield %>
   </body>
 </html>
