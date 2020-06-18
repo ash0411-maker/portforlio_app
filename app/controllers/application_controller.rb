@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
       admin_home_top_path
     when Guide
       guide_home_top_path(current_guide)
+    when Tourist
+      tourist_tours_path
     end
   end
 
@@ -18,6 +20,8 @@ class ApplicationController < ActionController::Base
       new_admin_session_path
     elsif resource == :guide
       new_guide_session_path
+    elsif resource == :tourist
+      new_tourist_session_path
     end
   end
 
