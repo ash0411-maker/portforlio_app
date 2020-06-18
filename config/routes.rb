@@ -3,6 +3,7 @@
 
 Rails.application.routes.draw do
 
+  devise_for :tourists
   devise_for :admins, controllers: {
     sessions: 'devise/admins/sessions',
     passwords: 'devise/admins/passwords',
