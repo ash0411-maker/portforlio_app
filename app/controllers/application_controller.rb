@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -10,9 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource)
-    if resource == :admin
-      new_admin_session_path
-    end
+    new_admin_session_path if resource == :admin
   end
 
   private
