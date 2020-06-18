@@ -49,6 +49,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'rubocop'
 gem 'rubocop-rails'
