@@ -17,6 +17,10 @@ services:
     volumes:
       - .:/FANTRA
       - bundle:/usr/local/bundle
+      - /app/vendor
+      - /app/tmp
+      - /app/log
+      - /app/.git
     ports:
       - "3000:3000"
     depends_on:
