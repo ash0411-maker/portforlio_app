@@ -2,11 +2,6 @@ class Guide::ToursController < ApplicationController
   before_action :authenticate_guide!
 
   def new
-    if current_guide.family_name.blank? || current_guide.name.blank? || current_guide.nationality.blank? ||
-       current_guide.identification_image_id.blank? || current_guide.postal_code.blank? || current_guide.address.blank? ||
-       current_guide.phone_number.blank? || current_guide.introduction.blank? || current_guide.selfy_image_id.blank?
-      redirect_to guide_guide_to_guide_edit_path(current_guide)
-    end
     @tour = Tour.new
     @tour_photo = @tour.tour_photos.build
   end
