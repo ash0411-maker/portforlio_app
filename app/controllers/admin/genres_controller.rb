@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::GenresController < ApplicationController
   before_action :authenticate_admin!
 
@@ -38,9 +40,8 @@ class Admin::GenresController < ApplicationController
     redirect_to admin_genres_path
   end
 
-
-  
   private
+
   def genre_params
     params.require(:genre).permit(:name)
   end

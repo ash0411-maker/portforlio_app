@@ -1,0 +1,50 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-xs-8 col-xs-offset-4">
+      <h2>ガイド登録</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/guides/shared/error_messages", resource: resource %>
+
+          <div class = "row">
+            <div class="guest-login">
+              <%= link_to 'ゲストログイン（閲覧用）', guest_guide_path, method: :post, class: "btn btn-primary col-xs-6 devise-login-text" %>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class="devise-field">
+              <%= f.label :メールアドレス %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-xs-6 devise-login-text" %>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class="devise-field">
+              <%= f.label :パスワード %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> 文字以上)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password", class: "col-xs-6 devise-login-text" %>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class="devise-field">
+              <%= f.label :確認用パスワード %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-xs-6 devise-login-text" %>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class="devise-field">
+              <%= f.submit "新規登録", class: "btn btn-warning col-xs-6 devise-login-text" %>
+            </div>
+          </div>
+
+          <div class = "row">
+            <%= render "devise/guides/shared/links" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

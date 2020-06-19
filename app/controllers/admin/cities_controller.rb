@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::CitiesController < ApplicationController
   before_action :authenticate_admin!
 
@@ -38,9 +40,8 @@ class Admin::CitiesController < ApplicationController
     redirect_to admin_cities_path
   end
 
-
-  
   private
+
   def city_params
     params.require(:city).permit(:name)
   end
