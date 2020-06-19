@@ -3,6 +3,21 @@
 class Guide::ToursController < ApplicationController
   before_action :authenticate_guide!
 
+  def show
+    @tour = Tour.find(params[:id])
+    @tour_photos = @tour.tour_photos
+  end
+
+  def index
+    @genres = Genre.all
+    if params[:genre_id]
+      @genre = Genre.find(params[:genre_id])
+      @tours = @genre.tours.order(created_at: :desc).page(params[:page]).per(9)
+    else
+      @tours = Tour.all.order(created_at: :desc).page(params[:page]).per(9)
+    end
+  end
+
   def new
     @tour = Tour.new
     @tour_photo = @tour.tour_photos.build
@@ -17,10 +32,6 @@ class Guide::ToursController < ApplicationController
       render 'new'
     end
   end
-
-  def show; end
-
-  def index; end
 
   def edit
     @tour = Tour.find(params[:id])

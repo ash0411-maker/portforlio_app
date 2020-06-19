@@ -18,7 +18,7 @@
 								<%= render 'partial/tours_photos_link', tour_photos: tour_photos, tour: tour %>
 							<% end %>
 						<% elsif guide_signed_in? %>
-							<%= link_to guide_guide_tour_path(current_guide, tour) do %>
+							<%= link_to guide_tour_path(tour) do %>
 								<%= render 'partial/tours_photos_link', tour_photos: tour_photos, tour: tour %>
 							<% end %>
 						<% elsif admin_signed_in? %>

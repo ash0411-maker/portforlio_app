@@ -37,6 +37,12 @@
       <% elsif guide_signed_in? %>
         <ul>
           <li>
+            <%= link_to guide_tours_path do %>
+              <i class="fas fa-plane-departure fa-2x"></i>
+                ツアー一覧
+            <% end %>
+          </li>
+          <li>
             <%= link_to new_guide_tour_path do %>
               <i class="fas fa-file-signature fa-2x"></i>
               ツアー投稿

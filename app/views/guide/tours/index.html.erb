@@ -1,2 +1,58 @@
-<h1>Guide::Tours#index</h1>
-<p>Find me in app/views/guide/tours/index.html.erb</p>
+<div class = "container">
+	<div class = "row">
+		<div class = "col-xs-5 col-xs-offset-3">
+			<h1>ツアー情報</h1>
+		</div>
+	</div>
+	<div class = "row">
+        <div class = "col-xs-2">
+            <div class =  "panel panel-default category-search-box">
+                <div class = "panel-heading">
+                    <h3 class="panel-title">ジャンル検索</h3>
+                </div>
+                <div class = "panel-body" >
+                    <% @genres.each do |genre| %>
+                        <p>
+                            <%= link_to guide_tours_path(genre_id: genre.id) do %>
+                                <%= genre.name %>
+                            <% end %>
+                        </p>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class = "col-xs-10">
+            <table class = "table">
+                <thead>
+                    <tr>
+                        <th class = "active text-center">紹介者</th>
+                        <th class = "active text-center">ツアー名</th>
+                        <th class = "active text-center">ステータス</th>
+                        <th class = "active text-center">都市</th>
+                        <th class = "active text-center">ジャンル</th>
+                        <th class = "active text-center"></th>
+                    </tr>
+                </thead>
+                <% @tours.each do |tour| %>
+                    <tbody>
+                        <tr class = "text-center">
+                            <td><%= tour.guide.name %>さん</td>
+                            <td><%= tour.title %></td>
+                            <% if tour.is_active == true %>
+                                <td>販売中</td>
+                            <% else %>
+                                <td>販売停止中</td>
+                            <% end %>
+                            <td><%= tour.city.name %></td>
+                            <td><%= tour.genre.name %></td>
+                            <td>
+                                <%= link_to "ツアー詳細", guide_tour_path(tour), class: "btn btn-default" %>
+                            </td>
+                        </tr>
+                    </tbody>
+                <% end %>
+            </table>
+        </div>
+        <%= paginate @tours, class: "paginate" %>
+    </div>
+</div>
