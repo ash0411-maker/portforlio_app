@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 class CreateTours < ActiveRecord::Migration[6.0]
   def change
     create_table :tours do |t|
-
       t.timestamps
       t.integer 'genre_id', null: false
       t.integer 'guide_id', null: false

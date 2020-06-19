@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Guide::ToursController < ApplicationController
   before_action :authenticate_guide!
 
@@ -16,11 +18,9 @@ class Guide::ToursController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def index
-  end
+  def index; end
 
   def edit
     @tour = Tour.find(params[:id])
@@ -35,8 +35,7 @@ class Guide::ToursController < ApplicationController
     end
   end
 
-  def destroy
-  end
+  def destroy; end
 
   private
 
