@@ -1,0 +1,10 @@
+<% if tour.errors.any? %>
+    <div class ="error_explanation">
+    	<h2><%= tour.errors.count %>件のエラーがあります。</h2>
+    	<ul>
+		    <% tour.errors.full_messages.each do |message| %>
+		    	<li><%= message %></li>
+		    <% end %>
+    	</ul>
+    </div>
+<% end %>

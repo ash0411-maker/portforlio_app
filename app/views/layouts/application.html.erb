@@ -29,7 +29,16 @@
       <% elsif guide_signed_in? %>
         <ul>
           <li>
-            <%= link_to "ログアウト", destroy_guide_session_path, method: :delete %>
+            <%= link_to new_guide_tour_path do %>
+              <i class="fas fa-file-signature fa-2x"></i>
+              ツアー投稿
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_guide_session_path, method: :delete do %>
+              <i class="fas fa-sign-out-alt fa-2x"></i>
+              ログアウト
+            <% end %>
           </li>
         </ul>
       <% elsif tourist_signed_in? %>
