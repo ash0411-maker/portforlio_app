@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_132743) do
+
+ActiveRecord::Schema.define(version: 2020_06_19_010008) do
+
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +24,19 @@ ActiveRecord::Schema.define(version: 2020_06_18_132743) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+
+  create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name", null: false
+  end
+
+  create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name", null: false
   end
 
   create_table "guides", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -47,6 +62,15 @@ ActiveRecord::Schema.define(version: 2020_06_18_132743) do
     t.index ["reset_password_token"], name: "index_guides_on_reset_password_token", unique: true
   end
 
+
+  create_table "tour_photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "image_id", null: false
+    t.integer "tour_id", null: false
+  end
+
+
   create_table "tourists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -69,4 +93,23 @@ ActiveRecord::Schema.define(version: 2020_06_18_132743) do
     t.index ["reset_password_token"], name: "index_tourists_on_reset_password_token", unique: true
   end
 
+
+  create_table "tours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "genre_id", null: false
+    t.integer "guide_id", null: false
+    t.integer "city_id", null: false
+    t.string "title", null: false
+    t.text "body", null: false
+    t.integer "capacity", null: false
+    t.integer "price", null: false
+    t.string "contents_of_price", null: false
+    t.boolean "is_active", default: true
+    t.string "time", null: false
+    t.string "meetingpoint_address", null: false
+    t.string "meetingpoint_introduction", null: false
+    t.float "latitude"
+    t.float "longitude"
+  end
 end
