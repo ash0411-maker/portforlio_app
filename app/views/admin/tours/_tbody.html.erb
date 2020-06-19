@@ -1,0 +1,14 @@
+<tr class = "text-center">
+	<td><%= tour.guide.name %></td>
+	<td><%= tour.title %></td>
+	<td>
+		<% if tour.is_active == true  %>
+			販売中
+		<% else %>
+			販売停止中
+		<% end %>
+	</td>
+	<td><%= tour.city.name %></td>
+	<td><%= tour.genre.name %></td>
+	<td><%= link_to "ツアー詳細へ", admin_tour_path(tour), class: "btn btn-default" %></td>
+</tr>

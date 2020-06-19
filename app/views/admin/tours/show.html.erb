@@ -1,0 +1,16 @@
+<!----- ツアー写真 ----->
+<div class = "tour-image-wrapper">
+	<%= render 'partial/tour_image_wrapper', tour_photos: @tour_photos %>
+</div>
+
+
+<!------- ツアー情報詳細 -------->
+<div class = "tour-info-wrapper">
+	<%= render 'partial/tour_info_wrapper', tour: @tour %>
+</div>
+
+
+<!-- ツアー情報（テキスト） -->
+<div class = "tour-detail-wrapper">
+	<%= render 'partial/tour_detail_wrapper', tour: @tour, reviews: @reviews%>
+</div>
