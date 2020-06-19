@@ -8,11 +8,21 @@ class ApplicationController < ActionController::Base
     case resource
     when Admin
       admin_home_top_path
+    when Guide
+      guide_home_top_path(current_guide)
+    when Tourist
+      tourist_tours_path
     end
   end
 
   def after_sign_out_path_for(resource)
-    new_admin_session_path if resource == :admin
+    if resource == :admin
+      new_admin_session_path
+    elsif resource == :guide
+      new_guide_session_path
+    elsif resource == :tourist
+      new_tourist_session_path
+    end
   end
 
   private

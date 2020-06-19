@@ -12,7 +12,14 @@
   <body>
   <header>
     <nav>
-      <%= link_to "FANTRA", admin_home_top_path, class: "logo" %>
+      <% if admin_signed_in? %>
+        <%= link_to "FANTRA", admin_home_top_path, class: "logo" %>
+      <% elsif guide_signed_in? %>
+        <%= link_to "FANTRA", guide_home_top_path, class: "logo" %>
+      <% elsif tourist_signed_in? %>
+        <%= link_to "FANTRA", tourist_tours_path, class: "logo" %>
+      <% end %>
+
       <% if admin_signed_in? %>
         <ul>
           <li>
@@ -23,6 +30,43 @@
           </li>
           <li>
             <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+          </li>
+        </ul>
+      <% elsif guide_signed_in? %>
+        <ul>
+          <li>
+            <%= link_to "ログアウト", destroy_guide_session_path, method: :delete %>
+          </li>
+        </ul>
+      <% elsif tourist_signed_in? %>
+        <ul>
+          <li>
+            <%= link_to "ログアウト", destroy_tourist_session_path, method: :delete %>
+          </li>
+        </ul>
+      <% else %>
+        <ul>
+          <li>
+            <%= link_to new_tourist_registration_path do %>
+              ツーリスト登録
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_guide_registration_path do %>
+              ガイド登録
+            <% end %>
+          </li>
+          <li>
+              <%= link_to guide_session_path do %>
+                <i class="fas fa-hiking fa-2x"></i>
+                ガイドログイン
+              <% end %>
+          </li>
+          <li>
+              <%= link_to tourist_session_path do %>
+                <i class="fas fa-suitcase-rolling fa-2x"></i>
+                ツーリストログイン
+              <% end %>
           </li>
         </ul>
       <% end %>
