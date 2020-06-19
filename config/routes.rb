@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  namespace :home do
+    get 'tours/index'
+    get 'tours/show'
+  end
   devise_for :admins, controllers: {
     sessions: 'devise/admins/sessions',
     passwords: 'devise/admins/passwords',
