@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  
   devise_for :admins, controllers: {
     sessions: 'devise/admins/sessions',
     passwords: 'devise/admins/passwords',
@@ -14,5 +15,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'home/top'
+    resources :genres, only: [:index, :create, :edit, :update, :destroy]
+    resources :cities, only: [:index, :create, :edit, :update, :destroy]
   end
+
 end
