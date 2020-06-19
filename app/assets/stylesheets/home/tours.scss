@@ -1,3 +1,47 @@
 // Place all the styles related to the home/tours controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+.home-top-image {
+    background-image: image-url("IMG_0311.jpeg");
+    background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	height: 580px;
+}
+
+.home-top-image-box {
+    width: 45%;
+    height: 580px;
+    background-color: rgba( 0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    position: relative;
+    margin-left: auto;
+}
+
+.home-top-image-box-text:first-child{
+    text-align: center;
+    display: block;
+    padding: 130px 0 80px;
+}
+
+.home-top-image-box-text {
+    text-align: center;
+    display: block;
+    font-size: 21px;
+}
+
+.registration-btn {
+    display: block;
+    margin-top: 20px;
+}
+
+.registration-btn a {
+    color: white;
+}
+
+.registration-logo {
+    padding-right: 10px;
+}
