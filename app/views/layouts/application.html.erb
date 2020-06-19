@@ -16,10 +16,10 @@
       <% if admin_signed_in? %>
         <ul>
           <li>
-            <%= link_to "都市", admin_genres_path %>
+            <%= link_to "都市", admin_cities_path %>
           </li>
           <li>
-            <%= link_to "ジャンル", admin_cities_path %>
+            <%= link_to "ジャンル", admin_genres_path %>
           </li>
           <li>
             <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
