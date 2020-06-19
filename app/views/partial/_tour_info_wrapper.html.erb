@@ -1,0 +1,28 @@
+<div class = "container">
+	<div class = "row">
+		<div class = "col-xs-3">
+			<div class = "left-bar">
+				<h4 class = "city-name"><%= tour.city.name %></h4>
+				<h4><%= tour.genre.name %></h4>
+			</div>
+		</div>
+		<div class = "col-xs-7">
+			<div class = "right-bar">
+				<table class = "table">
+					<thead>
+						<th class = "text-center"><h5>定員</h5></th>
+						<th class = "text-center"><h5>一人当たりの価格</h5></th>
+						<th class = "text-center"><h5>価格に含まれるサービス</h5></th>
+						<th class = "text-center"><h5>所要時間</h5></th>
+					</thead>
+					<tbody class = "text-center">
+						<td><h5><%= tour.capacity %>人</h5></td>
+						<td><h5><%= number_with_delimiter(tour.price) %>円</h5></td>
+						<td><p class = "contents_of_price"><%= tour.contents_of_price %></p></td>
+						<td><h5><%= tour.time %></h5></td>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
