@@ -1,0 +1,55 @@
+<div class = "admin-tours-index">
+	<div class = "container">
+		<div class = "row">
+			<h1>ツアーページ</h1>
+			<div class = "col-xs-2">
+				<div class =  "panel panel-default category-search-box">
+					<div class="panel-heading">
+						<h3 class="panel-title">ジャンル検索</h3>
+					</div>
+					<div class = "panel-body" >
+						<% @genres.each do |genre| %>
+							<p>
+								<%= link_to admin_tours_path(genre_id: genre.id) do %>
+									<%= genre.name %>
+								<% end %>
+							</p>
+						<% end %>
+					</div>
+				</div>
+				<div class = "text-center">
+					<%= link_to "都市投稿", admin_cities_path, class: "btn btn-success btn-lg admin-cities-btn" %>
+				</div>
+				<div class = "text-center admin_genre_btn">
+					<%= link_to "ジャンル投稿", admin_genres_path, class: "btn btn-info btn-lg admin-genres-btn" %>
+				</div>
+			</div>
+			<div class = "col-xs-10">
+				<table class = "table">
+					<thead>
+						<tr class = "active">
+							<th class = "text-center">紹介者</th>
+							<th class = "text-center">ツアー名</th>
+							<th class = "text-center">販売ステータス</th>
+							<th class = "text-center">都市</th>
+							<th class = "text-center">ジャンル</th>
+							<th class = "text-center"></th>
+						</tr>
+					</thead>
+					<% @tours.each do |tour| %>
+						<% if tour.is_active == true %>
+							<tbody>
+								<%= render 'tbody', tour: tour %>
+							</tbody>
+						<% else %>
+							<tbody class = "tour_is_active-tbody">
+								<%= render 'tbody', tour: tour %>
+							</tbody>
+						<% end %>
+					<% end %>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
