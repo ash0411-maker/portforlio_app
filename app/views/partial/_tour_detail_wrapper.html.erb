@@ -1,0 +1,83 @@
+<div class = "container">
+	<div class = "row">
+
+<!------- ツアー内容説明 -------->
+		<div class = "row">
+			<div class = "col-xs-8 col-xs-offset-4">
+				<h2 class = "guide-body-text"><%= tour.title %></h2>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "col-xs-4">
+				<div class = "guide-body-title">
+					<h2>ツアー内容</h2>
+				</div>
+			</div>
+			<div class = "col-xs-8">
+				<h4 class = "guide-body-text"><%= tour.body %></h4>
+			</div>
+		</div>
+	</div>
+
+
+<!------- ツアーガイド紹介 -------->
+	<div class = "row">
+		<div class = "guide-tour-details">
+			<div class = "col-xs-4">
+				<div class = "guide-body-title">
+					<h2>ガイド紹介</h2>
+					<div class = "guide-tour-guide-introduction">
+						<%= attachment_image_tag tour.guide, :selfy_image, :fill, 100, 100, format: 'jpeg' %>
+						<h4>
+							<strong><%= tour.guide.family_name %> <%= tour.guide.name %></strong>
+						</h4>
+					</div>
+				</div>
+			</div>
+			<div class = "col-xs-8">
+				<div class = "tour-body-wrapper">
+					<h4 class = "guide-body-text"><%= tour.guide.introduction %></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+<!----------- 集合場所 ------------>
+	<div class = "row">
+		<div class = "guide-tour-details">
+			<div class = "col-xs-4">
+				<div class = "guide-body-title">
+					<h2>集合場所</h2>
+				</div>
+			</div>
+			<div class = "col-xs-8">
+				<div class = "tour-body-wrapper">
+					<h4 class = "guide-body-text">
+						<%= tour.meetingpoint_address %><br/>
+						<%= tour.meetingpoint_introduction %>
+					</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!----------- レビュー一覧 ------------>
+	<div class = "row">
+		<div class = "guide-tour-details">
+			<div class = "col-xs-4">
+				<div class = "guide-body-title">
+					<h2>レビュー一覧</h2>
+				</div>
+			</div>
+			<div class = "col-xs-8">
+				<div class = "tour-body-wrapper">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

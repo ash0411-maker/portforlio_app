@@ -1,0 +1,40 @@
+<div class = "container">
+	<div class = "row">
+		<% unless @genre == nil %>
+			<h1 class = "col-xs-4 col-xs-offset-1 genre_name"><%= @genre.name %></h1>
+		<% else %>
+			<h1 class = "col-xs-4 col-xs-offset-1 genre_name"></h1>
+		<% end %>
+	</div>
+	<div class = "row">
+	<!----- ツアー写真 ----->
+		<% tours.each do |tour| %>
+			<% if tour.is_active == true %>
+				<div class = "col-xs-4">
+					<div class = "tours-phots-box">
+						<% tour_photos = tour.tour_photos %>
+						<% if tourist_signed_in? %>
+							<%= link_to tourist_tour_path(tour) do %>
+								<%= render 'partial/tours_photos_link', tour_photos: tour_photos, tour: tour %>
+							<% end %>
+						<% elsif guide_signed_in? %>
+							<%= link_to guide_guide_tour_path(current_guide, tour) do %>
+								<%= render 'partial/tours_photos_link', tour_photos: tour_photos, tour: tour %>
+							<% end %>
+						<% elsif admin_signed_in? %>
+							<%= link_to admin_tour_path(tour) do %>
+								<%= render 'partial/tours_photos_link', tour_photos: tour_photos, tour: tour %>
+							<% end %>
+						<% else %>
+							<%= link_to home_tour_path(tour) do %>
+								<%= render 'partial/tours_photos_link', tour_photos: tour_photos, tour: tour %>
+							<% end %>
+						<% end %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	<!----- ツアー写真 ----->
+	</div>
+	<%= paginate tours, class: "paginate" %>
+</div>
