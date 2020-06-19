@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root to: 'home/tours#index'
+
   devise_for :admins, controllers: {
     sessions: 'devise/admins/sessions',
     passwords: 'devise/admins/passwords',
@@ -38,6 +40,10 @@ Rails.application.routes.draw do
     get 'home/top'
     resources :genres, only: %i[index create edit update destroy]
     resources :cities, only: %i[index create edit update destroy]
+  end
+
+  namespace :home do
+    resources :tours, only: %i[index show]
   end
 
   namespace :guide do
