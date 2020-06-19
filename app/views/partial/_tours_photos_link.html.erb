@@ -1,0 +1,3 @@
+<%= attachment_image_tag tour_photos[0], :image, :fill, 350, 280, format: 'jpeg',class: "tours-photo-index" %>
+<h3><%= tour.title %></h3>
+<h4>¥<%= number_with_delimiter(tour.price) %>・<%= tour.time %></h4>
