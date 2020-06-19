@@ -1,0 +1,39 @@
+<div class = "container">
+	<div class = "row">
+		<%= render 'admin/genres/errors', genre: @genre %>
+		<div class = "col-xs-3">
+			<div class = "form">
+				<h3 class = "col-xs-offset-3">ジャンル登録</h3>
+				<%= form_for(@genre, url: admin_genres_path) do |f| %>
+					<div class = "form_field">
+			            <%= f.text_field :name, class: "genre-form",
+						placeholder: "ジャンル入力" %>
+		        	</div>
+		        	<div class = "form_field">
+			        	<%= f.submit  "追加", class: "btn btn-success genre-form" %>
+			        </div>
+				<% end %>
+			</div>
+		</div>
+		<div class = "col-xs-6 col-xs-offset-1">
+			<h3 class = "flash"><%=flash[:notice]%></h3>
+			<h2>ジャンル一覧</h2>
+			<table class = "table">
+				<thead>
+					<th>ジャンル名</th>
+					<th></th>
+					<th></th>
+				</thead>
+				<% @genres.each do |genre| %>
+					<tbody>
+						<td><%= genre.name %></td>
+						<td><%= link_to "編集", edit_admin_genre_path(genre), class: "btn btn-primary" %></td>
+						<td>
+							<%= link_to "削除", admin_genre_path(genre), method: :delete,data: {confirm:'削除してもよろしいですか？'}, class: "btn btn-danger" %>
+						</td>
+					</tbody>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>

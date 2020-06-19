@@ -1,0 +1,10 @@
+<% if genre.errors.any? %>
+    <div class ="error_explanation">
+    	<h2><%= genre.errors.count %>件のエラーがあります。</h2>
+    	<ul>
+		    <% genre.errors.full_messages.each do |message| %>
+		    	<li><%= message %></li>
+		    <% end %>
+    	</ul>
+    </div>
+<% end %>

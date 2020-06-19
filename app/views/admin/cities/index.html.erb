@@ -1,0 +1,47 @@
+<div class = "container">
+	<div class = "row">
+
+		<%= render 'admin/cities/errors', city: @city %>
+
+	<!----- 都市新規登録 ----->
+		<div class = "col-xs-3">
+			<div class = "form">
+				<h3 class = "col-xs-offset-3">都市登録</h3>
+				<%= form_for(@city, url: admin_cities_path) do |f| %>
+					<div class = "form_field">
+			            <%= f.text_field :name, class: "city-form",placeholder: "都市入力" %>
+		        	</div>
+		        	<div class = "form_field">
+			        	<%= f.submit  "追加", class: "btn btn-success city-form" %>
+			        </div>
+				<% end %>
+			</div>
+		</div>
+	<!----- 都市新規登録 ----->
+
+
+	<!----- 都市一覧 ----->
+		<div class = "col-xs-6 col-xs-offset-1">
+			<h3 class = "flash"><%=flash[:notice]%></h3>
+			<h2>都市一覧</h2>
+			<table class = "table">
+				<thead>
+					<th>都市名</th>
+					<th></th>
+					<th></th>
+				</thead>
+				<% @cities.each do |city| %>
+					<tbody>
+						<td><%= city.name %></td>
+						<td><%= link_to "編集", edit_admin_city_path(city), class: "btn btn-primary" %></td>
+						<td>
+							<%= link_to "削除", admin_city_path(city), method: :delete,data: {confirm:'削除してもよろしいですか？'}, class: "btn btn-danger" %>
+						</td>
+					</tbody>
+				<% end %>
+			</table>
+		</div>
+	<!----- 都市一覧 ----->
+
+	</div>
+</div>

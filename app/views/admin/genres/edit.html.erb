@@ -1,0 +1,17 @@
+<div class = "container">
+	<div class = "row">
+		<%= render 'admin/genres/errors', genre: @genre %>
+		<div class = "col-xs-6 col-xs-offset-3">
+			<h2 class = "genre-edit-headline">ジャンル編集画面</h2>
+			<%= form_for(@genre, url: admin_genre_path(@genre)) do |f| %>
+				<div class = "form_field">
+			        <%= f.label :ジャンル名 %><br/>
+			        <%= f.text_field :name, class: "genre-form" %>
+		        </div>
+		        <div class = "form_field">
+			    	<%= f.submit  "編集", class: "btn btn-success genre-form" %>
+			    </div>
+			<% end %>
+		</div>
+	</div>
+</div>
