@@ -7,4 +7,7 @@ class Guide < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :tours, dependent: :destroy
+
+  attachment :selfy_image
+  attachment :identification_image
 end
