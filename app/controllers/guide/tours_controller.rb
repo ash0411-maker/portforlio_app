@@ -12,7 +12,7 @@ class Guide::ToursController < ApplicationController
     @tour = Tour.new(tour_params)
     @tour.guide_id = current_guide.id
     if @tour.save
-      redirect_to guide_guide_tour_path(current_guide, @tour)
+      redirect_to guide_tour_path(current_guide, @tour)
     else
       render 'new'
     end
