@@ -64,7 +64,8 @@ nav li a{
 
 
 
-// ------ devise関連 ---------
+
+//  devise関連
 .devise-field {
 	margin-top: 40px;
 }
@@ -79,4 +80,142 @@ nav li a{
 
 .login_message {
 	color: lime;
+}
+
+
+
+//ツアー一覧ページ
+.tours-first-wrapper {
+	background-color: black;
+	height: 580px;
+	color: white;
+}
+
+.home-top-image {
+	background-image: image-url("IMG_0311.jpeg");
+	background-size: cover;
+	background-position: center;
+	height: 450px;
+}
+
+.tours-phots-box {
+	margin-bottom: 50px;
+	padding-bottom: 10px;
+}
+
+.tours-photo-index {
+	border-radius: 5%;
+}
+
+
+
+
+
+
+// -----  ツアー詳細ページ -------
+.tour-img {
+	border-radius: 3%;
+}
+
+.tour-top-wrapper {
+	height: 600px;
+	background-color: black;
+	color: white;
+	position: relative;
+}
+
+.guide_book_marks {
+	position: absolute;
+	right: 60px;
+	top: 80px;
+}
+
+.guide_book_marks_numbers {
+	font-size: 50px;
+}
+
+.guide-tour-introduction {
+	color: red;
+}
+
+// ----- ツアー写真 -----
+.tour-image-wrapper {
+	height: 400px;
+	padding: 30px 0 0 150px;
+	background-color: black;
+	position: relative;
+}
+
+.tour-img-1 {
+	padding-right: 20px;
+}
+
+.tour-img-2 {
+
+}
+
+.tour-img-3 {
+	padding-left: 10px;
+}
+
+.tour-img-4 {
+	padding-top: 10px;
+}
+
+.tour-img-5 {
+	padding-left: 15px;
+}
+
+
+
+// ----- ツアー概要 -----
+.tour-info-wrapper {
+	padding: 30px 0 0 0px;
+	background-color: black;
+	color: white;
+}
+
+
+.left-bar{
+	margin: 55px 0 0 40px;
+}
+
+.city-name{
+	margin: 30px 0;
+}
+
+.right-bar{
+	margin-left: -100px;
+}
+
+.contents_of_price{
+	margin-top: 10px;
+}
+
+.edit-tour-btn{
+	margin: 80px 0 0 40px;
+}
+
+.tour-body-title{
+	margin: 100px 0 0 90px;
+
+}
+
+
+.guide-tour-details {
+	margin-top: 40px;
+	margin-bottom: 200px;
+	border-top: dotted 0.1px gray;
+}
+
+.guide-body-title{
+	margin-left: 140px;
+}
+
+.guide-body-text{
+	line-height: 50px;
+}
+
+.guide-tour-guide-introduction{
+	margin: 20px 0 0 30px;
 }

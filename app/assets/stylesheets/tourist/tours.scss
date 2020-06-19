@@ -1,3 +1,45 @@
 // Place all the styles related to the tourist/tours controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.tourist-top-image {
+    background-image: image-url("IMG_1533.jpeg");
+    background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	height: 450px;
+}
+
+.tourist-top-image-box {
+    width: 40%;
+    height: 450px;
+    background-color: rgba( 0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    position: relative;
+}
+
+.tourist-top-image-box-text {
+    font-size: 30px;
+    padding: 90px;
+    position: absolute;
+    top: 70px;
+    left: 70px;
+}
+
+
+.tourist-second-wrapper {
+	background-color: black;
+	height: 180px;
+}
+
+.genres-box {
+    margin-top: 40px;
+}
+
+.genre_name {
+	margin-bottom: 40px;
+}
+
+.tourist-genre-btn{
+	margin: 0px 5px 0;
+}
