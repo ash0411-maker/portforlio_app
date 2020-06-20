@@ -2,7 +2,7 @@
 	<div class = "row">
 		<%= render 'errors', tour: @tour %>
 		<div class = "col-xs-12">
-			<%= form_for(@tour, url: guide_tours_path) do |f| %>
+			<%= form_for(@tour, url: guide_guide_tours_path(current_guide)) do |f| %>
 				<div class = "col-xs-4">
 					<h1>ツアー新規投稿</h1>
 				</div>

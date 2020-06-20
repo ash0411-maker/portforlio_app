@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     when Admin
       admin_home_top_path
     when Guide
-      guide_home_top_path(current_guide)
+      guide_guide_home_top_path(current_guide)
     when Tourist
       tourist_tourist_tours_path(current_guide)
     end
