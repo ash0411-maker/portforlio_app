@@ -1,0 +1,2 @@
+module Tourist::TouristsHelper
+end
