@@ -2,6 +2,9 @@
 
 Rails.application.routes.draw do
 
+  namespace :guide do
+    get 'orders/index'
+  end
   root to: 'home/tours#index'
 
   devise_for :admins, controllers: {
