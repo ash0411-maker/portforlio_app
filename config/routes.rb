@@ -52,8 +52,10 @@ Rails.application.routes.draw do
   end
 
   namespace :guide do
-    get 'home/top'
-    resources :tours
+    resources :guides, only: %i[show edit update destroy] do
+      get 'home/top'
+      resources :tours
+    end
   end
 
 
