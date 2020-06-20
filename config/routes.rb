@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   end
 
   namespace :tourist do
+    get 'searches/city'
     resources :tours, only: %i[index show] do
       resource :book_marks, only: %i[create destroy]
     end
