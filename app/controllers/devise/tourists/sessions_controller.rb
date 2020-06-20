@@ -27,6 +27,6 @@ class Devise::Tourists::SessionsController < Devise::SessionsController
   def tourist_guest
     tourist = Tourist.find(1)
     sign_in tourist
-    redirect_to tourist_tours_path, notice: 'ゲストユーザーとしてログインしました。'
+    redirect_to tourist_tourist_tours_path(current_tourist), notice: 'ゲストユーザーとしてログインしました。'
   end
 end
