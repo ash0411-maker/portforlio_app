@@ -24,7 +24,7 @@
       <% elsif tourist_signed_in? %>
         <%= link_to "FANTRA", tourist_tourist_tours_path(current_tourist), class: "logo" %>
         <span class = "header-city-search">
-          <%= form_tag(tourist_tourist_searches_city_path, method: :get) do %>
+          <%= form_tag(tourist_tourist_searches_city_path(current_tourist), method: :get) do %>
             <%= text_field_tag 'search[city]' %>
             <%= button_tag '<i class="fa fa-search"></i>ツアー都市'.html_safe, :type => "submit",:class =>"btn btn-default" %>
           <% end %>

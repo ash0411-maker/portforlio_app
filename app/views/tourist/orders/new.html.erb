@@ -1,2 +1,82 @@
-<h1>Tourist::Orders#new</h1>
-<p>Find me in app/views/tourist/orders/new.html.erb</p>
+<div class = "container">
+	<div class = "row">
+		<h1>ツアー同行者人数入力</h1>
+		<h3 class = "flash"><%= flash[:danger] %></h3>
+
+        <%# ----- 注文フォーム ----- %>
+		<div class = "col-xs-4 col-xs-offset-2">
+			<%= form_for(@order, url: tourist_tourist_order_confirm_path(current_tourist), method: :get) do |f| %>
+
+				<div class = "row">
+					<div class="order-form-group">
+						<%= f.label :参加人数, "数字のみを入力してください" %><br/>
+						<%= f.text_field :total_people, class: "col-xs-4" %>名
+					</div>
+				</div>
+				<div class = "row">
+					<div class="order-form-group">
+						<%= f.datetime_select :tour_date %>
+					</div>
+				</div>
+
+				<%= f.hidden_field :tourist_id, :value => current_tourist.id %>
+				<%= f.hidden_field :tour_id, :value => @tour.id %>
+				<%= f.hidden_field :guide_id, :value => @tour.guide.id %>
+				<%= f.hidden_field :tour_title, :value => @tour.title %>
+				<%= f.hidden_field :tour_body, :value => @tour.body %>
+				<%= f.hidden_field :tour_city, :value => @tour.city.name %>
+				<%= f.hidden_field :price, :value => @tour.price %>
+				<%= f.hidden_field :tour_contents_of_price, :value => @tour.contents_of_price %>
+				<%= f.hidden_field :tour_capacity, :value => @tour.capacity %>
+				<%= f.hidden_field :tour_time, :value => @tour.time %>
+				<%= f.hidden_field :tour_genre, :value => @tour.genre.name %>
+				<%= f.hidden_field :tour_price, :value => @tour.price %>
+
+				<div class = "row">
+					<div>
+						<%= f.submit '送信', class: "btn btn-success btn-lg order-new-btn col-xs-4" %>
+					</div>
+				</div>
+
+			<% end %>
+		</div>
+
+
+
+	<%# ----- ツアー内容確認表 ----- %>
+		<div class = "col-xs-4">
+			<div class="panel panel-default">
+				<div class="panel-heading text-center">
+			    	<h3 class="panel-title">ツアー内容</h3>
+				</div>
+				<div class="panel-body">
+				    <p>
+				    	ツアー名：<strong class = "text-right"><%= @tour.title %></strong>
+				    </p>
+				    <p>
+				    	ツアー都市：<strong class = "text-right"><%= @tour.city.name %></strong>
+				    </p>
+				    <p>
+				    	定員：<strong class = "text-right"><%= @tour.capacity %>名</strong>
+				    </p>
+				    <p>
+				    	所要時間：<strong class = "text-right"><%= @tour.time %></strong>
+				    </p>
+				    <p class = "order-confirm">
+				    	ホスト：<strong><%= @tour.guide.family_name %> <%= @tour.guide.name %></strong>
+				    </p>
+				</div>
+				<div class="panel-body">
+				    <p class = "order-confirm">
+				    	価格に含まれるサービス<br/>
+				    	<strong><%= @tour.contents_of_price %></strong>
+				    </p>
+				</div><div class="panel-body">
+				    <p class = "order-confirm">
+				    	価格 × 1人：<strong>¥<%= number_with_delimiter(@tour.price) %></strong>
+				    </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
