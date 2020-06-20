@@ -58,6 +58,7 @@ Rails.application.routes.draw do
     resources :guides, only: %i[show edit update destroy] do
       get 'home/top'
       resources :tours
+      resources :orders, only: %i[index update]
     end
   end
 

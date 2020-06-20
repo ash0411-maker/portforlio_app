@@ -1,7 +1,15 @@
 <div class = "contaienr">
     <div class = "row">
-		<div class = "col-xs-8 col-xs-offset-2">
-			<h1>ガイドトップ画面</h1>
+		<<div class = "col-xs-8 col-xs-offset-1">
+			<h1 class = "guide_signin_text"><%= flash[:notice] %></h1>
+			<div>
+				<h1>
+					本日に入った予約件数は
+					<%= link_to guide_guide_orders_path(current_guide) do %>
+						<%= @orders.count %>件です
+					<% end %>
+				</h1>
+			</div>
 		</div>
   </div>
 </div>

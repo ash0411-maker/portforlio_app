@@ -6,5 +6,6 @@ class Tourist < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :orders
   has_many :book_marks, dependent: :destroy
 end
