@@ -19,9 +19,9 @@ class ApplicationController < ActionController::Base
     if resource == :admin
       new_admin_session_path
     elsif resource == :guide
-      new_guide_session_path
+      root_path
     elsif resource == :tourist
-      new_tourist_session_path
+      root_path
     end
   end
 
