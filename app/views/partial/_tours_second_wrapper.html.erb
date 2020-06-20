@@ -1,10 +1,6 @@
 <div class = "container">
 	<div class = "row">
-		<% if genre.nil? %>
 			<h1 class = "col-xs-4 col-xs-offset-1 genre_name"></h1>
-		<% else%>
-			<h1 class = "col-xs-4 col-xs-offset-1 genre_name"><%= genre.name %></h1>
-		<% end %>
 	</div>
 	<div class = "row">
 	<%# ----- ツアー写真一覧 ----- %>
@@ -14,7 +10,7 @@
 					<div class = "tours-phots-box">
 						<% tour_photos = tour.tour_photos %>
 						<% if tourist_signed_in? %>
-							<%= link_to tourist_tour_path(tour) do %>
+							<%= link_to tourist_tourist_tour_path(current_tourist, tour) do %>
 								<%= render 'partial/tours_photos_link', tour_photos: tour_photos, tour: tour %>
 							<% end %>
 						<% elsif guide_signed_in? %>
