@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_20_023244) do
+ActiveRecord::Schema.define(version: 2020_06_20_084329) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -64,6 +64,28 @@ ActiveRecord::Schema.define(version: 2020_06_20_023244) do
     t.datetime "deleted_at"
     t.index ["email"], name: "index_guides_on_email", unique: true
     t.index ["reset_password_token"], name: "index_guides_on_reset_password_token", unique: true
+  end
+
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "status", default: 0
+    t.integer "tourist_id", null: false
+    t.integer "tour_id", null: false
+    t.integer "guide_id", null: false
+    t.string "tour_title", null: false
+    t.text "tour_body", null: false
+    t.integer "tour_capacity", null: false
+    t.string "tour_contents_of_price", null: false
+    t.string "tour_time", null: false
+    t.string "tour_city", null: false
+    t.string "tour_genre", null: false
+    t.integer "tour_price", null: false
+    t.datetime "tour_date", null: false
+    t.integer "total_people", null: false
+    t.integer "total_price", null: false
+    t.integer "admin_sales", null: false
+    t.integer "guide_sales", null: false
   end
 
   create_table "tour_photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|

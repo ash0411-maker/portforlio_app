@@ -1,0 +1,2 @@
+module Tourist::OrdersHelper
+end
