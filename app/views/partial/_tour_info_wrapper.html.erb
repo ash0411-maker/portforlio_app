@@ -26,5 +26,12 @@
 				</table>
 			</div>
 		</div>
+		<div class = "col-xs-2">
+			<% if tourist_signed_in? %>
+				<div class = "order-btn">
+					<%= link_to "予約に進む", new_tourist_tourist_order_path(current_tourist, tour_id: tour.id), class: "btn btn-success btn-lg" %>
+				</div>
+			<% end %>
+		</div>
 	</div>
 </div>

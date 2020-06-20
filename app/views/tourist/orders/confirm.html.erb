@@ -1,0 +1,110 @@
+<div class = "container">
+	<div class = "row">
+		<div class = "confirm-box">
+			<div class = "col-xs-3 col-xs-offset-1">
+
+			<%# ----- 予約するーツアー内容 ----- %>
+				<div class="panel panel-default">
+					<div class="panel-heading text-center">
+				    	<h3 class="panel-title">ツアー内容</h3>
+					</div>
+					<div class="panel-body">
+						<p>
+					    	ツアー日時：<strong class = "text-right"><%= @order.tour_date.strftime("%Y-%m-%d %H:%M")  %></strong>
+					    </p>
+					    <p>
+					    	ツアー名：<strong class = "text-right"><%= @order.tour_title %></strong>
+					    </p>
+					    <p>
+					    	ツアー都市：<strong class = "text-right"><%= @order.tour_city %></strong>
+					    </p>
+					    <p>
+					    	定員：<strong class = "text-right"><%= @order.tour_capacity %>名</strong>
+					    </p>
+					    <p>
+					    	所要時間：<strong class = "text-right"><%= @order.tour_time %></strong>
+					    </p>
+					    <p class = "order-confirm-text">
+					    	ホスト：</strong>
+					    </p>
+					</div>
+
+					<div class="panel-body">
+						<p>価格に含まれるサービス</p>
+					    <p class = "order-confirm-text">
+					    	<strong><%= @order.tour_contents_of_price %></strong>
+					    </p>
+					</div>
+					<div class="panel-body">
+						<p>合計人数</p>
+					    <p class = "order-confirm-text">
+					    	<strong><%= @order.total_people %>名</strong>
+					    </p>
+					</div>
+
+					<div class="panel-body">
+						<p>一人当たりの金額</p>
+					    <p class = "order-confirm-text">
+					    	<strong>¥<%= number_with_delimiter(@order.tour_price) %></strong>
+					    </p>
+					</div>
+
+					<div class="panel-body">
+						<p>合計金額</p>
+					    <p class = "order-confirm-text">
+					    	¥<%= number_with_delimiter(@order.tour_price) %>　× <%= @order.total_people %>名　＝　<strong>¥<%= number_with_delimiter(@total_price) %></strong>
+					    </p>
+					</div>
+					<%= form_for(@order, url: tourist_tourist_orders_path) do |f| %>
+						<%= f.hidden_field :tourist_id, :value => current_tourist.id %>
+						<%= f.hidden_field :tour_id, :value => @order.tour_id %>
+						<%= f.hidden_field :guide_id, :value => @order.guide_id %>
+						<%= f.hidden_field :tour_title, :value => @order.tour_title %>
+						<%= f.hidden_field :tour_body, :value => @order.tour_body %>
+						<%= f.hidden_field :tour_city, :value => @order.tour_city %>
+						<%= f.hidden_field :total_people, :value => @order.total_people %>
+						<%= f.hidden_field :total_price, :value => @total_price %>
+						<%= f.hidden_field :tour_contents_of_price, :value => @order.tour_contents_of_price %>
+						<%= f.hidden_field :tour_capacity, :value => @order.tour_capacity %>
+						<%= f.hidden_field :tour_time, :value => @order.tour_time %>
+						<%= f.hidden_field :tour_date, :value => @order.tour_date %>
+						<%= f.hidden_field :tour_genre, :value => @order.tour_genre %>
+						<%= f.hidden_field :tour_price, :value => @order.tour_price %>
+						<% admin_sales = @total_price * 0.12 %>
+						<% guide_sales = @total_price * 0.88 %>
+						<%= f.hidden_field :admin_sales, :value => admin_sales %>
+						<%= f.hidden_field :guide_sales, :value => guide_sales %>
+
+						<div class="panel-body">
+							<%= f.submit '予約する', class: "btn btn-success btn-lg" %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+
+
+
+		<%# ----- 注意事項・予約内容確認 ----- %>
+			<div class = "col-xs-7">
+                <div class = "oreder-warning">
+                    <h1 class = "order-confirm-title">予約内容確認</h1>
+                    <h2>ツアー説明</h2>
+                    <h4 class = "order-confirm-body"><%= @order.tour_body %></h4>
+                </div>
+				<div class = "oreder-warning">
+					<h2>旅行する上での注意</h2>
+					<h4>
+						ツアーガイドから予約内容に記載されていないサービスを提供しようとして、金銭が発生する場合はトラブルの原因となりますのでお断り頂きますようにお願いいたします。
+					</h4>
+				</div>
+				<div class = "oreder-warning">
+					<h2>キャンセルポリシー</h2>
+					<h4>ツアー前日からのキャンセルは予約内容に記載されている料金の100%を請求させていただきます。</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     registrations: 'devise/tourists/registrations'
   }
 
-  
+
   # 管理者ゲストログイン
   devise_scope :admin do
     post 'admins/sign_in_with_guest' => 'devise/admins/sessions#admin_guest', as: 'guest_admin'
@@ -58,8 +58,10 @@ Rails.application.routes.draw do
 
 
   namespace :tourist do
+    get 'orders/thanks' => 'orders#thanks', as: 'orders_thanks'
     resources :tourists, only: %i[show edit update destroy] do
       get 'searches/city'
+      get 'orders/confirm' => 'orders#confirm', as: 'order_confirm'
       resources :orders, only: %i[show index new create destroy]
       resources :tours, only: %i[index show] do
         resource :book_marks, only: %i[create destroy]
