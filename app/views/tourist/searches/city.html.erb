@@ -25,14 +25,13 @@
 </div>
 <div class = "tours-second-wrapper">
     <% if @city_tours.nil? %>
-        <div class = "contaienr">
-            <div class = "row">
-                <div class = "col-xs-offset-2">
-                    <h2><% @city.name %>はまだ登録されておりません。</h2>
-                </div>
-            </div>
-        </div>
+		<h1 class = "col-xs-offset-1">
+			<span class = "city-search-result"><%= @city %></span>はまだ登録されておりません。
+		</h1>
     <% else %>
+        <h1 class = "col-xs-offset-1">
+            <span class = "city-search-result"><%= @city %></span>の検索結果
+        </h1>
         <%= render 'partial/tours_second_wrapper', tours: @city_tours, genre: @genre, city: @city %>
     <% end %>
 </div>

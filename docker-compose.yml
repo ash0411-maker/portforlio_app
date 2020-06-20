@@ -26,7 +26,6 @@ services:
     depends_on:
       - db
     tty: true
-    stdin_open: true
 
 volumes:
   mysql-data:

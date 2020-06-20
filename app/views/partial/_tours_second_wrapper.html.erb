@@ -2,12 +2,8 @@
 	<div class = "row">
 		<% if genre.nil? %>
 			<h1 class = "col-xs-4 col-xs-offset-1 genre_name"></h1>
-		<% elsif genre %>
+		<% else%>
 			<h1 class = "col-xs-4 col-xs-offset-1 genre_name"><%= genre.name %></h1>
-		<% elsif @city_tours.nil? %>
-			<h1 class = "col-xs-4 col-xs-offset-1 genre_name"></h1>
-		<% elsif @city_tours %>
-			<h1 class = "col-xs-4 col-xs-offset-1 genre_name"><%= city.name %></h1>
 		<% end %>
 	</div>
 	<div class = "row">
