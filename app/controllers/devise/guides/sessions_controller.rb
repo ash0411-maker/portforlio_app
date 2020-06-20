@@ -27,6 +27,6 @@ class Devise::Guides::SessionsController < Devise::SessionsController
   def guide_guest
     guide = Guide.find(1)
     sign_in guide
-    redirect_to guide_home_top_path(guide.id), notice: 'ゲストユーザーとしてログインしました。'
+    redirect_to guide_guide_home_top_path(current_guide), notice: 'ゲストユーザーとしてログインしました。'
   end
 end

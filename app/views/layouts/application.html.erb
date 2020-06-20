@@ -18,7 +18,7 @@
 
       <%# ---- GuideのFANTRAロゴ ---- %>
       <% elsif guide_signed_in? %>
-        <%= link_to "FANTRA", guide_home_top_path, class: "logo" %>
+        <%= link_to "FANTRA", guide_guide_home_top_path, class: "logo" %>
 
       <%# ---- ToursitのFANTRAロゴ・都市検索窓 ---- %>
       <% elsif tourist_signed_in? %>
@@ -49,13 +49,13 @@
       <% elsif guide_signed_in? %>
         <ul>
           <li>
-            <%= link_to guide_tours_path do %>
+            <%= link_to guide_guide_tours_path(current_guide) do %>
               <i class="fas fa-plane-departure fa-2x"></i>
                 ツアー一覧
             <% end %>
           </li>
           <li>
-            <%= link_to new_guide_tour_path do %>
+            <%= link_to new_guide_guide_tour_path(current_guide) do %>
               <i class="fas fa-file-signature fa-2x"></i>
               ツアー投稿
             <% end %>
