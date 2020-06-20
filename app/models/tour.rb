@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class Tour < ApplicationRecord
+
   belongs_to :guide, optional: true
   belongs_to :genre, optional: true
   belongs_to :city, optional: true
+  has_many :book_marks, dependent: :destroy
   has_many :tour_photos, dependent: :destroy
   accepts_nested_attributes_for :tour_photos, allow_destroy: true
 
@@ -17,4 +19,9 @@ class Tour < ApplicationRecord
   validates :price, presence: true
   validates :contents_of_price, presence: true
   validates :time, presence: true
+
+  # ブックマーク機能
+  def bookmarked_by?(tourist)
+    book_marks.where(tourist_id: tourist.id).exists?
+  end
 end

@@ -12,6 +12,7 @@
   <body>
   <header>
     <nav>
+      <%# ---- FANTRAロゴ ---- %>
       <% if admin_signed_in? %>
         <%= link_to "FANTRA", admin_home_top_path, class: "logo" %>
       <% elsif guide_signed_in? %>
@@ -22,12 +23,15 @@
         <%= link_to "FANTRA", root_path, class: "logo" %>
       <% end %>
 
+      <%# ---- Adminログイン時のheader ---- %>
       <% if admin_signed_in? %>
         <ul>
           <li>
             <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
           </li>
         </ul>
+
+      <%# ---- Guideログイン時のheader ---- %>
       <% elsif guide_signed_in? %>
         <ul>
           <li>
@@ -49,12 +53,16 @@
             <% end %>
           </li>
         </ul>
+
+      <%# ---- Touristログイン時のheader ---- %>
       <% elsif tourist_signed_in? %>
         <ul>
           <li>
             <%= link_to "ログアウト", destroy_tourist_session_path, method: :delete %>
           </li>
         </ul>
+
+      <%# ---- 非ログイン時のheader ---- %>
       <% else %>
         <ul>
           <li>
