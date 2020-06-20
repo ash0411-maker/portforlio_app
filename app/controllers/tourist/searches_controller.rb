@@ -4,7 +4,6 @@ class Tourist::SearchesController < ApplicationController
   def city
     if @city = params['search']['city']
       city_search_result = City.match(@city)
-      binding.pry
       if city_search_result.empty?
         @city_tours = empty
       else
