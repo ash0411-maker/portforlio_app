@@ -50,10 +50,12 @@ Rails.application.routes.draw do
 
   namespace :guide do
     get 'home/top'
-    resources :tours, only: %i[index show new create edit update destroy]
+    resources :tours
   end
 
   namespace :tourist do
-    resources :tours, only: %i[index show]
+    resources :tours, only: %i[index show] do
+      resource :book_marks, only: %i[create destroy]
+    end
   end
 end

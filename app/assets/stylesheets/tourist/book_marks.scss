@@ -1,0 +1,18 @@
+// Place all the styles related to the tourist/book_marks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.book-marks{
+	position: absolute;
+	top: 10px;
+	left: 20px;
+}
+
+.book_mark{
+	color: white;
+	position: absolute;
+	top: 30px;
+	right: 50px;
+	z-index: 500;
+}
