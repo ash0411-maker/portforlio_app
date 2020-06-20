@@ -3,7 +3,7 @@
 
 		<%= render 'admin/cities/errors', city: @city %>
 
-	<!----- 都市新規登録 ----->
+	<%# ----- 都市新規登録 ---- %>
 		<div class = "col-xs-3">
 			<div class = "form">
 				<h3 class = "col-xs-offset-3">都市登録</h3>
@@ -17,10 +17,10 @@
 				<% end %>
 			</div>
 		</div>
-	<!----- 都市新規登録 ----->
 
 
-	<!----- 都市一覧 ----->
+
+	<%# ----- 都市一覧 ---- %>
 		<div class = "col-xs-6 col-xs-offset-1">
 			<h3 class = "flash"><%=flash[:notice]%></h3>
 			<h2>都市一覧</h2>
@@ -41,7 +41,5 @@
 				<% end %>
 			</table>
 		</div>
-	<!----- 都市一覧 ----->
-
 	</div>
 </div>

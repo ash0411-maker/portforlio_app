@@ -7,7 +7,7 @@
 		<% end %>
 	</div>
 	<div class = "row">
-	<!----- ツアー写真 ----->
+	<%# ----- ツアー写真一覧 ----- %>
 		<% tours.each do |tour| %>
 			<% if tour.is_active == true %>
 				<div class = "col-xs-4">
@@ -34,7 +34,6 @@
 				</div>
 			<% end %>
 		<% end %>
-	<!----- ツアー写真 ----->
 	</div>
 	<%= paginate tours, class: "paginate" %>
 </div>
