@@ -2,9 +2,6 @@
 
 Rails.application.routes.draw do
 
-  namespace :guide do
-    get 'orders/index'
-  end
   root to: 'home/tours#index'
 
   devise_for :admins, controllers: {
@@ -57,6 +54,9 @@ Rails.application.routes.draw do
   namespace :guide do
     resources :guides, only: %i[show edit update destroy] do
       get 'home/top'
+      get 'orders/new_order' => 'orders#new_order', as: 'new_order'
+      get 'orders/finished_tour' => 'orders#finished_tour', as: 'finished_tour'
+      get 'orders/day_before_touring' => 'orders#day_before_touring', as: 'day_before_touring'
       resources :tours
       resources :orders, only: %i[index update]
     end
