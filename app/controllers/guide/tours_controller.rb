@@ -41,7 +41,7 @@ class Guide::ToursController < ApplicationController
   def update
     @tour = Tour.find(params[:id])
     if @tour.update(tour_params)
-      redirect_to guide_tour_path(@tour)
+      redirect_to guide_guide_tour_path(current_guide, @tour)
     else
       render 'edit'
     end
