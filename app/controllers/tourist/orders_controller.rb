@@ -21,6 +21,9 @@ class Tourist::OrdersController < ApplicationController
     elsif @order.total_people.to_i > @order.tour_capacity.to_i
       flash[:danger] = '定員数を超えています。'
       redirect_to new_tourist_tourist_order_path(current_tourist, tour_id: @order.tour_id)
+    elsif @order.total_people == 0
+      flash[:danger] = '０名の予約は受け付けられません'
+      redirect_to new_tourist_tourist_order_path(current_tourist, tour_id: @order.tour_id)
     elsif !@order.total_people.nil?
       @total_price = @order.tour_price * @order.total_people
     end
