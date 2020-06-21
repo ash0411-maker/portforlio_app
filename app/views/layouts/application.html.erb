@@ -19,10 +19,12 @@
       <%# ---- GuideのFANTRAロゴ・マイページリンク ---- %>
       <% elsif guide_signed_in? %>
         <%= link_to "FANTRA", guide_guide_home_top_path(current_guide), class: "logo" %>
-        <%= link_to guide_guide_path(current_guide) do %>
-          <%= attachment_image_tag current_guide, :selfy_image, :fill, 40, 40, format: 'jpeg', class: "guide_selfy_image" %>
-          <span class = "guide-login-name">マイページ</span>
-        <% end %>
+        <span class = "guide-mypage-link">
+          <%= link_to guide_guide_path(current_guide) do %>
+            <%= attachment_image_tag current_guide, :selfy_image, :fill, 40, 40, format: 'jpeg', class: "guide_selfy_image" %>
+            <span class = "guide-login-name">マイページ</span>
+          <% end %>
+        </span>
 
       <%# ---- ToursitのFANTRAロゴ・都市検索窓 ---- %>
       <% elsif tourist_signed_in? %>

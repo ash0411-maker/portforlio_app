@@ -1,3 +1,21 @@
 // Place all the styles related to the guide/guides controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+// ガイド詳細画面
+.selfy_image{
+	border-radius: 40%;
+}
+
+.guide-edit-btn {
+	margin: 60px 0 0 25px;
+}
+
+
+
+// ガイド編集画面
+.guide-introduction-area {
+	width: 90%;
+	height: 200px;
+}

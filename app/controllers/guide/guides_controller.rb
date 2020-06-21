@@ -10,10 +10,24 @@ class Guide::GuidesController < ApplicationController
   end
 
   def edit
+    @guide = Guide.find(params[:id])
   end
+
+def update
+  @guide = Guide.find(params[:id])
+  if @guide.update(guide_params)
+    redirect_to guide_guide_path(@guide)
+  else
+    render 'edit'
+  end
+end
 
 
   private
+
+  def guide_params
+    params.require(:guide).permit(:family_name, :name, :address, :postal_code, :email, :phone_number, :identification_image, :selfy_image, :introduction_image, :introduction, :nationality)
+  end
 
   def correct_guide
     guide = Guide.find(params[:id])
