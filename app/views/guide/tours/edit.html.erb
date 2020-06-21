@@ -1,2 +1,16 @@
-<h1>Guide::Tours#edit</h1>
-<p>Find me in app/views/guide/tours/edit.html.erb</p>
+<div class = "container">
+	<div class = "row">
+		<%= render 'errors', tour: @tour %>
+		<div class = "col-xs-12">
+			<%= form_for(@tour, url: guide_guide_tour_path(current_guide, @tour)) do |f| %>
+				<div class = "col-xs-4">
+					<h1>ツアー情報編集</h1>
+				</div>
+				<div class = "col-xs-4 col-xs-offset-3">
+					<h1><%= f.submit  "ツアー内容を変更", class: "btn btn-success btn-lg" %></h1>
+				</div>
+				<%= render 'tour_form', f: f %>
+		    <% end %>
+		</div>
+	</div>
+</div>
