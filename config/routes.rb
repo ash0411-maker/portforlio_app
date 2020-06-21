@@ -57,6 +57,7 @@ Rails.application.routes.draw do
       get 'orders/new_order' => 'orders#new_order', as: 'new_order'
       get 'orders/finished_tour' => 'orders#finished_tour', as: 'finished_tour'
       get 'orders/day_before_touring' => 'orders#day_before_touring', as: 'day_before_touring'
+      get 'gudies/to_guide_edit' => 'guides#to_guide_edit', as: 'to_guide_edit'
       resources :tours
       resources :orders, only: %i[index update]
     end
