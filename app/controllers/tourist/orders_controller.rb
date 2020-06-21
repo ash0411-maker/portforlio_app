@@ -10,6 +10,9 @@ class Tourist::OrdersController < ApplicationController
   def new
     @tour = Tour.find_by(id: params[:tour_id])
     @tourist = Tourist.find_by(id: params[:tourist_id])
+    if @tourist.family_name.blank? || @tourist.name.blank? || @tourist.family_name.blank? || @tourist.sex.blank? || @tourist.birth_year.blank? || @tourist.nationality.blank? || @tourist.phone_number.blank? || @tourist.address.blank? || @tourist.postal_code.blank?
+      redirect_to tourist_tourist_tour_path(current_tourist, @tour)
+    end
     @order = Order.new
   end
 
