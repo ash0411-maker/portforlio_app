@@ -4,6 +4,7 @@ class Tourist::OrdersController < ApplicationController
   before_action :correct_tourist, only: %i[new confirm create destroy index]
 
   def index
+    @orders = current_tourist.orders
   end
 
   def new
@@ -29,6 +30,19 @@ class Tourist::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.save
     redirect_to tourist_orders_thanks_path
+  end
+
+  def destroy
+    @order = Order.find(params[:id])
+    @tourist = @order.tourist
+    if @order.status == 'ツアー開始前'
+      @order.destroy
+      redirect_to tourist_tourist_path(@tourist)
+      flash[:notice] = '予約していたツアーをキャンセルしました。'
+    else
+      redirect_to tourist_tourist_path(@tourist)
+      flash[:notice] = '前日以降なのでキャンセルできません'
+    end
   end
 
   def thanks; end

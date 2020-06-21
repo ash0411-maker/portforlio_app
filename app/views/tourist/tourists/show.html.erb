@@ -1,6 +1,6 @@
 <div class = "contaienr">
     <div class = "row">
-		<div class = "col-xs-4 col-xs-offset-3">
+		<div class = "col-xs-8 col-xs-offset-3">
 			<h3 class = "flash"><%=flash[:notice]%></h3>
 		</div>
 	</div>
@@ -9,6 +9,12 @@
 			<%= link_to  edit_tourist_tourist_path(current_tourist), class: "btn btn-lg" do %>
 				<i class="fas fa-address-card fa-10x"></i>
 				<h3>個人情報変更</h3>
+			<% end %>
+		</div>
+        <div class = "col-xs-4">
+			<%= link_to  tourist_tourist_orders_path(current_tourist), class: "btn btn-lg" do %>
+				<i class="far fa-calendar-check fa-10x"></i>
+				<h3>予約一覧</h3>
 			<% end %>
 		</div>
 	</div>
