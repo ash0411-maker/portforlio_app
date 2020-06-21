@@ -1,2 +1,75 @@
-<h1>Tourist::Tourists#edit</h1>
-<p>Find me in app/views/tourist/tourists/edit.html.erb</p>
+
+<div class = "container">
+	<div class = "row">
+		<div class = "col-xs-11">
+
+		<!------- エラーメッセージ ------->
+			<% if @tourist.errors.any? %>
+			    <div id="error_explanation">
+			    	<h2><%= @tourist.errors.count %>件のエラーが発生しました。</h2>
+			    	<ul>
+					    <% @tourist.errors.full_messages.each do |message| %>
+					      <li><%= message %></li>
+					    <% end %>
+			    	</ul>
+			    </div>
+		    <% end %>
+			<h1>登録情報変更</h1>
+			<%= form_for(@tourist, url: tourist_tourist_path(@tourist)) do |f| %>
+				<table class = "table table-bordered">
+          		<!---- 氏名、生まれ年 ---->
+		            <tr class = "text-center">
+		            	<td class = "active">お名前・国籍・生まれ年</td>
+		            	<td>
+		            		<%= f.label :姓 %><br/><%= f.text_field :family_name %>
+		            	</td>
+		            	<td>
+		            		<%= f.label :名 %><br/><%= f.text_field :name %>
+		            	</td>
+		            	<td>
+		            		<%= f.label :性別 %><br/><%= f.select :sex,[["女性", "女性"], ["男性", "男性"]], :prompt => "--性別--"  %>
+		            	</td>
+		            	<td>
+		            		<%= f.label :生まれ年 %>(西暦)<br/><%= f.text_field :birth_year %>年
+		            	</td>
+		            </tr>
+
+
+		          <!---- 住所、国籍 ---->
+		            <tr class = "text-center">
+		            	<td class = "active">国籍・電話番号・住所</td>
+		            	<td>
+		            		<%= f.label :国籍 %><br/><%= f.text_field :nationality %>
+		            	</td>
+		            	<td>
+		            		<%= f.label :電話番号 %><br/><%= f.text_field :phone_number %>
+		            	</td>
+		            	<td>
+		            		<%= f.label :郵便番号 %><br/><%= f.text_field :postal_code %>
+		            	</td>
+		            	<td>
+		            		<%= f.label :住所 %><br/><%= f.text_field :address %>
+		            	</td>
+		            </tr>
+
+		         <!---- メアド ---->
+		            <tr class = "text-center">
+		            	<td class = "active">メールアドレス</td>
+		            	<td>
+		            		<%= f.label :メールアドレス %><br/><%= f.text_field :email %>
+		            	</td>
+		            </tr>
+		        </table>
+				<div class = "row">
+					<div class = "col-xs-3">
+						<div class="actions">
+							<%= f.submit "情報更新", class: "btn btn-success btn-lg" %>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+

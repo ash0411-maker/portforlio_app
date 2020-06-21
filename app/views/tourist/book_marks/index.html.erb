@@ -1,0 +1,43 @@
+<div class = "container">
+	<div class = "row">
+	<!------- ブックマークが０だった場合 ------->
+		<% if @book_marks.count == 0  %>
+			<h1>気になったツアーをブックマーク登録しましょう！</h1>
+			<h1>
+				<%= link_to "ツアー情報ページ", tourist_tourist_tours_path(current_tourist), class: "btn btn-success btn-lg" %>
+			</h1>
+
+	<!------- ブックマークがあった場合 ------->
+		<% else %>
+			<div class = "col-xs-8 col-xs-offset-1">
+				<h1>ブックマーク一覧</h1>
+				<table class = "table">
+					<thead>
+						<tr class = "active">
+							<th>ツアー題名</th>
+							<th>ツアー都市</th>
+							<th>定員</th>
+							<th>ツアー価格</th>
+							<th>所要時間</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @book_marks.each do |book_mark| %>
+							<tr>
+								<td><%= book_mark.tour.title %></td>
+								<td><%= book_mark.tour.city.name %></td>
+								<td><%= book_mark.tour.capacity %>名</td>
+								<td>¥ <%= number_with_delimiter(book_mark.tour.price) %></td>
+								<td><%= book_mark.tour.time %></td>
+								<td>
+									<%= link_to "詳細", tourist_tourist_tour_path(current_tourist, book_mark.tour), class: "btn btn-success" %>
+								</td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+		<% end %>
+	</div>
+</div>

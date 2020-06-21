@@ -68,6 +68,7 @@ Rails.application.routes.draw do
     resources :tourists, only: %i[show edit update destroy] do
       get 'searches/city'
       get 'orders/confirm' => 'orders#confirm', as: 'order_confirm'
+      get 'book_marks/index' => 'book_marks#index', as: 'book_marks'
       resources :orders, only: %i[show index new create destroy]
       resources :tours, only: %i[index show] do
         resource :book_marks, only: %i[create destroy]

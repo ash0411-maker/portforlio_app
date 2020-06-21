@@ -1,12 +1,12 @@
 <% if tour.bookmarked_by?(current_tourist) %>
 	<li>
-	    <%= link_to tourist_tourist_tour_book_marks_path(tour, current_tourist), method: :delete, remote: true do %>
+	    <%= link_to tourist_tourist_tour_book_marks_path(current_tourist, tour), method: :delete, remote: true do %>
 	    	<i class="fa fa-flag fa-5x" aria-hidden="true" style = "color: red;" ></i>
 	    <% end %>
   	</li>
 <% else %>
   	<li>
-	    <%= link_to tourist_tourist_tour_book_marks_path(tour, current_tourist), method: :post, remote: true do %>
+	    <%= link_to tourist_tourist_tour_book_marks_path(current_tourist, tour), method: :post, remote: true do %>
 	    	<i class="fa fa-flag fa-5x" aria-hidden="true" style = "color: white;" ></i>
 	    <% end %>
   	</li>

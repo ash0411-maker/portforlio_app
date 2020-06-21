@@ -1,2 +1,44 @@
-<h1>Tourist::Orders#index</h1>
-<p>Find me in app/views/tourist/orders/index.html.erb</p>
+<% if @orders.count == 0 %>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-xs-9 col-xs-offset-1">
+				<h1>まだ予約はありません。</h1>
+			</div>
+		</div>
+	</div>
+<% else %>
+	<div class = "container">
+
+	<!---- 今後のツアー ----->
+		<div class = "row">
+			<div class = "col-xs-12">
+				<h2>予約中のツアー</h2>
+				<table class = "table table-bordered">
+					<thead class = "text-center">
+						<tr class = "active">
+							<%= render 'thead' %>
+							<th class = "text-center"></th>
+						</tr>
+					</thead>
+					<% @orders.each do |order| %>
+						<% unless order.status == "ツアー終了" or order.status == "レビュー済み" %>
+							<tbody>
+								<tr class = "text-center">
+									<%= render 'tbody', order: order, review: @review %>
+									<td>
+										<% if order.status == "ツアー開始前" %>
+											<h3><%= link_to "キャンセル", tourist_tourist_order_path(current_tourist,order), method: :delete,data: {confirm:'このツアーを本当にキャンセルしてもよろしいですか？ツアー前日だとキャンセル料が発生します。'}, class: "btn btn-danger btn-lg" %>
+											</h3>
+										<% else %>
+											<h3>ツアー前日以降ですので、<br/>キャセルできません。</h3>
+										<% end %>
+									</td>
+								</tr>
+							</tbody>
+						<% end %>
+					<% end %>
+				</table>
+			</div>
+		</div>
+	<!---- 今後のツアー ----->
+<% end %>
