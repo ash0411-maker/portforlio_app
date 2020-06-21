@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     when Guide
       guide_guide_home_top_path(current_guide)
     when Tourist
-      tourist_tourist_tours_path(current_guide)
+      tourist_tourist_tours_path(current_tourist)
     end
   end
 

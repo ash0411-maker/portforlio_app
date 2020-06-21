@@ -26,9 +26,15 @@
           <% end %>
         </span>
 
-      <%# ---- ToursitのFANTRAロゴ・都市検索窓 ---- %>
+      <%# ---- ToursitのFANTRAロゴ・マイページリンク・都市検索窓 ---- %>
       <% elsif tourist_signed_in? %>
         <%= link_to "FANTRA", tourist_tourist_tours_path(current_tourist), class: "logo" %>
+        <%= link_to tourist_tourist_path(current_tourist) do %>
+          <span class = "login_name">
+            <i class="fas fa-address-card fa-2x"></i>
+            <%= current_tourist.name %>さんのマイページ
+          </span>
+        <% end %>
         <span class = "header-city-search">
           <%= form_tag(tourist_tourist_searches_city_path(current_tourist), method: :get) do %>
             <%= text_field_tag 'search[city]' %>
