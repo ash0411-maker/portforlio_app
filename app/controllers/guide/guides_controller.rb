@@ -22,6 +22,8 @@ def update
   end
 end
 
+def to_guide_edit; end
+
 
   private
 
