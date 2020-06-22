@@ -1,4 +1,6 @@
-![Uploading スクリーンショット 2020-06-22 15.15.46.png…]()
+![top](https://user-images.githubusercontent.com/59913383/85254586-a0dd2700-b49b-11ea-887e-cb2f0da304aa.jpeg)
+
+
 
 ## サイト概要
 ・フリーで活動しているツアーガイドには顧客を効率的に獲得ができるようにサポートするサイト。
