@@ -37,4 +37,5 @@ Googlemap表示機能(GoogleMap API,Geocorder API)
 チャット機能  
 通知機能  
 検索機能  
+予約機能  
 
