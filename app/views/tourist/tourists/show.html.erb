@@ -20,6 +20,12 @@
 	</div>
     <div class = "row">
 		<div class = "col-xs-4 col-xs-offset-3">
+			<%= link_to tourist_tourist_rooms_path(current_tourist) do %>
+		        <i class="far fa-comments fa-10x"></i>
+		        <h2>チャット</h2>
+		    <% end %>
+	    </div>
+		<div class = "col-xs-4">
 			<%= link_to tourist_tourist_book_marks_path(current_tourist) do %>
                 <i class="fas fa-flag fa-10x"></i>
                 <h3>ブックマーク</h3>

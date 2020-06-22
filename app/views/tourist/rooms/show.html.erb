@@ -20,7 +20,7 @@
                     <%# ------- メッセージがguideによるものだったら、メッセージを左に寄せる -------- %>
                         <% else %>
                             <div class = "text-left  bg-warning">
-                                <h4 class = "chat"><%= @guide %>さん:  <%= chat.content %></h4>
+                                <h4 class = "chat"><%= @guide %>さん:  <%= chat.message %></h4>
                                 <span class = "chat-time">（<%= chat.created_at.to_s(:datetime_jp) %>）</span>
                             </div>
                         <% end %>

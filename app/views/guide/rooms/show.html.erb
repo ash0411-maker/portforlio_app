@@ -1,2 +1,57 @@
-<h1>Guide::Rooms#show</h1>
-<p>Find me in app/views/guide/rooms/show.html.erb</p>
+<div class = "room-wrapper">
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-xs-8 col-xs-offset-1">
+				<% if @room.chats.count == 0 %>
+					<h3>まだメッセージはありません。</h3>
+				<% else %>
+					<h3><%= @tourist.name %>さんとのチャットルーム</h3>
+				<% end %>
+
+
+		<!------- メッセージ ------->
+				<h3 class = "vacant-chat flash"><%= flash[:warning] %></h3>
+				<div class = "chat-field">
+				  <% @chats.each do |chat| %>
+				<!-- メッセージがguideだったら、メッセージを右に寄せる -->
+				    <% unless chat.is_tourist %>
+					    <div class = "text-right bg-info">
+					    	<h4 class = "chat"><%= chat.message %>  :<%= current_guide.name %>さん</h4>
+					    	<span class = "chat-time">（<%= chat.created_at.to_s(:datetime_jp) %>）</span>
+					    </div>
+
+                <!-- メッセージがtouristによるものだったら、メッセージを左に寄せる -->
+					<% else %>
+				    	<div class = "text-left bg-warning">
+				    		<h4><%= @tourist.name %>さん:  <%= chat.message %></h4>
+				    		<span class = "chat-time">（<%= chat.created_at.to_s(:datetime_jp) %>）</span>
+				    	</div>
+				    <% end %>
+				  <% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!------ メッセージ送信 ------->
+	<div class = "chat-form-field">
+		<div class = "contaienr">
+			<div class = "row">
+				<div class = "col-xs-3 col-xs-offset-9">
+					<div class = "btn-to-rooms">
+						<%= link_to "チャット一覧へ戻る", guide_guide_rooms_path(current_guide), class: "btn btn-warning" %>
+					</div>
+					<div class = "chat-form">
+
+						<%= form_for [@room, @chat], url: guide_guide_room_chats_path(current_guide, @room) do |f| %>
+							<%= f.text_field :message %>
+						 	<%= f.submit "メッセージを送る", class: "btn btn-success"%>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

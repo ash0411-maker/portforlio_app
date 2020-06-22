@@ -2,10 +2,6 @@
 
 Rails.application.routes.draw do
 
-  namespace :guide do
-    get 'rooms/index'
-    get 'rooms/show'
-  end
   root to: 'home/tours#index'
 
   devise_for :admins, controllers: {
@@ -64,6 +60,9 @@ Rails.application.routes.draw do
       get 'gudies/to_guide_edit' => 'guides#to_guide_edit', as: 'to_guide_edit'
       resources :tours
       resources :orders, only: %i[index update]
+      resources :rooms, only: %i[show index create] do
+        resources :chats, only: %i[create]
+      end
     end
   end
 
