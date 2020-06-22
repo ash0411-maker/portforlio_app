@@ -1,22 +1,25 @@
-<!------- メッセージが０件だった場合 ------->
+<!------ チャット件数が０だった場合 ------>
 <% if @rooms.count == 0 %>
 	<div class = "container">
 		<div class = "row">
 			<div class = "col-xs-8 col-xs-offset-1">
 				<h2>
 					チャットはまだありません。<br/>
-					ツアー情報にあるガイド紹介欄から質問をしましょう！
+					予約が入ればメッセージを送りましょう！
 				</h2>
+				<span>
+					<%= image_tag 'guide_chat.png', size: '900x400' %>
+				</span>
 			</div>
 		</div>
 	</div>
 
-<!------- メッセージがあった場合 ------->
+<!------ チャットをしていた場合 ------>
 <% else %>
 	<div class = "container">
 		<div class = "row">
-			<div class = "col-xs-8 col-xs-offset-1">
-				<h2>メッセージルーム一覧</h2>
+			<div class = "col-xs-9">
+				<h2>チャット一覧</h2>
 				<table class = "table">
 					<thead>
 						<tr class = "active">
@@ -26,27 +29,30 @@
 							<th class = "text-center">チャットルーム</th>
 						</tr>
 					</thead>
-
-				<!------- チャットルーム ------->
 					<tbody>
 						<% @rooms.each do |room| %>
 							<tr class = "text-center">
-								<td><%= room.guide.family_name %> <%= room.guide.name %>さん</td>
-								<td><%= room.chats.count %>件</td>
+								<td>
+									<%= room.tourist.family_name %> <%= room.tourist.name %>
+								</td>
 
-						<!------ メッセージの一部分を見せる ------>
+								<td>
+									<%= room.chats.count %>件
+								</td>
+
+							<!------ 先頭の11文字を表示させる ------>
 								<% chats = [] %>
 								<% room.chats.each do |chat| %>
 									<% chats << chat.message %>
 								<% end %>
-								<% latest_chat =  chats[-1] %>
+								<% chat =  chats[-1] %>
 								<td>
-									<%= latest_chat.present? ?  latest_chat[0..10] << "..." : "" %>
+									<%= chat.present? ?  chat[0..10] << "..." : "" %>
+								</td>
+								<td>
+									<%= link_to "メッセージ確認", guide_guide_room_path(current_guide, room), class: "btn btn-default" %>
 								</td>
 
-								<td>
-									<%= link_to "チャット確認", tourist_tourist_room_path(current_tourist, room), class: "btn btn-default" %>
-								</td>
 							</tr>
 						<% end %>
 					</tbody>

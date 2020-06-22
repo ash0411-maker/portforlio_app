@@ -60,6 +60,12 @@
       <% elsif guide_signed_in? %>
         <ul>
           <li>
+            <%= link_to guide_guide_rooms_path(current_guide) do %>
+              <i class="far fa-comment fa-2x"></i>
+              チャット
+            <% end %>
+          </li>
+          <li>
             <%= link_to guide_guide_tours_path(current_guide) do %>
               <i class="fas fa-plane-departure fa-2x"></i>
                 ツアー一覧
