@@ -10,6 +10,14 @@ class Tourist::RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @chat = Chat.new
     @chats = @room.chats
+    # ------ チャット通知機能 -----
+    @chats.each do |chat|
+      next unless chat.is_tourist == false
+
+      chat.chat_notices.each do |chat_notice|
+        chat_notice.update(checked: true)
+      end
+    end
     @guide = @room.guide.name
   end
 

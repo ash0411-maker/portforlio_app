@@ -1,0 +1,32 @@
+<div class = "container">
+	<div class = "row">
+		<div class = "col-xs-7 col-xs-offset-1">
+			<% if @chat_notices.count == 0 %>
+				<h1>通知はありません</h1>
+			<% else %>
+				<h1>通知一覧</h1>
+				<% @chat_notices.each do |notice| %>
+					<div class = "tourist_notice_box">
+						<h4>
+						<!----- 未読メッセージがあった時に表示するオレンジボール ----->
+							<% if notice.checked == false %>
+								<span class = "tourist-notice-circle">
+		                    		<i class="fas fa-circle" style = "color: orange;"></i>
+		                  		</span>
+		                  	<% end %>
+							<% guide = Guide.find(notice.visitor_id) %>
+							<strong><%= guide.name %></strong>さんからの
+							<%= link_to tourist_tourist_room_path(current_tourist, notice.chat.room) do  %>
+								新規メッセージ
+							<% end %>
+							を受信しました。
+						</h4>
+						<span><%= time_ago_in_words(notice.created_at) %> ago</span>
+					</div>
+				<% end %>
+				<%= paginate @chat_notices, class: "paginate" %>
+			<% end %>
+		</div>
+	</div>
+</div>
+

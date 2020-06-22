@@ -92,6 +92,17 @@ nav li a{
 	color: white;
 }
 
+// 通知マーク
+.bell {
+	position: relative;
+}
+
+.circle {
+	position: absolute;
+	left: 15px;
+	bottom: -30px;
+}
+
 
 
 //  devise関連
