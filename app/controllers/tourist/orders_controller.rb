@@ -5,6 +5,7 @@ class Tourist::OrdersController < ApplicationController
 
   def index
     @orders = current_tourist.orders
+    @review = Review.new
   end
 
   def new

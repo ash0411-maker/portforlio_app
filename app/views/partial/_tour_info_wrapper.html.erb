@@ -36,6 +36,15 @@
 						<%= link_to "個人情報を更新して予約へ", edit_tourist_tourist_path(current_tourist), class: "btn btn-success btn-lg" %>
 					<% end %>
 				</div>
+			<% elsif guide_signed_in? %>
+				<% if current_guide.id == tour.guide.id %>
+					<%= link_to "編集", edit_guide_guide_tour_path(current_guide, tour), class: "btn btn-default btn-lg edit-tour-btn" %>
+				<% end %>
+			<% elsif admin_signed_in? %>
+			<% else %>
+				<div class = "order-btn">
+					<%= link_to "登録して予約しましょう", new_tourist_registration_path, class: "btn btn-success btn-lg"  %>
+				</div>
 			<% end %>
 		</div>
 	</div>

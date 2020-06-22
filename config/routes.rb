@@ -80,6 +80,7 @@ Rails.application.routes.draw do
       resources :orders, only: %i[show index new create destroy]
       resources :tours, only: %i[index show] do
         resource :book_marks, only: %i[create destroy]
+        resources :reviews, only: %i[create update]
       end
       resources :rooms, only: %i[show index create] do
         resources :chats, only: %i[create]

@@ -7,6 +7,7 @@ class Guide::ToursController < ApplicationController
   def show
     @tour = Tour.find(params[:id])
     @tour_photos = @tour.tour_photos
+    @reviews = @tour.reviews
   end
 
   def index
@@ -56,6 +57,7 @@ class Guide::ToursController < ApplicationController
   def destroy
     @tour = Tour.find(params[:id])
     @tour.destroy
+    flash[:notice] = 'ツアーを削除しました。'
     redirect_to guide_guide_path(current_guide)
   end
 
