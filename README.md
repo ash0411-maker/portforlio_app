@@ -1,24 +1,35 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## サイト概要
+・フリーで活動しているツアーガイドには顧客を効率的に獲得ができるようにサポートするサイト。
+・観光客には特別な旅・体験を提供するサイト。
 
-* Ruby version
+## 作成した理由
+　信頼問題で1日に1人も顧客を獲得できずにいるツアーガイドのために効率良く時間を使ってもらいたいこと、ツアーでありながらアドベンチャー気分を味わえる経験を観客に提供したいという２つの思いから作成しました。
 
-* System dependencies
+## ターゲットユーザ
+　隙間時間で活動したいツアーガイド、旅行代理店を通さずに旅行に来ている観光客
 
-* Configuration
+## 主な利用シーン
+　国内旅行・海外旅行
 
-* Database creation
+## 使用技術
+Ruby 2.6.6, Rails 6.0.3.2
+Docker,Docker-compose
+Bootstrap,JQuery
+git, Github
 
-* Database initialization
+## 機能一覧
+Googlemap表示機能(GoogleMap API,Geocorder API)
+投稿機能、複数画像投稿機能、削除機能(refile,cocoon)
+ユーザー登録、ログイン、編集、一覧機能(devise)
+ページネーション機能(kaminari)
+環境変数化(dontev-rails)
+投稿一覧、投稿詳細表示機能
+ブックマーク機能(Ajax)
+お問い合わせ機能
+レビュー機能
+チャット機能
+通知機能
+検索機能
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
