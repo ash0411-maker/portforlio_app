@@ -16,5 +16,12 @@ class Tourist::ToursController < ApplicationController
   def show
     @tour = Tour.find(params[:id])
     @tour_photos = @tour.tour_photos
+
+    # チャット相手のidを入れる。
+    rooms = current_tourist.rooms
+    @guide_ids = []
+    rooms.each do |room|
+      @guide_ids << room.guide_id
+    end
   end
 end

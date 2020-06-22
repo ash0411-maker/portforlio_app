@@ -26,13 +26,26 @@
 			<div class = "col-xs-4">
 				<div class = "guide-body-title">
 					<h2>ガイド紹介</h2>
-					<div class = "guide-tour-guide-introduction">
-						<%= attachment_image_tag tour.guide, :selfy_image, :fill, 100, 100, format: 'jpeg' %>
-						<h4>
+					<div class = "guide-introduction-text">
+						<%= attachment_image_tag tour.guide, :selfy_image, :fill, 130, 130, format: 'jpeg' %>
+						<h4 class = "guide-name">
 							<strong><%= tour.guide.family_name %> <%= tour.guide.name %></strong>
 						</h4>
 					</div>
 				</div>
+			<%# ------- チャットルーム -------- %>
+				<% if tourist_signed_in? %>
+					<div class = "chat-room-btn">
+						<% if guide_ids.include?(tour.guide.id) %>
+							<%= link_to "質問しましょう！", tourist_tourist_room_path(current_tourist, current_tourist.rooms.find_by(guide_id: tour.guide.id)), class: "btn btn-lg btn-warning" %>
+						<% else %>
+						    <%= form_for(Room.new, url: tourist_tourist_rooms_path(current_tourist)) do |f| %>
+						    	<%= f.hidden_field :guide_id, :value => tour.guide.id %>
+						    	<%= f.submit "質問しましょう！", class: "btn btn-lg btn-warning" %>
+						    <% end %>
+						<% end %>
+					</div>
+				<% end %>
 			</div>
 			<div class = "col-xs-8">
 				<div class = "tour-body-wrapper">

@@ -74,6 +74,9 @@ Rails.application.routes.draw do
       resources :tours, only: %i[index show] do
         resource :book_marks, only: %i[create destroy]
       end
+      resources :rooms, only: %i[show index create] do
+        resources :chats, only: %i[create]
+      end
     end
   end
 end
