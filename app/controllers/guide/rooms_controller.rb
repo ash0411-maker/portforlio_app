@@ -10,6 +10,14 @@ class Guide::RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @chat = Chat.new
     @chats = @room.chats
+    # ------ チャット通知機能 -----
+    @chats.each do |chat|
+      next if chat.is_tourist == false
+
+      chat.chat_notices.each do |chat_notice|
+        chat_notice.update_attributes(checked: true)
+      end
+    end
     if @room.guide.id == current_guide.id
       @tourist = @room.tourist
     else

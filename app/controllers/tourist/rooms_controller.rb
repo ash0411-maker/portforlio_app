@@ -12,7 +12,7 @@ class Tourist::RoomsController < ApplicationController
     @chats = @room.chats
     # ------ チャット通知機能 -----
     @chats.each do |chat|
-      next unless chat.is_tourist == false
+      next if chat.is_tourist == true
 
       chat.chat_notices.each do |chat_notice|
         chat_notice.update(checked: true)
