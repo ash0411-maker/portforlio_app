@@ -2,6 +2,10 @@
 
 Rails.application.routes.draw do
 
+  namespace :guide do
+    get 'rooms/index'
+    get 'rooms/show'
+  end
   root to: 'home/tours#index'
 
   devise_for :admins, controllers: {

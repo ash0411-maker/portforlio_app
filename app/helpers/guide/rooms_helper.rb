@@ -1,0 +1,2 @@
+module Guide::RoomsHelper
+end
