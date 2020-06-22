@@ -6,8 +6,12 @@ class Guide < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :tours, dependent: :destroy
+
+  
   has_many :orders, dependent: :destroy
+  has_many :rooms, dependent: :destroy
+  has_many :tours, dependent: :destroy
+  
 
   validates :introduction, length: { maximum: 400 }
 
