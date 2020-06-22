@@ -1,0 +1,2 @@
+class ChatNotice < ApplicationRecord
+end
