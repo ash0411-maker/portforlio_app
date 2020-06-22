@@ -6,7 +6,7 @@
 
 
 ## サイト概要
-・フリーで活動しているツアーガイドには顧客を効率的に獲得ができるようにサポートするサイト。
+・フリーで活動しているツアーガイドには顧客を効率的に獲得ができるようにサポートするサイト。  　
 ・観光客には特別な旅・体験を提供するサイト。
 
 ## 作成した理由
@@ -19,22 +19,22 @@
 　国内旅行・海外旅行
 
 ## 使用技術
-Ruby 2.6.6, Rails 6.0.3.2
-Docker,Docker-compose
-Bootstrap,JQuery
-git, Github
+Ruby 2.6.6, Rails 6.0.3.2  
+Docker,Docker-compose   
+Bootstrap,JQuery  
+git, Github  
 
 ## 機能一覧
-Googlemap表示機能(GoogleMap API,Geocorder API)
-投稿機能、複数画像投稿機能、削除機能(refile,cocoon)
-ユーザー登録、ログイン、編集、一覧機能(devise)
-ページネーション機能(kaminari)
-環境変数化(dontev-rails)
-投稿一覧、投稿詳細表示機能
-ブックマーク機能(Ajax)
-お問い合わせ機能
-レビュー機能
-チャット機能
-通知機能
-検索機能
+Googlemap表示機能(GoogleMap API,Geocorder API)  
+投稿機能、複数画像投稿機能、削除機能(refile,cocoon)  
+ユーザー登録、ログイン、編集、一覧機能(devise)  
+ページネーション機能(kaminari)  
+環境変数化(dontev-rails)  
+投稿一覧、投稿詳細表示機能  
+ブックマーク機能(Ajax)  
+お問い合わせ機能  
+レビュー機能  
+チャット機能  
+通知機能  
+検索機能  
 
