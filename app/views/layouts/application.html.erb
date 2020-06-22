@@ -61,7 +61,16 @@
         <ul>
           <li>
             <%= link_to guide_guide_rooms_path(current_guide) do %>
-              <i class="far fa-comment fa-2x"></i>
+              <% if unchecked_guide_chat_notices.any? %>
+                <span class = "bell">
+                  <i class="far fa-comment fa-2x"></i>
+                  <span class = "circle">
+                    <i class="fas fa-circle" style = "color: orange;"></i>
+                  </span>
+                </span>
+              <% else %>
+                <i class="far fa-comment fa-2x"></i>
+              <% end %>
               チャット
             <% end %>
           </li>
