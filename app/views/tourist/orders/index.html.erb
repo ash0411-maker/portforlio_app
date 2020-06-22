@@ -25,14 +25,16 @@
 							<tbody>
 								<tr class = "text-center">
 									<%= render 'tbody', order: order, review: @review %>
-									<td>
-										<% if order.status == "ツアー開始前" %>
+									<% if order.status == "ツアー開始前" %>
+										<td>
 											<h3><%= link_to "キャンセル", tourist_tourist_order_path(current_tourist,order), method: :delete,data: {confirm:'このツアーを本当にキャンセルしてもよろしいですか？ツアー前日だとキャンセル料が発生します。'}, class: "btn btn-danger btn-lg" %>
 											</h3>
-										<% else %>
+										</td>
+									<% else %>
+										<td>
 											<h3>ツアー前日以降ですので、<br/>キャセルできません。</h3>
-										<% end %>
-									</td>
+										</td>
+									<% end %>
 								</tr>
 							</tbody>
 						<% end %>
@@ -41,4 +43,60 @@
 			</div>
 		</div>
 	<!---- 今後のツアー ----->
+
+
+	<!---- 終了済みでレビュー待ちのツアー ----->
+		<div class = "row">
+			<div class = "col-xs-12">
+				<h2>レビュー待ちのツアー</h2>
+				<table class = "table table-bordered">
+					<thead class = "text-center">
+						<tr class = "active">
+							<%= render 'thead' %>
+							<th class = "text-center">レビュー作成</th>
+						</tr>
+					</thead>
+					<% @orders.each do |order| %>
+						<% if order.status == "ツアー終了" %>
+							<tbody>
+								<tr class = "text-center">
+									<%= render 'tbody', order: order, review: @review %>
+									</td>
+								</tr>
+							</tbody>
+						<% end %>
+					<% end %>
+				</table>
+			</div>
+		</div>
+
+
+
+	<!---- レビュー済みのツアー ----->
+		<div class = "row">
+			<div class = "col-xs-12">
+				<h2>レビュー済みのツアー</h2>
+				<table class = "table table-bordered">
+					<thead class = "text-center">
+						<tr class = "active">
+							<%= render 'thead' %>
+							<th class = "text-center">レビュー編集</th>
+						</tr>
+					</thead>
+					<% @orders.each do |order| %>
+						<% if order.status == "レビュー済み" %>
+							<tbody>
+								<tr class = "text-center">
+									<%= render 'tbody', order: order, review: @review %>
+									<td>
+										レビューをありがとうございました。
+									</td>
+								</tr>
+							</tbody>
+						<% end %>
+					<% end %>
+				</table>
+			</div>
+		</div>
+	</div>
 <% end %>

@@ -84,13 +84,37 @@
 		<div class = "guide-tour-details">
 			<div class = "col-xs-4">
 				<div class = "guide-body-title">
-					<h2>レビュー一覧</h2>
+					<h2>レビュー</h2>
 				</div>
 			</div>
 			<div class = "col-xs-8">
-				<div class = "tour-body-wrapper">
+					<div class = "tour-body-wrapper">
+						<% if reviews.count == 0 %>
+							<% if tourist_signed_in? %>
+								<h3>予約して最初のレビュー投稿者になりましょう！</h3>
+							<% else %>
+								<h3>まだレビューはありません。</h3>
+							<% end %>
+						<% else %>
+							<% reviews.each do |review| %>
+								<div class = "review-message-box">
+									<h5>
+										<%= review.tourist.family_name %> <%= review.tourist.name %>さん
+										: <%= review.created_at.to_s(:datetime_jp) %>
+										<span>
+											<% if admin_signed_in? %>
+												<%= link_to "削除する", admin_review_path(review), method: :delete,  class: "btn btn-danger", data: {confirm:'このレビューコメントは不適切な内容を含んでいますか？本当に削除してよろしいですか？'} %>
+											<% end %>
+										</span>
+									</h5>
+									<h4 class = "guide-body-text">
+										<%= review.comment %>
+									</h4>
+								</div>
+							<% end %>
+						<% end %>
+					</div>
 				</div>
-			</div>
 		</div>
 	</div>
 </div>

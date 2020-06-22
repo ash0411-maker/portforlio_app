@@ -12,5 +12,6 @@ class Admin::ToursController < ApplicationController
   def show
     @tour = Tour.find(params[:id])
     @tour_photos = @tour.tour_photos
+    @reviews = @tour.reviews
   end
 end
