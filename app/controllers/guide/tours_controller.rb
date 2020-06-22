@@ -53,7 +53,11 @@ class Guide::ToursController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    @tour = Tour.find(params[:id])
+    @tour.destroy
+    redirect_to guide_guide_path(current_guide)
+  end
 
 
   private
