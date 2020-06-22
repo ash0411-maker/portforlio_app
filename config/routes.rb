@@ -2,6 +2,9 @@
 
 Rails.application.routes.draw do
 
+  namespace :tourist do
+    get 'chat_notices/index'
+  end
   root to: 'home/tours#index'
 
   devise_for :admins, controllers: {
@@ -73,6 +76,7 @@ Rails.application.routes.draw do
       get 'searches/city'
       get 'orders/confirm' => 'orders#confirm', as: 'order_confirm'
       get 'book_marks/index' => 'book_marks#index', as: 'book_marks'
+      resources :chat_notices, only: %i[index]
       resources :orders, only: %i[show index new create destroy]
       resources :tours, only: %i[index show] do
         resource :book_marks, only: %i[create destroy]

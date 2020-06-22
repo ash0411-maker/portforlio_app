@@ -89,6 +89,21 @@
       <% elsif tourist_signed_in? %>
         <ul>
           <li>
+            <%= link_to tourist_tourist_chat_notices_path(current_tourist) do %>
+              <% if unchecked_tourist_chat_notices.any? %>
+                <span class = "bell">
+                  <i class="far fa-bell fa-2x"></i>
+                    <span class = "circle">
+                      <i class="fas fa-circle" style = "color: orange;"></i>
+                    </span>
+                </span>
+              <% else %>
+                <i class="far fa-bell fa-2x"></i>
+              <% end %>
+              通知
+            <% end %>
+          </li>
+          <li>
             <%= link_to "ログアウト", destroy_tourist_session_path, method: :delete %>
           </li>
         </ul>
