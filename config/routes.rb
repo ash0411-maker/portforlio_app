@@ -3,6 +3,10 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get 'tourists/index'
+    get 'tourists/show'
+  end
+  namespace :admin do
     get 'guides/index'
     get 'guides/show'
   end
@@ -47,6 +51,7 @@ Rails.application.routes.draw do
     get 'home/top'
     resources :reviews, only: [:destroy]
     resources :guides, only: %i[show index update destroy]
+    resources :tourists, only: %i[show index update destroy]
     resources :tours, only: %i[index show edit update destroy]
     resources :genres, only: %i[index create edit update destroy]
     resources :cities, only: %i[index create edit update destroy]
