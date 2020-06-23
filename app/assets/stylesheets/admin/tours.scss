@@ -3,6 +3,16 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
+// 販売ステータスボタン
+.admin_tour_status {
+	font-size: 30px;
+}
+
+// 販売停止時の表示
+.tour_is_active-tbody {
+	color: red;
+	background-color: pink;
+}
 
 .admin-cities-btn {
     width: 100%;
@@ -13,3 +23,4 @@
     width: 100%;
     margin-top: 40px;
 }
+

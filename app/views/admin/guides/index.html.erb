@@ -1,0 +1,35 @@
+<div class = "container">
+	<div class = "row">
+	<h2>ガイド一覧</h2>
+	  <div class="col-xs-12">
+		<table class = "table">
+			<thead>
+				<tr class= "active">
+					<th class = "text-center">会員ID</th>
+					<th class = "text-center">登録日</th>
+					<th class = "text-center">メールアドレス</th>
+					<th class = "text-center">ステータス</th>
+					<th class = "text-center"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @guides.each do |guide| %>
+					<% if guide.deleted_at == nil %>
+						<tr class = "text-center">
+							<%= render 'tbody', guide: guide %>
+						</tr>
+					<% else %>
+				<!-- 退会しているguide -->
+						<tr class = "text-center deleted_at">
+							<%= render 'tbody', guide: guide %>
+						</tr>
+				<!-- 退会しているguide -->
+					<% end %>
+				<%end%>
+			</tbody>
+		</table>
+      </div>
+	</div>
+</div>
+
+

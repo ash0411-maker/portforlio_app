@@ -1,0 +1,11 @@
+<td><%= tourist.id %></td>
+<td><%= tourist.created_at.to_s(:datetime_jp) %></td>
+<td><%= tourist.email %></td>
+<td>
+	<% if tourist.deleted_at == nil %>
+		有効
+	<% else %>
+		退会
+	<% end %>
+</td>
+<td><%= link_to "詳細へ", admin_tourist_path(tourist), class: "btn btn-default" %></td>

@@ -1,0 +1,11 @@
+<td><%= guide.id %></td>
+<td><%= guide.created_at.to_s(:datetime_jp) %></td>
+<td><%= guide.email %></td>
+<td>
+	<% if guide.deleted_at == nil %>
+		有効
+	<% else %>
+		退会
+	<% end %>
+</td>
+<td><%= link_to "詳細へ", admin_guide_path(guide), class: "btn btn-default" %></td>
