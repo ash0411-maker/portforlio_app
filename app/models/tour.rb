@@ -8,6 +8,7 @@ class Tour < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :book_marks, dependent: :destroy
   has_many :tour_photos, dependent: :destroy
+  has_many :notifications, dependent: :destroy
   accepts_nested_attributes_for :tour_photos, allow_destroy: true
 
   validates :genre_id, presence: true

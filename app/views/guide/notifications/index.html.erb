@@ -1,0 +1,36 @@
+<div class = "container">
+	<div class = "row">
+		<div class = "col-xs-7 col-xs-offset-1">
+			<% if @notifications.count == 0 %>
+				<h1>通知はありません</h1>
+			<% else %>
+				<h1>通知一覧</h1>
+				<% @notifications.each do |notice| %>
+					<div class = "notice_box">
+						<% case notice.action %>
+							<% when 'book_mark' then %>
+								<h4>
+									<strong><%= notice.tourist.name %></strong>さんが
+									<%= link_to guide_guide_tour_path(current_guide, notice.tour) do  %>
+										<%= notice.tour.title %>
+									<% end %>
+									をブックマークしました。
+								</h4>
+							<% when 'comment' then %>
+								<h4>
+									<strong><%= notice.tourist.name %></strong>さんが
+									<%= link_to guide_guide_tour_path(current_guide, notice.tour) do  %>
+										<%= notice.tour.title %>
+									<% end %>
+									にレビューを書きました。
+								</h4>
+						<% end %>
+						<span><%= time_ago_in_words(notice.created_at) %> ago</span>
+					</div>
+				<% end %>
+				<%= paginate @notifications, class: "paginate" %>
+			<% end %>
+		</div>
+	</div>
+</div>
+

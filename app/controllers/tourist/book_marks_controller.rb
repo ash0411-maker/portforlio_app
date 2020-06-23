@@ -9,7 +9,19 @@ class Tourist::BookMarksController < ApplicationController
   def create
     @tour = Tour.find(params[:tour_id])
     book_mark = current_tourist.book_marks.new(tour_id: @tour.id)
-    book_mark.save
+    if book_mark.save
+       # -------- 通知機能　---------
+       temp = Notification.where(['tourist_id = ? and guide_id = ? and tour_id = ? and action = ? ', current_tourist.id, @tour.guide.id, @tour.id, 'book_mark'])
+       if temp.blank?
+         notification = Notification.new(
+           tour_id: @tour.id,
+           tourist_id: current_tourist.id,
+           guide_id: @tour.guide.id,
+           action: 'book_mark'
+         )
+         notification.save
+       end
+    end
   end
 
   def destroy
