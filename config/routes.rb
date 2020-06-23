@@ -2,9 +2,6 @@
 
 Rails.application.routes.draw do
 
-  namespace :tourist do
-    get 'chat_notices/index'
-  end
   root to: 'home/tours#index'
 
   devise_for :admins, controllers: {
@@ -62,6 +59,7 @@ Rails.application.routes.draw do
       get 'orders/day_before_touring' => 'orders#day_before_touring', as: 'day_before_touring'
       get 'gudies/to_guide_edit' => 'guides#to_guide_edit', as: 'to_guide_edit'
       resources :tours
+      resources :notifications, only: %i[index]
       resources :orders, only: %i[index update]
       resources :rooms, only: %i[show index create] do
         resources :chats, only: %i[create]

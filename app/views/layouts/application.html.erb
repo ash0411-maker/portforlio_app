@@ -75,6 +75,21 @@
             <% end %>
           </li>
           <li>
+             <%= link_to guide_guide_notifications_path(current_guide) do %>
+               <% if unchecked_notifications.any? %>
+                 <span class = "bell">
+                   <i class="far fa-bell fa-2x"></i>
+                   <span class = "circle">
+                     <i class="fas fa-circle" style = "color: orange;"></i>
+                   </span>
+                 </span>
+               <% else %>
+                 <i class="far fa-bell fa-2x"></i>
+               <% end %>
+               通知
+             <% end %>
+           </li>
+          <li>
             <%= link_to guide_guide_tours_path(current_guide) do %>
               <i class="fas fa-plane-departure fa-2x"></i>
                 ツアー一覧
