@@ -23,6 +23,8 @@ Ruby 2.6.6, Rails 6.0.3.2
 Docker,Docker-compose  
 Bootstrap,JQuery  
 git, Github  
+nginx,puma  
+
 
 ## 機能一覧
 【機能一覧】  
@@ -49,8 +51,8 @@ git, Github
    ・予約の作成、削除、予約ステータスの編集 
    ・日時指定をするためにsimple_calendarを使用
 
-◆チャット機能
-   ・チャットルーム作成・メッセージ送信 
+◆チャット機能  
+   ・チャットルーム作成・メッセージ送信  
   
 ◆通知機能  
    ・チャット・レビュー・ブックマークでの通知機能  
