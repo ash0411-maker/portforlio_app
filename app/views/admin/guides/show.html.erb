@@ -1,0 +1,64 @@
+<div class = "container">
+	<div class = "row">
+		<h2>ガイド詳細</h2>
+		<div class = "col-xs-8">
+			<div class =  "panel panel-default">
+
+			<!------ ツアーガイド情報 ------>
+				<div class="panel-heading text-center">
+					<h2 class="panel-title"><%= @guide.family_name %> <%= @guide.name %> 様</h2>
+				</div>
+				<div class = "panel-body" >
+					<div class = "col-xs-8">
+						<h4>会員ID ：　<%= @guide.id %><h4>
+						<h4>国籍 ： <%= @guide.nationality %><h4>
+						<h4>電話番号 ： <%= @guide.phone_number %><h4>
+						<h4>
+							住所 ：
+							〒<%= @guide.postal_code %>
+							<%= @guide.address %>
+						<h4>
+						<h4>ツアー提供数 ： <%= @guide.tours.count %>件<h4>
+						<h4>注文受注数 ： <%= @guide.orders.count %>件<h4>
+					</div>
+					<div class = "col-xs-4">
+						<h4>身分証明書</h4>
+						<%= attachment_image_tag @guide, :identification_image, :fill, 200, 140, format: 'jpeg' %>
+					</div>
+				</div>
+
+
+
+			<!------ ツアーガイド会員ステータス編集 ------>
+				<div class = "panel-body">
+					<h4 class = "flash"><%= flash[:notice] %></h4>
+					<h4>会員ステータス</h4>
+					<%= form_for(@guide, url: admin_guide_path(@guide)) do |f| %>
+						<% if @guide.deleted_at == nil %>
+							<span class="col-xs-3">
+								<%= f.radio_button :deleted_at, 0 , checked: true %>
+								<%= f.label :deleted_at, "有効" %>
+							</span>
+							<span class="col-xs-4">
+								<%= f.radio_button :deleted_at, 1, checked: false %>
+								<%= f.label :deleted_at, "退会" %>
+							</span>
+							<span class="col-xs-5">
+					    <% else %>
+							<span class="col-xs-3">
+								<%= f.radio_button :deleted_at, 0 , checked: false %>
+								<%= f.label :deleted_at, "有効" %>
+							</span>
+							<span class="col-xs-4">
+								<%= f.radio_button :deleted_at, 1, checked: true %>
+								<%= f.label :deleted_at, "退会" %>
+							</span>
+						<% end %>
+						<span><%= f.submit "更新", class: "btn btn-success" %></span>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

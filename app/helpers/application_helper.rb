@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  def unchecked_notifications
+    @notifications = current_guide.notifications.where(checked: false)
+  end
+
   def unchecked_tourist_chat_notices
     rooms = current_tourist.rooms
     notifications = []

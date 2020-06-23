@@ -52,6 +52,15 @@
       <% if admin_signed_in? %>
         <ul>
           <li>
+            <%= link_to "ガイド", admin_guides_path %>
+          </li>
+          <li>
+            <%= link_to "ツーリスト", admin_tourists_path %>
+          </li>
+          <li>
+            <%= link_to "ツアー", admin_tours_path %>
+          </li>
+          <li>
             <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
           </li>
         </ul>
@@ -74,6 +83,21 @@
               チャット
             <% end %>
           </li>
+          <li>
+             <%= link_to guide_guide_notifications_path(current_guide) do %>
+               <% if unchecked_notifications.any? %>
+                 <span class = "bell">
+                   <i class="far fa-bell fa-2x"></i>
+                   <span class = "circle">
+                     <i class="fas fa-circle" style = "color: orange;"></i>
+                   </span>
+                 </span>
+               <% else %>
+                 <i class="far fa-bell fa-2x"></i>
+               <% end %>
+               通知
+             <% end %>
+           </li>
           <li>
             <%= link_to guide_guide_tours_path(current_guide) do %>
               <i class="fas fa-plane-departure fa-2x"></i>
