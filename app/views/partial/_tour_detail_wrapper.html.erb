@@ -1,4 +1,34 @@
 <div class = "container">
+	<% if admin_signed_in? %>
+		<div class = "row">
+			<%= form_for(@tour, url: admin_tour_path(@tour)) do |f| %>
+				<div class = "col-xs-8 col-xs-offset-4">
+					<% if @tour.is_active == true %>
+						<span class = "col-xs-2 admin_tour_status">
+							<%= f.radio_button :is_active, true , checked: true %>
+							<%= f.label :is_active, "販売" %>
+						</span>
+						<span class = "admin_tour_status">
+							<%= f.radio_button :is_active, false, checked: false %>
+							<%= f.label :is_active, "販売停止" %>
+						</span>
+				    <% else %>
+						<span class="col-xs-2 admin_tour_status">
+							<%= f.radio_button :is_active, true , checked: false %>
+							<%= f.label :is_active, "販売" %>
+						</span>
+						<span class = "admin_tour_status">
+							<%= f.radio_button :is_active, true, checked: true %>
+							<%= f.label :is_active, "販売停止" %>
+						</span>
+					<% end %>
+					<span>
+						<%= f.submit "更新", class: "btn btn-success btn-lg" %>
+					</span>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
 	<div class = "row">
 
 <%# ------- ツアー内容説明 -------- %>
