@@ -52,6 +52,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootstrap-sass'
 gem 'cocoon'
 gem 'devise'
+gem 'dotenv-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'kaminari', '~> 1.2.1'

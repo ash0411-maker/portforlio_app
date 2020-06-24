@@ -2,6 +2,12 @@
 	<div class = "row">
 		<div class = "col-xs-8 col-xs-offset-2">
 			<h1>管理者トップ画面</h1>
+			<h2>
+				本日のお問い合わせ
+				<%= link_to admin_contacts_path do %>
+					<%= Contact.where(created_at: Time.zone.now.all_day).count %> 件
+				<% end %>
+			</h2>
 		</div>
-  </div>
+  	</div>
 </div>

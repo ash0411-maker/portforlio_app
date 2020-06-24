@@ -1,0 +1,31 @@
+<div class = "container">
+	<div class = "row">
+		<div class = "col-xs-11 col-xs-offset-1">
+			<h1>お問い合わせ一覧</h1>
+			<table class = "table">
+				<thead>
+					<tr class = "active">
+						<th class = "text-center">お問い合わせ番号</th>
+						<th class = "text-center">お問い合わせ日時</th>
+						<th class = "text-center">お客様氏名</th>
+						<th class = "text-center">メールアドレス</th>
+						<th class = "text-center"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @contacts.each do |contact| %>
+						<% if contact.admin_text.nil? %>
+							<tr class = "text-center">
+								<%= render 'tbody', contact: contact%>
+							</tr>
+						<% else %>
+							<tr class = "text-center admin-replied">
+								<%= render 'tbody', contact: contact%>
+							</tr>
+						<% end %>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

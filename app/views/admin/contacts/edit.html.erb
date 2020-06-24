@@ -1,0 +1,99 @@
+<%= form_for(@contact, url: admin_contact_path) do |f| %>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-xs-9 col-xs-offset-1">
+				<h1>お問い合わせフォーム</h1>
+
+			<!----- お客様指名・メールアドレス ----->
+				<table class = "table table-bordered">
+					<thead>
+						<tr class = "active">
+							<th class = "text-center">お客様の氏名</th>
+							<th class = "text-center">お客様のメールアドレス</th>
+						</tr>
+					</thead>
+					<div class = "col-xs-12">
+						<tr class = "text-center">
+							<td>
+				  				<%= @contact.name %>様
+				  			</td>
+				  			<td>
+				  				<%= @contact.email %>
+				  			</td>
+						</tr>
+					</div>
+				</table>
+
+
+			<!----- お問い合わせ内容 ----->
+				<table class = "table table-bordered">
+					<thead>
+						<tr class = "active">
+							<th class = "text-center">お問い合わせ内容(<%= @contact.created_at.to_s(:datetime_jp) %>)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<div class = "col-xs-12">
+							<tr class = "text-center">
+								<td>
+					  				<%= @contact.user_text %>
+					  			</td>
+							</tr>
+						</div>
+					</tbody>
+				</table>
+
+
+			<!----- 回答内容 ----->
+				<% unless @contact.admin_text.nil? %>
+					<table class = "table table-bordered">
+						<thead>
+							<tr class = "active">
+								<th class = "text-center">回答内容(<%= @contact.updated_at.to_s(:datetime_jp) %>)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<div class = "col-xs-12">
+								<tr class = "text-center">
+									<td>
+						  				<%= @contact.admin_text %>
+						  			</td>
+								</tr>
+							</div>
+						</tbody>
+					</table>
+				<% end %>
+
+
+			<!----- 返信フォーム ----->
+				<table class = "table table-bordered">
+					<div class = "col-xs-12">
+						<thead>
+							<tr class = "active">
+								<th class = "text-center">お問い合わせ内容への返信</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class = "text-center">
+								<td class = "text-center">
+					  				<%= f.text_area :admin_text, class: "user-contact-form" %>
+					  			</td>
+							</tr>
+						</tbody>
+					</div>
+				</table>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "col-xs-3 col-xs-offset-9">
+				<%= f.submit "送信する", class: "btn btn-success btn-lg" %>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+
+
+
+
+

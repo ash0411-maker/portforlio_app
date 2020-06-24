@@ -1,0 +1,27 @@
+// Place all the styles related to the admin/contacts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.form{
+	margin-top: 50px;
+}
+
+.form_field{
+	margin-bottom: 20px;
+}
+
+.genre-edit-headline{
+	margin-bottom: 60px;
+}
+
+.user-contact-form {
+	height: 150px;
+	width: 100%;
+}
+
+
+.admin-replied {
+    background-color: pink;
+	color: red;
+}
