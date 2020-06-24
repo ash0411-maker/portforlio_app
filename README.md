@@ -1,6 +1,6 @@
 <img width="1438" alt="スクリーンショット 2020-06-22 18 34 33" src="https://user-images.githubusercontent.com/59913383/85272391-14406200-b4b7-11ea-91d4-cdef0ad683d8.png">
 
-<img width="1437" alt="スクリーンショット 2020-06-22 18 34 01" src="https://user-images.githubusercontent.com/59913383/85272316-fb37b100-b4b6-11ea-8356-d0a266dbc552.png">
+<img width="1437" alt="スクリーンショット 2020-06-24 18 46 32" src="https://user-images.githubusercontent.com/59913383/85532924-0facb280-b64b-11ea-804c-82941fa3d648.png">
 
 
 
