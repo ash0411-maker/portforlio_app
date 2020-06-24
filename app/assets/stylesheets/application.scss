@@ -46,7 +46,7 @@
 	position: relative;
     position: sticky;
 	top: 0;
-	z-index: 100;
+	z-index: 1000;
 }
 
 .logo {
@@ -226,7 +226,7 @@ nav li a{
 
 // ----- ツアー概要 -----
 .tour-info-wrapper {
-	padding-top: 50px;
+	padding-top: 60px;
 	background-color: black;
 	color: white;
 }
