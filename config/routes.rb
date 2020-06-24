@@ -49,10 +49,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'home/top'
+    get 'contacts/thanks' => 'contacts#thanks', as: 'contact_thanks'
     resources :reviews, only: [:destroy]
     resources :guides, only: %i[show index update destroy]
     resources :tourists, only: %i[show index update destroy]
     resources :tours, only: %i[index show edit update destroy]
+    resources :contacts, only: %i[index new create edit update]
     resources :genres, only: %i[index create edit update destroy]
     resources :cities, only: %i[index create edit update destroy]
   end

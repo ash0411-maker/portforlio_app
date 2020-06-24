@@ -1,0 +1,11 @@
+<td><%= contact.id %></td>
+<td><%= contact.created_at.to_s(:datetime_jp) %></td>
+<td><%= contact.name %></td>
+<td><%= contact.email %></td>
+<td>
+	<% if contact.admin_text.nil? %>
+		<%= link_to "返信する", edit_admin_contact_path(contact, class: "btn btn-sucess"), class: "btn btn-success" %>
+	<% else %>
+		<%= link_to "返信済み", edit_admin_contact_path(contact, class: "btn btn-sucess"), class: "btn btn-default" %>
+	<% end %>
+</td>

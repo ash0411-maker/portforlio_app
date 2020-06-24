@@ -1,0 +1,58 @@
+<%= form_for(@contact, url: admin_contacts_path) do |f| %>
+	<div class = "container">
+		<div class = "row">
+			<% if @contact.errors.any? %>
+			    <div class ="error_explanation">
+			      <h2><%= @contact.errors.count %>件のエラーがあります。</h2>
+			      <ul>
+				      <% @contact.errors.full_messages.each do |message| %>
+				        <li><%= message %></li>
+				      <% end %>
+			      </ul>
+			    </div>
+			<% end %>
+			<div class = "col-xs-9 col-xs-offset-1">
+				<h1>お問い合わせフォーム</h1>
+				<table class = "table table-bordered">
+					<thead>
+						<tr class = "active">
+							<th class = "text-center">お客様の氏名</th>
+							<th class = "text-center">お客様のメールアドレス</th>
+						</tr>
+					</thead>
+					<div class = "col-xs-12">
+						<tr class = "text-center">
+							<td>
+				  				<%= f.text_field :name, placeholder: "山田　太郎" %>
+				  			</td>
+				  			<td>
+				  				<%= f.text_field :email, placeholder: "abc123@×××.com" %>
+				  			</td>
+						</tr>
+					</div>
+				</table>
+				<table class = "table table-bordered">
+					<div class = "col-xs-12">
+						<thead>
+							<tr class = "active">
+								<th class = "text-center">お問い合わせ内容</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class = "text-center">
+								<td>
+					  				<%= f.text_area :user_text, class: "user-contact-form" %>
+					  			</td>
+							</tr>
+						</tbody>
+					</div>
+				</table>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "col-xs-3 col-xs-offset-9">
+				<%= f.submit "送信する", class: "btn btn-success btn-lg" %>
+			</div>
+		</div>
+	</div>
+<% end %>

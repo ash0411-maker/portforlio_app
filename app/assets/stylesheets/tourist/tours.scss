@@ -30,7 +30,7 @@
 
 
 
-// ジャンル検索ボックス
+// ジャンルタブメニュー
 .tourist-second-wrapper {
 	background-color: black;
 	height: 180px;
@@ -40,13 +40,25 @@
     margin-top: 40px;
 }
 
-.genre_name {
-	margin-bottom: 40px;
+.genre-tab li {
+    color: white;
+    float: left;
+    margin: 0 10px -1px 0;
+    padding: 10px 20px;
+    border: 1px solid #fb4343;
+    cursor: pointer;
+    list-style: none;
+    transition: .3s;
 }
 
-.tourist-genre-btn{
-	margin: 0px 5px 0;
-}
+.tab li.active {
+    color: #fff;
+    background: #fb4343;
+    cursor: auto;
+  }
+
+
+
 
 // 予約へ進むボタン
 .order-btn{
@@ -57,3 +69,5 @@
 .chat-room-btn{
 	margin: 50px 0 0 120px;
 }
+
+

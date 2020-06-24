@@ -24,6 +24,11 @@
 	color: lime;
 }
 
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
 
 
  /* header */
@@ -255,4 +260,20 @@ nav li a{
 
 .guide-name {
 	margin: 30px 0px 0 30px;
+}
+
+
+// footer
+footer {
+	color: white;
+	margin-top: auto;
+	height: 70px;
+	background-color: black;
+}
+
+.contact-btn {
+	float: left;
+	color: white;
+	line-height: 70px;
+	padding-left: 40px;
 }
