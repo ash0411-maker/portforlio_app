@@ -20,6 +20,12 @@
  @import "font-awesome";
 
 
+ .clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+  }
+
  .flash {
 	color: lime;
 }
@@ -29,6 +35,7 @@
 	flex-direction: column;
 	min-height: 100vh;
 }
+
 
 
  /* header */
@@ -179,28 +186,39 @@ nav li a{
 // ----- ツアー写真 -----
 .tour-image-wrapper {
 	height: 400px;
-	padding: 30px 0 0 150px;
+	padding: 30px 0 0 110px;
 	background-color: black;
 	position: relative;
 }
 
 .tour-img-1 {
-	padding-right: 20px;
+	float: left;
+	margin-right: 20px;
+}
+
+.tour-img-2-4 {
+    float: left;
 }
 
 .tour-img-2 {
-
+	float: left;
+	margin-right: 15px;
 }
 
 .tour-img-3 {
-	padding-left: 10px;
+	float: left;
+}
+
+.tour-img-2-3 {
+	margin-bottom: 10px;
 }
 
 .tour-img-4 {
-	padding-top: 10px;
+	float: left;
 }
 
 .tour-img-5 {
+	float: left;
 	padding-left: 15px;
 }
 
@@ -208,7 +226,7 @@ nav li a{
 
 // ----- ツアー概要 -----
 .tour-info-wrapper {
-	padding: 30px 0 0 0px;
+	padding-top: 50px;
 	background-color: black;
 	color: white;
 }
