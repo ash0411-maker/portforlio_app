@@ -1,5 +1,10 @@
 <!----- ツアー写真 ----->
-<div class = "tour-image-wrapper">
+<div class = "tour-image-wrapper clearfix">
+	<span class = "book_mark">
+		<div id = "book_marks_<%= @tour.id %>">
+			<%= render 'tourist/book_marks/book_mark', tour: @tour %>
+		</div>
+	</span>
 	<%= render 'partial/tour_image_wrapper', tour_photos: @tour_photos %>
 </div>
 
