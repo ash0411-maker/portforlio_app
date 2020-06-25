@@ -1,0 +1,115 @@
+<div class = "container">
+	<div class = "row">
+		<div class = "col-xs-8">
+			<h2>
+				予約者：<strong><%= @order.tourist.family_name %> <%= @order.tourist.name %></strong> 様<br/>
+				ガイド：<strong><%= @order.guide.family_name %> <%= @order.guide.name %></strong> 様<br/>
+			</h2>
+			<h2>注文詳細画面</h2>
+		</div>
+		<div class = "col-xs-2">
+			<div class = "admin_sales_box">
+				<div class =  "panel panel-default text-center">
+					<div class="panel-heading">
+						<h3 class="panel-title"><strong>管理者売上</strong></h3>
+					</div>
+					<div class = "panel-body" >
+						¥ <%= number_with_delimiter(@order.admin_sales) %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!----- ツアー情報 ----->
+	<div class = "row">
+		<div class = "col-xs-10">
+			<h2>ツアー情報</h2>
+			<table class = "table">
+				<thead>
+					<tr class = "active">
+						<th class = "text-center">ツアー価格</th>
+						<th class = "text-center">ツアー時間</th>
+						<th class = "text-center">ツアー都市</th>
+						<th class = "text-center">ツアージャンル</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class = "text-center">
+						<td>¥ <%= number_with_delimiter(@order.tour_price) %></td>
+						<td><%= @order.tour_time %></td>
+						<td> <%= @order.tour_city %></td>
+						<td><%= @order.tour_genre %></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+
+<!----- 観光客情報 ----->
+	<div class = "row">
+		<div class = "col-xs-10">
+			<h2>予約者情報</h2>
+			<table class = "table">
+				<thead>
+					<tr class = "active">
+						<th class = "text-center">予約番号</th>
+						<th class = "text-center">今回の支払い額</th>
+						<th class = "text-center">氏名（ID）</th>
+						<th class = "text-center">性別</th>
+						<th class = "text-center">生まれ年</th>
+						<th class = "text-center">国籍</th>
+						<th class = "text-center">総注文数</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class = "text-center">
+						<td><%= @order.id %></td>
+						<td>¥ <%= number_with_delimiter(@order.tour_price) %></td>
+						<td><%= @order.tourist.family_name %> <%= @order.tourist.name %>（<%= @order.tourist.id%>）</td>
+						<td><%= @order.tourist.sex %></td>
+						<td><%= @order.tourist.birth_year %></td>
+						<td><%= @order.tourist.nationality %></td>
+						<td><%= @order.tourist.orders.count %></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+<!----- ガイド情報 ----->
+	<div class = "row">
+		<div class = "col-xs-10">
+			<h2>ツアーガイド情報</h2>
+			<table class = "table">
+				<thead>
+					<tr class = "active">
+						<th class = "text-center">今回の売り上げ</th>
+						<th class = "text-center">氏名（ID）</th>
+						<th class = "text-center">国籍</th>
+						<th class = "text-center">総受注数</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class = "text-center">
+						<td>¥ <%= number_with_delimiter(@order.guide_sales) %></td>
+						<td><%= @order.guide.family_name %> <%= @order.guide.name %>（<%= @order.guide.id%>）</td>
+						<td><%= @order.guide.nationality %></td>
+						<td><%= @order.guide.orders.count %></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

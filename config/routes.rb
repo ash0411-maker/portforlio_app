@@ -43,6 +43,7 @@ Rails.application.routes.draw do
     get 'home/top'
     get 'contacts/thanks' => 'contacts#thanks', as: 'contact_thanks'
     resources :reviews, only: [:destroy]
+    resources :orders, only: %i[index show]
     resources :guides, only: %i[show index update destroy]
     resources :tourists, only: %i[show index update destroy]
     resources :tours, only: %i[index show edit update destroy]

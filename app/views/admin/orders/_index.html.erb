@@ -1,0 +1,54 @@
+<div class = "row">
+	<div class = "col-xs-5">
+		<table class = "table table-bordered">
+			<tr>
+				<th class = "active">
+					<h3>本日の管理者売上</h3>
+				</th>
+				<th>
+					<h3>¥ <%= number_with_delimiter(day_of_total_sales.floor) %></h3>
+				</th>
+			</tr>
+		</table>
+	</div>
+	<div class = "col-xs-5">
+		<table class = "table table-bordered">
+			<tr>
+				<th class = "active">
+					<h3>管理者総売上</h3>
+				</th>
+				<th>
+					<h3>¥ <%= number_with_delimiter(total_sales.floor) %></h3>
+				</th>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class = "row">
+	<div class = "col-xs-12">
+		<table class = "table">
+			<thead>
+				<tr class = "active">
+					<th class = "text-center">予約番号</th>
+					<th class = "text-center">予約された日</th>
+					<th class = "text-center">ツアー価格</th>
+					<th class = "text-center">管理者売り上げ</th>
+					<th class = "text-center">ガイド売り上げ</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% day_of_orders.each do |order| %>
+					<tr class = "text-center">
+						<td><%= order.id %></td>
+						<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+						<td>¥ <%= number_with_delimiter(order.tour_price) %></td>
+						<td>¥ <%= number_with_delimiter(order.admin_sales.floor) %></td>
+						<td>¥ <%= number_with_delimiter(order.guide_sales.floor) %></td>
+						<td><%= link_to "詳細", admin_order_path(order), class: "btn btn-default" %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
