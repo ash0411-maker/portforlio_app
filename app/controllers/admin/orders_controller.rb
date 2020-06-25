@@ -1,7 +1,7 @@
-# frozen_string_literal: true
+class Admin::OrdersController < ApplicationController
+  before_action :authenticate_admin!
 
-class Admin::HomeController < ApplicationController
-  def top
+  def index
     @day_of_orders = Order.where(created_at: Time.zone.now.all_day)
     day_of_total_sales = []
     @day_of_orders.each do |order|
@@ -15,5 +15,9 @@ class Admin::HomeController < ApplicationController
       total_sales << order.admin_sales
     end
     @total_sales = total_sales.sum
+  end
+
+  def show
+    @order = Order.find(params[:id])
   end
 end
