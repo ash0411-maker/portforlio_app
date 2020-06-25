@@ -2,6 +2,10 @@
 
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'rooms/index'
+    get 'rooms/show'
+  end
   root to: 'home/tours#index'
 
   devise_for :admins, controllers: {
@@ -44,6 +48,7 @@ Rails.application.routes.draw do
     get 'contacts/thanks' => 'contacts#thanks', as: 'contact_thanks'
     resources :reviews, only: [:destroy]
     resources :orders, only: %i[index show]
+    resources :rooms, only: %i[index show destroy]
     resources :guides, only: %i[show index update destroy]
     resources :tourists, only: %i[show index update destroy]
     resources :tours, only: %i[index show edit update destroy]
