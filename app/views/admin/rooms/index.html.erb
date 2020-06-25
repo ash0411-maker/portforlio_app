@@ -1,0 +1,36 @@
+<div class = "container">
+	<div class = "row">
+		<div class = "col-xs-7 col-xs-offset-1">
+			<h1>チャットルーム一覧</h1>
+			<h2 class = "flash"><%=flash[:notice]%></h2>
+			<table class = "table">
+				<thead>
+					<tr class = "active">
+						<th class = "text-center">ルームID</th>
+						<th class = "text-center">ガイド(ID)</th>
+						<th class = "text-center">ツーリスト(ID)</th>
+						<th class = "text-center"></th>
+						<th class = "text-center"></th>
+					</tr>
+				</thead>
+
+			<!------ チャットルーム一覧、削除 ------>
+				<tbody>
+					<% @rooms.each do |room| %>
+						<tr class = "text-center">
+							<td><%= room.id %></td>
+							<td><%= room.guide.name %>(<%= room.guide.id %>)</td>
+							<td><%= room.tourist.name %>(<%= room.tourist.id %>)</td>
+							<td>
+								<%= link_to "チャットルーム詳細", admin_room_path(room), class: "btn btn-default" %>
+							</td>
+							<td>
+								<%= link_to "チャットルーム削除", admin_room_path(room), method: :delete, data: {confirm:'このチャットルームを削除してよろしいですか？。'}, class: "btn btn-danger" %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
