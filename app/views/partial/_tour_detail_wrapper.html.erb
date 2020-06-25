@@ -101,6 +101,29 @@
 						<%= tour.meetingpoint_address %><br/>
 						<%= tour.meetingpoint_introduction %>
 					</h4>
+					<!----- GoogleMap ----->
+					<div id="map"></div>
+					<style>
+					    #map {
+					    height: 500px;
+					    width: 70%;
+						}
+					</style>
+					<script>
+					function initMap() {
+					    var uluru = {lat: <%= tour.latitude %>, lng: <%= tour.longitude %>};
+					    var map = new google.maps.Map(document.getElementById('map'), {
+					    	zoom: 16,
+					    	center: uluru
+					    });
+					    var marker = new google.maps.Marker({
+					    	position: uluru,
+					    	map: map
+						});
+					}
+					</script>
+					<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLEMAP'] %>&callback=initMap"
+					async defer></script>
 				</div>
 			</div>
 		</div>

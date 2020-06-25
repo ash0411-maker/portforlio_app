@@ -22,6 +22,10 @@ class Tour < ApplicationRecord
   validates :contents_of_price, presence: true
   validates :time, presence: true
 
+  # ツアーの詳細画面で表示するgooglemap
+  geocoded_by :meetingpoint_address
+  after_validation :geocode, if: :meetingpoint_address_changed?
+
   # ブックマーク機能
   def bookmarked_by?(tourist)
     book_marks.where(tourist_id: tourist.id).exists?
