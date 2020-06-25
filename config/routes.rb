@@ -2,14 +2,6 @@
 
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'tourists/index'
-    get 'tourists/show'
-  end
-  namespace :admin do
-    get 'guides/index'
-    get 'guides/show'
-  end
   root to: 'home/tours#index'
 
   devise_for :admins, controllers: {
