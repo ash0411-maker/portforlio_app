@@ -1,0 +1,26 @@
+<div class = "tours-first-wrapper">
+
+	<%# ---- トップ画面の写真・ユーザー登録リンク ---- %>
+	<div class = "home-top-image">
+    	<div class = "home-top-image-box">
+			<div class = "home-top-image-box-text">
+				<span class = "registration-btn">
+					<%= link_to new_guide_registration_path do %>
+						<i class="fas fa-hiking fa-2x registration-logo"></i>冒険・体験を提供したい方はガイド登録
+					<% end %>
+				</span>
+			</div>
+			<div class = "home-top-image-box-text">
+				<span class = "registration-btn">
+					<%= link_to new_tourist_registration_path do %>
+						<i class="fas fa-suitcase-rolling fa-2x registration-logo"></i>新たな世界へのツアーを探している方はツーリスト登録
+					<% end %>
+				</span>
+			</div>
+    	</div>
+　	</div>
+</div>
+<div class = "tours-second-wrapper">
+	<%= render 'partial/tours_second_wrapper', tours: @tours %>
+</div>
+

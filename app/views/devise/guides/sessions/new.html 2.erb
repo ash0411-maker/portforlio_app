@@ -1,0 +1,45 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-xs-8 col-xs-offset-4">
+      <h2>ガイドログイン</h2>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <div class = "row">
+          <div class="guest-login">
+            <%= link_to 'ゲストログイン（閲覧用）', guest_guide_path, method: :post, class: "btn btn-primary col-xs-6 devise-login-text" %>
+          </div>
+        </div>
+
+        <div class = "row">
+          <div class="devise-field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-xs-6 devise-login-text" %>
+          </div>
+        </div>
+
+        <div class = "row">
+          <div class="devise-field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class: "col-xs-6 devise-login-text" %>
+          </div>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class = "row">
+          <div class="devise-field">
+            <%= f.submit "ログイン", class: "btn btn-warning col-xs-6 devise-login-text" %>
+          </div>
+        </div>
+      <% end %>
+
+      <%= render "devise/guides/shared/links" %>
+    </div>
+  </div>
+</div>

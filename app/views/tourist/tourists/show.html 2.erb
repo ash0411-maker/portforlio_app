@@ -1,0 +1,37 @@
+<div class = "contaienr">
+    <div class = "row">
+		<div class = "col-xs-8 col-xs-offset-3">
+			<h3 class = "flash"><%=flash[:notice]%></h3>
+		</div>
+	</div>
+	<div class = "row">
+		<div class = "col-xs-4 col-xs-offset-3">
+			<%= link_to  edit_tourist_tourist_path(current_tourist), class: "btn btn-lg" do %>
+				<i class="fas fa-address-card fa-10x"></i>
+				<h3>個人情報変更</h3>
+			<% end %>
+		</div>
+        <div class = "col-xs-4">
+			<%= link_to  tourist_tourist_orders_path(current_tourist), class: "btn btn-lg" do %>
+				<i class="far fa-calendar-check fa-10x"></i>
+				<h3>予約一覧</h3>
+			<% end %>
+		</div>
+	</div>
+    <div class = "row">
+		<div class = "col-xs-4 col-xs-offset-3">
+			<%= link_to tourist_tourist_rooms_path(current_tourist) do %>
+		        <i class="far fa-comments fa-10x"></i>
+		        <h2>チャット</h2>
+		    <% end %>
+	    </div>
+		<div class = "col-xs-4">
+			<%= link_to tourist_tourist_book_marks_path(current_tourist) do %>
+                <i class="fas fa-flag fa-10x"></i>
+                <h3>ブックマーク</h3>
+            <% end %>
+		</div>
+	</div>
+</div>
+
+

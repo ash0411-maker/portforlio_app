@@ -13,7 +13,6 @@ class Tourist < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :rooms, dependent: :destroy
   has_many :book_marks, dependent: :destroy
-  has_many :notifications, dependent: :destroy
   has_many :tourist_active_notices, class_name: 'ChatNotice', foreign_key: 'visitor_id', dependent: :destroy
   has_many :tourist_passive_notices, class_name: 'ChatNotice', foreign_key: 'visited_id', dependent: :destroy
 end
