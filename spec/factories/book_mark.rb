@@ -1,6 +1,6 @@
 FactoryBot.define do
     factory :book_mark do
-        tourist
-        tour
+        association :tourist
+        association :tour
     end
 end
