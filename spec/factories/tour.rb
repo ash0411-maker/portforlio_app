@@ -1,8 +1,8 @@
 FactoryBot.define do
     factory :tour do
-        guide_id { Faker::Number.number(digits:2) }
-        city_id { Faker::Number.number(digits:2) }
-        genre_id { Faker::Number.number(digits:2) }
+        association :guide
+        association :genre
+        association :city
         title { Faker::Lorem.characters(number:10) }
         body { Faker::Lorem.characters(number:100) }
         contents_of_price { Faker::Lorem.characters(number:5) }
