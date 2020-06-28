@@ -170,6 +170,8 @@
         <span><%= link_to "お問い合わせ", new_admin_contact_path, class: "contact-btn" %></span>
         <% if tourist_signed_in? %>
           <span><%= link_to "退会手続き", tourist_tourist_tourist_delete_path(current_tourist), class: "user-delete-btn" %></span>
+        <% elsif guide_signed_in? %>
+          <span><%= link_to "退会手続き", guide_guide_guide_delete_path(current_guide), class: "user-delete-btn" %></span>
         <% end %>
       </footer>
     </div>

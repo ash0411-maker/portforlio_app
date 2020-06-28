@@ -69,6 +69,8 @@ Rails.application.routes.draw do
       get 'orders/finished_tour' => 'orders#finished_tour', as: 'finished_tour'
       get 'orders/day_before_touring' => 'orders#day_before_touring', as: 'day_before_touring'
       get 'gudies/to_guide_edit' => 'guides#to_guide_edit', as: 'to_guide_edit'
+      get 'guides/delete' => 'guides#delete', as: 'guide_delete'
+      get 'guides/cannnot_delete' => 'guides#cannot_delete', as: 'cannot_guide_delete'
       resources :tours
       resources :notifications, only: %i[index]
       resources :orders, only: %i[index update]
