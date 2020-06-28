@@ -1,0 +1,60 @@
+<!------- メッセージが０件だった場合 ------->
+<% if @rooms.count == 0 %>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-xs-8 col-xs-offset-1">
+				<h2>
+					チャットはまだありません。<br/>
+					ツアー情報にあるガイド紹介欄から質問をしましょう！
+				</h2>
+			</div>
+		</div>
+	</div>
+
+<!------- メッセージがあった場合 ------->
+<% else %>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-xs-8 col-xs-offset-1">
+				<h2>メッセージルーム一覧</h2>
+				<table class = "table">
+					<thead>
+						<tr class = "active">
+							<th class = "text-center">チャット相手</th>
+							<th class = "text-center">チャット件数</th>
+							<th class = "text-center">最新メッセージ</th>
+							<th class = "text-center">チャットルーム</th>
+						</tr>
+					</thead>
+
+				<!------- チャットルーム ------->
+					<tbody>
+						<% @rooms.each do |room| %>
+							<tr class = "text-center">
+								<td><%= room.guide.family_name %> <%= room.guide.name %>さん</td>
+								<td><%= room.chats.count %>件</td>
+
+						<!------ メッセージの一部分を見せる ------>
+								<% chats = [] %>
+								<% room.chats.each do |chat| %>
+									<% chats << chat.message %>
+								<% end %>
+								<% latest_chat =  chats[-1] %>
+								<td>
+									<%= latest_chat.present? ?  latest_chat[0..10] << "..." : "" %>
+								</td>
+
+								<td>
+									<%= link_to "チャット確認", tourist_tourist_room_path(current_tourist, room), class: "btn btn-default" %>
+								</td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+				<%= paginate @rooms, class: "paginate" %>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+
