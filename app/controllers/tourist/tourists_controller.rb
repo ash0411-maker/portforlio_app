@@ -20,6 +20,18 @@ class Tourist::TouristsController < ApplicationController
     end
   end
 
+  def destroy
+    @tourist = Tourist.find(params[:id])
+    if @tourist.id == 1
+      redirect_to tourist_tourist_cannot_tourist_delete_path(current_tourist)
+    else
+      @tourist.destroy
+      redirect_to tourist_tourist_thanks_path
+    end
+  end
+
+  def delete; end
+
   private
 
   def tourist_params

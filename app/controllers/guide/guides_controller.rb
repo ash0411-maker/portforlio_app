@@ -22,7 +22,23 @@ def update
   end
 end
 
+def destroy
+  @guide = Guide.find(params[:id])
+  if @guide.id == 1
+    redirect_to guide_guide_cannot_guide_delete_path(current_guide)
+  else
+    @guide.destroy
+    redirect_to guide_guide_thanks_path
+  end
+end
+
 def to_guide_edit; end
+
+def delete; end
+
+def cannot_delete; end
+
+def thanks; end
 
 
   private

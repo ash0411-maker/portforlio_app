@@ -1,0 +1,13 @@
+<div class = "container">
+	<div class = "row">
+		<div class = "col-xs-8 col-xs-offset1">
+			<h3>本当に退会しますか？</h3>
+			<span>
+				<%= link_to "退会する", guide_guide_path(current_guide), data: { confirm: "本当に退会しますか?" }, method: :delete ,class: "btn btn-danger" %>
+			</span>
+			<span>
+				<%= link_to "退会しない", guide_guide_path(current_guide), class: "btn btn-default" %>
+			</span>
+		</div>
+	</div>
+</div>
