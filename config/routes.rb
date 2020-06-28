@@ -81,10 +81,13 @@ Rails.application.routes.draw do
 
   namespace :tourist do
     get 'orders/thanks' => 'orders#thanks', as: 'orders_thanks'
+    get 'tourists/thanks' => 'tourists#thanks', as: 'tourist_thanks'
     resources :tourists, only: %i[show edit update destroy] do
       get 'searches/city'
       get 'orders/confirm' => 'orders#confirm', as: 'order_confirm'
       get 'book_marks/index' => 'book_marks#index', as: 'book_marks'
+      get 'tourists/delete' => 'tourists#delete', as: 'tourist_delete'
+      get 'tourists/cannnot_delete' => 'tourists#cannot_delete', as: 'cannot_tourist_delete'
       resources :chat_notices, only: %i[index]
       resources :orders, only: %i[show index new create destroy]
       resources :tours, only: %i[index show] do
