@@ -12,6 +12,7 @@ RSpec.describe 'Tourist', type: :system do
             before do
                 login tourist
                 visit new_tourist_tourist_order_path(tourist)
+                take_screenshot
             end
             it '予約確認画面へ遷移する' do
                 fill_in 'order_total_peole', with: '3'
