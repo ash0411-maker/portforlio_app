@@ -67,7 +67,13 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :system
   config.include FactoryBot::Syntax::Methods
 
+  # Capybara setting
   config.before(:each, type: :system) do
-    driven_by :selenium_chrome_headless
+    driven_by Capybara.default_driver
+  end
+
+  config.before(:each, type: :system, js: true) do
+    driven_by Capybara.javascript_driver
+    host! "http://#{Capybara.server_host}:#{Capybara.server_port}"
   end
 end
