@@ -2,6 +2,7 @@ FactoryBot.define do
     factory :order do
         association :guide
         association :tourist
+        tour_id { Faker::Number.number(digits:1) }
         tour_title { Faker::Lorem.characters(number:10) }
         tour_body { Faker::Lorem.characters(number:100) }
         tour_contents_of_price { Faker::Lorem.characters(number:5) }
