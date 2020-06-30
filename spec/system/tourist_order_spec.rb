@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Tourist', type: :system, js: true do
+RSpec.describe 'TouristOrder', type: :system, js: true do
     let!(:tourist) do
         create(:tourist,
             email: 'test@example.com',
