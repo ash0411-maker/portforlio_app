@@ -1,8 +1,8 @@
 FactoryBot.define do
     factory :tour do
-        association :guide
-        association :genre
-        association :city
+        guide
+        genre
+        city
         title { Faker::Lorem.characters(number:10) }
         body { Faker::Lorem.characters(number:100) }
         contents_of_price { Faker::Lorem.characters(number:5) }
