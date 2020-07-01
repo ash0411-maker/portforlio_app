@@ -1,10 +1,10 @@
 FactoryBot.define do
-    factory :guide do
+    factory :guide, class: Guide do
         email { Faker::Internet.email }
         family_name { Faker::Name.male_first_name }
         name { Faker::Name.male_first_name }
-        identification_image { Refile::FileDouble.new("dummy", "no_image.jpg", content_type: "image/jpg") }
-        selfy_image { Refile::FileDouble.new("dummy", "no_image.jpg", content_type: "image/jpg") }
+        identification_image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'app/assets/images/no_image.jpg')) }
+        selfy_image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'app/assets/images/no_image.jpg')) }
         nationality { Faker::Nation.nationality }
         postal_code { Faker::Address.zip_code }
         address { Faker::Address.street_address }
@@ -14,7 +14,7 @@ FactoryBot.define do
         password_confirmation { 'password' }
     end
 
-    factory :another_guide do
+    factory :another_guide, class: Guide do
         email { Faker::Internet.email }
         password { 'password' }
         password_confirmation { 'password' }
