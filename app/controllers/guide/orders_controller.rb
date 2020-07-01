@@ -1,7 +1,7 @@
 class Guide::OrdersController < ApplicationController
   
   before_action :authenticate_guide!
-  before_action :correct_guide, only: %i[index update]
+  before_action :correct_guide, only: %i[index update new_order day_before_touring finished_tour]
 
   def index
     @orders = current_guide.orders
