@@ -2,7 +2,7 @@
 
 class Guide::ToursController < ApplicationController
   before_action :authenticate_guide!
-  before_action :correct_guide, only: %i[new create edit update destroy]
+  before_action :correct_guide, only: %i[index show new create edit update destroy]
 
   def show
     @tour = Tour.find(params[:id])
