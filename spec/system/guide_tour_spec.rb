@@ -43,25 +43,25 @@ RSpec.describe 'GuideTour', type: :system, js: true do
         # end
 
         context 'tour投稿関連' do
-            # it '個人情報を入力してるで、tour投稿ページへ遷移' do
-            #     login guide
-            #     visit new_guide_guide_tour_path(guide)
-            #     expect(current_path).to eq(new_guide_guide_tour_path(guide))
-            # end
-            # it '個人情報を全項目入力できていないので、編集ページへリンクを持つページへ遷移' do
-            #     login another_guide
-            #     visit new_guide_guide_tour_path(another_guide)
-            #     expect(current_path).to eq(guide_guide_to_guide_edit_path(another_guide))
-            # end
-            # it 'idが異なるので、correct_guideで trueとなる' do
-            #     login another_guide
-            #     visit new_guide_guide_tour_path(guide)
-            #     expect(current_path).to eq(guide_guide_path(another_guide))
-            # end
-            # it 'ログインなしではアクセスできない' do
-            #     visit new_guide_guide_tour_path(guide)
-            #     expect(current_path).to eq(new_guide_session_path)
-            # end
+            it '個人情報を入力してるで、tour投稿ページへ遷移' do
+                login guide
+                visit new_guide_guide_tour_path(guide)
+                expect(current_path).to eq(new_guide_guide_tour_path(guide))
+            end
+            it '個人情報を全項目入力できていないので、編集ページへリンクを持つページへ遷移' do
+                login another_guide
+                visit new_guide_guide_tour_path(another_guide)
+                expect(current_path).to eq(guide_guide_to_guide_edit_path(another_guide))
+            end
+            it 'idが異なるので、correct_guideで trueとなる' do
+                login another_guide
+                visit new_guide_guide_tour_path(guide)
+                expect(current_path).to eq(guide_guide_path(another_guide))
+            end
+            it 'ログインなしではアクセスできない' do
+                visit new_guide_guide_tour_path(guide)
+                expect(current_path).to eq(new_guide_session_path)
+            end
             it 'tour投稿に成功する' do
                 login guide
                 visit new_guide_guide_tour_path(guide)

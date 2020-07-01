@@ -1,25 +1,25 @@
 require 'rails_helper'
 
-RSpec.describe 'Devise', type: :system do
+RSpec.describe 'Devise', type: :system, js: true do
     let!(:guide) do
         create(:guide,
-               email: 'test@example.com',
-               password: '123456',
-               password_confirmation: '123456'
+                email: 'test@example.com',
+                password: '123456',
+                password_confirmation: '123456'
             )
     end
     let!(:admin) do
         create(:admin,
-               email: 'test@example.com',
-               password: '123456',
-               password_confirmation: '123456'
-            )
+                email: 'test@example.com',
+                password: '123456',
+                password_confirmation: '123456'
+                )
     end
     let!(:tourist) do
         create(:tourist,
-               email: 'test@example.com',
-               password: '123456',
-               password_confirmation: '123456'
+                email: 'test@example.com',
+                password: '123456',
+                password_confirmation: '123456'
             )
     end
 
@@ -44,7 +44,7 @@ RSpec.describe 'Devise', type: :system do
             end
             it 'かんたんログイン' do
                 click_on 'かんたんログイン（閲覧用）'
-                expect(current_path).to eq(guest_admin_path)
+                expect(current_path).to eq(admin_home_top_path)
             end
         end
     end
@@ -89,7 +89,7 @@ RSpec.describe 'Devise', type: :system do
             end
             it 'かんたんログイン' do
                 click_on 'ゲストログイン（閲覧用）'
-                expect(current_path).to eq(guest_guide_path)
+                expect(current_path).to eq(guide_guide_home_top_path(1))
             end
         end
         context '退会に成功する' do
@@ -97,6 +97,7 @@ RSpec.describe 'Devise', type: :system do
                 login guide
                 visit guide_guide_guide_delete_path(guide)
                 click_on '退会する'
+                page.driver.browser.switch_to.alert.accept
             end
             it '退会に成功する' do
                 expect(page).to have_content 'ありがとうございました'
@@ -144,7 +145,7 @@ RSpec.describe 'Devise', type: :system do
             end
             it 'かんたんログイン' do
                 click_on 'ゲストログイン（閲覧用）'
-                expect(current_path).to eq(guest_tourist_path)
+                expect(current_path).to eq(tourist_tourist_tours_path(1))
             end
         end
         context '退会に成功する' do
@@ -152,6 +153,7 @@ RSpec.describe 'Devise', type: :system do
                 login tourist
                 visit tourist_tourist_tourist_delete_path(tourist)
                 click_on '退会する'
+                page.driver.browser.switch_to.alert.accept
             end
             it '退会に成功する' do
                 expect(page).to have_content 'ありがとうございました'

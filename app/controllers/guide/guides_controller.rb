@@ -28,7 +28,7 @@ def destroy
     redirect_to guide_guide_cannot_guide_delete_path(current_guide)
   else
     @guide.destroy
-    redirect_to guide_guide_thanks_path
+    redirect_to guide_thanks_path
   end
 end
 

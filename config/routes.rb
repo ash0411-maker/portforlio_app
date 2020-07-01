@@ -63,6 +63,7 @@ Rails.application.routes.draw do
   end
 
   namespace :guide do
+    get 'guides/thanks' => 'guides#thanks', as: 'thanks'
     resources :guides, only: %i[show edit update destroy] do
       get 'home/top'
       get 'orders/new_order' => 'orders#new_order', as: 'new_order'
