@@ -92,6 +92,13 @@ RSpec.describe 'Devise', type: :system, js: true do
                 click_button 'ログイン'
                 expect(current_path).to eq(new_guide_session_path)
             end
+            it 'ログインに失敗する' do
+                visit new_guide_session_path
+                fill_in 'guide[email]', with: 'test@example.com'
+                fill_in 'guide[password]', with: '654321'
+                click_button 'ログイン'
+                expect(current_path).to eq(new_guide_session_path)
+            end
             it 'かんたんログイン' do
                 visit new_guide_session_path
                 click_on 'ゲストログイン（閲覧用）'
@@ -153,6 +160,13 @@ RSpec.describe 'Devise', type: :system, js: true do
                 fill_in 'tourist[password]', with: ''
                 click_button 'ログイン'
                 expect(current_path).to eq(new_tourist_session_path)
+            end
+            it 'ログインに失敗する' do
+                visit new_guide_session_path
+                fill_in 'guide[email]', with: 'test@example.com'
+                fill_in 'guide[password]', with: '654321'
+                click_button 'ログイン'
+                expect(current_path).to eq(new_guide_session_path)
             end
             it 'かんたんログイン' do
                 visit new_tourist_session_path
