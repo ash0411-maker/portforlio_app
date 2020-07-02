@@ -18,11 +18,11 @@ class Admin::TouristsController < ApplicationController
     else
       if @tourist.update(tourist_params)
         if tourist_params[:deleted_at].to_i == 0
-          flash[:notice] = '情報を更新しました'
+          flash[:notice] = '会員を再開させました'
           @tourist.restore
           redirect_to admin_tourist_path(@tourist)
         else
-          flash[:notice] = '情報を更新しました'
+          flash[:notice] = '退会させました'
           @tourist.destroy
           redirect_to admin_tourist_path(@tourist)
         end

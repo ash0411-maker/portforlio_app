@@ -53,6 +53,40 @@ RSpec.describe 'Devise', type: :system, js: true do
                 expect(current_path).to eq(new_admin_session_path)
             end
         end
+
+        context 'Tourist 会員ステータス変更' do
+            it '退会' do
+                login admin
+                visit admin_tourist_path(tourist)
+                find('#tourist_deleted_at_1').click
+                click_button '更新'
+                expect(page).to have_content '退会させました'
+            end
+            it '復活' do
+                login admin
+                visit admin_tourist_path(tourist)
+                find('#tourist_deleted_at_0').click
+                click_button '更新'
+                expect(page).to have_content '会員を再開させました'
+            end
+        end
+
+        context 'Guide 会員ステータス変更' do
+            it '退会' do
+                login admin
+                visit admin_guide_path(guide)
+                find('#guide_deleted_at_1').click
+                click_button '更新'
+                expect(page).to have_content '退会させました'
+            end
+            it '復活' do
+                login admin
+                visit admin_guide_path(guide)
+                find('#guide_deleted_at_0').click
+                click_button '更新'
+                expect(page).to have_content '会員を再開させました'
+            end
+        end
     end
 
 
