@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Tourist', type: :system, js: true do
+RSpec.describe 'AdminTourist', type: :system, js: true do
     let(:admin) { create(:admin) }
     let(:tourist) { create(:tourist) }
 
