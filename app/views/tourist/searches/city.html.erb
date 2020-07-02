@@ -14,7 +14,7 @@
                 </div>
                 <div class= "col-xs-5 col-xs-offset-2">
                     <% @genres.each do |genre| %>
-                        <%= link_to tourist_tours_path(current_tourist, genre_id: genre.id), class: "btn btn-default tourist-genre-btn" do %>
+                        <%= link_to tourist_tourist_tours_path(current_tourist, genre_id: genre.id), class: "btn btn-default tourist-genre-btn" do %>
                             <% genre.name %>
                         <% end %>
                     <% end %>
