@@ -45,6 +45,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'home/top'
+    get 'searches/result'
     get 'contacts/thanks' => 'contacts#thanks', as: 'contact_thanks'
     resources :reviews, only: [:destroy]
     resources :orders, only: %i[index show]
