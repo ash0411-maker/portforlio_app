@@ -4,4 +4,10 @@ class Order < ApplicationRecord
     validates :total_people, presence: true
 
     enum status: { ツアー開始前: 0, ツアー前日: 1, ツアー当日: 2, ツアー終了: 3, レビュー済み: 4 }
+
+    def self.match(model, order_id)
+        if model == 'order'
+            Order.find_by(id: order_id)
+        end
+    end
 end

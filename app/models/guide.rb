@@ -20,4 +20,10 @@ class Guide < ApplicationRecord
 
   attachment :selfy_image
   attachment :identification_image
+
+  def self.match(model, guide_id)
+    if model == 'guide'
+      Guide.find_by(id: guide_id)
+    end
+  end
 end
