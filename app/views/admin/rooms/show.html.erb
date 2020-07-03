@@ -5,20 +5,33 @@
 
 		<!------ チャットルーム ------>
 			<div class = "chat-field">
-			  <% @messages.each do |message| %>
-			    <!-- メッセージがtouristによるものだったら、メッセージを右に寄せる -->
-			    <% if message.is_tourist %>
-			      <div class = "text-right">
-			        	<h4 class = "message bg-info"><%= message.content %>  :<%= message.room.tourist.name %>さん(ツーリスト)</h4>
-			      </div>
+				<% @chats.each do |chat| %>
+                    <%# ------- メッセージがtouristによるものだったら、メッセージを右に寄せる -------- %>
+                        <% if chat.is_tourist %>
+                            <div class = "text-right  bg-info">
+                                <h4 class = "chat"><%= chat.message %>  :<%= chat.room.tourist.name %>さん</h4>
+                                <span class = "chat-time">（<%= chat.created_at.to_s(:datetime_jp) %>）</span>
+                            </div>
 
-			    <!-- メッセージがguideによるものだったら、メッセージを左に寄せる -->
-			    <% else %>
-			    	<div class = "text-left  bg-warning">
-			    	  	<h4><%= message.room.guide.name %>さん(ガイド):  <%= message.content %></h4>
-			    	</div>
-			    <% end %>
-			  <% end %>
+                    <%# ------- メッセージがguideによるものだったら、メッセージを左に寄せる -------- %>
+                        <% else %>
+                            <div class = "text-left  bg-warning">
+                                <h4 class = "chat"><%= chat.room.guide.name %>さん:  <%= chat.message %></h4>
+                                <span class = "chat-time">（<%= chat.created_at.to_s(:datetime_jp) %>）</span>
+                            </div>
+                        <% end %>
+				    <% end %>
+			</div>
+		</div>
+	</div>
+	<div class = "chat-form-field">
+		<div class = "contaienr">
+			<div class = "row">
+				<div class = "col-xs-4 col-xs-offset-8">
+					<div class = "btn-to-rooms">
+						<%= link_to "チャットルームを削除", admin_room_path(@room), method: :delete, data: {confirm:'このチャットルームを削除してよろしいですか？。'}, class: "btn btn-danger btn-lg" %>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
