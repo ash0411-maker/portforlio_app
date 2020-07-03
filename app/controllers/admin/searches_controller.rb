@@ -8,6 +8,8 @@ class Admin::SearchesController < ApplicationController
         @guide = Guide.match(@model, @content)
         if @tourist = Tourist.match(@model, @content)
             @orders = @tourist.orders
+        elsif @room = Room.match(@model, @content)
+            @chats = @room.chats
         end
     end
 end
