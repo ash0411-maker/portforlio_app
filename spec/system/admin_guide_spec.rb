@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'guide', type: :system, js: true do
+RSpec.describe 'AdminGuide', type: :system, js: true do
     let(:admin) { create(:admin) }
     let(:guide) { create(:guide) }
 
