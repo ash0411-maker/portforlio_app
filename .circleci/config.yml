@@ -1,77 +1,152 @@
 version: 2.1
 orbs:
-  ruby: circleci/ruby@0.1.2 
+  ruby: circleci/ruby@0.1.2
 
 jobs:
   build:
     docker:
+      # specify the version you desire here
       - image: circleci/ruby:2.6.6-stretch-node
-      environment:
-        RAILS_ENV: test
-        DB_HOST: '127.0.0.1'
-        DB_USERNAME: root
-        DB_PASSWORD: password
+        environment:
+          - RAILS_ENV: 'test'
       - image: circleci/mysql:8.0
-      environment:
-          RAILS_ENV: test
-          DB_HOST: 127.0.0.1
-          DB_USERNAME: root
-          DB_PASSWORD: password
+        environment:
+          - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+          - MYSQL_ROOT_HOST: '%'
 
-    # Specify service dependencies here if necessary
-    # CircleCI maintains a library of pre-built images
-    # documented at https://circleci.com/docs/2.0/circleci-images/
-    # - image: circleci/postgres:9.4
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:9.4
 
-  working_directory: ~/FANTRA
+    working_directory: ~/FANTRA
 
-  steps:
-    - checkout
+    steps:
+      - checkout
 
     # Download and cache dependencies
     - restore_cache:
-        keys:
-          - v1-dependencies-{{ checksum "Gemfile.lock" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+      keys:
+        - v1-dependencies-{{ checksum "Gemfile.lock" }}
+        # fallback to using the latest cache if no exact match is found
+        - v1-dependencies-
 
-    - save_cache:
+    - run:
+      name: install dependencies
+      command: |
+
+      - save_cache:
         paths:
           - ./vendor/bundle
         key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-    - run:
-        name: Wait for DB
-        command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
 
     # Database setup
     - run: bundle exec rake db:create
     - run: bundle exec rake db:schema:load
 
+    # rubocopの実行
     - run:
-        name: install dependencies
-        command: |
-        # Database setup
-        - run: bundle exec rake db:create
-        - run: bundle exec rake db:schema:load
-        - run:
-            name: Rubocop
-            command: bundle exec rubocop
-        - run:
-            name: run tests
-            command: |
-              mkdir /tmp/test-results
-              TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
-                circleci tests split --split-by=timings)"
+        name: Rubocop
+        command: bundle exec rubocop -a
+
+    # run tests!
+    - run:
+      name: run tests
+      command: |
+        mkdir /tmp/test-results
+        TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
+          circleci tests split --split-by=timings)"
 
     # collect reports
     - store_test_results:
-        path: /tmp/test-results
-    - store_artifacts:
-        path: /tmp/test-results
-        destination: test-results
+      path: /tmp/test-results
+  - store_artifacts:
+      path: /tmp/test-results
+      destination: test-results
 
-    # run rubocop
-    - run:
-        name: run rubocop
-        command: bundle exec rubocop -a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# version: 2.1
+# orbs:
+#   ruby: circleci/ruby@0.1.2
+
+# jobs:
+#   build:
+#     docker:
+#       # specify the version you desire here
+#       - image: circleci/ruby:2.6.6-stretch-node
+#         environment:
+#           RAILS_ENV: test
+#           DB_HOST: '127.0.0.1'
+#           DB_USERNAME: root
+#           DB_PASSWORD: password
+
+#     # Specify service dependencies here if necessary
+#     # CircleCI maintains a library of pre-built images
+#     # documented at https://circleci.com/docs/2.0/circleci-images/
+#     # - image: circleci/postgres:9.4
+
+#   working_directory: ~/FANTRA
+
+#   steps:
+#     - checkout
+
+#     # Download and cache dependencies
+#     - restore_cache:
+#         keys:
+#           - v1-dependencies-{{ checksum "Gemfile.lock" }}
+#           # fallback to using the latest cache if no exact match is found
+#           - v1-dependencies-
+
+#     - save_cache:
+#         paths:
+#           - ./vendor/bundle
+#         key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+#     - run:
+#         name: Wait for DB
+#         command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
+
+#     # Database setup
+#     - run: bundle exec rake db:create
+#     - run: bundle exec rake db:schema:load
+
+#     - run:
+#         name: install dependencies
+#         command: |
+#         # Database setup
+#         - run: bundle exec rake db:create
+#         - run: bundle exec rake db:schema:load
+#         - run:
+#             name: Rubocop
+#             command: bundle exec rubocop
+#         - run:
+#             name: run tests
+#             command: |
+#               mkdir /tmp/test-results
+#               TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
+#                 circleci tests split --split-by=timings)"
+
+#     # collect reports
+#     - store_test_results:
+#         path: /tmp/test-results
+#     - store_artifacts:
+#         path: /tmp/test-results
+#         destination: test-results
+
+#     # run rubocop
+#     - run:
+#         name: run rubocop
+#         command: bundle exec rubocop -a
