@@ -24,51 +24,53 @@ jobs:
     steps:
       - checkout
 
-    # Download and cache dependencies
+      # Download and cache dependencies
       - restore_cache:
-        keys:
-          - v1-dependencies-{{ checksum "Gemfile.lock" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
       - run:
-        name: install dependencies
+          name: install dependencies
           command: |
 
       - save_cache:
-        paths:
-          - ./vendor/bundle
-        key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      - run: mv config/database.yml.ci config/database.yml 
 
       # Database setup
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
-      # rubocopの実行
+# rubocop。
       - run:
-        name: Rubocop
-          command: bundle exec rubocop -a
+          name: Rubocop
+          command: bundle exec rubocop
 
+# rspec
       # run tests!
       - run:
-        name: run tests
+          name: run tests
           command: |
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
               circleci tests split --split-by=timings)"
 
+
+            bundle exec rspec \
+              --format progress \
+              --format RspecJunitFormatter \
+              --out /tmp/test-results/rspec.xml \
+              --format progress \
+              $TEST_FILES
+
       # collect reports
       - store_test_results:
-        path: /tmp/test-results
+          path: /tmp/test-results
       - store_artifacts:
-        path: /tmp/test-results
-        destination: test-results
-
-
-
-
-
-
-
-
-
+          path: /tmp/test-results
+          destination: test-results
