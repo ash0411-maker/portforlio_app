@@ -33,7 +33,7 @@ jobs:
 
       - run:
         name: install dependencies
-        command: |
+          command: |
 
       - save_cache:
         paths:
@@ -46,16 +46,16 @@ jobs:
 
       # rubocopの実行
       - run:
-          name: Rubocop
+        name: Rubocop
           command: bundle exec rubocop -a
 
       # run tests!
       - run:
         name: run tests
-        command: |
-          mkdir /tmp/test-results
-          TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
-            circleci tests split --split-by=timings)"
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
+              circleci tests split --split-by=timings)"
 
       # collect reports
       - store_test_results:
