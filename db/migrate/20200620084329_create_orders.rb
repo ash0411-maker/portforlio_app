@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 class CreateOrders < ActiveRecord::Migration[6.0]
   def change
     create_table :orders do |t|
-
       t.timestamps
       t.integer 'status', default: 0
       t.integer 'tourist_id', null: false

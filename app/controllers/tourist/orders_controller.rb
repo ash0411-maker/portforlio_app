@@ -1,5 +1,6 @@
-class Tourist::OrdersController < ApplicationController
+# frozen_string_literal: true
 
+class Tourist::OrdersController < ApplicationController
   before_action :authenticate_tourist!
   before_action :correct_tourist, only: %i[new confirm create destroy index]
 
@@ -11,9 +12,7 @@ class Tourist::OrdersController < ApplicationController
   def new
     @tour = Tour.find_by(id: params[:tour_id])
     @tourist = Tourist.find_by(id: params[:tourist_id])
-    if @tourist.name.blank? || @tourist.family_name.blank? || @tourist.sex.blank? || @tourist.birth_year.blank? || @tourist.nationality.blank? || @tourist.phone_number.blank? || @tourist.address.blank? || @tourist.postal_code.blank?
-      redirect_to edit_tourist_tourist_path(current_tourist)
-    end
+    redirect_to edit_tourist_tourist_path(current_tourist) if @tourist.name.blank? || @tourist.family_name.blank? || @tourist.sex.blank? || @tourist.birth_year.blank? || @tourist.nationality.blank? || @tourist.phone_number.blank? || @tourist.address.blank? || @tourist.postal_code.blank?
     @order = Order.new
   end
 
@@ -53,7 +52,6 @@ class Tourist::OrdersController < ApplicationController
   end
 
   def thanks; end
-
 
   private
 

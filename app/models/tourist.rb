@@ -5,7 +5,7 @@ class Tourist < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   acts_as_paranoid
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -17,8 +17,6 @@ class Tourist < ApplicationRecord
   has_many :tourist_passive_notices, class_name: 'ChatNotice', foreign_key: 'visited_id', dependent: :destroy
 
   def self.match(model, tourist_id)
-    if model == 'tourist'
-      Tourist.find_by(id: tourist_id)
-    end
+    Tourist.find_by(id: tourist_id) if model == 'tourist'
   end
 end

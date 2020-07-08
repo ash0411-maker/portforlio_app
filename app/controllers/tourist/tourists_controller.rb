@@ -1,10 +1,10 @@
-class Tourist::TouristsController < ApplicationController
+# frozen_string_literal: true
 
+class Tourist::TouristsController < ApplicationController
   before_action :authenticate_tourist!, only: %i[show edit update destroy]
   before_action :correct_tourist, only: %i[show edit update destroy]
 
-  def show
-  end
+  def show; end
 
   def edit
     @tourist = Tourist.find(params[:id])

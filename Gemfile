@@ -33,12 +33,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'capybara'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'capybara'
-  gem 'selenium-webdriver'
   gem 'rspec_junit_formatter'
+  gem 'selenium-webdriver'
 end
 
 group :development do
@@ -63,7 +63,7 @@ gem 'font-awesome-sass'
 gem 'geocoder'
 gem 'jquery-rails'
 gem 'kaminari', '~> 1.2.1'
+gem 'paranoia'
 gem 'pry-byebug'
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
-gem 'paranoia'

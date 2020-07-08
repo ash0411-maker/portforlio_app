@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::GuidesController < ApplicationController
   before_action :authenticate_admin!
 
@@ -28,7 +30,6 @@ class Admin::GuidesController < ApplicationController
       else
         flash[:notice] = '情報の更新に失敗しました'
         render 'show'
-       end
       end
   end
 
