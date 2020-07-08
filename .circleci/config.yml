@@ -10,8 +10,9 @@ jobs:
         environment:
           - RAILS_ENV: 'test'
       - image: circleci/mysql:8.0
+        command: mysqld --default-authentication-plugin=mysql_native_password
         environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+          - MYSQL_PASSWORD: "password"
           - MYSQL_ROOT_HOST: '%'
 
       # Specify service dependencies here if necessary
