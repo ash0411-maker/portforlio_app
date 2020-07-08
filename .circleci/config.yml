@@ -14,6 +14,7 @@ jobs:
         name: "db"
         command: mysqld --default-authentication-plugin=mysql_native_password
         environment:
+          - MYSQL_ROOT_PASSWORD: password
           - MYSQL_PASSWORD: "password"
           - MYSQL_ROOT_HOST: '%'
 
