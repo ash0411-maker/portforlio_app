@@ -10,13 +10,10 @@ jobs:
         environment:
           - RAILS_ENV: 'test'
       - image: circleci/mysql:8.0
-        #追記
         name: "db"
         command: mysqld --default-authentication-plugin=mysql_native_password
         environment:
           - MYSQL_ROOT_PASSWORD: password
-          - MYSQL_PASSWORD: "password"
-          - MYSQL_ROOT_HOST: '%'
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -48,7 +45,7 @@ jobs:
 # rubocop。
       - run:
           name: Rubocop
-          command: bundle exec rubocop
+          command: bundle exec rubocop -a
 
 # rspec
       # run tests!
