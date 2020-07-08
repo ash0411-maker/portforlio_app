@@ -31,6 +31,7 @@ class Admin::GuidesController < ApplicationController
         flash[:notice] = '情報の更新に失敗しました'
         render 'show'
       end
+    end
   end
 
   private
