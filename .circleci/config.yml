@@ -10,10 +10,11 @@ jobs:
         environment:
           - RAILS_ENV: 'test'
       - image: circleci/mysql:8.0
+        name: "db"
         command: mysqld --default-authentication-plugin=mysql_native_password
         environment:
-          - username: <%= ENV.fetch("MYSQL_USERNAME", "root") %>
-          - password: <%= ENV.fetch("MYSQL_PASSWORD", "password") %>
+          - MYSQL_PASSWORD: "password"
+          - MYSQL_ROOT_HOST: '%'
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
