@@ -10,6 +10,7 @@ jobs:
         environment:
           - RAILS_ENV: 'test'
       - image: circleci/mysql:8.0
+        #追記
         name: "db"
         command: mysqld --default-authentication-plugin=mysql_native_password
         environment:
