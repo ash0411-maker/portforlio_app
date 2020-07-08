@@ -10,9 +10,10 @@ jobs:
         environment:
           - RAILS_ENV: 'test'
       - image: circleci/mysql:8.0
+        name: "db"
+        command: mysqld --default-authentication-plugin=mysql_native_password
         environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
-          - MYSQL_ROOT_HOST: '%'
+          - MYSQL_ROOT_PASSWORD: password
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -31,16 +32,11 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run:
-          name: install dependencies
-          command: |
-
+      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
       - save_cache:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-      - run: mv config/database.yml.ci config/database.yml 
 
       # Database setup
       - run: bundle exec rake db:create
@@ -49,7 +45,7 @@ jobs:
 # rubocop。
       - run:
           name: Rubocop
-          command: bundle exec rubocop
+          command: bundle exec rubocop -a
 
 # rspec
       # run tests!

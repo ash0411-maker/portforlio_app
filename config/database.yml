@@ -25,12 +25,3 @@ production:
   username: <%= ENV['DB_USERNAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
 
-
-# production:
-#   <<: *default
-#   database: FANTRA_production
-#   username: FANTRA
-#   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
-
-
- 
