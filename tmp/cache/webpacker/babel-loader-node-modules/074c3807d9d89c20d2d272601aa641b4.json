@@ -1,0 +1,1 @@
+{"ast":null,"code":"define(function () {\n  \"use strict\"; // rsingleTag matches a string consisting of a single HTML element with no attributes\n  // and captures the element's name\n\n  return /^<([a-z][^\\/\\0>:\\x20\\t\\r\\n\\f]*)[\\x20\\t\\r\\n\\f]*\\/?>(?:<\\/\\1>|)$/i;\n});","map":null,"metadata":{},"sourceType":"module"}

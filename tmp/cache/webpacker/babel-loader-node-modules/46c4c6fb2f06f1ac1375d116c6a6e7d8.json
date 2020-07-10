@@ -1,0 +1,1 @@
+{"ast":null,"code":"define(function () {\n  \"use strict\";\n\n  return function isWindow(obj) {\n    return obj != null && obj === obj.window;\n  };\n});","map":null,"metadata":{},"sourceType":"module"}

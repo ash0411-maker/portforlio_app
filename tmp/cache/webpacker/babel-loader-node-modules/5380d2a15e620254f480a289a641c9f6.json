@@ -1,0 +1,1 @@
+{"ast":null,"code":"define(function () {\n  \"use strict\"; // Only count HTML whitespace\n  // Other whitespace should count in values\n  // https://infra.spec.whatwg.org/#ascii-whitespace\n\n  return /[^\\x20\\t\\r\\n\\f]+/g;\n});","map":null,"metadata":{},"sourceType":"module"}

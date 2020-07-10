@@ -1,0 +1,1 @@
+{"ast":null,"code":"define([\"../core\", \"../selector\", \"../effects\"], function (jQuery) {\n  \"use strict\";\n\n  jQuery.expr.pseudos.animated = function (elem) {\n    return jQuery.grep(jQuery.timers, function (fn) {\n      return elem === fn.elem;\n    }).length;\n  };\n});","map":null,"metadata":{},"sourceType":"module"}

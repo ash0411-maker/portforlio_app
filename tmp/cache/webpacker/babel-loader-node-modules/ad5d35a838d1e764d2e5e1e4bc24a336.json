@@ -1,0 +1,1 @@
+{"ast":null,"code":"define([\"./arr\"], function (arr) {\n  \"use strict\";\n\n  return arr.slice;\n});","map":null,"metadata":{},"sourceType":"module"}

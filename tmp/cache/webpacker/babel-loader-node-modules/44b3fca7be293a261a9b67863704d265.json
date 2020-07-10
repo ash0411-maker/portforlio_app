@@ -1,0 +1,1 @@
+{"ast":null,"code":"define([\"../var/support\"], function (support) {\n  \"use strict\";\n\n  support.focusin = \"onfocusin\" in window;\n  return support;\n});","map":null,"metadata":{},"sourceType":"module"}

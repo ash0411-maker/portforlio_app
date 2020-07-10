@@ -1,0 +1,1 @@
+{"ast":null,"code":"define([\"./hasOwn\"], function (hasOwn) {\n  \"use strict\";\n\n  return hasOwn.toString;\n});","map":null,"metadata":{},"sourceType":"module"}

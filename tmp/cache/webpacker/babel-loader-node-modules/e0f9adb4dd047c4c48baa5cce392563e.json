@@ -1,0 +1,1 @@
+{"ast":null,"code":"define(function () {\n  \"use strict\";\n\n  return /^$|^module$|\\/(?:java|ecma)script/i;\n});","map":null,"metadata":{},"sourceType":"module"}

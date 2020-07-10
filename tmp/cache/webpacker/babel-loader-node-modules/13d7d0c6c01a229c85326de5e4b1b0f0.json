@@ -1,0 +1,1 @@
+{"ast":null,"code":"define([\"../var/pnum\"], function (pnum) {\n  \"use strict\";\n\n  return new RegExp(\"^(?:([+-])=|)(\" + pnum + \")([a-z%]*)$\", \"i\");\n});","map":null,"metadata":{},"sourceType":"module"}

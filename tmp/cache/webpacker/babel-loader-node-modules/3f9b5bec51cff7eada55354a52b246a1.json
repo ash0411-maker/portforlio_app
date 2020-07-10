@@ -1,0 +1,1 @@
+{"ast":null,"code":"define(function () {\n  \"use strict\";\n\n  return [\"Top\", \"Right\", \"Bottom\", \"Left\"];\n});","map":null,"metadata":{},"sourceType":"module"}

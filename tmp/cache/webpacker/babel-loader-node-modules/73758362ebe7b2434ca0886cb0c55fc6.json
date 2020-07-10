@@ -1,0 +1,1 @@
+{"ast":null,"code":"define([\"./class2type\"], function (class2type) {\n  \"use strict\";\n\n  return class2type.hasOwnProperty;\n});","map":null,"metadata":{},"sourceType":"module"}

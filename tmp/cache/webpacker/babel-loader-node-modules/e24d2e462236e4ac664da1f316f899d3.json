@@ -1,0 +1,1 @@
+{"ast":null,"code":"define([\"./cssExpand\"], function (cssExpand) {\n  \"use strict\";\n\n  return new RegExp(cssExpand.join(\"|\"), \"i\");\n});","map":null,"metadata":{},"sourceType":"module"}

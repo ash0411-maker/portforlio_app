@@ -1,0 +1,1 @@
+{"ast":null,"code":"define(function () {\n  \"use strict\";\n\n  return window.location;\n});","map":null,"metadata":{},"sourceType":"module"}

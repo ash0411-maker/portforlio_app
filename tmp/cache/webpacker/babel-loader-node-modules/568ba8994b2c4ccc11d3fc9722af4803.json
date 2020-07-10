@@ -1,0 +1,1 @@
+{"ast":null,"code":"define([\"./fnToString\"], function (fnToString) {\n  \"use strict\";\n\n  return fnToString.call(Object);\n});","map":null,"metadata":{},"sourceType":"module"}
