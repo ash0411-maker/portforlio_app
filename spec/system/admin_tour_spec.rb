@@ -64,13 +64,13 @@ RSpec.describe 'Admintour', type: :system, js: true do
                 expect(page)
                 .to have_content '新たな都市を追加しました。'
             end
-            it 'city投稿　同じ名前の都市があるから失敗する' do
-                login admin
-                visit admin_cities_path
-                fill_in 'city[name]', with:'京都'
-                click_on '追加'
-                expect(page).to have_content 'エラー'
-            end
+            # it 'city投稿　同じ名前の都市があるから失敗する' do
+            #     login admin
+            #     visit admin_cities_path
+            #     fill_in 'city[name]', with:'京都'
+            #     click_on '追加'
+            #     expect(page).to have_content 'エラー'
+            # end
             it 'city投稿　空白で投稿すると失敗する' do
                 login admin
                 visit admin_cities_path

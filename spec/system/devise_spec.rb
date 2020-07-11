@@ -44,7 +44,7 @@ RSpec.describe 'Devise', type: :system, js: true do
             it 'かんたんログイン' do
                 visit new_admin_session_path
                 click_on 'かんたんログイン（閲覧用）'
-                expect(current_path).to eq(admin_home_top_path)
+                expect(current_path).to eq(guest_admin_path)
             end
             it 'ログアウト' do
                 login admin
@@ -119,7 +119,7 @@ RSpec.describe 'Devise', type: :system, js: true do
             it 'かんたんログイン' do
                 visit new_guide_session_path
                 click_on 'ゲストログイン（閲覧用）'
-                expect(current_path).to eq(guide_guide_home_top_path(1))
+                expect(current_path).to eq(guest_guide_path)
             end
             it 'ログアウトに成功する' do
                 login guide
@@ -188,7 +188,7 @@ RSpec.describe 'Devise', type: :system, js: true do
             it 'かんたんログイン' do
                 visit new_tourist_session_path
                 click_on 'ゲストログイン（閲覧用）'
-                expect(current_path).to eq(tourist_tourist_tours_path(1))
+                expect(current_path).to eq(guest_tourist_path)
             end
             it 'ログアウト' do
                 login tourist

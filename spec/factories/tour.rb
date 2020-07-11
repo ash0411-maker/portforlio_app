@@ -1,18 +1,4 @@
 FactoryBot.define do
-  module GeocoderStub
-    def self.stub_with(tour)
-      Geocoder.configure(lookup: :test)
-      results = [
-        {
-          'latitude' => Faker::Address.latitude.ceil(9),
-          'longitude' => Faker::Address.longitude.ceil(9)
-        }
-      ]
-      queries = [tour.meetingpoint_address]
-      queries.each { |q| Geocoder::Lookup::Test.add_stub(q, results) }
-    end
-  end
-
   factory :tour do
     association :guide
     association :genre
@@ -28,4 +14,3 @@ FactoryBot.define do
     meetingpoint_introduction { Faker::Lorem.characters(number:5) }
   end
 end
-  
