@@ -52,7 +52,7 @@ RSpec.describe 'GuideGuide', type: :system, js: true do
                 fill_in 'guide[phone_number]', with:'Faker::PhoneNumber.cell_phone'
                 click_on '編集'
                 page.driver.browser.switch_to.alert.accept
-                expect(current_path).to eq(guide_guide_path(guide))
+                expect(current_path).to eq(edit_guide_guide_path(guide))
             end
             it 'メールアドレスを空白にするとGuide情報編集に失敗する' do
                 login guide

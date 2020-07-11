@@ -13,32 +13,32 @@ class Guide::GuidesController < ApplicationController
     @guide = Guide.find(params[:id])
   end
 
-def update
-  @guide = Guide.find(params[:id])
-  if @guide.update(guide_params)
-    redirect_to guide_guide_path(@guide)
-  else
-    render 'edit'
+  def update
+    @guide = Guide.find(params[:id])
+    if @guide.update(guide_params)
+      redirect_to guide_guide_path(@guide)
+    else
+      render 'edit'
+    end
   end
-end
 
-def destroy
-  @guide = Guide.find(params[:id])
-  if @guide.id == 1
-    redirect_to guide_guide_cannot_guide_delete_path(current_guide)
-  else
-    @guide.destroy
-    redirect_to guide_thanks_path
+  def destroy
+    @guide = Guide.find(params[:id])
+    if @guide.id == 1
+      redirect_to guide_guide_cannot_guide_delete_path(current_guide)
+    else
+      @guide.destroy
+      redirect_to guide_thanks_path
+    end
   end
-end
 
-def to_guide_edit; end
+  def to_guide_edit; end
 
-def delete; end
+  def delete; end
 
-def cannot_delete; end
+  def cannot_delete; end
 
-def thanks; end
+  def thanks; end
 
 
   private
