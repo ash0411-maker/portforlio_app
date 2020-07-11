@@ -1,0 +1,91 @@
+<div class = "container">
+	<div class = "row">
+		<h2>ツーリスト詳細</h2>
+		<div class = "col-xs-8">
+			<div class =  "panel panel-default">
+				<div class="panel-heading text-center">
+					<h2 class="panel-title"><strong><%= tourist.family_name %> <%= tourist.name %></strong> 様</h2>
+				</div>
+				<div class = "panel-body" >
+					<h4>会員ID ：　<%= tourist.id %><h4>
+					<h4>性別 ：　<%= tourist.sex %><h4>
+					<h4>国籍 ： <%= tourist.nationality %><h4>
+					<h4>生まれ年 ： <%= tourist.birth_year %><h4>
+					<h4>電話番号 ： <%= tourist.phone_number %><h4>
+					<h4>住所 ：
+						〒<%= tourist.postal_code %>
+						<%= tourist.address %>
+					<h4>
+					<h4>注文数 ： <%= tourist.orders.count %>件<h4>
+				</div>
+
+
+			<!------ ツーリスト会員ステータス更新 ------>
+				<div class = "panel-body">
+					<h4 class = "flash"><%= flash[:notice] %></h4>
+					<h4>会員ステータス</h4>
+					<%= form_for(tourist, url: admin_tourist_path(tourist)) do |f| %>
+						<% if tourist.deleted_at == nil %>
+							<span class="col-xs-3">
+								<%= f.radio_button :deleted_at, 0 , checked: true %>
+								<%= f.label :deleted_at, "有効" %>
+							</span>
+							<span class="col-xs-4">
+								<%= f.radio_button :deleted_at, 1, checked: false %>
+								<%= f.label :deleted_at, "退会" %>
+							</span>
+							<span class="col-xs-5">
+					    <% else %>
+							<span class="col-xs-3">
+								<%= f.radio_button :deleted_at, 0 , checked: false %>
+								<%= f.label :deleted_at, "有効" %>
+							</span>
+							<span class="col-xs-4">
+								<%= f.radio_button :deleted_at, 1, checked: true %>
+								<%= f.label :deleted_at, "退会" %>
+							</span>
+						<% end %>
+						<span><%= f.submit "更新", class: "btn btn-success" %></span>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class = "row">
+		<h2>
+			<strong><%= tourist.family_name %> <%= tourist.name %></strong> 様の予約一覧
+		</h2>
+		<div class = "col-xs-12">
+			<% if orders.count == 0 %>
+				<h2>予約はまだありません</h2>
+			<% else %>
+				<table class = "table">
+					<thead>
+						<tr class = "active">
+							<th class = "text-center">予約番号</th>
+							<th class = "text-center">ツアー都市</th>
+							<th class = "text-center">ツアージャンル</th>
+							<th class = "text-center">参加人数</th>
+							<th class = "text-center">支払金額</th>
+							<th class = "text-center"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% orders.each do |order| %>
+							<tr class = "text-center">
+								<td><%= order.id %></td>
+								<td><%= order.tour_city %></td>
+								<td><%= order.tour_genre %></td>
+								<td><%= order.total_people %></td>
+								<td>¥ <%= number_with_delimiter(order.tour_price) %></td>
+								<td><%= link_to "ツアー詳細", admin_tour_path(order.tour_id), class: "btn btn-default" %></td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+

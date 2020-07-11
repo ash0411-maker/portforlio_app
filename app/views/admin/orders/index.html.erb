@@ -1,15 +1,8 @@
 <div class = "container">
-		<div class = "row">
-			<div class = "col-xs-4">
-				<h1>過去すべての予約</h1>
-			</div>
-			<div class = "col-xs-8">
-				<p><%= flash[:warning] %></p>
-			    <%= form_tag(admin_search_order_path, method: :get) do %>
-			      <%= text_field_tag 'search[order_id]' %>
-			      <%= submit_tag '予約番号検索', class: "btn btn-primary" %>
-			    <% end %>
-			</div>
+	<div class = "row">
+		<div class = "col-xs-4">
+			<h1>過去すべての予約</h1>
 		</div>
+	</div>
 	<%= render 'index', day_of_orders: @day_of_orders, total_sales: @total_sales, day_of_total_sales: @day_of_total_sales  %>
 </div>

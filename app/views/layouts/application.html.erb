@@ -16,6 +16,13 @@
           <%# ---- AdminのFANTRAロゴ ---- %>
           <% if admin_signed_in? %>
             <%= link_to "FANTRA", admin_home_top_path, class: "logo" %>
+            <span class = "admin_search">
+              <%= form_tag(admin_searches_result_path, method: :get) do %>
+                <%= select_tag 'search[model]', options_for_select({ "予約番号" => "order", "ツーリスト番号" => "tourist", "ガイド番号" => "guide", "チャットルーム番号" => "room" }) %>
+                <%= text_field_tag 'search[content]' %>
+                <%= button_tag '<i class="fa fa-search"></i>ID検索'.html_safe, :type => "submit",:class =>"btn btn-default" %>
+              <% end %>
+            </span>
 
           <%# ---- GuideのFANTRAロゴ・マイページリンク ---- %>
           <% elsif guide_signed_in? %>

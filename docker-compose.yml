@@ -18,7 +18,6 @@ services:
       - .:/FANTRA
       - bundle:/usr/local/bundle
       - /app/vendor
-      - /app/tmp
       - /app/log
       - /app/.git
     ports:
@@ -46,16 +45,3 @@ volumes:
     driver: local
   bundle:
     driver: local
-
-
-
-
-
-
-
-
-
-
-
-
-

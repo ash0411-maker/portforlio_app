@@ -1,0 +1,74 @@
+version: 2.1
+orbs:
+  ruby: circleci/ruby@0.1.2
+
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/ruby:2.6.6-stretch-node
+        environment:
+          - RAILS_ENV: 'test'
+      - image: circleci/mysql:8.0
+        name: "db"
+        command: mysqld --default-authentication-plugin=mysql_native_password
+        environment:
+          - MYSQL_ROOT_PASSWORD: password
+      - image: selenium/standalone-chrome
+        name:  "chrome"
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:9.4
+
+    working_directory: ~/FANTRA
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - run: yarn install
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      # Database setup
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+
+      # googlemapAPI
+      - run:
+          name: GoogleMap API
+          command: |
+            touch .env
+            echo GOOGLEMAP=$GOOGLEMAP > .env
+
+# rspec
+      # run tests!
+      - run:
+          name: run tests
+          command: |
+            mkdir -p /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
+              circleci tests split --split-by=timings)"
+            bundle exec rspec \
+              --format progress \
+              --format RspecJunitFormatter \
+              --out /tmp/test-results/rspec.xml \
+              --format progress \
+              $TEST_FILES
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results

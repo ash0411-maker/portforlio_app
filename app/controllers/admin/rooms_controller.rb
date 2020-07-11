@@ -7,7 +7,7 @@ class Admin::RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
-    @messages = @room.messages # このルームのメッセージを全て取得
+    @chats = @room.chats # このルームのメッセージを全て取得
   end
 
   def destroy

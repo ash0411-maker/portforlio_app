@@ -24,6 +24,9 @@ require 'capybara/rspec'
 #
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
+def take_screenshot
+  page.driver.browser.save_screenshot "tmp/capybara/screenshot#{Time.now.strftime("%Y%m%d%H%M%S")}.png"
+end
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
 begin

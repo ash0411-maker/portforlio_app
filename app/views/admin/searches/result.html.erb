@@ -1,0 +1,59 @@
+<!------ 予約番号検索結果 ------>
+<% if @model == 'order' %>
+	<% if @order.nil? %>
+		<div class = "result-text">
+			<h2>予約IDが<strong class = "result-text-id"><%= @content %></strong>の予約はありません。</h2>
+			<h2>
+				<%= link_to "予約一覧へ", admin_orders_path, class: "btn btn-lg btn-warning" %>
+			</h2>
+		</div>
+	<% else %>
+		<h2 class = "result-text">予約IDが<strong class = "result-text-id"><%= @content %></strong>の検索結果</h2>
+		<%= render 'partial/admin_order', order: @order %>
+	<% end %>
+
+
+<!------ ツーリスト検索結果 ------>
+<% elsif @model == 'tourist' %>
+	<% if @tourist.nil? %>
+		<div class = "result-text">
+			<h2>ツーリストID <strong class = "result-text-id"><%= @content %></strong> はありません。</h2>
+			<h2>
+				<%= link_to "ツーリスト一覧へ", admin_tourists_path, class: "btn btn-lg btn-warning" %>
+			</h2>
+		</div>
+	<% else %>
+		<h2 class = "result-text">ツーリストID<strong class = "result-text-id"><%= @content %></strong>の検索結果</h2>
+		<%= render 'partial/admin_tourist', tourist: @tourist, orders: @orders %>
+	<% end %>
+
+
+<!------ ガイド検索結果 ------>
+<% elsif @model == 'guide' %>
+	<% if @guide.nil? %>
+		<div class = "result-text">
+			<h2>ガイドID<strong class = "result-text-id"><%= @content %></strong>はありません。</h2>
+			<h2>
+				<%= link_to "ガイド一覧へ", admin_guides_path, class: "btn btn-lg btn-warning" %>
+			</h2>
+		</div>
+	<% else %>
+		<h2 class = "result-text">ガイドID<strong class = "result-text-id"><%= @content %></strong>の検索結果</h2>
+		<%= render 'partial/admin_guide', guide: @guide %>
+	<% end %>
+
+
+<!------ チャットルーム検索結果 ------>
+<% elsif @model == 'room' %>
+	<% if @room.nil? %>
+		<div class = "result-text">
+			<h2>チャットルームID<strong class = "result-text-id"><%= @content %></strong>はありません。</h2>
+			<h2>
+				<%= link_to "チャットルーム一覧へ", admin_rooms_path, class: "btn btn-lg btn-warning" %>
+			</h2>
+		</div>
+	<% else %>
+		<h2 class = "result-text">チャットルームID<strong class = "result-text-id"><%= @content %></strong>の検索結果</h2>
+		<%= render 'partial/admin_room', room: @room, chats: @chats %>
+	<% end %>
+<% end %>
