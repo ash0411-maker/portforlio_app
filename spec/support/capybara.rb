@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Capybara.default_driver    = :selenium_chrome
 Capybara.javascript_driver = :selenium_chrome
 Capybara.server_host = Socket.ip_address_list.detect(&:ipv4_private?).ip_address
@@ -8,8 +10,8 @@ Capybara.ignore_hidden_elements = true
 Capybara.register_driver :selenium_chrome do |app|
   opts = {
     desired_capabilities: :chrome,
-    browser:              :remote,
-    url:                  "http://chrome:4444/wd/hub",
+    browser: :remote,
+    url: 'http://chrome:4444/wd/hub'
   }
   Capybara::Selenium::Driver.new(app, opts)
 end

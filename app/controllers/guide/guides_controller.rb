@@ -1,8 +1,8 @@
-class Guide::GuidesController < ApplicationController
+# frozen_string_literal: true
 
+class Guide::GuidesController < ApplicationController
   before_action :authenticate_guide!, only: %i[show edit update destroy]
   before_action :correct_guide, only: %i[show edit update destroy]
-
 
   def show
     @guide = Guide.find(params[:id])
@@ -39,7 +39,6 @@ class Guide::GuidesController < ApplicationController
   def cannot_delete; end
 
   def thanks; end
-
 
   private
 
