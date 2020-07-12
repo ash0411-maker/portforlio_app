@@ -7,6 +7,7 @@ class Tourist::SearchesController < ApplicationController
       if city_search_result.nil?
         @city_tours = nil
         @genres = Genre.all
+        @cities = City.all
       else
         @city_tours = city_search_result.tours.page(params[:page]).per(9)
         @genres = Genre.all
