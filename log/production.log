@@ -1,1 +1,993 @@
-#Railsのエラーログ
+#RailsのエラーログD, [2020-07-12T00:13:36.532264 #26139] DEBUG -- :   [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4 COLLATE utf8mb4_general_ci,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2020-07-12T00:13:36.611422 #26139] DEBUG -- :   [1m[35m (74.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+D, [2020-07-12T00:13:36.631813 #26139] DEBUG -- :   [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+D, [2020-07-12T00:13:36.636645 #26139] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4 COLLATE utf8mb4_general_ci,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2020-07-12T00:13:36.637648 #26139] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('5115071780885261685', 0)[0m
+D, [2020-07-12T00:13:36.651739 #26139] DEBUG -- :   [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+I, [2020-07-12T00:13:36.653443 #26139]  INFO -- : Migrating to DeviseCreateAdmins (20200618110858)
+D, [2020-07-12T00:13:36.676581 #26139] DEBUG -- :   [1m[35m (19.1ms)[0m  [1m[35mCREATE TABLE `admins` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+D, [2020-07-12T00:13:36.697187 #26139] DEBUG -- :   [1m[35m (12.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admins_on_email`  ON `admins` (`email`) [0m
+D, [2020-07-12T00:13:36.713472 #26139] DEBUG -- :   [1m[35m (11.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admins_on_reset_password_token`  ON `admins` (`reset_password_token`) [0m
+D, [2020-07-12T00:13:36.719269 #26139] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:36.719860 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200618110858')[0m
+D, [2020-07-12T00:13:36.723231 #26139] DEBUG -- :   [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:36.723306 #26139]  INFO -- : Migrating to DeviseCreateGuides (20200618124232)
+D, [2020-07-12T00:13:36.744737 #26139] DEBUG -- :   [1m[35m (19.5ms)[0m  [1m[35mCREATE TABLE `guides` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `is_active` tinyint(1) DEFAULT TRUE, `family_name` varchar(255), `name` varchar(255), `nationality` varchar(255), `identification_image_id` varchar(255), `postal_code` varchar(255), `address` varchar(255), `phone_number` varchar(255), `introduction` text, `selfy_image_id` varchar(255), `deleted_at` datetime)[0m
+D, [2020-07-12T00:13:36.765284 #26139] DEBUG -- :   [1m[35m (16.8ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_guides_on_email`  ON `guides` (`email`) [0m
+D, [2020-07-12T00:13:36.787895 #26139] DEBUG -- :   [1m[35m (17.6ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_guides_on_reset_password_token`  ON `guides` (`reset_password_token`) [0m
+D, [2020-07-12T00:13:36.789507 #26139] DEBUG -- :   [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:36.790219 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200618124232')[0m
+D, [2020-07-12T00:13:36.792941 #26139] DEBUG -- :   [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:36.793018 #26139]  INFO -- : Migrating to DeviseCreateTourists (20200618132743)
+D, [2020-07-12T00:13:36.814143 #26139] DEBUG -- :   [1m[35m (18.9ms)[0m  [1m[35mCREATE TABLE `tourists` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `is_active` tinyint(1) DEFAULT TRUE, `family_name` varchar(255), `name` varchar(255), `sex` varchar(255), `birth_year` int, `nationality` varchar(255), `postal_code` varchar(255), `address` varchar(255), `phone_number` varchar(255), `deleted_at` datetime)[0m
+D, [2020-07-12T00:13:36.833199 #26139] DEBUG -- :   [1m[35m (14.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_tourists_on_email`  ON `tourists` (`email`) [0m
+D, [2020-07-12T00:13:36.853367 #26139] DEBUG -- :   [1m[35m (14.7ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_tourists_on_reset_password_token`  ON `tourists` (`reset_password_token`) [0m
+D, [2020-07-12T00:13:36.855007 #26139] DEBUG -- :   [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:36.855742 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200618132743')[0m
+D, [2020-07-12T00:13:36.859388 #26139] DEBUG -- :   [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:36.859447 #26139]  INFO -- : Migrating to CreateTours (20200618235105)
+D, [2020-07-12T00:13:36.881969 #26139] DEBUG -- :   [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE `tours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `genre_id` int NOT NULL, `guide_id` int NOT NULL, `city_id` int NOT NULL, `title` varchar(255) NOT NULL, `body` text NOT NULL, `capacity` int NOT NULL, `price` int NOT NULL, `contents_of_price` varchar(255) NOT NULL, `is_active` tinyint(1) DEFAULT TRUE, `time` varchar(255) NOT NULL, `meetingpoint_address` varchar(255) NOT NULL, `meetingpoint_introduction` varchar(255) NOT NULL, `latitude` float(24), `longitude` float(24))[0m
+D, [2020-07-12T00:13:36.883036 #26139] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:36.883668 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200618235105')[0m
+D, [2020-07-12T00:13:36.887327 #26139] DEBUG -- :   [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:36.887386 #26139]  INFO -- : Migrating to CreateTourPhotos (20200619000945)
+D, [2020-07-12T00:13:36.908035 #26139] DEBUG -- :   [1m[35m (16.8ms)[0m  [1m[35mCREATE TABLE `tour_photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `image_id` varchar(255) NOT NULL, `tour_id` int NOT NULL)[0m
+D, [2020-07-12T00:13:36.909198 #26139] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:36.909839 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200619000945')[0m
+D, [2020-07-12T00:13:36.912484 #26139] DEBUG -- :   [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:36.912540 #26139]  INFO -- : Migrating to CreateCities (20200619005904)
+D, [2020-07-12T00:13:36.932919 #26139] DEBUG -- :   [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE `cities` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `name` varchar(255) NOT NULL)[0m
+D, [2020-07-12T00:13:36.934305 #26139] DEBUG -- :   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:36.935065 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200619005904')[0m
+D, [2020-07-12T00:13:36.937857 #26139] DEBUG -- :   [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:36.937978 #26139]  INFO -- : Migrating to CreateGenres (20200619010008)
+D, [2020-07-12T00:13:36.959572 #26139] DEBUG -- :   [1m[35m (19.4ms)[0m  [1m[35mCREATE TABLE `genres` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `name` varchar(255) NOT NULL)[0m
+D, [2020-07-12T00:13:36.960734 #26139] DEBUG -- :   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:36.961317 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200619010008')[0m
+D, [2020-07-12T00:13:36.964696 #26139] DEBUG -- :   [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:36.964757 #26139]  INFO -- : Migrating to CreateBookMarks (20200620023244)
+D, [2020-07-12T00:13:36.984177 #26139] DEBUG -- :   [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE `book_marks` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `tourist_id` int NOT NULL, `tour_id` int NOT NULL)[0m
+D, [2020-07-12T00:13:36.985239 #26139] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:36.985850 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200620023244')[0m
+D, [2020-07-12T00:13:36.988430 #26139] DEBUG -- :   [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:36.988503 #26139]  INFO -- : Migrating to CreateOrders (20200620084329)
+D, [2020-07-12T00:13:37.009069 #26139] DEBUG -- :   [1m[35m (18.4ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `status` int DEFAULT 0, `tourist_id` int NOT NULL, `tour_id` int NOT NULL, `guide_id` int NOT NULL, `tour_title` varchar(255) NOT NULL, `tour_body` text NOT NULL, `tour_capacity` int NOT NULL, `tour_contents_of_price` varchar(255) NOT NULL, `tour_time` varchar(255) NOT NULL, `tour_city` varchar(255) NOT NULL, `tour_genre` varchar(255) NOT NULL, `tour_price` int NOT NULL, `tour_date` datetime NOT NULL, `total_people` int NOT NULL, `total_price` int NOT NULL, `admin_sales` int NOT NULL, `guide_sales` int NOT NULL)[0m
+D, [2020-07-12T00:13:37.010264 #26139] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:37.010884 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200620084329')[0m
+D, [2020-07-12T00:13:37.013349 #26139] DEBUG -- :   [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:37.013442 #26139]  INFO -- : Migrating to CreateRooms (20200622000125)
+D, [2020-07-12T00:13:37.032914 #26139] DEBUG -- :   [1m[35m (17.2ms)[0m  [1m[35mCREATE TABLE `rooms` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `tourist_id` int NOT NULL, `guide_id` int NOT NULL)[0m
+D, [2020-07-12T00:13:37.034099 #26139] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:37.034740 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200622000125')[0m
+D, [2020-07-12T00:13:37.037356 #26139] DEBUG -- :   [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:37.037425 #26139]  INFO -- : Migrating to CreateChats (20200622000341)
+D, [2020-07-12T00:13:37.056822 #26139] DEBUG -- :   [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE `chats` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `room_id` int NOT NULL, `is_tourist` tinyint(1) NOT NULL, `message` text NOT NULL)[0m
+D, [2020-07-12T00:13:37.057847 #26139] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:37.058407 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200622000341')[0m
+D, [2020-07-12T00:13:37.061286 #26139] DEBUG -- :   [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:37.061353 #26139]  INFO -- : Migrating to CreateChatNotices (20200622032136)
+D, [2020-07-12T00:13:37.083331 #26139] DEBUG -- :   [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE `chat_notices` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `visitor_id` int NOT NULL, `visited_id` int NOT NULL, `checked` tinyint(1) DEFAULT FALSE NOT NULL, `chat_id` int NOT NULL)[0m
+D, [2020-07-12T00:13:37.084450 #26139] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:37.085030 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200622032136')[0m
+D, [2020-07-12T00:13:37.088236 #26139] DEBUG -- :   [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:37.088298 #26139]  INFO -- : Migrating to CreateReviews (20200622053038)
+D, [2020-07-12T00:13:37.108712 #26139] DEBUG -- :   [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE `reviews` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `comment` text NOT NULL, `tourist_id` int NOT NULL, `tour_id` int NOT NULL)[0m
+D, [2020-07-12T00:13:37.109982 #26139] DEBUG -- :   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:37.110608 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200622053038')[0m
+D, [2020-07-12T00:13:37.113018 #26139] DEBUG -- :   [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:37.113083 #26139]  INFO -- : Migrating to CreateNotifications (20200623072734)
+D, [2020-07-12T00:13:37.134048 #26139] DEBUG -- :   [1m[35m (17.9ms)[0m  [1m[35mCREATE TABLE `notifications` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `review_id` int, `tourist_id` int NOT NULL, `guide_id` int NOT NULL, `tour_id` int NOT NULL, `action` varchar(255) NOT NULL, `checked` tinyint(1) DEFAULT FALSE NOT NULL)[0m
+D, [2020-07-12T00:13:37.135160 #26139] DEBUG -- :   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:37.135724 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200623072734')[0m
+D, [2020-07-12T00:13:37.139117 #26139] DEBUG -- :   [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T00:13:37.139174 #26139]  INFO -- : Migrating to CreateContacts (20200624013017)
+D, [2020-07-12T00:13:37.160427 #26139] DEBUG -- :   [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE `contacts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `name` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `user_text` text NOT NULL, `admin_text` text)[0m
+D, [2020-07-12T00:13:37.161503 #26139] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:37.162139 #26139] DEBUG -- :   [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200624013017')[0m
+D, [2020-07-12T00:13:37.164622 #26139] DEBUG -- :   [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+D, [2020-07-12T00:13:37.169945 #26139] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+D, [2020-07-12T00:13:37.176419 #26139] DEBUG -- :   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T00:13:37.177102 #26139] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'production', '2020-07-12 00:13:37.175301', '2020-07-12 00:13:37.175301')[0m
+D, [2020-07-12T00:13:37.180556 #26139] DEBUG -- :   [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+D, [2020-07-12T00:13:37.181337 #26139] DEBUG -- :   [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('5115071780885261685')[0m
+I, [2020-07-12T02:34:53.810951 #26904]  INFO -- : [7d264d5d-65c0-4d49-853e-4d8275ecb60c] Started GET "/" for 125.8.190.99 at 2020-07-12 02:34:53 +0000
+I, [2020-07-12T02:34:53.816197 #26904]  INFO -- : [7d264d5d-65c0-4d49-853e-4d8275ecb60c] Processing by Home::ToursController#index as HTML
+I, [2020-07-12T02:34:53.834472 #26904]  INFO -- : [7d264d5d-65c0-4d49-853e-4d8275ecb60c]   Rendering home/tours/index.html.erb within layouts/application
+D, [2020-07-12T02:34:53.880875 #26904] DEBUG -- : [7d264d5d-65c0-4d49-853e-4d8275ecb60c]   [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4 COLLATE utf8mb4_general_ci,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2020-07-12T02:34:53.884082 #26904] DEBUG -- : [7d264d5d-65c0-4d49-853e-4d8275ecb60c]   [1m[36mTour Load (2.0ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-12T02:34:53.893770 #26904]  INFO -- : [7d264d5d-65c0-4d49-853e-4d8275ecb60c]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 56.1ms | Allocations: 3584)
+I, [2020-07-12T02:34:53.893858 #26904]  INFO -- : [7d264d5d-65c0-4d49-853e-4d8275ecb60c]   Rendered home/tours/index.html.erb within layouts/application (Duration: 59.3ms | Allocations: 4146)
+I, [2020-07-12T02:34:53.908072 #26904]  INFO -- : [7d264d5d-65c0-4d49-853e-4d8275ecb60c] Completed 200 OK in 92ms (Views: 77.8ms | ActiveRecord: 4.4ms | Allocations: 8720)
+I, [2020-07-12T02:34:53.979974 #26904]  INFO -- : [e932829c-4fe2-43ac-b6de-8a64d02186c9] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:34:53 +0000
+F, [2020-07-12T02:34:53.982059 #26904] FATAL -- : [e932829c-4fe2-43ac-b6de-8a64d02186c9]   
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[e932829c-4fe2-43ac-b6de-8a64d02186c9]   
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[e932829c-4fe2-43ac-b6de-8a64d02186c9] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:36:13.500546 #26904]  INFO -- : [6e46b271-3ade-4d91-b486-1c8f2d496f4d] Started GET "/guides/sign_up" for 125.8.190.99 at 2020-07-12 02:36:13 +0000
+I, [2020-07-12T02:36:13.501417 #26904]  INFO -- : [6e46b271-3ade-4d91-b486-1c8f2d496f4d] Processing by Devise::Guides::RegistrationsController#new as HTML
+I, [2020-07-12T02:36:13.561504 #26904]  INFO -- : [6e46b271-3ade-4d91-b486-1c8f2d496f4d]   Rendering devise/guides/registrations/new.html.erb within layouts/application
+I, [2020-07-12T02:36:13.565824 #26904]  INFO -- : [6e46b271-3ade-4d91-b486-1c8f2d496f4d]   Rendered devise/guides/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 207)
+I, [2020-07-12T02:36:13.569717 #26904]  INFO -- : [6e46b271-3ade-4d91-b486-1c8f2d496f4d]   Rendered devise/guides/shared/_links.html.erb (Duration: 1.5ms | Allocations: 527)
+I, [2020-07-12T02:36:13.570048 #26904]  INFO -- : [6e46b271-3ade-4d91-b486-1c8f2d496f4d]   Rendered devise/guides/registrations/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 3272)
+I, [2020-07-12T02:36:13.571276 #26904]  INFO -- : [6e46b271-3ade-4d91-b486-1c8f2d496f4d] Completed 200 OK in 70ms (Views: 12.2ms | ActiveRecord: 4.7ms | Allocations: 22161)
+I, [2020-07-12T02:36:13.846887 #26904]  INFO -- : [652f89e3-7c83-4c4d-bd30-e4786dd87641] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:36:13 +0000
+F, [2020-07-12T02:36:13.847446 #26904] FATAL -- : [652f89e3-7c83-4c4d-bd30-e4786dd87641]   
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[652f89e3-7c83-4c4d-bd30-e4786dd87641]   
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[652f89e3-7c83-4c4d-bd30-e4786dd87641] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:36:15.014292 #26904]  INFO -- : [5bb64ed4-829f-4a89-afe2-4a46dc2d146f] Started GET "/guides/sign_in_with_guest" for 125.8.190.99 at 2020-07-12 02:36:15 +0000
+F, [2020-07-12T02:36:15.014867 #26904] FATAL -- : [5bb64ed4-829f-4a89-afe2-4a46dc2d146f]   
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] ActionController::RoutingError (No route matches [GET] "/guides/sign_in_with_guest"):
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f]   
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[5bb64ed4-829f-4a89-afe2-4a46dc2d146f] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:36:20.040209 #26904]  INFO -- : [70678076-9e8b-4527-b21d-1a30a8e1a6c4] Started GET "/tourists/sign_in" for 125.8.190.99 at 2020-07-12 02:36:20 +0000
+I, [2020-07-12T02:36:20.040966 #26904]  INFO -- : [70678076-9e8b-4527-b21d-1a30a8e1a6c4] Processing by Devise::Tourists::SessionsController#new as HTML
+I, [2020-07-12T02:36:20.065598 #26904]  INFO -- : [70678076-9e8b-4527-b21d-1a30a8e1a6c4]   Rendering devise/tourists/sessions/new.html.erb within layouts/application
+I, [2020-07-12T02:36:20.070931 #26904]  INFO -- : [70678076-9e8b-4527-b21d-1a30a8e1a6c4]   Rendered devise/tourists/shared/_links.html.erb (Duration: 1.5ms | Allocations: 605)
+I, [2020-07-12T02:36:20.071019 #26904]  INFO -- : [70678076-9e8b-4527-b21d-1a30a8e1a6c4]   Rendered devise/tourists/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2372)
+I, [2020-07-12T02:36:20.072238 #26904]  INFO -- : [70678076-9e8b-4527-b21d-1a30a8e1a6c4] Completed 200 OK in 31ms (Views: 8.5ms | ActiveRecord: 2.9ms | Allocations: 17383)
+I, [2020-07-12T02:36:20.149873 #26904]  INFO -- : [8143b956-34da-4cb2-b94e-bc3128f3c8c3] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:36:20 +0000
+F, [2020-07-12T02:36:20.150409 #26904] FATAL -- : [8143b956-34da-4cb2-b94e-bc3128f3c8c3]   
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3]   
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[8143b956-34da-4cb2-b94e-bc3128f3c8c3] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:36:23.044123 #26904]  INFO -- : [79acc303-bf9b-4516-bd90-b47bb060e669] Started GET "/guides/sign_up" for 125.8.190.99 at 2020-07-12 02:36:23 +0000
+I, [2020-07-12T02:36:23.044867 #26904]  INFO -- : [79acc303-bf9b-4516-bd90-b47bb060e669] Processing by Devise::Guides::RegistrationsController#new as HTML
+I, [2020-07-12T02:36:23.046487 #26904]  INFO -- : [79acc303-bf9b-4516-bd90-b47bb060e669]   Rendering devise/guides/registrations/new.html.erb within layouts/application
+I, [2020-07-12T02:36:23.046931 #26904]  INFO -- : [79acc303-bf9b-4516-bd90-b47bb060e669]   Rendered devise/guides/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+I, [2020-07-12T02:36:23.048785 #26904]  INFO -- : [79acc303-bf9b-4516-bd90-b47bb060e669]   Rendered devise/guides/shared/_links.html.erb (Duration: 0.1ms | Allocations: 79)
+I, [2020-07-12T02:36:23.049071 #26904]  INFO -- : [79acc303-bf9b-4516-bd90-b47bb060e669]   Rendered devise/guides/registrations/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1303)
+I, [2020-07-12T02:36:23.050259 #26904]  INFO -- : [79acc303-bf9b-4516-bd90-b47bb060e669] Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 2766)
+I, [2020-07-12T02:36:23.109579 #26904]  INFO -- : [fdd61e92-ebde-48ca-995a-d94008a9e733] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:36:23 +0000
+F, [2020-07-12T02:36:23.110127 #26904] FATAL -- : [fdd61e92-ebde-48ca-995a-d94008a9e733]   
+[fdd61e92-ebde-48ca-995a-d94008a9e733] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[fdd61e92-ebde-48ca-995a-d94008a9e733]   
+[fdd61e92-ebde-48ca-995a-d94008a9e733] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[fdd61e92-ebde-48ca-995a-d94008a9e733] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:36:37.547602 #26904]  INFO -- : [c630d8c0-77eb-48cb-bcc6-097825376ab8] Started POST "/guides" for 125.8.190.99 at 2020-07-12 02:36:37 +0000
+I, [2020-07-12T02:36:37.548380 #26904]  INFO -- : [c630d8c0-77eb-48cb-bcc6-097825376ab8] Processing by Devise::Guides::RegistrationsController#create as HTML
+I, [2020-07-12T02:36:37.548439 #26904]  INFO -- : [c630d8c0-77eb-48cb-bcc6-097825376ab8]   Parameters: {"authenticity_token"=>"rvFDTxrEY8qAkBCEzOcg+Snhg1FABY5GUneW9BujfMVzwMwEqZuEtlOhi0/XDVzmksGPmMp1ZrG0Iggkf88XtA==", "guide"=>{"email"=>"a@a", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新規登録"}
+D, [2020-07-12T02:36:37.860493 #26904] DEBUG -- : [c630d8c0-77eb-48cb-bcc6-097825376ab8]   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-12T02:36:37.861592 #26904] DEBUG -- : [c630d8c0-77eb-48cb-bcc6-097825376ab8]   [1m[36mGuide Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM `guides` WHERE `guides`.`email` = BINARY 'a@a' AND `guides`.`deleted_at` IS NULL LIMIT 1[0m
+D, [2020-07-12T02:36:37.863448 #26904] DEBUG -- : [c630d8c0-77eb-48cb-bcc6-097825376ab8]   [1m[36mGuide Create (0.6ms)[0m  [1m[32mINSERT INTO `guides` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('a@a', '$2a$12$f.A8HDnpnMDckxyBJ8IsVegDMdN71KFaMVeoN7ee07xJ9OrKcBQTi', '2020-07-12 02:36:37.861980', '2020-07-12 02:36:37.861980')[0m
+D, [2020-07-12T02:36:37.914140 #26904] DEBUG -- : [c630d8c0-77eb-48cb-bcc6-097825376ab8]   [1m[35m (50.3ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-12T02:36:37.917519 #26904]  INFO -- : [c630d8c0-77eb-48cb-bcc6-097825376ab8] Redirected to http://54.250.64.149/guide/guides/1/home/top
+I, [2020-07-12T02:36:37.917665 #26904]  INFO -- : [c630d8c0-77eb-48cb-bcc6-097825376ab8] Completed 302 Found in 369ms (ActiveRecord: 52.3ms | Allocations: 5755)
+I, [2020-07-12T02:36:37.959135 #26904]  INFO -- : [50c6d5b0-e5ee-4045-8f31-250e4042d17a] Started GET "/guide/guides/1/home/top" for 125.8.190.99 at 2020-07-12 02:36:37 +0000
+I, [2020-07-12T02:36:37.959883 #26904]  INFO -- : [50c6d5b0-e5ee-4045-8f31-250e4042d17a] Processing by Guide::HomeController#top as HTML
+I, [2020-07-12T02:36:37.959929 #26904]  INFO -- : [50c6d5b0-e5ee-4045-8f31-250e4042d17a]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:36:37.962495 #26904] DEBUG -- : [50c6d5b0-e5ee-4045-8f31-250e4042d17a]   [1m[36mGuide Load (0.7ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+I, [2020-07-12T02:36:37.968502 #26904]  INFO -- : [50c6d5b0-e5ee-4045-8f31-250e4042d17a]   Rendering guide/home/top.html.erb within layouts/application
+D, [2020-07-12T02:36:37.971276 #26904] DEBUG -- : [50c6d5b0-e5ee-4045-8f31-250e4042d17a]   [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `orders` WHERE `orders`.`guide_id` = 1 AND `orders`.`created_at` BETWEEN '2020-07-11 15:00:00' AND '2020-07-12 14:59:59.999999'[0m
+I, [2020-07-12T02:36:37.971452 #26904]  INFO -- : [50c6d5b0-e5ee-4045-8f31-250e4042d17a]   Rendered guide/home/top.html.erb within layouts/application (Duration: 2.9ms | Allocations: 433)
+D, [2020-07-12T02:36:37.985308 #26904] DEBUG -- : [50c6d5b0-e5ee-4045-8f31-250e4042d17a]   [1m[36mRoom Load (1.1ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:36:37.993324 #26904] DEBUG -- : [50c6d5b0-e5ee-4045-8f31-250e4042d17a]   [1m[36mNotification Exists? (4.4ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:36:37.993986 #26904]  INFO -- : [50c6d5b0-e5ee-4045-8f31-250e4042d17a] Completed 200 OK in 34ms (Views: 16.5ms | ActiveRecord: 12.9ms | Allocations: 6143)
+I, [2020-07-12T02:36:38.055106 #26904]  INFO -- : [acfee6d0-f8aa-40f3-a7e7-5220c5666923] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:36:38 +0000
+F, [2020-07-12T02:36:38.055745 #26904] FATAL -- : [acfee6d0-f8aa-40f3-a7e7-5220c5666923]   
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923]   
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[acfee6d0-f8aa-40f3-a7e7-5220c5666923] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:36:41.665081 #26904]  INFO -- : [fe2efe56-b6b5-44d2-84b2-d4f103a0d914] Started GET "/guides/sign_out" for 125.8.190.99 at 2020-07-12 02:36:41 +0000
+F, [2020-07-12T02:36:41.665663 #26904] FATAL -- : [fe2efe56-b6b5-44d2-84b2-d4f103a0d914]   
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] ActionController::RoutingError (No route matches [GET] "/guides/sign_out"):
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914]   
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[fe2efe56-b6b5-44d2-84b2-d4f103a0d914] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:36:47.577374 #26904]  INFO -- : [bbbb3906-0a78-46f2-8328-3882c9f71f11] Started GET "/guide/guides/1/tours/new" for 125.8.190.99 at 2020-07-12 02:36:47 +0000
+I, [2020-07-12T02:36:47.578151 #26904]  INFO -- : [bbbb3906-0a78-46f2-8328-3882c9f71f11] Processing by Guide::ToursController#new as HTML
+I, [2020-07-12T02:36:47.578203 #26904]  INFO -- : [bbbb3906-0a78-46f2-8328-3882c9f71f11]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:36:47.580837 #26904] DEBUG -- : [bbbb3906-0a78-46f2-8328-3882c9f71f11]   [1m[36mGuide Load (0.8ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:36:47.582145 #26904] DEBUG -- : [bbbb3906-0a78-46f2-8328-3882c9f71f11]   [1m[36mGuide Load (0.6ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+I, [2020-07-12T02:36:47.582553 #26904]  INFO -- : [bbbb3906-0a78-46f2-8328-3882c9f71f11] Redirected to http://54.250.64.149/guide/guides/1/gudies/to_guide_edit
+I, [2020-07-12T02:36:47.609148 #26904]  INFO -- : [bbbb3906-0a78-46f2-8328-3882c9f71f11] Completed 302 Found in 31ms (ActiveRecord: 5.4ms | Allocations: 15792)
+I, [2020-07-12T02:36:47.647793 #26904]  INFO -- : [87c77d2b-d8b0-4622-80cc-90dcca1eb341] Started GET "/guide/guides/1/gudies/to_guide_edit" for 125.8.190.99 at 2020-07-12 02:36:47 +0000
+I, [2020-07-12T02:36:47.648523 #26904]  INFO -- : [87c77d2b-d8b0-4622-80cc-90dcca1eb341] Processing by Guide::GuidesController#to_guide_edit as HTML
+I, [2020-07-12T02:36:47.648570 #26904]  INFO -- : [87c77d2b-d8b0-4622-80cc-90dcca1eb341]   Parameters: {"guide_id"=>"1"}
+I, [2020-07-12T02:36:47.650584 #26904]  INFO -- : [87c77d2b-d8b0-4622-80cc-90dcca1eb341]   Rendering guide/guides/to_guide_edit.html.erb within layouts/application
+D, [2020-07-12T02:36:47.653601 #26904] DEBUG -- : [87c77d2b-d8b0-4622-80cc-90dcca1eb341]   [1m[36mGuide Load (0.8ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+I, [2020-07-12T02:36:47.654030 #26904]  INFO -- : [87c77d2b-d8b0-4622-80cc-90dcca1eb341]   Rendered guide/guides/to_guide_edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 524)
+D, [2020-07-12T02:36:47.655992 #26904] DEBUG -- : [87c77d2b-d8b0-4622-80cc-90dcca1eb341]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:36:47.657393 #26904] DEBUG -- : [87c77d2b-d8b0-4622-80cc-90dcca1eb341]   [1m[36mNotification Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:36:47.658066 #26904]  INFO -- : [87c77d2b-d8b0-4622-80cc-90dcca1eb341] Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 1.9ms | Allocations: 3305)
+I, [2020-07-12T02:36:47.733726 #26904]  INFO -- : [f3c42ba4-6f45-4fb5-a4d0-84078298371e] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:36:47 +0000
+F, [2020-07-12T02:36:47.734298 #26904] FATAL -- : [f3c42ba4-6f45-4fb5-a4d0-84078298371e]   
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e]   
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[f3c42ba4-6f45-4fb5-a4d0-84078298371e] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:36:48.403828 #26904]  INFO -- : [e7d16d61-4b73-400d-a287-a8e0d531e3ab] Started GET "/guide/guides/1/tours" for 125.8.190.99 at 2020-07-12 02:36:48 +0000
+I, [2020-07-12T02:36:48.404651 #26904]  INFO -- : [e7d16d61-4b73-400d-a287-a8e0d531e3ab] Processing by Guide::ToursController#index as HTML
+I, [2020-07-12T02:36:48.404710 #26904]  INFO -- : [e7d16d61-4b73-400d-a287-a8e0d531e3ab]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:36:48.407419 #26904] DEBUG -- : [e7d16d61-4b73-400d-a287-a8e0d531e3ab]   [1m[36mGuide Load (0.9ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:36:48.408696 #26904] DEBUG -- : [e7d16d61-4b73-400d-a287-a8e0d531e3ab]   [1m[36mGuide Load (0.6ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+I, [2020-07-12T02:36:48.410750 #26904]  INFO -- : [e7d16d61-4b73-400d-a287-a8e0d531e3ab]   Rendering guide/tours/index.html.erb within layouts/application
+D, [2020-07-12T02:36:48.413564 #26904] DEBUG -- : [e7d16d61-4b73-400d-a287-a8e0d531e3ab]   [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+D, [2020-07-12T02:36:48.416092 #26904] DEBUG -- : [e7d16d61-4b73-400d-a287-a8e0d531e3ab]   [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` ORDER BY `tours`.`created_at` DESC LIMIT 9 OFFSET 0[0m
+I, [2020-07-12T02:36:48.416468 #26904]  INFO -- : [e7d16d61-4b73-400d-a287-a8e0d531e3ab]   Rendered guide/tours/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1076)
+D, [2020-07-12T02:36:48.418471 #26904] DEBUG -- : [e7d16d61-4b73-400d-a287-a8e0d531e3ab]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:36:48.419779 #26904] DEBUG -- : [e7d16d61-4b73-400d-a287-a8e0d531e3ab]   [1m[36mNotification Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:36:48.420425 #26904]  INFO -- : [e7d16d61-4b73-400d-a287-a8e0d531e3ab] Completed 200 OK in 16ms (Views: 6.5ms | ActiveRecord: 5.7ms | Allocations: 4619)
+I, [2020-07-12T02:36:48.490186 #26904]  INFO -- : [6fff4160-1e58-45e1-8134-84eb86a9e095] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:36:48 +0000
+F, [2020-07-12T02:36:48.490748 #26904] FATAL -- : [6fff4160-1e58-45e1-8134-84eb86a9e095]   
+[6fff4160-1e58-45e1-8134-84eb86a9e095] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[6fff4160-1e58-45e1-8134-84eb86a9e095]   
+[6fff4160-1e58-45e1-8134-84eb86a9e095] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[6fff4160-1e58-45e1-8134-84eb86a9e095] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:36:49.208882 #26904]  INFO -- : [0e20e4a8-ad6b-4ff3-bb14-01ab1898f2b8] Started GET "/guide/guides/1/notifications" for 125.8.190.99 at 2020-07-12 02:36:49 +0000
+I, [2020-07-12T02:36:49.209643 #26904]  INFO -- : [0e20e4a8-ad6b-4ff3-bb14-01ab1898f2b8] Processing by Guide::NotificationsController#index as HTML
+I, [2020-07-12T02:36:49.209696 #26904]  INFO -- : [0e20e4a8-ad6b-4ff3-bb14-01ab1898f2b8]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:36:49.212165 #26904] DEBUG -- : [0e20e4a8-ad6b-4ff3-bb14-01ab1898f2b8]   [1m[36mGuide Load (0.7ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:36:49.213421 #26904] DEBUG -- : [0e20e4a8-ad6b-4ff3-bb14-01ab1898f2b8]   [1m[36mGuide Load (0.6ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+D, [2020-07-12T02:36:49.215086 #26904] DEBUG -- : [0e20e4a8-ad6b-4ff3-bb14-01ab1898f2b8]   [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT `notifications`.* FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE ORDER BY `notifications`.`created_at` DESC LIMIT 20 OFFSET 0[0m
+I, [2020-07-12T02:36:49.216659 #26904]  INFO -- : [0e20e4a8-ad6b-4ff3-bb14-01ab1898f2b8]   Rendering guide/notifications/index.html.erb within layouts/application
+D, [2020-07-12T02:36:49.219079 #26904] DEBUG -- : [0e20e4a8-ad6b-4ff3-bb14-01ab1898f2b8]   [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 ORDER BY `notifications`.`created_at` DESC LIMIT 20 OFFSET 0) subquery_for_count[0m
+I, [2020-07-12T02:36:49.219196 #26904]  INFO -- : [0e20e4a8-ad6b-4ff3-bb14-01ab1898f2b8]   Rendered guide/notifications/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 660)
+D, [2020-07-12T02:36:49.221270 #26904] DEBUG -- : [0e20e4a8-ad6b-4ff3-bb14-01ab1898f2b8]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:36:49.222392 #26904] DEBUG -- : [0e20e4a8-ad6b-4ff3-bb14-01ab1898f2b8]   [1m[36mNotification Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:36:49.223041 #26904]  INFO -- : [0e20e4a8-ad6b-4ff3-bb14-01ab1898f2b8] Completed 200 OK in 13ms (Views: 5.6ms | ActiveRecord: 3.6ms | Allocations: 4504)
+I, [2020-07-12T02:36:49.293789 #26904]  INFO -- : [ffb5343f-2864-4dda-a524-5cc6c0b8e181] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:36:49 +0000
+F, [2020-07-12T02:36:49.294389 #26904] FATAL -- : [ffb5343f-2864-4dda-a524-5cc6c0b8e181]   
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181]   
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[ffb5343f-2864-4dda-a524-5cc6c0b8e181] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:36:49.934090 #26904]  INFO -- : [3e5d4ebf-cebb-4163-af03-77cb6ec164f3] Started GET "/guide/guides/1/rooms" for 125.8.190.99 at 2020-07-12 02:36:49 +0000
+I, [2020-07-12T02:36:49.934854 #26904]  INFO -- : [3e5d4ebf-cebb-4163-af03-77cb6ec164f3] Processing by Guide::RoomsController#index as HTML
+I, [2020-07-12T02:36:49.934904 #26904]  INFO -- : [3e5d4ebf-cebb-4163-af03-77cb6ec164f3]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:36:49.937652 #26904] DEBUG -- : [3e5d4ebf-cebb-4163-af03-77cb6ec164f3]   [1m[36mGuide Load (0.9ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:36:49.938824 #26904] DEBUG -- : [3e5d4ebf-cebb-4163-af03-77cb6ec164f3]   [1m[36mGuide Load (0.5ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+I, [2020-07-12T02:36:49.940982 #26904]  INFO -- : [3e5d4ebf-cebb-4163-af03-77cb6ec164f3]   Rendering guide/rooms/index.html.erb within layouts/application
+D, [2020-07-12T02:36:49.943378 #26904] DEBUG -- : [3e5d4ebf-cebb-4163-af03-77cb6ec164f3]   [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `rooms` WHERE `rooms`.`guide_id` = 1 ORDER BY `rooms`.`created_at` DESC LIMIT 10 OFFSET 0) subquery_for_count[0m
+I, [2020-07-12T02:36:49.943746 #26904]  INFO -- : [3e5d4ebf-cebb-4163-af03-77cb6ec164f3]   Rendered guide/rooms/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 756)
+I, [2020-07-12T02:36:49.943902 #26904]  INFO -- : [3e5d4ebf-cebb-4163-af03-77cb6ec164f3] Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.1ms | Allocations: 3051)
+F, [2020-07-12T02:36:49.944658 #26904] FATAL -- : [3e5d4ebf-cebb-4163-af03-77cb6ec164f3]   
+[3e5d4ebf-cebb-4163-af03-77cb6ec164f3] ActionView::Template::Error (The asset "guide_chat.png" is not present in the asset pipeline.):
+[3e5d4ebf-cebb-4163-af03-77cb6ec164f3]      8: 					予約が入ればメッセージを送りましょう！
+[3e5d4ebf-cebb-4163-af03-77cb6ec164f3]      9: 				</h2>
+[3e5d4ebf-cebb-4163-af03-77cb6ec164f3]     10: 				<span>
+[3e5d4ebf-cebb-4163-af03-77cb6ec164f3]     11: 					<%= image_tag 'guide_chat.png', size: '900x400' %>
+[3e5d4ebf-cebb-4163-af03-77cb6ec164f3]     12: 				</span>
+[3e5d4ebf-cebb-4163-af03-77cb6ec164f3]     13: 			</div>
+[3e5d4ebf-cebb-4163-af03-77cb6ec164f3]     14: 		</div>
+[3e5d4ebf-cebb-4163-af03-77cb6ec164f3]   
+[3e5d4ebf-cebb-4163-af03-77cb6ec164f3] app/views/guide/rooms/index.html.erb:11
+I, [2020-07-12T02:36:52.218189 #26904]  INFO -- : [44617182-7edb-4b2a-8229-7ff1a9328cbd] Started GET "/guide/guides/1/rooms" for 125.8.190.99 at 2020-07-12 02:36:52 +0000
+I, [2020-07-12T02:36:52.218979 #26904]  INFO -- : [44617182-7edb-4b2a-8229-7ff1a9328cbd] Processing by Guide::RoomsController#index as HTML
+I, [2020-07-12T02:36:52.219026 #26904]  INFO -- : [44617182-7edb-4b2a-8229-7ff1a9328cbd]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:36:52.221578 #26904] DEBUG -- : [44617182-7edb-4b2a-8229-7ff1a9328cbd]   [1m[36mGuide Load (0.8ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:36:52.222765 #26904] DEBUG -- : [44617182-7edb-4b2a-8229-7ff1a9328cbd]   [1m[36mGuide Load (0.5ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+I, [2020-07-12T02:36:52.223735 #26904]  INFO -- : [44617182-7edb-4b2a-8229-7ff1a9328cbd]   Rendering guide/rooms/index.html.erb within layouts/application
+D, [2020-07-12T02:36:52.224653 #26904] DEBUG -- : [44617182-7edb-4b2a-8229-7ff1a9328cbd]   [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `rooms` WHERE `rooms`.`guide_id` = 1 ORDER BY `rooms`.`created_at` DESC LIMIT 10 OFFSET 0) subquery_for_count[0m
+I, [2020-07-12T02:36:52.224976 #26904]  INFO -- : [44617182-7edb-4b2a-8229-7ff1a9328cbd]   Rendered guide/rooms/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 323)
+I, [2020-07-12T02:36:52.225131 #26904]  INFO -- : [44617182-7edb-4b2a-8229-7ff1a9328cbd] Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.8ms | Allocations: 1700)
+F, [2020-07-12T02:36:52.225893 #26904] FATAL -- : [44617182-7edb-4b2a-8229-7ff1a9328cbd]   
+[44617182-7edb-4b2a-8229-7ff1a9328cbd] ActionView::Template::Error (The asset "guide_chat.png" is not present in the asset pipeline.):
+[44617182-7edb-4b2a-8229-7ff1a9328cbd]      8: 					予約が入ればメッセージを送りましょう！
+[44617182-7edb-4b2a-8229-7ff1a9328cbd]      9: 				</h2>
+[44617182-7edb-4b2a-8229-7ff1a9328cbd]     10: 				<span>
+[44617182-7edb-4b2a-8229-7ff1a9328cbd]     11: 					<%= image_tag 'guide_chat.png', size: '900x400' %>
+[44617182-7edb-4b2a-8229-7ff1a9328cbd]     12: 				</span>
+[44617182-7edb-4b2a-8229-7ff1a9328cbd]     13: 			</div>
+[44617182-7edb-4b2a-8229-7ff1a9328cbd]     14: 		</div>
+[44617182-7edb-4b2a-8229-7ff1a9328cbd]   
+[44617182-7edb-4b2a-8229-7ff1a9328cbd] app/views/guide/rooms/index.html.erb:11
+I, [2020-07-12T02:53:25.394792 #26904]  INFO -- : [72958c28-34a9-4aa7-96b7-83726d681712] Started GET "/guide/guides/1/rooms" for 125.8.190.99 at 2020-07-12 02:53:25 +0000
+I, [2020-07-12T02:53:25.395506 #26904]  INFO -- : [72958c28-34a9-4aa7-96b7-83726d681712] Processing by Guide::RoomsController#index as HTML
+I, [2020-07-12T02:53:25.395554 #26904]  INFO -- : [72958c28-34a9-4aa7-96b7-83726d681712]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:53:25.403231 #26904] DEBUG -- : [72958c28-34a9-4aa7-96b7-83726d681712]   [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4 COLLATE utf8mb4_general_ci,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2020-07-12T02:53:25.404809 #26904] DEBUG -- : [72958c28-34a9-4aa7-96b7-83726d681712]   [1m[36mGuide Load (0.8ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:53:25.406077 #26904] DEBUG -- : [72958c28-34a9-4aa7-96b7-83726d681712]   [1m[36mGuide Load (0.6ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+I, [2020-07-12T02:53:25.406964 #26904]  INFO -- : [72958c28-34a9-4aa7-96b7-83726d681712]   Rendering guide/rooms/index.html.erb within layouts/application
+D, [2020-07-12T02:53:25.407989 #26904] DEBUG -- : [72958c28-34a9-4aa7-96b7-83726d681712]   [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `rooms` WHERE `rooms`.`guide_id` = 1 ORDER BY `rooms`.`created_at` DESC LIMIT 10 OFFSET 0) subquery_for_count[0m
+I, [2020-07-12T02:53:25.408312 #26904]  INFO -- : [72958c28-34a9-4aa7-96b7-83726d681712]   Rendered guide/rooms/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 323)
+I, [2020-07-12T02:53:25.408441 #26904]  INFO -- : [72958c28-34a9-4aa7-96b7-83726d681712] Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.6ms | Allocations: 1833)
+F, [2020-07-12T02:53:25.409218 #26904] FATAL -- : [72958c28-34a9-4aa7-96b7-83726d681712]   
+[72958c28-34a9-4aa7-96b7-83726d681712] ActionView::Template::Error (The asset "guide_chat.png" is not present in the asset pipeline.):
+[72958c28-34a9-4aa7-96b7-83726d681712]      8: 					予約が入ればメッセージを送れます！
+[72958c28-34a9-4aa7-96b7-83726d681712]      9: 				</h2>
+[72958c28-34a9-4aa7-96b7-83726d681712]     10: 			</div>
+[72958c28-34a9-4aa7-96b7-83726d681712]     11: 		</div>
+[72958c28-34a9-4aa7-96b7-83726d681712]     12: 	</div>
+[72958c28-34a9-4aa7-96b7-83726d681712]     13: 
+[72958c28-34a9-4aa7-96b7-83726d681712]     14: <!------ チャットをしていた場合 ------>
+[72958c28-34a9-4aa7-96b7-83726d681712]   
+[72958c28-34a9-4aa7-96b7-83726d681712] app/views/guide/rooms/index.html.erb:11
+I, [2020-07-12T02:53:26.291149 #26904]  INFO -- : [d1a0720b-8b2c-445a-8317-c3f35c5e3ba0] Started GET "/guide/guides/1/rooms" for 125.8.190.99 at 2020-07-12 02:53:26 +0000
+I, [2020-07-12T02:53:26.291858 #26904]  INFO -- : [d1a0720b-8b2c-445a-8317-c3f35c5e3ba0] Processing by Guide::RoomsController#index as HTML
+I, [2020-07-12T02:53:26.291901 #26904]  INFO -- : [d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:53:26.294531 #26904] DEBUG -- : [d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]   [1m[36mGuide Load (0.8ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:53:26.295934 #26904] DEBUG -- : [d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]   [1m[36mGuide Load (0.8ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+I, [2020-07-12T02:53:26.296953 #26904]  INFO -- : [d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]   Rendering guide/rooms/index.html.erb within layouts/application
+D, [2020-07-12T02:53:26.297999 #26904] DEBUG -- : [d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]   [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `rooms` WHERE `rooms`.`guide_id` = 1 ORDER BY `rooms`.`created_at` DESC LIMIT 10 OFFSET 0) subquery_for_count[0m
+I, [2020-07-12T02:53:26.298381 #26904]  INFO -- : [d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]   Rendered guide/rooms/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 323)
+I, [2020-07-12T02:53:26.298511 #26904]  INFO -- : [d1a0720b-8b2c-445a-8317-c3f35c5e3ba0] Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.3ms | Allocations: 1697)
+F, [2020-07-12T02:53:26.299264 #26904] FATAL -- : [d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]   
+[d1a0720b-8b2c-445a-8317-c3f35c5e3ba0] ActionView::Template::Error (The asset "guide_chat.png" is not present in the asset pipeline.):
+[d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]      8: 					予約が入ればメッセージを送れます！
+[d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]      9: 				</h2>
+[d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]     10: 			</div>
+[d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]     11: 		</div>
+[d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]     12: 	</div>
+[d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]     13: 
+[d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]     14: <!------ チャットをしていた場合 ------>
+[d1a0720b-8b2c-445a-8317-c3f35c5e3ba0]   
+[d1a0720b-8b2c-445a-8317-c3f35c5e3ba0] app/views/guide/rooms/index.html.erb:11
+I, [2020-07-12T02:53:29.646834 #26904]  INFO -- : [fac751ca-2bd6-41c7-b576-80b4e48082a2] Started GET "/guide/guides/1/notifications" for 125.8.190.99 at 2020-07-12 02:53:29 +0000
+I, [2020-07-12T02:53:29.647540 #26904]  INFO -- : [fac751ca-2bd6-41c7-b576-80b4e48082a2] Processing by Guide::NotificationsController#index as HTML
+I, [2020-07-12T02:53:29.647586 #26904]  INFO -- : [fac751ca-2bd6-41c7-b576-80b4e48082a2]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:53:29.650093 #26904] DEBUG -- : [fac751ca-2bd6-41c7-b576-80b4e48082a2]   [1m[36mGuide Load (0.8ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:53:29.651282 #26904] DEBUG -- : [fac751ca-2bd6-41c7-b576-80b4e48082a2]   [1m[36mGuide Load (0.6ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+D, [2020-07-12T02:53:29.652844 #26904] DEBUG -- : [fac751ca-2bd6-41c7-b576-80b4e48082a2]   [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT `notifications`.* FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE ORDER BY `notifications`.`created_at` DESC LIMIT 20 OFFSET 0[0m
+I, [2020-07-12T02:53:29.653339 #26904]  INFO -- : [fac751ca-2bd6-41c7-b576-80b4e48082a2]   Rendering guide/notifications/index.html.erb within layouts/application
+D, [2020-07-12T02:53:29.654300 #26904] DEBUG -- : [fac751ca-2bd6-41c7-b576-80b4e48082a2]   [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 ORDER BY `notifications`.`created_at` DESC LIMIT 20 OFFSET 0) subquery_for_count[0m
+I, [2020-07-12T02:53:29.654428 #26904]  INFO -- : [fac751ca-2bd6-41c7-b576-80b4e48082a2]   Rendered guide/notifications/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 197)
+D, [2020-07-12T02:53:29.656319 #26904] DEBUG -- : [fac751ca-2bd6-41c7-b576-80b4e48082a2]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:53:29.657534 #26904] DEBUG -- : [fac751ca-2bd6-41c7-b576-80b4e48082a2]   [1m[36mNotification Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:53:29.658202 #26904]  INFO -- : [fac751ca-2bd6-41c7-b576-80b4e48082a2] Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 3.7ms | Allocations: 3145)
+I, [2020-07-12T02:53:29.722573 #26904]  INFO -- : [3d6f2acb-a21b-465e-9f54-f39279ff914c] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:53:29 +0000
+F, [2020-07-12T02:53:29.723144 #26904] FATAL -- : [3d6f2acb-a21b-465e-9f54-f39279ff914c]   
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[3d6f2acb-a21b-465e-9f54-f39279ff914c]   
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[3d6f2acb-a21b-465e-9f54-f39279ff914c] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:53:31.244198 #26904]  INFO -- : [614b2623-4b12-4152-b2ce-051662dbb4b4] Started GET "/guide/guides/1/notifications" for 125.8.190.99 at 2020-07-12 02:53:31 +0000
+I, [2020-07-12T02:53:31.244935 #26904]  INFO -- : [614b2623-4b12-4152-b2ce-051662dbb4b4] Processing by Guide::NotificationsController#index as HTML
+I, [2020-07-12T02:53:31.244993 #26904]  INFO -- : [614b2623-4b12-4152-b2ce-051662dbb4b4]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:53:31.247470 #26904] DEBUG -- : [614b2623-4b12-4152-b2ce-051662dbb4b4]   [1m[36mGuide Load (0.7ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:53:31.248626 #26904] DEBUG -- : [614b2623-4b12-4152-b2ce-051662dbb4b4]   [1m[36mGuide Load (0.5ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+D, [2020-07-12T02:53:31.250188 #26904] DEBUG -- : [614b2623-4b12-4152-b2ce-051662dbb4b4]   [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT `notifications`.* FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE ORDER BY `notifications`.`created_at` DESC LIMIT 20 OFFSET 0[0m
+I, [2020-07-12T02:53:31.250615 #26904]  INFO -- : [614b2623-4b12-4152-b2ce-051662dbb4b4]   Rendering guide/notifications/index.html.erb within layouts/application
+D, [2020-07-12T02:53:31.251594 #26904] DEBUG -- : [614b2623-4b12-4152-b2ce-051662dbb4b4]   [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 ORDER BY `notifications`.`created_at` DESC LIMIT 20 OFFSET 0) subquery_for_count[0m
+I, [2020-07-12T02:53:31.251719 #26904]  INFO -- : [614b2623-4b12-4152-b2ce-051662dbb4b4]   Rendered guide/notifications/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 197)
+D, [2020-07-12T02:53:31.253497 #26904] DEBUG -- : [614b2623-4b12-4152-b2ce-051662dbb4b4]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:53:31.254610 #26904] DEBUG -- : [614b2623-4b12-4152-b2ce-051662dbb4b4]   [1m[36mNotification Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:53:31.255204 #26904]  INFO -- : [614b2623-4b12-4152-b2ce-051662dbb4b4] Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 3.4ms | Allocations: 3104)
+I, [2020-07-12T02:53:31.312159 #26904]  INFO -- : [95205990-a64f-4ed2-b0be-831fec45da66] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:53:31 +0000
+F, [2020-07-12T02:53:31.312749 #26904] FATAL -- : [95205990-a64f-4ed2-b0be-831fec45da66]   
+[95205990-a64f-4ed2-b0be-831fec45da66] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[95205990-a64f-4ed2-b0be-831fec45da66]   
+[95205990-a64f-4ed2-b0be-831fec45da66] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[95205990-a64f-4ed2-b0be-831fec45da66] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[95205990-a64f-4ed2-b0be-831fec45da66] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[95205990-a64f-4ed2-b0be-831fec45da66] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[95205990-a64f-4ed2-b0be-831fec45da66] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[95205990-a64f-4ed2-b0be-831fec45da66] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[95205990-a64f-4ed2-b0be-831fec45da66] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[95205990-a64f-4ed2-b0be-831fec45da66] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[95205990-a64f-4ed2-b0be-831fec45da66] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[95205990-a64f-4ed2-b0be-831fec45da66] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:53:32.215443 #26904]  INFO -- : [751e447c-7de7-4da7-b76c-953d475faeb2] Started GET "/guide/guides/1/rooms" for 125.8.190.99 at 2020-07-12 02:53:32 +0000
+I, [2020-07-12T02:53:32.216118 #26904]  INFO -- : [751e447c-7de7-4da7-b76c-953d475faeb2] Processing by Guide::RoomsController#index as HTML
+I, [2020-07-12T02:53:32.216169 #26904]  INFO -- : [751e447c-7de7-4da7-b76c-953d475faeb2]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:53:32.218652 #26904] DEBUG -- : [751e447c-7de7-4da7-b76c-953d475faeb2]   [1m[36mGuide Load (0.7ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:53:32.219881 #26904] DEBUG -- : [751e447c-7de7-4da7-b76c-953d475faeb2]   [1m[36mGuide Load (0.6ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+I, [2020-07-12T02:53:32.220851 #26904]  INFO -- : [751e447c-7de7-4da7-b76c-953d475faeb2]   Rendering guide/rooms/index.html.erb within layouts/application
+D, [2020-07-12T02:53:32.221797 #26904] DEBUG -- : [751e447c-7de7-4da7-b76c-953d475faeb2]   [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `rooms` WHERE `rooms`.`guide_id` = 1 ORDER BY `rooms`.`created_at` DESC LIMIT 10 OFFSET 0) subquery_for_count[0m
+I, [2020-07-12T02:53:32.222123 #26904]  INFO -- : [751e447c-7de7-4da7-b76c-953d475faeb2]   Rendered guide/rooms/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 323)
+I, [2020-07-12T02:53:32.222260 #26904]  INFO -- : [751e447c-7de7-4da7-b76c-953d475faeb2] Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.9ms | Allocations: 1684)
+F, [2020-07-12T02:53:32.223002 #26904] FATAL -- : [751e447c-7de7-4da7-b76c-953d475faeb2]   
+[751e447c-7de7-4da7-b76c-953d475faeb2] ActionView::Template::Error (The asset "guide_chat.png" is not present in the asset pipeline.):
+[751e447c-7de7-4da7-b76c-953d475faeb2]      8: 					予約が入ればメッセージを送れます！
+[751e447c-7de7-4da7-b76c-953d475faeb2]      9: 				</h2>
+[751e447c-7de7-4da7-b76c-953d475faeb2]     10: 			</div>
+[751e447c-7de7-4da7-b76c-953d475faeb2]     11: 		</div>
+[751e447c-7de7-4da7-b76c-953d475faeb2]     12: 	</div>
+[751e447c-7de7-4da7-b76c-953d475faeb2]     13: 
+[751e447c-7de7-4da7-b76c-953d475faeb2]     14: <!------ チャットをしていた場合 ------>
+[751e447c-7de7-4da7-b76c-953d475faeb2]   
+[751e447c-7de7-4da7-b76c-953d475faeb2] app/views/guide/rooms/index.html.erb:11
+I, [2020-07-12T02:56:16.279573 #26904]  INFO -- : [02e3801e-3eec-4ae4-b732-8769152c2716] Started GET "/guide/guides/1/notifications" for 125.8.190.99 at 2020-07-12 02:56:16 +0000
+I, [2020-07-12T02:56:16.280330 #26904]  INFO -- : [02e3801e-3eec-4ae4-b732-8769152c2716] Processing by Guide::NotificationsController#index as HTML
+I, [2020-07-12T02:56:16.280379 #26904]  INFO -- : [02e3801e-3eec-4ae4-b732-8769152c2716]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:56:16.282898 #26904] DEBUG -- : [02e3801e-3eec-4ae4-b732-8769152c2716]   [1m[36mGuide Load (0.7ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:56:16.284080 #26904] DEBUG -- : [02e3801e-3eec-4ae4-b732-8769152c2716]   [1m[36mGuide Load (0.5ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+D, [2020-07-12T02:56:16.285548 #26904] DEBUG -- : [02e3801e-3eec-4ae4-b732-8769152c2716]   [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT `notifications`.* FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE ORDER BY `notifications`.`created_at` DESC LIMIT 20 OFFSET 0[0m
+I, [2020-07-12T02:56:16.286044 #26904]  INFO -- : [02e3801e-3eec-4ae4-b732-8769152c2716]   Rendering guide/notifications/index.html.erb within layouts/application
+D, [2020-07-12T02:56:16.287014 #26904] DEBUG -- : [02e3801e-3eec-4ae4-b732-8769152c2716]   [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 ORDER BY `notifications`.`created_at` DESC LIMIT 20 OFFSET 0) subquery_for_count[0m
+I, [2020-07-12T02:56:16.287153 #26904]  INFO -- : [02e3801e-3eec-4ae4-b732-8769152c2716]   Rendered guide/notifications/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 197)
+D, [2020-07-12T02:56:16.288976 #26904] DEBUG -- : [02e3801e-3eec-4ae4-b732-8769152c2716]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:56:16.290062 #26904] DEBUG -- : [02e3801e-3eec-4ae4-b732-8769152c2716]   [1m[36mNotification Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:56:16.290673 #26904]  INFO -- : [02e3801e-3eec-4ae4-b732-8769152c2716] Completed 200 OK in 10ms (Views: 3.3ms | ActiveRecord: 3.2ms | Allocations: 3108)
+I, [2020-07-12T02:56:16.341363 #26904]  INFO -- : [4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:56:16 +0000
+F, [2020-07-12T02:56:16.341946 #26904] FATAL -- : [4d9a3735-ca64-4755-bb85-8ad6dcaff9c9]   
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9]   
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[4d9a3735-ca64-4755-bb85-8ad6dcaff9c9] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:56:17.057176 #26904]  INFO -- : [4ae949b9-9132-457c-b6f3-fb4c29c41195] Started GET "/guide/guides/1/notifications" for 125.8.190.99 at 2020-07-12 02:56:17 +0000
+I, [2020-07-12T02:56:17.057884 #26904]  INFO -- : [4ae949b9-9132-457c-b6f3-fb4c29c41195] Processing by Guide::NotificationsController#index as HTML
+I, [2020-07-12T02:56:17.057933 #26904]  INFO -- : [4ae949b9-9132-457c-b6f3-fb4c29c41195]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:56:17.060524 #26904] DEBUG -- : [4ae949b9-9132-457c-b6f3-fb4c29c41195]   [1m[36mGuide Load (0.9ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:56:17.061871 #26904] DEBUG -- : [4ae949b9-9132-457c-b6f3-fb4c29c41195]   [1m[36mGuide Load (0.7ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+D, [2020-07-12T02:56:17.063370 #26904] DEBUG -- : [4ae949b9-9132-457c-b6f3-fb4c29c41195]   [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT `notifications`.* FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE ORDER BY `notifications`.`created_at` DESC LIMIT 20 OFFSET 0[0m
+I, [2020-07-12T02:56:17.063815 #26904]  INFO -- : [4ae949b9-9132-457c-b6f3-fb4c29c41195]   Rendering guide/notifications/index.html.erb within layouts/application
+D, [2020-07-12T02:56:17.064707 #26904] DEBUG -- : [4ae949b9-9132-457c-b6f3-fb4c29c41195]   [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 ORDER BY `notifications`.`created_at` DESC LIMIT 20 OFFSET 0) subquery_for_count[0m
+I, [2020-07-12T02:56:17.064837 #26904]  INFO -- : [4ae949b9-9132-457c-b6f3-fb4c29c41195]   Rendered guide/notifications/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 197)
+D, [2020-07-12T02:56:17.066632 #26904] DEBUG -- : [4ae949b9-9132-457c-b6f3-fb4c29c41195]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:56:17.067670 #26904] DEBUG -- : [4ae949b9-9132-457c-b6f3-fb4c29c41195]   [1m[36mNotification Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:56:17.068276 #26904]  INFO -- : [4ae949b9-9132-457c-b6f3-fb4c29c41195] Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 3.6ms | Allocations: 3112)
+I, [2020-07-12T02:56:17.119957 #26904]  INFO -- : [f3e09f4b-4210-4692-af9b-bdc80081157d] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:56:17 +0000
+F, [2020-07-12T02:56:17.120558 #26904] FATAL -- : [f3e09f4b-4210-4692-af9b-bdc80081157d]   
+[f3e09f4b-4210-4692-af9b-bdc80081157d] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[f3e09f4b-4210-4692-af9b-bdc80081157d]   
+[f3e09f4b-4210-4692-af9b-bdc80081157d] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[f3e09f4b-4210-4692-af9b-bdc80081157d] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:56:19.759616 #26904]  INFO -- : [6451744a-7814-4d39-89e8-72fab513a48f] Started GET "/guide/guides/1" for 125.8.190.99 at 2020-07-12 02:56:19 +0000
+I, [2020-07-12T02:56:19.760345 #26904]  INFO -- : [6451744a-7814-4d39-89e8-72fab513a48f] Processing by Guide::GuidesController#show as HTML
+I, [2020-07-12T02:56:19.760400 #26904]  INFO -- : [6451744a-7814-4d39-89e8-72fab513a48f]   Parameters: {"id"=>"1"}
+D, [2020-07-12T02:56:19.763006 #26904] DEBUG -- : [6451744a-7814-4d39-89e8-72fab513a48f]   [1m[36mGuide Load (0.8ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:56:19.764366 #26904] DEBUG -- : [6451744a-7814-4d39-89e8-72fab513a48f]   [1m[36mGuide Load (0.7ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+D, [2020-07-12T02:56:19.764926 #26904] DEBUG -- : [6451744a-7814-4d39-89e8-72fab513a48f]   [1m[36mCACHE Guide Load (0.0ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+I, [2020-07-12T02:56:19.766091 #26904]  INFO -- : [6451744a-7814-4d39-89e8-72fab513a48f]   Rendering guide/guides/show.html.erb within layouts/application
+D, [2020-07-12T02:56:19.769531 #26904] DEBUG -- : [6451744a-7814-4d39-89e8-72fab513a48f]   [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `tours` WHERE `tours`.`guide_id` = 1[0m
+I, [2020-07-12T02:56:19.769730 #26904]  INFO -- : [6451744a-7814-4d39-89e8-72fab513a48f]   Rendered guide/guides/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1192)
+D, [2020-07-12T02:56:19.771444 #26904] DEBUG -- : [6451744a-7814-4d39-89e8-72fab513a48f]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:56:19.772757 #26904] DEBUG -- : [6451744a-7814-4d39-89e8-72fab513a48f]   [1m[36mNotification Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:56:19.773438 #26904]  INFO -- : [6451744a-7814-4d39-89e8-72fab513a48f] Completed 200 OK in 13ms (Views: 5.9ms | ActiveRecord: 3.1ms | Allocations: 4239)
+I, [2020-07-12T02:56:19.891607 #26904]  INFO -- : [23230ccb-5a2a-4451-a777-ddbdd688d685] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:56:19 +0000
+F, [2020-07-12T02:56:19.892215 #26904] FATAL -- : [23230ccb-5a2a-4451-a777-ddbdd688d685]   
+[23230ccb-5a2a-4451-a777-ddbdd688d685] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[23230ccb-5a2a-4451-a777-ddbdd688d685]   
+[23230ccb-5a2a-4451-a777-ddbdd688d685] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[23230ccb-5a2a-4451-a777-ddbdd688d685] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:56:20.798863 #26904]  INFO -- : [f05d0d3a-377b-4f43-aa9a-671421797b14] Started GET "/guide/guides/1/home/top" for 125.8.190.99 at 2020-07-12 02:56:20 +0000
+I, [2020-07-12T02:56:20.799615 #26904]  INFO -- : [f05d0d3a-377b-4f43-aa9a-671421797b14] Processing by Guide::HomeController#top as HTML
+I, [2020-07-12T02:56:20.799684 #26904]  INFO -- : [f05d0d3a-377b-4f43-aa9a-671421797b14]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:56:20.802201 #26904] DEBUG -- : [f05d0d3a-377b-4f43-aa9a-671421797b14]   [1m[36mGuide Load (0.7ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+I, [2020-07-12T02:56:20.803440 #26904]  INFO -- : [f05d0d3a-377b-4f43-aa9a-671421797b14]   Rendering guide/home/top.html.erb within layouts/application
+D, [2020-07-12T02:56:20.804673 #26904] DEBUG -- : [f05d0d3a-377b-4f43-aa9a-671421797b14]   [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `orders` WHERE `orders`.`guide_id` = 1 AND `orders`.`created_at` BETWEEN '2020-07-11 15:00:00' AND '2020-07-12 14:59:59.999999'[0m
+I, [2020-07-12T02:56:20.804853 #26904]  INFO -- : [f05d0d3a-377b-4f43-aa9a-671421797b14]   Rendered guide/home/top.html.erb within layouts/application (Duration: 1.3ms | Allocations: 231)
+D, [2020-07-12T02:56:20.806670 #26904] DEBUG -- : [f05d0d3a-377b-4f43-aa9a-671421797b14]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:56:20.808027 #26904] DEBUG -- : [f05d0d3a-377b-4f43-aa9a-671421797b14]   [1m[36mNotification Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:56:20.808724 #26904]  INFO -- : [f05d0d3a-377b-4f43-aa9a-671421797b14] Completed 200 OK in 9ms (Views: 3.7ms | ActiveRecord: 2.5ms | Allocations: 2762)
+I, [2020-07-12T02:56:20.879747 #26904]  INFO -- : [6c08164c-453b-4036-ab9d-e4fee2a4f781] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:56:20 +0000
+F, [2020-07-12T02:56:20.880294 #26904] FATAL -- : [6c08164c-453b-4036-ab9d-e4fee2a4f781]   
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[6c08164c-453b-4036-ab9d-e4fee2a4f781]   
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[6c08164c-453b-4036-ab9d-e4fee2a4f781] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:56:22.885804 #26904]  INFO -- : [e6d7fb78-bc3b-42f8-a62a-87d0ae7fbf34] Started GET "/guide/guides/1/orders" for 125.8.190.99 at 2020-07-12 02:56:22 +0000
+I, [2020-07-12T02:56:22.886564 #26904]  INFO -- : [e6d7fb78-bc3b-42f8-a62a-87d0ae7fbf34] Processing by Guide::OrdersController#index as HTML
+I, [2020-07-12T02:56:22.886626 #26904]  INFO -- : [e6d7fb78-bc3b-42f8-a62a-87d0ae7fbf34]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:56:22.889264 #26904] DEBUG -- : [e6d7fb78-bc3b-42f8-a62a-87d0ae7fbf34]   [1m[36mGuide Load (0.8ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:56:22.890563 #26904] DEBUG -- : [e6d7fb78-bc3b-42f8-a62a-87d0ae7fbf34]   [1m[36mGuide Load (0.6ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+D, [2020-07-12T02:56:22.892142 #26904] DEBUG -- : [e6d7fb78-bc3b-42f8-a62a-87d0ae7fbf34]   [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` WHERE `orders`.`guide_id` = 1[0m
+I, [2020-07-12T02:56:22.893771 #26904]  INFO -- : [e6d7fb78-bc3b-42f8-a62a-87d0ae7fbf34]   Rendering guide/orders/index.html.erb within layouts/application
+D, [2020-07-12T02:56:22.896613 #26904] DEBUG -- : [e6d7fb78-bc3b-42f8-a62a-87d0ae7fbf34]   [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` WHERE `orders`.`guide_id` = 1 AND `orders`.`created_at` BETWEEN '2020-07-11 15:00:00' AND '2020-07-12 14:59:59.999999'[0m
+I, [2020-07-12T02:56:22.896762 #26904]  INFO -- : [e6d7fb78-bc3b-42f8-a62a-87d0ae7fbf34]   Rendered guide/orders/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 804)
+D, [2020-07-12T02:56:22.898675 #26904] DEBUG -- : [e6d7fb78-bc3b-42f8-a62a-87d0ae7fbf34]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:56:22.900136 #26904] DEBUG -- : [e6d7fb78-bc3b-42f8-a62a-87d0ae7fbf34]   [1m[36mNotification Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:56:22.900812 #26904]  INFO -- : [e6d7fb78-bc3b-42f8-a62a-87d0ae7fbf34] Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 3.8ms | Allocations: 4694)
+I, [2020-07-12T02:56:22.967033 #26904]  INFO -- : [70738f8c-100a-4456-ad4c-4a7e4229e04a] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:56:22 +0000
+F, [2020-07-12T02:56:22.967608 #26904] FATAL -- : [70738f8c-100a-4456-ad4c-4a7e4229e04a]   
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[70738f8c-100a-4456-ad4c-4a7e4229e04a]   
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[70738f8c-100a-4456-ad4c-4a7e4229e04a] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:56:23.967356 #26904]  INFO -- : [3ff6e814-2022-4f4c-a6bf-eae6062b5e76] Started GET "/guide/guides/1/rooms" for 125.8.190.99 at 2020-07-12 02:56:23 +0000
+I, [2020-07-12T02:56:23.968114 #26904]  INFO -- : [3ff6e814-2022-4f4c-a6bf-eae6062b5e76] Processing by Guide::RoomsController#index as HTML
+I, [2020-07-12T02:56:23.968164 #26904]  INFO -- : [3ff6e814-2022-4f4c-a6bf-eae6062b5e76]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:56:23.974706 #26904] DEBUG -- : [3ff6e814-2022-4f4c-a6bf-eae6062b5e76]   [1m[36mGuide Load (2.9ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:56:23.976022 #26904] DEBUG -- : [3ff6e814-2022-4f4c-a6bf-eae6062b5e76]   [1m[36mGuide Load (0.6ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+I, [2020-07-12T02:56:23.977073 #26904]  INFO -- : [3ff6e814-2022-4f4c-a6bf-eae6062b5e76]   Rendering guide/rooms/index.html.erb within layouts/application
+D, [2020-07-12T02:56:23.978171 #26904] DEBUG -- : [3ff6e814-2022-4f4c-a6bf-eae6062b5e76]   [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `rooms` WHERE `rooms`.`guide_id` = 1 ORDER BY `rooms`.`created_at` DESC LIMIT 10 OFFSET 0) subquery_for_count[0m
+I, [2020-07-12T02:56:23.978518 #26904]  INFO -- : [3ff6e814-2022-4f4c-a6bf-eae6062b5e76]   Rendered guide/rooms/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 323)
+I, [2020-07-12T02:56:23.978666 #26904]  INFO -- : [3ff6e814-2022-4f4c-a6bf-eae6062b5e76] Completed 500 Internal Server Error in 10ms (ActiveRecord: 4.1ms | Allocations: 1690)
+F, [2020-07-12T02:56:23.979437 #26904] FATAL -- : [3ff6e814-2022-4f4c-a6bf-eae6062b5e76]   
+[3ff6e814-2022-4f4c-a6bf-eae6062b5e76] ActionView::Template::Error (The asset "guide_chat.png" is not present in the asset pipeline.):
+[3ff6e814-2022-4f4c-a6bf-eae6062b5e76]      8: 					予約が入ればメッセージを送れます！
+[3ff6e814-2022-4f4c-a6bf-eae6062b5e76]      9: 				</h2>
+[3ff6e814-2022-4f4c-a6bf-eae6062b5e76]     10: 			</div>
+[3ff6e814-2022-4f4c-a6bf-eae6062b5e76]     11: 		</div>
+[3ff6e814-2022-4f4c-a6bf-eae6062b5e76]     12: 	</div>
+[3ff6e814-2022-4f4c-a6bf-eae6062b5e76]     13: 
+[3ff6e814-2022-4f4c-a6bf-eae6062b5e76]     14: <!------ チャットをしていた場合 ------>
+[3ff6e814-2022-4f4c-a6bf-eae6062b5e76]   
+[3ff6e814-2022-4f4c-a6bf-eae6062b5e76] app/views/guide/rooms/index.html.erb:11
+I, [2020-07-12T02:57:07.520358 #26904]  INFO -- : [68c8dee9-2fac-4c57-b7dc-9e8103e0f4e2] Started GET "/guide/guides/1/tours/new" for 125.8.190.99 at 2020-07-12 02:57:07 +0000
+I, [2020-07-12T02:57:07.521144 #26904]  INFO -- : [68c8dee9-2fac-4c57-b7dc-9e8103e0f4e2] Processing by Guide::ToursController#new as HTML
+I, [2020-07-12T02:57:07.521193 #26904]  INFO -- : [68c8dee9-2fac-4c57-b7dc-9e8103e0f4e2]   Parameters: {"guide_id"=>"1"}
+D, [2020-07-12T02:57:07.523728 #26904] DEBUG -- : [68c8dee9-2fac-4c57-b7dc-9e8103e0f4e2]   [1m[36mGuide Load (0.7ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:57:07.524950 #26904] DEBUG -- : [68c8dee9-2fac-4c57-b7dc-9e8103e0f4e2]   [1m[36mGuide Load (0.5ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+I, [2020-07-12T02:57:07.525346 #26904]  INFO -- : [68c8dee9-2fac-4c57-b7dc-9e8103e0f4e2] Redirected to http://54.250.64.149/guide/guides/1/gudies/to_guide_edit
+I, [2020-07-12T02:57:07.526094 #26904]  INFO -- : [68c8dee9-2fac-4c57-b7dc-9e8103e0f4e2] Completed 302 Found in 5ms (ActiveRecord: 1.3ms | Allocations: 1213)
+I, [2020-07-12T02:57:07.562362 #26904]  INFO -- : [c8a8d246-a899-4174-857a-d004a7aa3692] Started GET "/guide/guides/1/gudies/to_guide_edit" for 125.8.190.99 at 2020-07-12 02:57:07 +0000
+I, [2020-07-12T02:57:07.563075 #26904]  INFO -- : [c8a8d246-a899-4174-857a-d004a7aa3692] Processing by Guide::GuidesController#to_guide_edit as HTML
+I, [2020-07-12T02:57:07.563121 #26904]  INFO -- : [c8a8d246-a899-4174-857a-d004a7aa3692]   Parameters: {"guide_id"=>"1"}
+I, [2020-07-12T02:57:07.564050 #26904]  INFO -- : [c8a8d246-a899-4174-857a-d004a7aa3692]   Rendering guide/guides/to_guide_edit.html.erb within layouts/application
+D, [2020-07-12T02:57:07.566139 #26904] DEBUG -- : [c8a8d246-a899-4174-857a-d004a7aa3692]   [1m[36mGuide Load (0.8ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+I, [2020-07-12T02:57:07.566549 #26904]  INFO -- : [c8a8d246-a899-4174-857a-d004a7aa3692]   Rendered guide/guides/to_guide_edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 407)
+D, [2020-07-12T02:57:07.568444 #26904] DEBUG -- : [c8a8d246-a899-4174-857a-d004a7aa3692]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:57:07.569732 #26904] DEBUG -- : [c8a8d246-a899-4174-857a-d004a7aa3692]   [1m[36mNotification Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:57:07.570375 #26904]  INFO -- : [c8a8d246-a899-4174-857a-d004a7aa3692] Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 1.8ms | Allocations: 2322)
+I, [2020-07-12T02:57:07.787714 #26904]  INFO -- : [fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:57:07 +0000
+F, [2020-07-12T02:57:07.788291 #26904] FATAL -- : [fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8]   
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8]   
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[fa1ee21b-9aad-45f4-9b2a-b05d7fea52c8] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:57:09.762702 #26904]  INFO -- : [f2003415-0efd-4e45-b73e-a9c849f171ec] Started GET "/guide/guides/1/edit" for 125.8.190.99 at 2020-07-12 02:57:09 +0000
+I, [2020-07-12T02:57:09.763436 #26904]  INFO -- : [f2003415-0efd-4e45-b73e-a9c849f171ec] Processing by Guide::GuidesController#edit as HTML
+I, [2020-07-12T02:57:09.763483 #26904]  INFO -- : [f2003415-0efd-4e45-b73e-a9c849f171ec]   Parameters: {"id"=>"1"}
+D, [2020-07-12T02:57:09.766066 #26904] DEBUG -- : [f2003415-0efd-4e45-b73e-a9c849f171ec]   [1m[36mGuide Load (0.8ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T02:57:09.767266 #26904] DEBUG -- : [f2003415-0efd-4e45-b73e-a9c849f171ec]   [1m[36mGuide Load (0.5ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+D, [2020-07-12T02:57:09.767849 #26904] DEBUG -- : [f2003415-0efd-4e45-b73e-a9c849f171ec]   [1m[36mCACHE Guide Load (0.0ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+I, [2020-07-12T02:57:09.768616 #26904]  INFO -- : [f2003415-0efd-4e45-b73e-a9c849f171ec]   Rendering guide/guides/edit.html.erb within layouts/application
+I, [2020-07-12T02:57:09.774907 #26904]  INFO -- : [f2003415-0efd-4e45-b73e-a9c849f171ec]   Rendered guide/guides/edit.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3582)
+D, [2020-07-12T02:57:09.776694 #26904] DEBUG -- : [f2003415-0efd-4e45-b73e-a9c849f171ec]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T02:57:09.778122 #26904] DEBUG -- : [f2003415-0efd-4e45-b73e-a9c849f171ec]   [1m[36mNotification Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T02:57:09.778780 #26904]  INFO -- : [f2003415-0efd-4e45-b73e-a9c849f171ec] Completed 200 OK in 15ms (Views: 9.3ms | ActiveRecord: 2.5ms | Allocations: 6521)
+I, [2020-07-12T02:57:09.848539 #26904]  INFO -- : [5fdd1da4-2638-418b-a560-2e4030e3bc7c] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 02:57:09 +0000
+F, [2020-07-12T02:57:09.849120 #26904] FATAL -- : [5fdd1da4-2638-418b-a560-2e4030e3bc7c]   
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c]   
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[5fdd1da4-2638-418b-a560-2e4030e3bc7c] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T02:57:11.473441 #26904]  INFO -- : [db3b08a6-78f2-4e18-8ec5-395f98b05100] Started GET "/guides/sign_out" for 125.8.190.99 at 2020-07-12 02:57:11 +0000
+F, [2020-07-12T02:57:11.474012 #26904] FATAL -- : [db3b08a6-78f2-4e18-8ec5-395f98b05100]   
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] ActionController::RoutingError (No route matches [GET] "/guides/sign_out"):
+[db3b08a6-78f2-4e18-8ec5-395f98b05100]   
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[db3b08a6-78f2-4e18-8ec5-395f98b05100] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T03:12:05.897460 #26904]  INFO -- : [cd3842c1-a8bf-4d19-8bec-5606a83bfa9e] Started GET "/guide/guides/1/edit" for 125.8.190.99 at 2020-07-12 03:12:05 +0000
+I, [2020-07-12T03:12:05.898171 #26904]  INFO -- : [cd3842c1-a8bf-4d19-8bec-5606a83bfa9e] Processing by Guide::GuidesController#edit as HTML
+I, [2020-07-12T03:12:05.898220 #26904]  INFO -- : [cd3842c1-a8bf-4d19-8bec-5606a83bfa9e]   Parameters: {"id"=>"1"}
+D, [2020-07-12T03:12:05.935698 #26904] DEBUG -- : [cd3842c1-a8bf-4d19-8bec-5606a83bfa9e]   [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4 COLLATE utf8mb4_general_ci,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2020-07-12T03:12:05.937217 #26904] DEBUG -- : [cd3842c1-a8bf-4d19-8bec-5606a83bfa9e]   [1m[36mGuide Load (0.7ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 ORDER BY `guides`.`id` ASC LIMIT 1[0m
+D, [2020-07-12T03:12:05.938530 #26904] DEBUG -- : [cd3842c1-a8bf-4d19-8bec-5606a83bfa9e]   [1m[36mGuide Load (0.5ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+D, [2020-07-12T03:12:05.939117 #26904] DEBUG -- : [cd3842c1-a8bf-4d19-8bec-5606a83bfa9e]   [1m[36mCACHE Guide Load (0.0ms)[0m  [1m[34mSELECT `guides`.* FROM `guides` WHERE `guides`.`deleted_at` IS NULL AND `guides`.`id` = 1 LIMIT 1[0m
+I, [2020-07-12T03:12:05.939595 #26904]  INFO -- : [cd3842c1-a8bf-4d19-8bec-5606a83bfa9e]   Rendering guide/guides/edit.html.erb within layouts/application
+I, [2020-07-12T03:12:05.943956 #26904]  INFO -- : [cd3842c1-a8bf-4d19-8bec-5606a83bfa9e]   Rendered guide/guides/edit.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2636)
+D, [2020-07-12T03:12:05.945793 #26904] DEBUG -- : [cd3842c1-a8bf-4d19-8bec-5606a83bfa9e]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`guide_id` = 1[0m
+D, [2020-07-12T03:12:05.947184 #26904] DEBUG -- : [cd3842c1-a8bf-4d19-8bec-5606a83bfa9e]   [1m[36mNotification Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `notifications` WHERE `notifications`.`guide_id` = 1 AND `notifications`.`checked` = FALSE LIMIT 1[0m
+I, [2020-07-12T03:12:05.947792 #26904]  INFO -- : [cd3842c1-a8bf-4d19-8bec-5606a83bfa9e] Completed 200 OK in 49ms (Views: 7.2ms | ActiveRecord: 2.9ms | Allocations: 5570)
+I, [2020-07-12T03:12:06.003776 #26904]  INFO -- : [9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-12 03:12:06 +0000
+F, [2020-07-12T03:12:06.004319 #26904] FATAL -- : [9ec5e53d-a7d6-41da-ad3d-39f9d4d37004]   
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004]   
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[9ec5e53d-a7d6-41da-ad3d-39f9d4d37004] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-12T03:12:07.794010 #26904]  INFO -- : [f1753933-b19f-46e4-8ca8-fd1cc789373a] Started GET "/guides/sign_out" for 125.8.190.99 at 2020-07-12 03:12:07 +0000
+F, [2020-07-12T03:12:07.794512 #26904] FATAL -- : [f1753933-b19f-46e4-8ca8-fd1cc789373a]   
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] ActionController::RoutingError (No route matches [GET] "/guides/sign_out"):
+[f1753933-b19f-46e4-8ca8-fd1cc789373a]   
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[f1753933-b19f-46e4-8ca8-fd1cc789373a] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'

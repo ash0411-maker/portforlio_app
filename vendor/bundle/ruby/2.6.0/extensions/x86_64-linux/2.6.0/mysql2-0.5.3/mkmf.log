@@ -1,0 +1,478 @@
+have_func: checking for rb_absint_size()... -------------------- yes
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby  -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby  -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_absint_size; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_absint_singlebit_p()... -------------------- yes
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby  -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_absint_singlebit_p; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_wait_for_single_fd()... -------------------- yes
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby  -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:14:57: error: ‘rb_wait_for_single_fd’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_wait_for_single_fd; return !p; }
+                                                         ^
+conftest.c:14:57: note: each undeclared identifier is reported only once for each function it appears in
+conftest.c: At top level:
+cc1: warning: unrecognized command line option "-Wno-tautological-compare" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-self-assign" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-parentheses-equality" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-constant-logical-operand" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-cast-function-type" [enabled by default]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_wait_for_single_fd; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby  -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void rb_wait_for_single_fd();
+15: int t(void) { rb_wait_for_single_fd(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for mysql.h... -------------------- yes
+
+"gcc -E -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+/* end */
+
+--------------------
+
+have_header: checking for errmsg.h... -------------------- yes
+
+"gcc -E -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <errmsg.h>
+/* end */
+
+--------------------
+
+have_const: checking for SSL_MODE_DISABLED in mysql.h... -------------------- no
+
+"gcc -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC   -c conftest.c"
+conftest.c:7:34: error: ‘SSL_MODE_DISABLED’ undeclared here (not in a function)
+ conftest_type conftestval = (int)SSL_MODE_DISABLED;
+                                  ^
+cc1: warning: unrecognized command line option "-Wno-tautological-compare" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-self-assign" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-parentheses-equality" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-constant-logical-operand" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-cast-function-type" [enabled by default]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)SSL_MODE_DISABLED;
+/* end */
+
+--------------------
+
+have_const: checking for MYSQL_OPT_SSL_ENFORCE in mysql.h... -------------------- no
+
+"gcc -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC   -c conftest.c"
+conftest.c:7:34: error: ‘MYSQL_OPT_SSL_ENFORCE’ undeclared here (not in a function)
+ conftest_type conftestval = (int)MYSQL_OPT_SSL_ENFORCE;
+                                  ^
+cc1: warning: unrecognized command line option "-Wno-tautological-compare" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-self-assign" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-parentheses-equality" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-constant-logical-operand" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-cast-function-type" [enabled by default]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)MYSQL_OPT_SSL_ENFORCE;
+/* end */
+
+--------------------
+
+have_struct_member: checking for MYSQL.net.vio in mysql.h... -------------------- yes
+
+"gcc -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <mysql.h>
+ 4: 
+ 5: /*top*/
+ 6: int s = (char *)&((MYSQL*)0)->net.vio - (char *)0;
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   return 0;
+10: }
+/* end */
+
+--------------------
+
+have_struct_member: checking for MYSQL.net.pvio in mysql.h... -------------------- no
+
+"gcc -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT   -c conftest.c"
+conftest.c:6:34: error: ‘NET’ has no member named ‘pvio’
+ int s = (char *)&((MYSQL*)0)->net.pvio - (char *)0;
+                                  ^
+cc1: warning: unrecognized command line option "-Wno-tautological-compare" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-self-assign" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-parentheses-equality" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-constant-logical-operand" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-cast-function-type" [enabled by default]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <mysql.h>
+ 4: 
+ 5: /*top*/
+ 6: int s = (char *)&((MYSQL*)0)->net.pvio - (char *)0;
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   return 0;
+10: }
+/* end */
+
+--------------------
+
+have_const: checking for MYSQL_ENABLE_CLEARTEXT_PLUGIN in mysql.h... -------------------- yes
+
+"gcc -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)MYSQL_ENABLE_CLEARTEXT_PLUGIN;
+/* end */
+
+--------------------
+
+have_const: checking for SERVER_QUERY_NO_GOOD_INDEX_USED in mysql.h... -------------------- yes
+
+"gcc -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)SERVER_QUERY_NO_GOOD_INDEX_USED;
+/* end */
+
+--------------------
+
+have_const: checking for SERVER_QUERY_NO_INDEX_USED in mysql.h... -------------------- yes
+
+"gcc -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)SERVER_QUERY_NO_INDEX_USED;
+/* end */
+
+--------------------
+
+have_const: checking for SERVER_QUERY_WAS_SLOW in mysql.h... -------------------- yes
+
+"gcc -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)SERVER_QUERY_WAS_SLOW;
+/* end */
+
+--------------------
+
+have_const: checking for MYSQL_OPTION_MULTI_STATEMENTS_ON in mysql.h... -------------------- yes
+
+"gcc -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)MYSQL_OPTION_MULTI_STATEMENTS_ON;
+/* end */
+
+--------------------
+
+have_const: checking for MYSQL_OPTION_MULTI_STATEMENTS_OFF in mysql.h... -------------------- yes
+
+"gcc -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)MYSQL_OPTION_MULTI_STATEMENTS_OFF;
+/* end */
+
+--------------------
+
+have_type: checking for my_bool in mysql.h... -------------------- yes
+
+"gcc -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+4: 
+5: /*top*/
+6: typedef my_bool conftest_type;
+7: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Weverything -lm   -lc"
+gcc: error: unrecognized command line option ‘-Weverything’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-bad-function-cast -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-conditional-uninitialized -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-covered-switch-default -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-declaration-after-statement -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-disabled-macro-expansion -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-documentation-unknown-command -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-missing-field-initializers -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-missing-variable-declarations -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-padded -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-reserved-id-macro -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-sign-conversion -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-static-in-inline -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-switch-enum -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-undef -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-unreachable-code -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/ec2-user/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/usr/include/mysql55 -I/home/ec2-user/.rbenv/versions/2.6.6/include    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC -DNO_SSL_MODE_SUPPORT conftest.c  -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L. -L/home/ec2-user/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl  -Wl,-rpath,/home/ec2-user/.rbenv/versions/2.6.6/lib -L/home/ec2-user/.rbenv/versions/2.6.6/lib -lruby -Werror -Wno-used-but-marked-unused -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
