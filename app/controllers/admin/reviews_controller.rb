@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::ReviewsController < ApplicationController
   before_action :authenticate_admin!
 

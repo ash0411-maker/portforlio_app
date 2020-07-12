@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Geocoder.configure(
   lookup: :google,
   always_raise: [
@@ -6,6 +8,6 @@ Geocoder.configure(
     Geocoder::InvalidRequest,
     Geocoder::InvalidApiKey
   ],
-  api_key:  ENV['GOOGLEMAP'] ,
+  api_key: ENV['GOOGLEMAP'],
   use_https: true
 )

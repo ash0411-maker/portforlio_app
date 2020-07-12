@@ -12,14 +12,11 @@ module ApplicationHelper
       room.chats.each do |chat|
         next if chat.is_tourist == true
 
-        unless chat.chat_notices.where(checked: false, visited_id: current_tourist.id).empty?
-          notifications << chat.chat_notices.where(checked: false, visited_id: current_tourist.id)
-        end
+        notifications << chat.chat_notices.where(checked: false, visited_id: current_tourist.id) unless chat.chat_notices.where(checked: false, visited_id: current_tourist.id).empty?
       end
     end
     notifications
   end
-
 
   def unchecked_guide_chat_notices
     rooms = current_guide.rooms
@@ -28,9 +25,7 @@ module ApplicationHelper
       room.chats.each do |chat|
         next if chat.is_tourist == false
 
-        unless chat.chat_notices.where(checked: false, visited_id: current_guide.id).empty?
-          notifications << chat.chat_notices.where(checked: false, visited_id: current_guide.id)
-        end
+        notifications << chat.chat_notices.where(checked: false, visited_id: current_guide.id) unless chat.chat_notices.where(checked: false, visited_id: current_guide.id).empty?
       end
     end
     notifications
