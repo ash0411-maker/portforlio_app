@@ -1,1 +1,0 @@
-{"ast":null,"code":"define([\"./core\", \"./attributes/attr\", \"./attributes/prop\", \"./attributes/classes\", \"./attributes/val\"], function (jQuery) {\n  \"use strict\"; // Return jQuery for attributes-only inclusion\n\n  return jQuery;\n});","map":null,"metadata":{},"sourceType":"module"}
