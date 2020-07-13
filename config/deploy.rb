@@ -5,7 +5,7 @@ set :application, "FANTRA"
 set :repo_url, "https://github.com/ash0411-maker/portforlio_app"
 
 set :deploy_to, "/home/ec2-user/FANTRA"
-set :rbenv_ruby, '2.5.7'
+set :rbenv_ruby, '2.6.6'
 set :linked_files, %w{config/master.key .env}
 append :linked_dirs, "log", "public/system", "tmp"
 
