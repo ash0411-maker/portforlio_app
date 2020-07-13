@@ -1,1 +1,0 @@
-{"ast":null,"code":"define(function () {\n  \"use strict\";\n\n  function nodeName(elem, name) {\n    return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();\n  }\n\n  ;\n  return nodeName;\n});","map":null,"metadata":{},"sourceType":"module"}

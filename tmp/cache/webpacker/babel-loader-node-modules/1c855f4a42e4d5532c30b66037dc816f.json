@@ -1,1 +1,0 @@
-{"ast":null,"code":"define([\"../core\", \"../ajax\", \"../event\"], function (jQuery) {\n  \"use strict\";\n\n  jQuery.each([\"ajaxStart\", \"ajaxStop\", \"ajaxComplete\", \"ajaxError\", \"ajaxSuccess\", \"ajaxSend\"], function (_i, type) {\n    jQuery.fn[type] = function (fn) {\n      return this.on(type, fn);\n    };\n  });\n});","map":null,"metadata":{},"sourceType":"module"}

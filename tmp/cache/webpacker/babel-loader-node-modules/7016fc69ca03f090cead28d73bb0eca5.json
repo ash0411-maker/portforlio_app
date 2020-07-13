@@ -1,1 +1,0 @@
-{"ast":null,"code":"define(function () {\n  \"use strict\";\n\n  return function (n, elem) {\n    var matched = [];\n\n    for (; n; n = n.nextSibling) {\n      if (n.nodeType === 1 && n !== elem) {\n        matched.push(n);\n      }\n    }\n\n    return matched;\n  };\n});","map":null,"metadata":{},"sourceType":"module"}

@@ -1,1 +1,0 @@
-{"ast":null,"code":"define([\"./document\"], function (document) {\n  \"use strict\";\n\n  return document.documentElement;\n});","map":null,"metadata":{},"sourceType":"module"}
