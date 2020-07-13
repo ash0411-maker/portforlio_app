@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Admin::ContactsController < ApplicationController
   before_action :authenticate_admin!, only: %i[edit update index]
 

@@ -47,8 +47,6 @@
     position: sticky;
 	top: 0;
 	z-index: 1000;
-	font-family: "M PLUS 1p";
-	font-weight: bold;
 }
 
 .logo {
@@ -161,12 +159,9 @@ nav li a{
 
 .tours-photo-index {
 	border-radius: 5%;
-	transition: 0.5s;
 }
 
-.tours-photo-index:hover {
-	transform: scale(1.1, 1.1);
-}
+
 
 
 

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Admin::GuidesController < ApplicationController
   before_action :authenticate_admin!
 

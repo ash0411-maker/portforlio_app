@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Tourist::RoomsController < ApplicationController
   before_action :authenticate_tourist!
   before_action :correct_tourist, only: %i[index show create destroy]

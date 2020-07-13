@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Tourist::ChatsController < ApplicationController
   before_action :correct_tourist, only: [:create]
   before_action :authenticate_tourist!
@@ -38,4 +36,5 @@ class Tourist::ChatsController < ApplicationController
     )
     chat_notice.save if chat_notice.valid?
   end
+
 end

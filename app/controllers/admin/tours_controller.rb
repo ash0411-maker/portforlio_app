@@ -1,6 +1,5 @@
-# frozen_string_literal: true
-
 class Admin::ToursController < ApplicationController
+
   before_action :authenticate_admin!
 
   def index

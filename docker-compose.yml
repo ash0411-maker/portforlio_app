@@ -40,6 +40,7 @@ services:
       - "4444:4444"
     shm_size: "2g"
 
+
 volumes:
   mysql-data:
     driver: local

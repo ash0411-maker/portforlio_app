@@ -14,6 +14,7 @@ class Guide < ApplicationRecord
   has_many :notifications, dependent: :destroy
   has_many :guide_active_notices, class_name: 'ChatNotice', foreign_key: 'visitor_id', dependent: :destroy
   has_many :guide_passive_notices, class_name: 'ChatNotice', foreign_key: 'visited_id', dependent: :destroy
+  
 
   validates :introduction, length: { maximum: 400 }
 
@@ -21,6 +22,8 @@ class Guide < ApplicationRecord
   attachment :identification_image
 
   def self.match(model, guide_id)
-    Guide.find_by(id: guide_id) if model == 'guide'
+    if model == 'guide'
+      Guide.find_by(id: guide_id)
+    end
   end
 end

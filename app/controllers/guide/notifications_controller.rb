@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Guide::NotificationsController < ApplicationController
   before_action :authenticate_guide!
   before_action :correct_guide

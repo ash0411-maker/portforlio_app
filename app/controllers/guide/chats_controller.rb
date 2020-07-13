@@ -1,7 +1,5 @@
-# frozen_string_literal: true
-
 class Guide::ChatsController < ApplicationController
-  before_action :authenticate_guide!, only: [:create]
+    before_action :authenticate_guide!, only: [:create]
   before_action :correct_guide, only: [:create]
 
   def create

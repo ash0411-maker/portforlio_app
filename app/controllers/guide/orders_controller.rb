@@ -1,6 +1,5 @@
-# frozen_string_literal: true
-
 class Guide::OrdersController < ApplicationController
+  
   before_action :authenticate_guide!
   before_action :correct_guide, only: %i[index update new_order day_before_touring finished_tour]
 
@@ -23,6 +22,7 @@ class Guide::OrdersController < ApplicationController
     end
   end
 
+
   # -------------- 予約ステータス変更ページ --------------
   def new_order
     @orders = current_guide.orders
@@ -34,6 +34,7 @@ class Guide::OrdersController < ApplicationController
     @guide_total_sales = guide_total_sales_sum.floor
   end
 
+
   def day_before_touring
     @orders = current_guide.orders
     guide_total_sales = []
@@ -43,6 +44,7 @@ class Guide::OrdersController < ApplicationController
     guide_total_sales_sum = guide_total_sales.sum
     @guide_total_sales = guide_total_sales_sum.floor
   end
+
 
   def finished_tour
     @orders = current_guide.orders
