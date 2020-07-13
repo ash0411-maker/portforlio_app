@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :genre do
-    name { '冒険' }
+    name { Faker::Lorem.characters(number: 10) }
   end
 end
