@@ -39,6 +39,10 @@ group :development, :test do
   gem 'rspec_junit_formatter'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rbenv'
 end
 
 group :development do
