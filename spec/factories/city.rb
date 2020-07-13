@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :city do
-    name { 'シカゴ' }
+    name { Faker::Lorem.characters(number: 10) }
   end
 end

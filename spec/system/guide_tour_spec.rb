@@ -3,11 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe 'GuideTour', type: :system, js: true do
-  let(:tour) { create(:tour) }
-  let(:guide) { create(:guide) }
+  let!(:tour) { create(:tour) }
+  let!(:guide) { create(:guide) }
   let(:genre) { create(:genre) }
-  let(:city) { create(:city) }
-  let(:another_guide) { create(:another_guide) }
+  let!(:city) { create(:city) }
+  let!(:another_guide) { create(:another_guide) }
 
   describe 'Tour関連ページ' do
     context 'tour詳細ページ' do
@@ -85,8 +85,8 @@ RSpec.describe 'GuideTour', type: :system, js: true do
         login guide
         visit new_guide_guide_tour_path(guide)
         fill_in 'tour[title]', with: ''
-        find('#tour_genre_id').find("option[value='1']").select_option
-        find('#tour_city_id').find("option[value='1']").select_option
+        find('#tour_genre_id').find("option[value='']").select_option
+        find('#tour_city_id').find("option[value='']").select_option
         fill_in 'tour[capacity]', with: ''
         fill_in 'tour[time]', with: ''
         fill_in 'tour[price]', with: ''
