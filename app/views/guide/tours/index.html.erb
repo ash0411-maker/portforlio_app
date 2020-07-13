@@ -27,7 +27,7 @@
                     <tr>
                         <th class = "active text-center">紹介者</th>
                         <th class = "active text-center">ツアー名</th>
-                        <th class = "active text-center">ステータス</th>
+                        <th class = "active text-center">ブックマーク数</th>
                         <th class = "active text-center">都市</th>
                         <th class = "active text-center">ジャンル</th>
                         <th class = "active text-center"></th>
@@ -38,11 +38,7 @@
                         <tr class = "text-center">
                             <td><%= tour.guide.name %>さん</td>
                             <td><%= tour.title %></td>
-                            <% if tour.is_active == true %>
-                                <td>販売中</td>
-                            <% else %>
-                                <td>販売停止中</td>
-                            <% end %>
+                            <td><%= tour.book_marks.count %></td>
                             <td><%= tour.city.name %></td>
                             <td><%= tour.genre.name %></td>
                             <td>
