@@ -87,7 +87,7 @@ RSpec.describe 'Devise', type: :system, js: true do
         fill_in 'guide[password]', with: ''
         fill_in 'guide[password_confirmation]', with: ''
         click_button '新規登録'
-        expect(page).to have_content 'error'
+        expect(page).to have_content '件のエラーが発生したため'
       end
     end
     context 'ログイン・ログアウト' do
@@ -155,7 +155,7 @@ RSpec.describe 'Devise', type: :system, js: true do
         fill_in 'tourist[password]', with: ''
         fill_in 'tourist[password_confirmation]', with: ''
         click_button '新規登録'
-        expect(page).to have_content 'error'
+        expect(page).to have_content '件のエラーが発生したため'
       end
     end
     context 'ログイン・ログアウト' do
