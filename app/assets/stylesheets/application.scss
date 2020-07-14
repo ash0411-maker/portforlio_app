@@ -336,3 +336,20 @@ footer {
 	line-height: 70px;
 	padding-right: 40px;
 }
+
+
+
+.pagination>li>a {
+	border: none;
+	color: black;
+  }
+
+  .pagination>.active>a {
+	background: limegreen;
+	border-radius: 15px;
+  }
+  
+  .pagination>li>a:hover {
+	border-radius: 15px;
+	background: limegreen;
+  }
