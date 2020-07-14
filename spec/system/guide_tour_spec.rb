@@ -69,7 +69,8 @@ RSpec.describe 'GuideTour', type: :system, js: true do
             login guide
             visit new_guide_guide_tour_path(guide)
             fill_in 'tour[title]', with: 'test'
-            sleep 10
+            $wait = Selenium::WebDriver::Wait.new(:timeout => 60)
+            $wait.until{driver.find_element(:id,'tour_genre_id').displayed?}
             find('#tour_genre_id').find("option[value='1']").select_option
             find('#tour_city_id').find("option[value='1']").select_option
             fill_in 'tour[capacity]', with: '10'
