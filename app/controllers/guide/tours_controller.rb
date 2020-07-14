@@ -8,6 +8,7 @@ class Guide::ToursController < ApplicationController
     @tour = Tour.find(params[:id])
     @tour_photos = @tour.tour_photos
     @reviews = @tour.reviews
+    @book_marks = @tour.book_marks
   end
 
   def index
