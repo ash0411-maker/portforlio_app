@@ -1,8 +1,8 @@
 require "refile/s3"
 
 aws = {
-  access_key_id: "ENV['access_key']",
-  secret_access_key: "ENV['secret_access']",
+  access_key_id: ENV['S3_ACCESS_KEY_ID'],
+  secret_access_key: ENV['S3_SECRET_ACCESS_KEY'],
   region: "ap-northeast-1",
   bucket: "fantra",
 }
