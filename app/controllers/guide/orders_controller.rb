@@ -13,6 +13,13 @@ class Guide::OrdersController < ApplicationController
     end
     guide_total_sales_sum = guide_total_sales.sum
     @guide_total_sales = guide_total_sales_sum.floor
+
+    # チャット相手のidを入れる。
+    rooms = current_guide.rooms
+    @tourist_ids = []
+    rooms.each do |room|
+      @tourist_ids << room.tourist_id
+    end
   end
 
   def update

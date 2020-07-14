@@ -9,12 +9,12 @@
     background-attachment: fixed;
 	background-size: cover;
 	background-position: center;
-	height: 580px;
+	height: 600px;
 }
 
 .home-top-image-box {
     width: 45%;
-    height: 580px;
+    height: 600px;
     background-color: rgba( 0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
     position: relative;
@@ -30,7 +30,7 @@
 .home-top-image-box-text {
     text-align: center;
     display: block;
-    font-size: 22px;
+    font-size: 25px;
 }
 
 .registration-btn {
@@ -77,12 +77,12 @@
 }
 
 
-.fadein {
-    opacity : 0;
-    transform : translate(0, 50px);
-    transition : all 300ms;
+.top-fadein {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s;
 }
-.fadein.scrollin {
-    opacity : 1;
-    transform : translate(0, 0);
+.top-fadein.top-scrollin {
+    opacity: 1;
+    transform: translateY(0);
 }
