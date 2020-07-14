@@ -1,1 +1,0 @@
-{"ast":null,"code":"define(function () {\n  \"use strict\";\n\n  return /^(?:checkbox|radio)$/i;\n});","map":null,"metadata":{},"sourceType":"module"}
