@@ -1,0 +1,16 @@
+=> Booting Puma
+=> Rails 6.0.3.2 application starting in production 
+=> Run `rails server --help` for more startup options
+Puma starting in single mode...
+* Version 4.3.5 (ruby 2.6.6-p146), codename: Mysterious Traveller
+* Min threads: 5, max threads: 5
+* Environment: production
+* Daemonizing...
+=> Booting Puma
+=> Rails 6.0.3.2 application starting in production 
+=> Run `rails server --help` for more startup options
+Puma starting in single mode...
+* Version 4.3.5 (ruby 2.6.6-p146), codename: Mysterious Traveller
+* Min threads: 5, max threads: 5
+* Environment: production
+* Daemonizing...
