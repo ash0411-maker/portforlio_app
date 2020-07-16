@@ -24,7 +24,7 @@
 .home-top-image-box-text:first-child{
     text-align: center;
     display: block;
-    padding: 130px 0 80px;
+    padding: 10px 0 80px;
 }
 
 .home-top-image-box-text {
@@ -33,9 +33,17 @@
     font-size: 25px;
 }
 
+.top-main-text {
+    text-align: left;
+    padding-left: 50px;
+    font-size: 80px;
+    margin-bottom: 60px;
+    font-family: 'Coda Caption', sans-serif;
+}
+
 .registration-btn {
     display: block;
-    margin-top: 20px;
+    margin-top: 10px;
     font-family: "M PLUS 1p";
 	font-weight: bold;
 }
