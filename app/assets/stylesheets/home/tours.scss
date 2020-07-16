@@ -9,12 +9,12 @@
     background-attachment: fixed;
 	background-size: cover;
 	background-position: center;
-	height: 580px;
+	height: 600px;
 }
 
 .home-top-image-box {
     width: 45%;
-    height: 580px;
+    height: 600px;
     background-color: rgba( 0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
     position: relative;
@@ -30,7 +30,7 @@
 .home-top-image-box-text {
     text-align: center;
     display: block;
-    font-size: 22px;
+    font-size: 25px;
 }
 
 .registration-btn {
@@ -46,4 +46,43 @@
 
 .registration-logo {
     padding-right: 10px;
+}
+
+.about-fantra {
+    background-color: black;
+    color: white;
+    height: 450px;
+    font-family: "M PLUS 1p";
+	font-weight: bold;
+}
+
+.icon-headline {
+    margin: 50px 0 50px;
+}
+
+.icon-text {
+    margin-top: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.service-icon {
+    margin: 0 auto;
+    color: limegreen;
+    height: 120px;
+    width: 120px;
+    display: block;
+    line-height: 7.5rem;
+    font-size: 2.25rem;
+}
+
+
+.top-fadein {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s;
+}
+.top-fadein.top-scrollin {
+    opacity: 1;
+    transform: translateY(0);
 }

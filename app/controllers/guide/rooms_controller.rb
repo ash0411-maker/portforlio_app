@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Guide::RoomsController < ApplicationController
   before_action :authenticate_guide!
   before_action :correct_guide, only: %i[show index create]
@@ -36,6 +38,7 @@ class Guide::RoomsController < ApplicationController
   end
 
   private
+
   def room_tourist_params
     params.require(:room).permit(:tourist_id)
   end

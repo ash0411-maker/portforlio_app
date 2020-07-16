@@ -62,7 +62,7 @@
 						<th class = "text-center">参加人数</th>
 						<th class = "text-center">売り上げ</th>
 						<th class = "text-center">利益</th>
-						<th class = "text-center">チャットへ</th>
+						<th class = "text-center"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -74,6 +74,16 @@
 							<td><%= order.total_people %>名</td>
 							<td>¥ <%= number_with_delimiter(order.total_price) %></td>
 							<td>¥ <%= number_with_delimiter(order.guide_sales) %></td>
+							<td>
+								<% if @tourist_ids.include?(order.tourist.id) %>
+									<%= link_to "チャットへ", guide_guide_room_path(current_guide, current_guide.rooms.find_by(tourist_id: order.tourist.id)), class: "btn btn-lg btn-warning" %>
+								<% else %>
+									<%= form_for(Room.new, url: guide_guide_rooms_path(current_guide)) do |f| %>
+										<%= f.hidden_field :guide_id, :value => tour.guide.id %>
+										<%= f.submit "チャットへ", class: "btn btn-lg btn-warning" %>
+									<% end %>
+								<% end %>
+							</td>
 						</tr>
 					<% end %>
 				</tbody>

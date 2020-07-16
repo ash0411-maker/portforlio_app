@@ -13,12 +13,39 @@
 			<div class = "home-top-image-box-text">
 				<span class = "registration-btn">
 					<%= link_to new_tourist_registration_path do %>
-						<i class="fas fa-suitcase-rolling fa-2x registration-logo"></i>新たな世界へのツアーを探している方はツーリスト登録
+						<i class="fas fa-suitcase-rolling fa-2x registration-logo"></i>新たな冒険を探している方はツーリスト登録
 					<% end %>
 				</span>
 			</div>
     	</div>
 　	</div>
+</div>
+<div class = "about-fantra">
+	<div class = "container">
+		<div class = "row">
+			<h1 class = "col-xs-offset-3 icon-headline">FANTRAではこんなことが可能です。</h1>
+			<div class = "top-fadein">
+				<div class = "col-xs-4 col-xs-offset-2">
+					<span class = "service-icon">
+						<i class = "fas fa-suitcase-rolling fa-5x"></i>
+					</span>
+					<h2 class = "icon-text"><strong>新たな旅を見つける</strong></h2>
+					<h4 class = "icon-text">
+						普通の旅では味わえない、ローカルで貴重な経験を人との暖かい交流を通じて味わうことができます。
+					</h4>
+				</div>
+				<div class = "col-xs-4 col-xs-offset-1">
+					<span class = "service-icon">
+						<i class = "fas fa-hiking fa-5x"></i>
+					</span>
+					<h2 class = "icon-text"><strong>体験をシェアする</strong></h2>
+					<h4 class = "icon-text">
+						従来のツアーとは異なる、あなたの好きな世界をあらゆる人たちに特別な体験として提供することができます。
+					</h4>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <div class = "tours-second-wrapper">
 	<%= render 'partial/tours_second_wrapper', tours: @tours %>

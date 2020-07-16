@@ -1,1 +1,0 @@
-{"ast":null,"code":"define([\"../Data\"], function (Data) {\n  \"use strict\";\n\n  return new Data();\n});","map":null,"metadata":{},"sourceType":"module"}

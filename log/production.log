@@ -2651,3 +2651,1199 @@ F, [2020-07-16T00:29:31.410928 #2777] FATAL -- : [b5c92a7c-2978-4243-b5b7-32dfff
 [b5c92a7c-2978-4243-b5b7-32dfff405ced] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
 [b5c92a7c-2978-4243-b5b7-32dfff405ced] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
 [b5c92a7c-2978-4243-b5b7-32dfff405ced] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T00:30:54.584804 #2777]  INFO -- : [ba717ef6-7d26-4ffe-af1f-769aa7d8ba13] Started GET "/" for 125.8.190.99 at 2020-07-16 00:30:54 +0000
+I, [2020-07-16T00:30:54.585483 #2777]  INFO -- : [ba717ef6-7d26-4ffe-af1f-769aa7d8ba13] Processing by Home::ToursController#index as HTML
+I, [2020-07-16T00:30:54.586424 #2777]  INFO -- : [ba717ef6-7d26-4ffe-af1f-769aa7d8ba13]   Rendering home/tours/index.html.erb within layouts/application
+D, [2020-07-16T00:30:54.588934 #2777] DEBUG -- : [ba717ef6-7d26-4ffe-af1f-769aa7d8ba13]   [1m[36mTour Load (1.1ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T00:30:54.589316 #2777]  INFO -- : [ba717ef6-7d26-4ffe-af1f-769aa7d8ba13]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 2.5ms | Allocations: 272)
+I, [2020-07-16T00:30:54.589386 #2777]  INFO -- : [ba717ef6-7d26-4ffe-af1f-769aa7d8ba13]   Rendered home/tours/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 397)
+I, [2020-07-16T00:30:54.590601 #2777]  INFO -- : [ba717ef6-7d26-4ffe-af1f-769aa7d8ba13] Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 1.1ms | Allocations: 1672)
+I, [2020-07-16T00:30:54.647074 #2777]  INFO -- : [e72aa4e1-42e8-4c44-9073-cfbd154d1e26] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 00:30:54 +0000
+F, [2020-07-16T00:30:54.647596 #2777] FATAL -- : [e72aa4e1-42e8-4c44-9073-cfbd154d1e26]   
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26]   
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[e72aa4e1-42e8-4c44-9073-cfbd154d1e26] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T00:30:55.285672 #2777]  INFO -- : [6f2997ec-88a5-4b18-9f25-ad645249b3f6] Started GET "/" for 125.8.190.99 at 2020-07-16 00:30:55 +0000
+I, [2020-07-16T00:30:55.286311 #2777]  INFO -- : [6f2997ec-88a5-4b18-9f25-ad645249b3f6] Processing by Home::ToursController#index as HTML
+I, [2020-07-16T00:30:55.287281 #2777]  INFO -- : [6f2997ec-88a5-4b18-9f25-ad645249b3f6]   Rendering home/tours/index.html.erb within layouts/application
+D, [2020-07-16T00:30:55.289053 #2777] DEBUG -- : [6f2997ec-88a5-4b18-9f25-ad645249b3f6]   [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T00:30:55.289406 #2777]  INFO -- : [6f2997ec-88a5-4b18-9f25-ad645249b3f6]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 1.8ms | Allocations: 272)
+I, [2020-07-16T00:30:55.289477 #2777]  INFO -- : [6f2997ec-88a5-4b18-9f25-ad645249b3f6]   Rendered home/tours/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 397)
+I, [2020-07-16T00:30:55.290652 #2777]  INFO -- : [6f2997ec-88a5-4b18-9f25-ad645249b3f6] Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.6ms | Allocations: 1660)
+I, [2020-07-16T00:30:55.345209 #2777]  INFO -- : [8f0dc37c-9de3-4ff6-89ec-a9567fa18037] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 00:30:55 +0000
+F, [2020-07-16T00:30:55.345735 #2777] FATAL -- : [8f0dc37c-9de3-4ff6-89ec-a9567fa18037]   
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037]   
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[8f0dc37c-9de3-4ff6-89ec-a9567fa18037] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T00:53:14.071073 #2777]  INFO -- : [53502b65-21d7-4ec7-8cda-746f5e774990] Started GET "/" for 125.8.190.99 at 2020-07-16 00:53:14 +0000
+I, [2020-07-16T00:53:14.071715 #2777]  INFO -- : [53502b65-21d7-4ec7-8cda-746f5e774990] Processing by Home::ToursController#index as HTML
+I, [2020-07-16T00:53:14.072749 #2777]  INFO -- : [53502b65-21d7-4ec7-8cda-746f5e774990]   Rendering home/tours/index.html.erb within layouts/application
+D, [2020-07-16T00:53:14.080116 #2777] DEBUG -- : [53502b65-21d7-4ec7-8cda-746f5e774990]   [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4 COLLATE utf8mb4_general_ci,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2020-07-16T00:53:14.081334 #2777] DEBUG -- : [53502b65-21d7-4ec7-8cda-746f5e774990]   [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T00:53:14.081706 #2777]  INFO -- : [53502b65-21d7-4ec7-8cda-746f5e774990]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 8.6ms | Allocations: 405)
+I, [2020-07-16T00:53:14.081777 #2777]  INFO -- : [53502b65-21d7-4ec7-8cda-746f5e774990]   Rendered home/tours/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 530)
+I, [2020-07-16T00:53:14.082933 #2777]  INFO -- : [53502b65-21d7-4ec7-8cda-746f5e774990] Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 1.1ms | Allocations: 1803)
+I, [2020-07-16T00:53:14.230640 #2777]  INFO -- : [72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 00:53:14 +0000
+F, [2020-07-16T00:53:14.231177 #2777] FATAL -- : [72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2]   
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2]   
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[72ea72b4-7dd0-4e29-a5e1-bb910b4f80f2] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T00:53:14.925915 #2777]  INFO -- : [2b63f0b1-a7bb-463f-956f-aa6f97c1f4ac] Started GET "/" for 125.8.190.99 at 2020-07-16 00:53:14 +0000
+I, [2020-07-16T00:53:14.926537 #2777]  INFO -- : [2b63f0b1-a7bb-463f-956f-aa6f97c1f4ac] Processing by Home::ToursController#index as HTML
+I, [2020-07-16T00:53:14.927471 #2777]  INFO -- : [2b63f0b1-a7bb-463f-956f-aa6f97c1f4ac]   Rendering home/tours/index.html.erb within layouts/application
+D, [2020-07-16T00:53:14.929241 #2777] DEBUG -- : [2b63f0b1-a7bb-463f-956f-aa6f97c1f4ac]   [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T00:53:14.929589 #2777]  INFO -- : [2b63f0b1-a7bb-463f-956f-aa6f97c1f4ac]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 1.8ms | Allocations: 274)
+I, [2020-07-16T00:53:14.929660 #2777]  INFO -- : [2b63f0b1-a7bb-463f-956f-aa6f97c1f4ac]   Rendered home/tours/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 399)
+I, [2020-07-16T00:53:14.930793 #2777]  INFO -- : [2b63f0b1-a7bb-463f-956f-aa6f97c1f4ac] Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.6ms | Allocations: 1667)
+I, [2020-07-16T00:53:14.995901 #2777]  INFO -- : [842c4e81-942b-4df8-9008-0d6d1733b573] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 00:53:14 +0000
+F, [2020-07-16T00:53:14.996444 #2777] FATAL -- : [842c4e81-942b-4df8-9008-0d6d1733b573]   
+[842c4e81-942b-4df8-9008-0d6d1733b573] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[842c4e81-942b-4df8-9008-0d6d1733b573]   
+[842c4e81-942b-4df8-9008-0d6d1733b573] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[842c4e81-942b-4df8-9008-0d6d1733b573] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[842c4e81-942b-4df8-9008-0d6d1733b573] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[842c4e81-942b-4df8-9008-0d6d1733b573] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[842c4e81-942b-4df8-9008-0d6d1733b573] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[842c4e81-942b-4df8-9008-0d6d1733b573] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[842c4e81-942b-4df8-9008-0d6d1733b573] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[842c4e81-942b-4df8-9008-0d6d1733b573] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[842c4e81-942b-4df8-9008-0d6d1733b573] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:51:53.232693 #2777]  INFO -- : [e17040f3-ddc0-4683-beb5-9d9ee8a5019b] Started GET "/" for 125.8.190.99 at 2020-07-16 03:51:53 +0000
+I, [2020-07-16T03:51:53.233343 #2777]  INFO -- : [e17040f3-ddc0-4683-beb5-9d9ee8a5019b] Processing by Home::ToursController#index as HTML
+I, [2020-07-16T03:51:53.234302 #2777]  INFO -- : [e17040f3-ddc0-4683-beb5-9d9ee8a5019b]   Rendering home/tours/index.html.erb within layouts/application
+D, [2020-07-16T03:51:53.270502 #2777] DEBUG -- : [e17040f3-ddc0-4683-beb5-9d9ee8a5019b]   [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4 COLLATE utf8mb4_general_ci,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2020-07-16T03:51:53.271607 #2777] DEBUG -- : [e17040f3-ddc0-4683-beb5-9d9ee8a5019b]   [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T03:51:53.272046 #2777]  INFO -- : [e17040f3-ddc0-4683-beb5-9d9ee8a5019b]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 37.4ms | Allocations: 408)
+I, [2020-07-16T03:51:53.272125 #2777]  INFO -- : [e17040f3-ddc0-4683-beb5-9d9ee8a5019b]   Rendered home/tours/index.html.erb within layouts/application (Duration: 37.8ms | Allocations: 533)
+I, [2020-07-16T03:51:53.273314 #2777]  INFO -- : [e17040f3-ddc0-4683-beb5-9d9ee8a5019b] Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 1.0ms | Allocations: 1801)
+I, [2020-07-16T03:51:53.662159 #2777]  INFO -- : [621ff200-7d35-41ff-91c3-54df9703a2c1] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 03:51:53 +0000
+F, [2020-07-16T03:51:53.662713 #2777] FATAL -- : [621ff200-7d35-41ff-91c3-54df9703a2c1]   
+[621ff200-7d35-41ff-91c3-54df9703a2c1] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[621ff200-7d35-41ff-91c3-54df9703a2c1]   
+[621ff200-7d35-41ff-91c3-54df9703a2c1] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[621ff200-7d35-41ff-91c3-54df9703a2c1] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:52:01.923232 #2777]  INFO -- : [da2b6aee-6440-43cb-8fce-f79468a8afae] Started GET "/tourists/sign_in" for 125.8.190.99 at 2020-07-16 03:52:01 +0000
+I, [2020-07-16T03:52:01.924036 #2777]  INFO -- : [da2b6aee-6440-43cb-8fce-f79468a8afae] Processing by Devise::Tourists::SessionsController#new as HTML
+I, [2020-07-16T03:52:01.925619 #2777]  INFO -- : [da2b6aee-6440-43cb-8fce-f79468a8afae]   Rendering devise/tourists/sessions/new.html.erb within layouts/application
+I, [2020-07-16T03:52:01.927609 #2777]  INFO -- : [da2b6aee-6440-43cb-8fce-f79468a8afae]   Rendered devise/tourists/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+I, [2020-07-16T03:52:01.927688 #2777]  INFO -- : [da2b6aee-6440-43cb-8fce-f79468a8afae]   Rendered devise/tourists/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1212)
+I, [2020-07-16T03:52:01.928940 #2777]  INFO -- : [da2b6aee-6440-43cb-8fce-f79468a8afae] Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 2713)
+I, [2020-07-16T03:52:02.267666 #2777]  INFO -- : [d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 03:52:02 +0000
+F, [2020-07-16T03:52:02.268227 #2777] FATAL -- : [d647223c-04a4-49e8-a4eb-b7f6ee93d4c2]   
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2]   
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[d647223c-04a4-49e8-a4eb-b7f6ee93d4c2] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:52:03.358796 #2777]  INFO -- : [f6ae7835-8235-486d-90ed-3e45ad673ac4] Started GET "/tourists/sign_in_with_guest" for 125.8.190.99 at 2020-07-16 03:52:03 +0000
+F, [2020-07-16T03:52:03.359331 #2777] FATAL -- : [f6ae7835-8235-486d-90ed-3e45ad673ac4]   
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] ActionController::RoutingError (No route matches [GET] "/tourists/sign_in_with_guest"):
+[f6ae7835-8235-486d-90ed-3e45ad673ac4]   
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[f6ae7835-8235-486d-90ed-3e45ad673ac4] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:52:08.737749 #2777]  INFO -- : [ec20f6ee-e2e8-4696-ac5a-400f3d45ca79] Started GET "/" for 125.8.190.99 at 2020-07-16 03:52:08 +0000
+I, [2020-07-16T03:52:08.738404 #2777]  INFO -- : [ec20f6ee-e2e8-4696-ac5a-400f3d45ca79] Processing by Home::ToursController#index as HTML
+I, [2020-07-16T03:52:08.739402 #2777]  INFO -- : [ec20f6ee-e2e8-4696-ac5a-400f3d45ca79]   Rendering home/tours/index.html.erb within layouts/application
+D, [2020-07-16T03:52:08.741224 #2777] DEBUG -- : [ec20f6ee-e2e8-4696-ac5a-400f3d45ca79]   [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T03:52:08.741571 #2777]  INFO -- : [ec20f6ee-e2e8-4696-ac5a-400f3d45ca79]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 1.8ms | Allocations: 272)
+I, [2020-07-16T03:52:08.741641 #2777]  INFO -- : [ec20f6ee-e2e8-4696-ac5a-400f3d45ca79]   Rendered home/tours/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 397)
+I, [2020-07-16T03:52:08.742813 #2777]  INFO -- : [ec20f6ee-e2e8-4696-ac5a-400f3d45ca79] Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms | Allocations: 1654)
+I, [2020-07-16T03:52:08.802546 #2777]  INFO -- : [ef33b6a0-2d33-43ed-98b8-1a18682338d6] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 03:52:08 +0000
+F, [2020-07-16T03:52:08.803102 #2777] FATAL -- : [ef33b6a0-2d33-43ed-98b8-1a18682338d6]   
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6]   
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[ef33b6a0-2d33-43ed-98b8-1a18682338d6] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:52:11.638368 #2777]  INFO -- : [b6c89182-7b38-4114-a796-82a05ba31c4d] Started GET "/tourists/sign_up" for 125.8.190.99 at 2020-07-16 03:52:11 +0000
+I, [2020-07-16T03:52:11.639102 #2777]  INFO -- : [b6c89182-7b38-4114-a796-82a05ba31c4d] Processing by Devise::Tourists::RegistrationsController#new as HTML
+I, [2020-07-16T03:52:11.642134 #2777]  INFO -- : [b6c89182-7b38-4114-a796-82a05ba31c4d]   Rendering devise/tourists/registrations/new.html.erb within layouts/application
+I, [2020-07-16T03:52:11.645028 #2777]  INFO -- : [b6c89182-7b38-4114-a796-82a05ba31c4d]   Rendered devise/tourists/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 206)
+I, [2020-07-16T03:52:11.647237 #2777]  INFO -- : [b6c89182-7b38-4114-a796-82a05ba31c4d]   Rendered devise/tourists/shared/_links.html.erb (Duration: 0.3ms | Allocations: 125)
+I, [2020-07-16T03:52:11.647311 #2777]  INFO -- : [b6c89182-7b38-4114-a796-82a05ba31c4d]   Rendered devise/tourists/registrations/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2212)
+I, [2020-07-16T03:52:11.648494 #2777]  INFO -- : [b6c89182-7b38-4114-a796-82a05ba31c4d] Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4979)
+I, [2020-07-16T03:52:11.858693 #2777]  INFO -- : [a600b314-58d0-4619-a3d9-230a1a9aaccb] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 03:52:11 +0000
+F, [2020-07-16T03:52:11.859249 #2777] FATAL -- : [a600b314-58d0-4619-a3d9-230a1a9aaccb]   
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[a600b314-58d0-4619-a3d9-230a1a9aaccb]   
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[a600b314-58d0-4619-a3d9-230a1a9aaccb] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:52:18.413649 #2777]  INFO -- : [20c632e7-f8ec-4960-89a0-f8545849495c] Started POST "/tourists" for 125.8.190.99 at 2020-07-16 03:52:18 +0000
+I, [2020-07-16T03:52:18.414461 #2777]  INFO -- : [20c632e7-f8ec-4960-89a0-f8545849495c] Processing by Devise::Tourists::RegistrationsController#create as HTML
+I, [2020-07-16T03:52:18.414518 #2777]  INFO -- : [20c632e7-f8ec-4960-89a0-f8545849495c]   Parameters: {"authenticity_token"=>"hRIpiVsQMouz3sBT/aJ5nyLSAYKH9kSrwVEJsNN6QjUsPFEk6YTzAxVAg7mXb82fRigzGTMNHNAAMdyRypWCbg==", "tourist"=>{"email"=>"a@a", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新規登録"}
+D, [2020-07-16T03:52:18.721753 #2777] DEBUG -- : [20c632e7-f8ec-4960-89a0-f8545849495c]   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+D, [2020-07-16T03:52:18.722634 #2777] DEBUG -- : [20c632e7-f8ec-4960-89a0-f8545849495c]   [1m[36mTourist Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `tourists` WHERE `tourists`.`email` = BINARY 'a@a' AND `tourists`.`deleted_at` IS NULL LIMIT 1[0m
+D, [2020-07-16T03:52:18.727019 #2777] DEBUG -- : [20c632e7-f8ec-4960-89a0-f8545849495c]   [1m[36mTourist Create (3.2ms)[0m  [1m[32mINSERT INTO `tourists` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('a@a', '$2a$12$cVRjXnXXwTp5Cv8m9Lyqf.VmyQXJPOM4fyPhLHUJHKju8D2Kv.9aq', '2020-07-16 03:52:18.722926', '2020-07-16 03:52:18.722926')[0m
+D, [2020-07-16T03:52:18.736983 #2777] DEBUG -- : [20c632e7-f8ec-4960-89a0-f8545849495c]   [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+I, [2020-07-16T03:52:18.740246 #2777]  INFO -- : [20c632e7-f8ec-4960-89a0-f8545849495c] Redirected to http://fantra.net/tourist/tourists/1/tours
+I, [2020-07-16T03:52:18.740388 #2777]  INFO -- : [20c632e7-f8ec-4960-89a0-f8545849495c] Completed 302 Found in 326ms (ActiveRecord: 14.0ms | Allocations: 4957)
+I, [2020-07-16T03:52:18.794202 #2777]  INFO -- : [7b129f28-256a-4eb7-8c98-8fc917180ad5] Started GET "/tourist/tourists/1/tours" for 125.8.190.99 at 2020-07-16 03:52:18 +0000
+I, [2020-07-16T03:52:18.795009 #2777]  INFO -- : [7b129f28-256a-4eb7-8c98-8fc917180ad5] Processing by Tourist::ToursController#index as HTML
+I, [2020-07-16T03:52:18.795055 #2777]  INFO -- : [7b129f28-256a-4eb7-8c98-8fc917180ad5]   Parameters: {"tourist_id"=>"1"}
+I, [2020-07-16T03:52:18.797383 #2777]  INFO -- : [7b129f28-256a-4eb7-8c98-8fc917180ad5]   Rendering tourist/tours/index.html.erb within layouts/application
+D, [2020-07-16T03:52:18.799426 #2777] DEBUG -- : [7b129f28-256a-4eb7-8c98-8fc917180ad5]   [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+D, [2020-07-16T03:52:18.804162 #2777] DEBUG -- : [7b129f28-256a-4eb7-8c98-8fc917180ad5]   [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T03:52:18.804542 #2777]  INFO -- : [7b129f28-256a-4eb7-8c98-8fc917180ad5]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 1.8ms | Allocations: 822)
+I, [2020-07-16T03:52:18.804611 #2777]  INFO -- : [7b129f28-256a-4eb7-8c98-8fc917180ad5]   Rendered tourist/tours/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1966)
+D, [2020-07-16T03:52:18.806597 #2777] DEBUG -- : [7b129f28-256a-4eb7-8c98-8fc917180ad5]   [1m[36mTourist Load (0.6ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T03:52:18.810609 #2777] DEBUG -- : [7b129f28-256a-4eb7-8c98-8fc917180ad5]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T03:52:18.811085 #2777]  INFO -- : [7b129f28-256a-4eb7-8c98-8fc917180ad5] Completed 200 OK in 16ms (Views: 8.6ms | ActiveRecord: 6.0ms | Allocations: 5398)
+I, [2020-07-16T03:52:18.999175 #2777]  INFO -- : [08d82b8c-c08c-4c20-9e60-b9853545927e] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 03:52:18 +0000
+F, [2020-07-16T03:52:18.999727 #2777] FATAL -- : [08d82b8c-c08c-4c20-9e60-b9853545927e]   
+[08d82b8c-c08c-4c20-9e60-b9853545927e] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[08d82b8c-c08c-4c20-9e60-b9853545927e]   
+[08d82b8c-c08c-4c20-9e60-b9853545927e] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[08d82b8c-c08c-4c20-9e60-b9853545927e] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:52:23.822247 #2777]  INFO -- : [1d249fc6-5502-43e6-8224-6352e0fbb030] Started GET "/tourists/sign_out" for 125.8.190.99 at 2020-07-16 03:52:23 +0000
+F, [2020-07-16T03:52:23.822814 #2777] FATAL -- : [1d249fc6-5502-43e6-8224-6352e0fbb030]   
+[1d249fc6-5502-43e6-8224-6352e0fbb030] ActionController::RoutingError (No route matches [GET] "/tourists/sign_out"):
+[1d249fc6-5502-43e6-8224-6352e0fbb030]   
+[1d249fc6-5502-43e6-8224-6352e0fbb030] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[1d249fc6-5502-43e6-8224-6352e0fbb030] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:52:33.099597 #2777]  INFO -- : [c2014227-caab-4e1a-9008-22ebffe37319] Started GET "/tourist/tourists/1/tours" for 125.8.190.99 at 2020-07-16 03:52:33 +0000
+I, [2020-07-16T03:52:33.100349 #2777]  INFO -- : [c2014227-caab-4e1a-9008-22ebffe37319] Processing by Tourist::ToursController#index as HTML
+I, [2020-07-16T03:52:33.100398 #2777]  INFO -- : [c2014227-caab-4e1a-9008-22ebffe37319]   Parameters: {"tourist_id"=>"1"}
+I, [2020-07-16T03:52:33.101450 #2777]  INFO -- : [c2014227-caab-4e1a-9008-22ebffe37319]   Rendering tourist/tours/index.html.erb within layouts/application
+D, [2020-07-16T03:52:33.102895 #2777] DEBUG -- : [c2014227-caab-4e1a-9008-22ebffe37319]   [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+D, [2020-07-16T03:52:33.103913 #2777] DEBUG -- : [c2014227-caab-4e1a-9008-22ebffe37319]   [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T03:52:33.104279 #2777]  INFO -- : [c2014227-caab-4e1a-9008-22ebffe37319]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 1.2ms | Allocations: 263)
+I, [2020-07-16T03:52:33.104348 #2777]  INFO -- : [c2014227-caab-4e1a-9008-22ebffe37319]   Rendered tourist/tours/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 468)
+D, [2020-07-16T03:52:33.106200 #2777] DEBUG -- : [c2014227-caab-4e1a-9008-22ebffe37319]   [1m[36mTourist Load (0.7ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T03:52:33.107788 #2777] DEBUG -- : [c2014227-caab-4e1a-9008-22ebffe37319]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T03:52:33.108222 #2777]  INFO -- : [c2014227-caab-4e1a-9008-22ebffe37319] Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 2.4ms | Allocations: 2433)
+I, [2020-07-16T03:52:33.178392 #2777]  INFO -- : [fd1fb86f-557b-4e01-8587-c6e6afab58de] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 03:52:33 +0000
+F, [2020-07-16T03:52:33.178967 #2777] FATAL -- : [fd1fb86f-557b-4e01-8587-c6e6afab58de]   
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[fd1fb86f-557b-4e01-8587-c6e6afab58de]   
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[fd1fb86f-557b-4e01-8587-c6e6afab58de] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:52:34.909141 #2777]  INFO -- : [021138d1-4922-41e4-ae5a-ef1ec136d28a] Started GET "/tourist/tourists/1/chat_notices" for 125.8.190.99 at 2020-07-16 03:52:34 +0000
+I, [2020-07-16T03:52:34.909891 #2777]  INFO -- : [021138d1-4922-41e4-ae5a-ef1ec136d28a] Processing by Tourist::ChatNoticesController#index as HTML
+I, [2020-07-16T03:52:34.909940 #2777]  INFO -- : [021138d1-4922-41e4-ae5a-ef1ec136d28a]   Parameters: {"tourist_id"=>"1"}
+D, [2020-07-16T03:52:34.912462 #2777] DEBUG -- : [021138d1-4922-41e4-ae5a-ef1ec136d28a]   [1m[36mTourist Load (0.7ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T03:52:34.914029 #2777] DEBUG -- : [021138d1-4922-41e4-ae5a-ef1ec136d28a]   [1m[36mTourist Load (0.8ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 LIMIT 1[0m
+I, [2020-07-16T03:52:34.934633 #2777]  INFO -- : [021138d1-4922-41e4-ae5a-ef1ec136d28a]   Rendering tourist/chat_notices/index.html.erb within layouts/application
+D, [2020-07-16T03:52:34.948996 #2777] DEBUG -- : [021138d1-4922-41e4-ae5a-ef1ec136d28a]   [1m[35m (7.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `chat_notices` INNER JOIN `chats` ON `chats`.`id` = `chat_notices`.`chat_id` WHERE `chat_notices`.`visited_id` = 1 AND (chats.is_tourist = 0) ORDER BY `chat_notices`.`created_at` DESC LIMIT 20 OFFSET 0) subquery_for_count[0m
+I, [2020-07-16T03:52:34.949157 #2777]  INFO -- : [021138d1-4922-41e4-ae5a-ef1ec136d28a]   Rendered tourist/chat_notices/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 1809)
+D, [2020-07-16T03:52:34.951563 #2777] DEBUG -- : [021138d1-4922-41e4-ae5a-ef1ec136d28a]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T03:52:34.952083 #2777]  INFO -- : [021138d1-4922-41e4-ae5a-ef1ec136d28a] Completed 200 OK in 42ms (Views: 9.1ms | ActiveRecord: 27.9ms | Allocations: 5792)
+I, [2020-07-16T03:52:35.213845 #2777]  INFO -- : [77128d3c-898f-4288-8e8f-be3c28cdd613] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 03:52:35 +0000
+F, [2020-07-16T03:52:35.214407 #2777] FATAL -- : [77128d3c-898f-4288-8e8f-be3c28cdd613]   
+[77128d3c-898f-4288-8e8f-be3c28cdd613] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[77128d3c-898f-4288-8e8f-be3c28cdd613]   
+[77128d3c-898f-4288-8e8f-be3c28cdd613] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[77128d3c-898f-4288-8e8f-be3c28cdd613] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:52:38.569045 #2777]  INFO -- : [069adc5b-6099-4838-88e6-68e54683ee7d] Started GET "/" for 125.8.190.99 at 2020-07-16 03:52:38 +0000
+I, [2020-07-16T03:52:38.569821 #2777]  INFO -- : [069adc5b-6099-4838-88e6-68e54683ee7d] Processing by Home::ToursController#index as HTML
+I, [2020-07-16T03:52:38.570952 #2777]  INFO -- : [069adc5b-6099-4838-88e6-68e54683ee7d]   Rendering home/tours/index.html.erb within layouts/application
+D, [2020-07-16T03:52:38.572959 #2777] DEBUG -- : [069adc5b-6099-4838-88e6-68e54683ee7d]   [1m[36mTour Load (0.7ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T03:52:38.573408 #2777]  INFO -- : [069adc5b-6099-4838-88e6-68e54683ee7d]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 2.1ms | Allocations: 272)
+I, [2020-07-16T03:52:38.573492 #2777]  INFO -- : [069adc5b-6099-4838-88e6-68e54683ee7d]   Rendered home/tours/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 403)
+D, [2020-07-16T03:52:38.575335 #2777] DEBUG -- : [069adc5b-6099-4838-88e6-68e54683ee7d]   [1m[36mTourist Load (0.6ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T03:52:38.577039 #2777] DEBUG -- : [069adc5b-6099-4838-88e6-68e54683ee7d]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T03:52:38.577469 #2777]  INFO -- : [069adc5b-6099-4838-88e6-68e54683ee7d] Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 2.0ms | Allocations: 2356)
+I, [2020-07-16T03:52:38.644256 #2777]  INFO -- : [530904ef-3dd9-494c-adb0-13ee43f9f27d] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 03:52:38 +0000
+F, [2020-07-16T03:52:38.644806 #2777] FATAL -- : [530904ef-3dd9-494c-adb0-13ee43f9f27d]   
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[530904ef-3dd9-494c-adb0-13ee43f9f27d]   
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[530904ef-3dd9-494c-adb0-13ee43f9f27d] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:52:42.965015 #2777]  INFO -- : [040bbbcb-a974-412c-bfb2-07224720ff68] Started GET "/guides/sign_up" for 125.8.190.99 at 2020-07-16 03:52:42 +0000
+I, [2020-07-16T03:52:42.965746 #2777]  INFO -- : [040bbbcb-a974-412c-bfb2-07224720ff68] Processing by Devise::Guides::RegistrationsController#new as HTML
+I, [2020-07-16T03:52:42.968354 #2777]  INFO -- : [040bbbcb-a974-412c-bfb2-07224720ff68]   Rendering devise/guides/registrations/new.html.erb within layouts/application
+I, [2020-07-16T03:52:42.971233 #2777]  INFO -- : [040bbbcb-a974-412c-bfb2-07224720ff68]   Rendered devise/guides/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 199)
+I, [2020-07-16T03:52:42.973181 #2777]  INFO -- : [040bbbcb-a974-412c-bfb2-07224720ff68]   Rendered devise/guides/shared/_links.html.erb (Duration: 0.3ms | Allocations: 124)
+I, [2020-07-16T03:52:42.973469 #2777]  INFO -- : [040bbbcb-a974-412c-bfb2-07224720ff68]   Rendered devise/guides/registrations/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2150)
+D, [2020-07-16T03:52:42.976033 #2777] DEBUG -- : [040bbbcb-a974-412c-bfb2-07224720ff68]   [1m[36mTourist Load (0.7ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T03:52:42.977589 #2777] DEBUG -- : [040bbbcb-a974-412c-bfb2-07224720ff68]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T03:52:42.978035 #2777]  INFO -- : [040bbbcb-a974-412c-bfb2-07224720ff68] Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 1.2ms | Allocations: 5025)
+I, [2020-07-16T03:52:43.188958 #2777]  INFO -- : [5462801d-f59a-479e-bbfd-df3dd11c9959] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 03:52:43 +0000
+F, [2020-07-16T03:52:43.189513 #2777] FATAL -- : [5462801d-f59a-479e-bbfd-df3dd11c9959]   
+[5462801d-f59a-479e-bbfd-df3dd11c9959] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[5462801d-f59a-479e-bbfd-df3dd11c9959]   
+[5462801d-f59a-479e-bbfd-df3dd11c9959] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[5462801d-f59a-479e-bbfd-df3dd11c9959] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:52:45.013351 #2777]  INFO -- : [8f60b496-e7ad-43d5-8885-a0b75b8731f2] Started GET "/tourist/tourists/1" for 125.8.190.99 at 2020-07-16 03:52:45 +0000
+I, [2020-07-16T03:52:45.014137 #2777]  INFO -- : [8f60b496-e7ad-43d5-8885-a0b75b8731f2] Processing by Tourist::TouristsController#show as HTML
+I, [2020-07-16T03:52:45.014186 #2777]  INFO -- : [8f60b496-e7ad-43d5-8885-a0b75b8731f2]   Parameters: {"id"=>"1"}
+D, [2020-07-16T03:52:45.021439 #2777] DEBUG -- : [8f60b496-e7ad-43d5-8885-a0b75b8731f2]   [1m[36mTourist Load (5.5ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T03:52:45.023435 #2777] DEBUG -- : [8f60b496-e7ad-43d5-8885-a0b75b8731f2]   [1m[36mTourist Load (1.1ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 LIMIT 1[0m
+I, [2020-07-16T03:52:45.025116 #2777]  INFO -- : [8f60b496-e7ad-43d5-8885-a0b75b8731f2]   Rendering tourist/tourists/show.html.erb within layouts/application
+I, [2020-07-16T03:52:45.026816 #2777]  INFO -- : [8f60b496-e7ad-43d5-8885-a0b75b8731f2]   Rendered tourist/tourists/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 489)
+D, [2020-07-16T03:52:45.029222 #2777] DEBUG -- : [8f60b496-e7ad-43d5-8885-a0b75b8731f2]   [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T03:52:45.029683 #2777]  INFO -- : [8f60b496-e7ad-43d5-8885-a0b75b8731f2] Completed 200 OK in 15ms (Views: 4.8ms | ActiveRecord: 7.4ms | Allocations: 3538)
+I, [2020-07-16T03:52:45.227600 #2777]  INFO -- : [a82e117d-98ae-4dfe-bc9e-a4636ef98725] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 03:52:45 +0000
+F, [2020-07-16T03:52:45.228180 #2777] FATAL -- : [a82e117d-98ae-4dfe-bc9e-a4636ef98725]   
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725]   
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[a82e117d-98ae-4dfe-bc9e-a4636ef98725] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T03:52:46.093828 #2777]  INFO -- : [ab47a1b4-ee7d-4007-993c-46909fc9604f] Started GET "/tourist/tourists/1/tours" for 125.8.190.99 at 2020-07-16 03:52:46 +0000
+I, [2020-07-16T03:52:46.094572 #2777]  INFO -- : [ab47a1b4-ee7d-4007-993c-46909fc9604f] Processing by Tourist::ToursController#index as HTML
+I, [2020-07-16T03:52:46.094629 #2777]  INFO -- : [ab47a1b4-ee7d-4007-993c-46909fc9604f]   Parameters: {"tourist_id"=>"1"}
+I, [2020-07-16T03:52:46.095734 #2777]  INFO -- : [ab47a1b4-ee7d-4007-993c-46909fc9604f]   Rendering tourist/tours/index.html.erb within layouts/application
+D, [2020-07-16T03:52:46.097179 #2777] DEBUG -- : [ab47a1b4-ee7d-4007-993c-46909fc9604f]   [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+D, [2020-07-16T03:52:46.098066 #2777] DEBUG -- : [ab47a1b4-ee7d-4007-993c-46909fc9604f]   [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T03:52:46.098428 #2777]  INFO -- : [ab47a1b4-ee7d-4007-993c-46909fc9604f]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 1.1ms | Allocations: 263)
+I, [2020-07-16T03:52:46.098499 #2777]  INFO -- : [ab47a1b4-ee7d-4007-993c-46909fc9604f]   Rendered tourist/tours/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 468)
+D, [2020-07-16T03:52:46.100279 #2777] DEBUG -- : [ab47a1b4-ee7d-4007-993c-46909fc9604f]   [1m[36mTourist Load (0.6ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T03:52:46.101944 #2777] DEBUG -- : [ab47a1b4-ee7d-4007-993c-46909fc9604f]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T03:52:46.102364 #2777]  INFO -- : [ab47a1b4-ee7d-4007-993c-46909fc9604f] Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 2.2ms | Allocations: 2450)
+I, [2020-07-16T03:52:46.158974 #2777]  INFO -- : [5b08e2bb-8f22-48ed-b119-1295c1a61cb9] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 03:52:46 +0000
+F, [2020-07-16T03:52:46.159527 #2777] FATAL -- : [5b08e2bb-8f22-48ed-b119-1295c1a61cb9]   
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9]   
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[5b08e2bb-8f22-48ed-b119-1295c1a61cb9] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T04:59:19.804626 #2777]  INFO -- : [f44fcb5d-202f-4ff5-a860-6d772703f153] Started GET "/tourist/tourists/1/tours" for 125.8.190.99 at 2020-07-16 04:59:19 +0000
+I, [2020-07-16T04:59:19.805380 #2777]  INFO -- : [f44fcb5d-202f-4ff5-a860-6d772703f153] Processing by Tourist::ToursController#index as HTML
+I, [2020-07-16T04:59:19.805427 #2777]  INFO -- : [f44fcb5d-202f-4ff5-a860-6d772703f153]   Parameters: {"tourist_id"=>"1"}
+I, [2020-07-16T04:59:19.806484 #2777]  INFO -- : [f44fcb5d-202f-4ff5-a860-6d772703f153]   Rendering tourist/tours/index.html.erb within layouts/application
+D, [2020-07-16T04:59:19.847538 #2777] DEBUG -- : [f44fcb5d-202f-4ff5-a860-6d772703f153]   [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4 COLLATE utf8mb4_general_ci,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2020-07-16T04:59:19.848740 #2777] DEBUG -- : [f44fcb5d-202f-4ff5-a860-6d772703f153]   [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+D, [2020-07-16T04:59:19.849750 #2777] DEBUG -- : [f44fcb5d-202f-4ff5-a860-6d772703f153]   [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T04:59:19.850122 #2777]  INFO -- : [f44fcb5d-202f-4ff5-a860-6d772703f153]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 1.2ms | Allocations: 270)
+I, [2020-07-16T04:59:19.850198 #2777]  INFO -- : [f44fcb5d-202f-4ff5-a860-6d772703f153]   Rendered tourist/tours/index.html.erb within layouts/application (Duration: 43.6ms | Allocations: 608)
+D, [2020-07-16T04:59:19.852039 #2777] DEBUG -- : [f44fcb5d-202f-4ff5-a860-6d772703f153]   [1m[36mTourist Load (0.6ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T04:59:19.853702 #2777] DEBUG -- : [f44fcb5d-202f-4ff5-a860-6d772703f153]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:19.854128 #2777]  INFO -- : [f44fcb5d-202f-4ff5-a860-6d772703f153] Completed 200 OK in 49ms (Views: 47.8ms | ActiveRecord: 2.8ms | Allocations: 2590)
+I, [2020-07-16T04:59:19.914214 #2777]  INFO -- : [693f8de7-e4bc-4802-afdb-f62b70484563] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 04:59:19 +0000
+F, [2020-07-16T04:59:19.914734 #2777] FATAL -- : [693f8de7-e4bc-4802-afdb-f62b70484563]   
+[693f8de7-e4bc-4802-afdb-f62b70484563] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[693f8de7-e4bc-4802-afdb-f62b70484563]   
+[693f8de7-e4bc-4802-afdb-f62b70484563] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[693f8de7-e4bc-4802-afdb-f62b70484563] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[693f8de7-e4bc-4802-afdb-f62b70484563] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[693f8de7-e4bc-4802-afdb-f62b70484563] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[693f8de7-e4bc-4802-afdb-f62b70484563] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[693f8de7-e4bc-4802-afdb-f62b70484563] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[693f8de7-e4bc-4802-afdb-f62b70484563] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[693f8de7-e4bc-4802-afdb-f62b70484563] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[693f8de7-e4bc-4802-afdb-f62b70484563] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T04:59:20.919670 #2777]  INFO -- : [5ef06441-c65d-4370-b25c-901bf7216b61] Started GET "/tourist/tourists/1" for 125.8.190.99 at 2020-07-16 04:59:20 +0000
+I, [2020-07-16T04:59:20.920404 #2777]  INFO -- : [5ef06441-c65d-4370-b25c-901bf7216b61] Processing by Tourist::TouristsController#show as HTML
+I, [2020-07-16T04:59:20.920452 #2777]  INFO -- : [5ef06441-c65d-4370-b25c-901bf7216b61]   Parameters: {"id"=>"1"}
+D, [2020-07-16T04:59:20.922840 #2777] DEBUG -- : [5ef06441-c65d-4370-b25c-901bf7216b61]   [1m[36mTourist Load (0.7ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T04:59:20.924067 #2777] DEBUG -- : [5ef06441-c65d-4370-b25c-901bf7216b61]   [1m[36mTourist Load (0.6ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 LIMIT 1[0m
+I, [2020-07-16T04:59:20.924601 #2777]  INFO -- : [5ef06441-c65d-4370-b25c-901bf7216b61]   Rendering tourist/tourists/show.html.erb within layouts/application
+I, [2020-07-16T04:59:20.925053 #2777]  INFO -- : [5ef06441-c65d-4370-b25c-901bf7216b61]   Rendered tourist/tourists/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 168)
+D, [2020-07-16T04:59:20.926985 #2777] DEBUG -- : [5ef06441-c65d-4370-b25c-901bf7216b61]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:20.927405 #2777]  INFO -- : [5ef06441-c65d-4370-b25c-901bf7216b61] Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 1.8ms | Allocations: 2342)
+I, [2020-07-16T04:59:21.018389 #2777]  INFO -- : [c3722e14-e88e-4f92-869c-abc48aa8b35f] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 04:59:21 +0000
+F, [2020-07-16T04:59:21.018929 #2777] FATAL -- : [c3722e14-e88e-4f92-869c-abc48aa8b35f]   
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[c3722e14-e88e-4f92-869c-abc48aa8b35f]   
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[c3722e14-e88e-4f92-869c-abc48aa8b35f] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T04:59:22.558733 #2777]  INFO -- : [a4a9783b-27db-459d-9f28-e09359e1ad46] Started GET "/tourist/tourists/1/edit" for 125.8.190.99 at 2020-07-16 04:59:22 +0000
+I, [2020-07-16T04:59:22.559418 #2777]  INFO -- : [a4a9783b-27db-459d-9f28-e09359e1ad46] Processing by Tourist::TouristsController#edit as HTML
+I, [2020-07-16T04:59:22.559465 #2777]  INFO -- : [a4a9783b-27db-459d-9f28-e09359e1ad46]   Parameters: {"id"=>"1"}
+D, [2020-07-16T04:59:22.562031 #2777] DEBUG -- : [a4a9783b-27db-459d-9f28-e09359e1ad46]   [1m[36mTourist Load (0.8ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T04:59:22.563317 #2777] DEBUG -- : [a4a9783b-27db-459d-9f28-e09359e1ad46]   [1m[36mTourist Load (0.6ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 LIMIT 1[0m
+D, [2020-07-16T04:59:22.563901 #2777] DEBUG -- : [a4a9783b-27db-459d-9f28-e09359e1ad46]   [1m[36mCACHE Tourist Load (0.0ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 LIMIT 1[0m
+I, [2020-07-16T04:59:22.564640 #2777]  INFO -- : [a4a9783b-27db-459d-9f28-e09359e1ad46]   Rendering tourist/tourists/edit.html.erb within layouts/application
+I, [2020-07-16T04:59:22.570711 #2777]  INFO -- : [a4a9783b-27db-459d-9f28-e09359e1ad46]   Rendered tourist/tourists/edit.html.erb within layouts/application (Duration: 6.0ms | Allocations: 3355)
+D, [2020-07-16T04:59:22.572839 #2777] DEBUG -- : [a4a9783b-27db-459d-9f28-e09359e1ad46]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:22.573290 #2777]  INFO -- : [a4a9783b-27db-459d-9f28-e09359e1ad46] Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 2.0ms | Allocations: 5920)
+I, [2020-07-16T04:59:22.653794 #2777]  INFO -- : [d731751e-edf1-48e5-b5e2-ffdca3e3c330] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 04:59:22 +0000
+F, [2020-07-16T04:59:22.654370 #2777] FATAL -- : [d731751e-edf1-48e5-b5e2-ffdca3e3c330]   
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330]   
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[d731751e-edf1-48e5-b5e2-ffdca3e3c330] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T04:59:26.164198 #2777]  INFO -- : [b106bd53-b20d-469c-a0c6-59e157143652] Started GET "/tourist/tourists/1/rooms" for 125.8.190.99 at 2020-07-16 04:59:26 +0000
+I, [2020-07-16T04:59:26.164915 #2777]  INFO -- : [b106bd53-b20d-469c-a0c6-59e157143652] Processing by Tourist::RoomsController#index as HTML
+I, [2020-07-16T04:59:26.164964 #2777]  INFO -- : [b106bd53-b20d-469c-a0c6-59e157143652]   Parameters: {"tourist_id"=>"1"}
+D, [2020-07-16T04:59:26.167332 #2777] DEBUG -- : [b106bd53-b20d-469c-a0c6-59e157143652]   [1m[36mTourist Load (0.7ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T04:59:26.168514 #2777] DEBUG -- : [b106bd53-b20d-469c-a0c6-59e157143652]   [1m[36mTourist Load (0.5ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 LIMIT 1[0m
+I, [2020-07-16T04:59:26.170620 #2777]  INFO -- : [b106bd53-b20d-469c-a0c6-59e157143652]   Rendering tourist/rooms/index.html.erb within layouts/application
+D, [2020-07-16T04:59:26.172964 #2777] DEBUG -- : [b106bd53-b20d-469c-a0c6-59e157143652]   [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM `rooms` WHERE `rooms`.`tourist_id` = 1 ORDER BY `rooms`.`created_at` DESC LIMIT 10 OFFSET 0) subquery_for_count[0m
+I, [2020-07-16T04:59:26.173089 #2777]  INFO -- : [b106bd53-b20d-469c-a0c6-59e157143652]   Rendered tourist/rooms/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 598)
+D, [2020-07-16T04:59:26.175115 #2777] DEBUG -- : [b106bd53-b20d-469c-a0c6-59e157143652]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:26.175593 #2777]  INFO -- : [b106bd53-b20d-469c-a0c6-59e157143652] Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 2.3ms | Allocations: 3859)
+I, [2020-07-16T04:59:26.278436 #2777]  INFO -- : [d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 04:59:26 +0000
+F, [2020-07-16T04:59:26.279046 #2777] FATAL -- : [d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba]   
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba]   
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[d4c935c8-ef1f-4a78-8f8b-1ebecb9119ba] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T04:59:27.978036 #2777]  INFO -- : [68d2abe9-e579-4ed8-9e3c-6c17e8b8d0d8] Started GET "/tourist/tourists/1/book_marks/index" for 125.8.190.99 at 2020-07-16 04:59:27 +0000
+I, [2020-07-16T04:59:27.978786 #2777]  INFO -- : [68d2abe9-e579-4ed8-9e3c-6c17e8b8d0d8] Processing by Tourist::BookMarksController#index as HTML
+I, [2020-07-16T04:59:27.978834 #2777]  INFO -- : [68d2abe9-e579-4ed8-9e3c-6c17e8b8d0d8]   Parameters: {"tourist_id"=>"1"}
+D, [2020-07-16T04:59:27.981324 #2777] DEBUG -- : [68d2abe9-e579-4ed8-9e3c-6c17e8b8d0d8]   [1m[36mTourist Load (0.8ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T04:59:27.982503 #2777] DEBUG -- : [68d2abe9-e579-4ed8-9e3c-6c17e8b8d0d8]   [1m[36mTourist Load (0.5ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 LIMIT 1[0m
+I, [2020-07-16T04:59:27.984518 #2777]  INFO -- : [68d2abe9-e579-4ed8-9e3c-6c17e8b8d0d8]   Rendering tourist/book_marks/index.html.erb within layouts/application
+D, [2020-07-16T04:59:27.990568 #2777] DEBUG -- : [68d2abe9-e579-4ed8-9e3c-6c17e8b8d0d8]   [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `book_marks` WHERE `book_marks`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:27.990853 #2777]  INFO -- : [68d2abe9-e579-4ed8-9e3c-6c17e8b8d0d8]   Rendered tourist/book_marks/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1273)
+D, [2020-07-16T04:59:27.992848 #2777] DEBUG -- : [68d2abe9-e579-4ed8-9e3c-6c17e8b8d0d8]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:27.993288 #2777]  INFO -- : [68d2abe9-e579-4ed8-9e3c-6c17e8b8d0d8] Completed 200 OK in 14ms (Views: 5.5ms | ActiveRecord: 5.6ms | Allocations: 4451)
+I, [2020-07-16T04:59:28.102337 #2777]  INFO -- : [ee28a9d0-575c-4a71-b7eb-56c1191ab947] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 04:59:28 +0000
+F, [2020-07-16T04:59:28.102892 #2777] FATAL -- : [ee28a9d0-575c-4a71-b7eb-56c1191ab947]   
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947]   
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[ee28a9d0-575c-4a71-b7eb-56c1191ab947] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T04:59:29.777456 #2777]  INFO -- : [f08929f7-ada0-4f26-ad08-85aea59f9512] Started GET "/tourist/tourists/1/orders" for 125.8.190.99 at 2020-07-16 04:59:29 +0000
+I, [2020-07-16T04:59:29.778263 #2777]  INFO -- : [f08929f7-ada0-4f26-ad08-85aea59f9512] Processing by Tourist::OrdersController#index as HTML
+I, [2020-07-16T04:59:29.778312 #2777]  INFO -- : [f08929f7-ada0-4f26-ad08-85aea59f9512]   Parameters: {"tourist_id"=>"1"}
+D, [2020-07-16T04:59:29.780845 #2777] DEBUG -- : [f08929f7-ada0-4f26-ad08-85aea59f9512]   [1m[36mTourist Load (0.7ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T04:59:29.782254 #2777] DEBUG -- : [f08929f7-ada0-4f26-ad08-85aea59f9512]   [1m[36mTourist Load (0.7ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 LIMIT 1[0m
+I, [2020-07-16T04:59:29.793167 #2777]  INFO -- : [f08929f7-ada0-4f26-ad08-85aea59f9512]   Rendering tourist/orders/index.html.erb within layouts/application
+D, [2020-07-16T04:59:29.797865 #2777] DEBUG -- : [f08929f7-ada0-4f26-ad08-85aea59f9512]   [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `orders` WHERE `orders`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:29.798016 #2777]  INFO -- : [f08929f7-ada0-4f26-ad08-85aea59f9512]   Rendered tourist/orders/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2009)
+D, [2020-07-16T04:59:29.800175 #2777] DEBUG -- : [f08929f7-ada0-4f26-ad08-85aea59f9512]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:29.800653 #2777]  INFO -- : [f08929f7-ada0-4f26-ad08-85aea59f9512] Completed 200 OK in 22ms (Views: 5.6ms | ActiveRecord: 7.3ms | Allocations: 9332)
+I, [2020-07-16T04:59:29.902515 #2777]  INFO -- : [6e4f50f7-23e6-4bd7-9d53-3d91441405e7] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 04:59:29 +0000
+F, [2020-07-16T04:59:29.903056 #2777] FATAL -- : [6e4f50f7-23e6-4bd7-9d53-3d91441405e7]   
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7]   
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[6e4f50f7-23e6-4bd7-9d53-3d91441405e7] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T04:59:31.282670 #2777]  INFO -- : [a905ea7e-8180-4004-8c2e-682ec18c2370] Started GET "/tourist/tourists/1/book_marks/index" for 125.8.190.99 at 2020-07-16 04:59:31 +0000
+I, [2020-07-16T04:59:31.283423 #2777]  INFO -- : [a905ea7e-8180-4004-8c2e-682ec18c2370] Processing by Tourist::BookMarksController#index as HTML
+I, [2020-07-16T04:59:31.283470 #2777]  INFO -- : [a905ea7e-8180-4004-8c2e-682ec18c2370]   Parameters: {"tourist_id"=>"1"}
+D, [2020-07-16T04:59:31.286035 #2777] DEBUG -- : [a905ea7e-8180-4004-8c2e-682ec18c2370]   [1m[36mTourist Load (0.7ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T04:59:31.287313 #2777] DEBUG -- : [a905ea7e-8180-4004-8c2e-682ec18c2370]   [1m[36mTourist Load (0.6ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 LIMIT 1[0m
+I, [2020-07-16T04:59:31.288012 #2777]  INFO -- : [a905ea7e-8180-4004-8c2e-682ec18c2370]   Rendering tourist/book_marks/index.html.erb within layouts/application
+D, [2020-07-16T04:59:31.289144 #2777] DEBUG -- : [a905ea7e-8180-4004-8c2e-682ec18c2370]   [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `book_marks` WHERE `book_marks`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:31.289429 #2777]  INFO -- : [a905ea7e-8180-4004-8c2e-682ec18c2370]   Rendered tourist/book_marks/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 320)
+D, [2020-07-16T04:59:31.291432 #2777] DEBUG -- : [a905ea7e-8180-4004-8c2e-682ec18c2370]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:31.291901 #2777]  INFO -- : [a905ea7e-8180-4004-8c2e-682ec18c2370] Completed 200 OK in 8ms (Views: 3.0ms | ActiveRecord: 2.4ms | Allocations: 2535)
+I, [2020-07-16T04:59:31.357252 #2777]  INFO -- : [57b76ea6-8efb-4068-bbeb-efedbe9f1942] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 04:59:31 +0000
+F, [2020-07-16T04:59:31.357764 #2777] FATAL -- : [57b76ea6-8efb-4068-bbeb-efedbe9f1942]   
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942]   
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[57b76ea6-8efb-4068-bbeb-efedbe9f1942] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T04:59:32.192439 #2777]  INFO -- : [a83a4d48-8725-428e-8cfd-54ac00c57743] Started GET "/tourist/tourists/1/tours" for 125.8.190.99 at 2020-07-16 04:59:32 +0000
+I, [2020-07-16T04:59:32.193158 #2777]  INFO -- : [a83a4d48-8725-428e-8cfd-54ac00c57743] Processing by Tourist::ToursController#index as HTML
+I, [2020-07-16T04:59:32.193206 #2777]  INFO -- : [a83a4d48-8725-428e-8cfd-54ac00c57743]   Parameters: {"tourist_id"=>"1"}
+I, [2020-07-16T04:59:32.194280 #2777]  INFO -- : [a83a4d48-8725-428e-8cfd-54ac00c57743]   Rendering tourist/tours/index.html.erb within layouts/application
+D, [2020-07-16T04:59:32.195732 #2777] DEBUG -- : [a83a4d48-8725-428e-8cfd-54ac00c57743]   [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+D, [2020-07-16T04:59:32.196672 #2777] DEBUG -- : [a83a4d48-8725-428e-8cfd-54ac00c57743]   [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T04:59:32.197048 #2777]  INFO -- : [a83a4d48-8725-428e-8cfd-54ac00c57743]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 1.1ms | Allocations: 263)
+I, [2020-07-16T04:59:32.197117 #2777]  INFO -- : [a83a4d48-8725-428e-8cfd-54ac00c57743]   Rendered tourist/tours/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 468)
+D, [2020-07-16T04:59:32.198905 #2777] DEBUG -- : [a83a4d48-8725-428e-8cfd-54ac00c57743]   [1m[36mTourist Load (0.6ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T04:59:32.200543 #2777] DEBUG -- : [a83a4d48-8725-428e-8cfd-54ac00c57743]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:32.200964 #2777]  INFO -- : [a83a4d48-8725-428e-8cfd-54ac00c57743] Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 2.2ms | Allocations: 2444)
+I, [2020-07-16T04:59:32.267913 #2777]  INFO -- : [8247f847-cd19-4ee8-91b1-0a023a90090c] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 04:59:32 +0000
+F, [2020-07-16T04:59:32.268467 #2777] FATAL -- : [8247f847-cd19-4ee8-91b1-0a023a90090c]   
+[8247f847-cd19-4ee8-91b1-0a023a90090c] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[8247f847-cd19-4ee8-91b1-0a023a90090c]   
+[8247f847-cd19-4ee8-91b1-0a023a90090c] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[8247f847-cd19-4ee8-91b1-0a023a90090c] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T04:59:54.313044 #2777]  INFO -- : [6ee433a6-be8e-422a-995e-7f43c315b3f4] Started GET "/tourist/tourists/1/tourists/delete" for 125.8.190.99 at 2020-07-16 04:59:54 +0000
+I, [2020-07-16T04:59:54.313736 #2777]  INFO -- : [6ee433a6-be8e-422a-995e-7f43c315b3f4] Processing by Tourist::TouristsController#delete as HTML
+I, [2020-07-16T04:59:54.313799 #2777]  INFO -- : [6ee433a6-be8e-422a-995e-7f43c315b3f4]   Parameters: {"tourist_id"=>"1"}
+I, [2020-07-16T04:59:54.314818 #2777]  INFO -- : [6ee433a6-be8e-422a-995e-7f43c315b3f4]   Rendering tourist/tourists/delete.html.erb within layouts/application
+D, [2020-07-16T04:59:54.317953 #2777] DEBUG -- : [6ee433a6-be8e-422a-995e-7f43c315b3f4]   [1m[36mTourist Load (0.7ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+I, [2020-07-16T04:59:54.318441 #2777]  INFO -- : [6ee433a6-be8e-422a-995e-7f43c315b3f4]   Rendered tourist/tourists/delete.html.erb within layouts/application (Duration: 3.5ms | Allocations: 611)
+D, [2020-07-16T04:59:54.320470 #2777] DEBUG -- : [6ee433a6-be8e-422a-995e-7f43c315b3f4]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:54.320886 #2777]  INFO -- : [6ee433a6-be8e-422a-995e-7f43c315b3f4] Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.2ms | Allocations: 2264)
+I, [2020-07-16T04:59:54.393176 #2777]  INFO -- : [a6e5c47a-094f-40cf-9287-0372c9dc3178] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 04:59:54 +0000
+F, [2020-07-16T04:59:54.393734 #2777] FATAL -- : [a6e5c47a-094f-40cf-9287-0372c9dc3178]   
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[a6e5c47a-094f-40cf-9287-0372c9dc3178]   
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[a6e5c47a-094f-40cf-9287-0372c9dc3178] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T04:59:55.908221 #2777]  INFO -- : [7d439107-f3c7-4565-b44a-1720a6c8cb28] Started GET "/tourist/tourists/1" for 125.8.190.99 at 2020-07-16 04:59:55 +0000
+I, [2020-07-16T04:59:55.908894 #2777]  INFO -- : [7d439107-f3c7-4565-b44a-1720a6c8cb28] Processing by Tourist::TouristsController#show as HTML
+I, [2020-07-16T04:59:55.908943 #2777]  INFO -- : [7d439107-f3c7-4565-b44a-1720a6c8cb28]   Parameters: {"id"=>"1"}
+D, [2020-07-16T04:59:55.911448 #2777] DEBUG -- : [7d439107-f3c7-4565-b44a-1720a6c8cb28]   [1m[36mTourist Load (0.8ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T04:59:55.912708 #2777] DEBUG -- : [7d439107-f3c7-4565-b44a-1720a6c8cb28]   [1m[36mTourist Load (0.6ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 LIMIT 1[0m
+I, [2020-07-16T04:59:55.913277 #2777]  INFO -- : [7d439107-f3c7-4565-b44a-1720a6c8cb28]   Rendering tourist/tourists/show.html.erb within layouts/application
+I, [2020-07-16T04:59:55.913731 #2777]  INFO -- : [7d439107-f3c7-4565-b44a-1720a6c8cb28]   Rendered tourist/tourists/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 172)
+D, [2020-07-16T04:59:55.915742 #2777] DEBUG -- : [7d439107-f3c7-4565-b44a-1720a6c8cb28]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T04:59:55.916166 #2777]  INFO -- : [7d439107-f3c7-4565-b44a-1720a6c8cb28] Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 2.0ms | Allocations: 2346)
+I, [2020-07-16T04:59:55.993055 #2777]  INFO -- : [37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 04:59:55 +0000
+F, [2020-07-16T04:59:55.993575 #2777] FATAL -- : [37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866]   
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866]   
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[37a0ad5e-cbf6-4f5d-b4b0-9914ef50b866] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T05:00:56.715585 #2777]  INFO -- : [e0cb60c5-9260-499e-818e-dd38e97377ac] Started GET "/" for 147.192.30.91 at 2020-07-16 05:00:56 +0000
+I, [2020-07-16T05:00:56.716273 #2777]  INFO -- : [e0cb60c5-9260-499e-818e-dd38e97377ac] Processing by Home::ToursController#index as HTML
+I, [2020-07-16T05:00:56.717205 #2777]  INFO -- : [e0cb60c5-9260-499e-818e-dd38e97377ac]   Rendering home/tours/index.html.erb within layouts/application
+D, [2020-07-16T05:00:56.719052 #2777] DEBUG -- : [e0cb60c5-9260-499e-818e-dd38e97377ac]   [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T05:00:56.719423 #2777]  INFO -- : [e0cb60c5-9260-499e-818e-dd38e97377ac]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 1.9ms | Allocations: 272)
+I, [2020-07-16T05:00:56.719494 #2777]  INFO -- : [e0cb60c5-9260-499e-818e-dd38e97377ac]   Rendered home/tours/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 403)
+I, [2020-07-16T05:00:56.720747 #2777]  INFO -- : [e0cb60c5-9260-499e-818e-dd38e97377ac] Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.6ms | Allocations: 1598)
+I, [2020-07-16T05:00:56.766601 #2777]  INFO -- : [690c0b23-28a2-46f4-8ae0-5bf4728180c6] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 147.192.30.91 at 2020-07-16 05:00:56 +0000
+F, [2020-07-16T05:00:56.767107 #2777] FATAL -- : [690c0b23-28a2-46f4-8ae0-5bf4728180c6]   
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6]   
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[690c0b23-28a2-46f4-8ae0-5bf4728180c6] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T05:01:36.008785 #2777]  INFO -- : [915b5c7d-de7e-431c-b154-da38bc04dc09] Started GET "/guides/sign_in" for 147.192.30.91 at 2020-07-16 05:01:36 +0000
+I, [2020-07-16T05:01:36.009516 #2777]  INFO -- : [915b5c7d-de7e-431c-b154-da38bc04dc09] Processing by Devise::Guides::SessionsController#new as HTML
+I, [2020-07-16T05:01:36.011078 #2777]  INFO -- : [915b5c7d-de7e-431c-b154-da38bc04dc09]   Rendering devise/guides/sessions/new.html.erb within layouts/application
+I, [2020-07-16T05:01:36.013183 #2777]  INFO -- : [915b5c7d-de7e-431c-b154-da38bc04dc09]   Rendered devise/guides/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+I, [2020-07-16T05:01:36.013261 #2777]  INFO -- : [915b5c7d-de7e-431c-b154-da38bc04dc09]   Rendered devise/guides/sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1225)
+I, [2020-07-16T05:01:36.014349 #2777]  INFO -- : [915b5c7d-de7e-431c-b154-da38bc04dc09] Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 2723)
+I, [2020-07-16T05:01:36.080997 #2777]  INFO -- : [14d08e82-ea51-4259-950c-4fd68380007f] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 147.192.30.91 at 2020-07-16 05:01:36 +0000
+F, [2020-07-16T05:01:36.081564 #2777] FATAL -- : [14d08e82-ea51-4259-950c-4fd68380007f]   
+[14d08e82-ea51-4259-950c-4fd68380007f] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[14d08e82-ea51-4259-950c-4fd68380007f]   
+[14d08e82-ea51-4259-950c-4fd68380007f] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[14d08e82-ea51-4259-950c-4fd68380007f] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[14d08e82-ea51-4259-950c-4fd68380007f] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[14d08e82-ea51-4259-950c-4fd68380007f] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[14d08e82-ea51-4259-950c-4fd68380007f] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[14d08e82-ea51-4259-950c-4fd68380007f] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[14d08e82-ea51-4259-950c-4fd68380007f] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[14d08e82-ea51-4259-950c-4fd68380007f] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[14d08e82-ea51-4259-950c-4fd68380007f] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[14d08e82-ea51-4259-950c-4fd68380007f] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T05:06:12.401927 #2777]  INFO -- : [701fa90f-8cdb-4ded-82ad-c351ecac6e09] Started GET "/guides/sign_in" for 195.74.76.194 at 2020-07-16 05:06:12 +0000
+I, [2020-07-16T05:06:12.402623 #2777]  INFO -- : [701fa90f-8cdb-4ded-82ad-c351ecac6e09] Processing by Devise::Guides::SessionsController#new as HTML
+I, [2020-07-16T05:06:12.403885 #2777]  INFO -- : [701fa90f-8cdb-4ded-82ad-c351ecac6e09]   Rendering devise/guides/sessions/new.html.erb within layouts/application
+I, [2020-07-16T05:06:12.405778 #2777]  INFO -- : [701fa90f-8cdb-4ded-82ad-c351ecac6e09]   Rendered devise/guides/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+I, [2020-07-16T05:06:12.405855 #2777]  INFO -- : [701fa90f-8cdb-4ded-82ad-c351ecac6e09]   Rendered devise/guides/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1220)
+I, [2020-07-16T05:06:12.406887 #2777]  INFO -- : [701fa90f-8cdb-4ded-82ad-c351ecac6e09] Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 2613)
+I, [2020-07-16T05:06:12.684623 #2777]  INFO -- : [8e881a67-dc56-44c8-b5c8-abc161ce2cee] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 195.74.76.194 at 2020-07-16 05:06:12 +0000
+F, [2020-07-16T05:06:12.685144 #2777] FATAL -- : [8e881a67-dc56-44c8-b5c8-abc161ce2cee]   
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee]   
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[8e881a67-dc56-44c8-b5c8-abc161ce2cee] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T05:27:48.035050 #2777]  INFO -- : [3cac8cbd-73ea-47a2-aee8-2bd3d98ec6f5] Started GET "/tourist/tourists/1" for 125.8.190.99 at 2020-07-16 05:27:48 +0000
+I, [2020-07-16T05:27:48.035762 #2777]  INFO -- : [3cac8cbd-73ea-47a2-aee8-2bd3d98ec6f5] Processing by Tourist::TouristsController#show as HTML
+I, [2020-07-16T05:27:48.035810 #2777]  INFO -- : [3cac8cbd-73ea-47a2-aee8-2bd3d98ec6f5]   Parameters: {"id"=>"1"}
+D, [2020-07-16T05:27:48.073601 #2777] DEBUG -- : [3cac8cbd-73ea-47a2-aee8-2bd3d98ec6f5]   [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4 COLLATE utf8mb4_general_ci,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2020-07-16T05:27:48.075074 #2777] DEBUG -- : [3cac8cbd-73ea-47a2-aee8-2bd3d98ec6f5]   [1m[36mTourist Load (0.7ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T05:27:48.076348 #2777] DEBUG -- : [3cac8cbd-73ea-47a2-aee8-2bd3d98ec6f5]   [1m[36mTourist Load (0.6ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 LIMIT 1[0m
+I, [2020-07-16T05:27:48.076946 #2777]  INFO -- : [3cac8cbd-73ea-47a2-aee8-2bd3d98ec6f5]   Rendering tourist/tourists/show.html.erb within layouts/application
+I, [2020-07-16T05:27:48.077413 #2777]  INFO -- : [3cac8cbd-73ea-47a2-aee8-2bd3d98ec6f5]   Rendered tourist/tourists/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 168)
+D, [2020-07-16T05:27:48.079529 #2777] DEBUG -- : [3cac8cbd-73ea-47a2-aee8-2bd3d98ec6f5]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T05:27:48.080030 #2777]  INFO -- : [3cac8cbd-73ea-47a2-aee8-2bd3d98ec6f5] Completed 200 OK in 44ms (Views: 2.7ms | ActiveRecord: 2.3ms | Allocations: 2463)
+I, [2020-07-16T05:27:48.145300 #2777]  INFO -- : [98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 05:27:48 +0000
+F, [2020-07-16T05:27:48.145844 #2777] FATAL -- : [98cfcbbb-89ed-4468-b1c9-b65a11a17e9b]   
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b]   
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[98cfcbbb-89ed-4468-b1c9-b65a11a17e9b] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T05:27:50.444079 #2777]  INFO -- : [2e141496-b629-4abb-b126-64fc478531c7] Started GET "/tourist/tourists/1/searches/city?search%5Bcity%5D=&button=" for 125.8.190.99 at 2020-07-16 05:27:50 +0000
+I, [2020-07-16T05:27:50.444927 #2777]  INFO -- : [2e141496-b629-4abb-b126-64fc478531c7] Processing by Tourist::SearchesController#city as HTML
+I, [2020-07-16T05:27:50.444980 #2777]  INFO -- : [2e141496-b629-4abb-b126-64fc478531c7]   Parameters: {"search"=>{"city"=>""}, "button"=>"", "tourist_id"=>"1"}
+D, [2020-07-16T05:27:50.447572 #2777] DEBUG -- : [2e141496-b629-4abb-b126-64fc478531c7]   [1m[36mTourist Load (0.8ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T05:27:50.451237 #2777] DEBUG -- : [2e141496-b629-4abb-b126-64fc478531c7]   [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT `cities`.* FROM `cities` WHERE ((name LIKE '%%' )) LIMIT 1[0m
+I, [2020-07-16T05:27:50.452814 #2777]  INFO -- : [2e141496-b629-4abb-b126-64fc478531c7]   Rendering tourist/searches/city.html.erb within layouts/application
+D, [2020-07-16T05:27:50.454513 #2777] DEBUG -- : [2e141496-b629-4abb-b126-64fc478531c7]   [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+I, [2020-07-16T05:27:50.454847 #2777]  INFO -- : [2e141496-b629-4abb-b126-64fc478531c7]   Rendered tourist/searches/city.html.erb within layouts/application (Duration: 2.0ms | Allocations: 726)
+I, [2020-07-16T05:27:50.455006 #2777]  INFO -- : [2e141496-b629-4abb-b126-64fc478531c7] Completed 500 Internal Server Error in 10ms (ActiveRecord: 3.7ms | Allocations: 3202)
+F, [2020-07-16T05:27:50.455719 #2777] FATAL -- : [2e141496-b629-4abb-b126-64fc478531c7]   
+[2e141496-b629-4abb-b126-64fc478531c7] ActionView::Template::Error (undefined method `each' for nil:NilClass):
+[2e141496-b629-4abb-b126-64fc478531c7]     36:                         <th class = "text-center">登録されている都市</th>
+[2e141496-b629-4abb-b126-64fc478531c7]     37:                     </thead>
+[2e141496-b629-4abb-b126-64fc478531c7]     38:                     <tbody>
+[2e141496-b629-4abb-b126-64fc478531c7]     39:                         <% @cities.each do |city| %>
+[2e141496-b629-4abb-b126-64fc478531c7]     40:                             <tr>
+[2e141496-b629-4abb-b126-64fc478531c7]     41:                                 <td>
+[2e141496-b629-4abb-b126-64fc478531c7]     42:                                     <%= city.name %>
+[2e141496-b629-4abb-b126-64fc478531c7]   
+[2e141496-b629-4abb-b126-64fc478531c7] app/views/tourist/searches/city.html.erb:39
+I, [2020-07-16T05:27:52.788053 #2777]  INFO -- : [a0fe7fe0-3109-451a-a198-3a6104639efc] Started GET "/tourist/tourists/1/tours" for 125.8.190.99 at 2020-07-16 05:27:52 +0000
+I, [2020-07-16T05:27:52.788874 #2777]  INFO -- : [a0fe7fe0-3109-451a-a198-3a6104639efc] Processing by Tourist::ToursController#index as HTML
+I, [2020-07-16T05:27:52.788922 #2777]  INFO -- : [a0fe7fe0-3109-451a-a198-3a6104639efc]   Parameters: {"tourist_id"=>"1"}
+I, [2020-07-16T05:27:52.790033 #2777]  INFO -- : [a0fe7fe0-3109-451a-a198-3a6104639efc]   Rendering tourist/tours/index.html.erb within layouts/application
+D, [2020-07-16T05:27:52.791621 #2777] DEBUG -- : [a0fe7fe0-3109-451a-a198-3a6104639efc]   [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+D, [2020-07-16T05:27:52.792652 #2777] DEBUG -- : [a0fe7fe0-3109-451a-a198-3a6104639efc]   [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T05:27:52.793036 #2777]  INFO -- : [a0fe7fe0-3109-451a-a198-3a6104639efc]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 1.2ms | Allocations: 263)
+I, [2020-07-16T05:27:52.793103 #2777]  INFO -- : [a0fe7fe0-3109-451a-a198-3a6104639efc]   Rendered tourist/tours/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 468)
+D, [2020-07-16T05:27:52.794930 #2777] DEBUG -- : [a0fe7fe0-3109-451a-a198-3a6104639efc]   [1m[36mTourist Load (0.6ms)[0m  [1m[34mSELECT `tourists`.* FROM `tourists` WHERE `tourists`.`deleted_at` IS NULL AND `tourists`.`id` = 1 ORDER BY `tourists`.`id` ASC LIMIT 1[0m
+D, [2020-07-16T05:27:52.796625 #2777] DEBUG -- : [a0fe7fe0-3109-451a-a198-3a6104639efc]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`tourist_id` = 1[0m
+I, [2020-07-16T05:27:52.797073 #2777]  INFO -- : [a0fe7fe0-3109-451a-a198-3a6104639efc] Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 2.4ms | Allocations: 2440)
+I, [2020-07-16T05:27:52.875559 #2777]  INFO -- : [827b8e2d-6080-4047-a288-148f0254d283] Started GET "/packs/js/application-3f358d0470a40838d395.js" for 125.8.190.99 at 2020-07-16 05:27:52 +0000
+F, [2020-07-16T05:27:52.876106 #2777] FATAL -- : [827b8e2d-6080-4047-a288-148f0254d283]   
+[827b8e2d-6080-4047-a288-148f0254d283] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3f358d0470a40838d395.js"):
+[827b8e2d-6080-4047-a288-148f0254d283]   
+[827b8e2d-6080-4047-a288-148f0254d283] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[827b8e2d-6080-4047-a288-148f0254d283] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[827b8e2d-6080-4047-a288-148f0254d283] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[827b8e2d-6080-4047-a288-148f0254d283] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[827b8e2d-6080-4047-a288-148f0254d283] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[827b8e2d-6080-4047-a288-148f0254d283] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[827b8e2d-6080-4047-a288-148f0254d283] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[827b8e2d-6080-4047-a288-148f0254d283] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[827b8e2d-6080-4047-a288-148f0254d283] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[827b8e2d-6080-4047-a288-148f0254d283] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T14:53:26.705227 #12404]  INFO -- : [8dde284a-03d8-4956-81c1-cbb39a34cdd7] Started GET "/tourist/tourists/1/tours" for 125.8.190.99 at 2020-07-16 14:53:26 +0000
+I, [2020-07-16T14:53:26.714319 #12404]  INFO -- : [8dde284a-03d8-4956-81c1-cbb39a34cdd7] Processing by Tourist::ToursController#index as HTML
+I, [2020-07-16T14:53:26.714386 #12404]  INFO -- : [8dde284a-03d8-4956-81c1-cbb39a34cdd7]   Parameters: {"tourist_id"=>"1"}
+I, [2020-07-16T14:53:26.728412 #12404]  INFO -- : [8dde284a-03d8-4956-81c1-cbb39a34cdd7]   Rendering tourist/tours/index.html.erb within layouts/application
+D, [2020-07-16T14:53:26.773946 #12404] DEBUG -- : [8dde284a-03d8-4956-81c1-cbb39a34cdd7]   [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4 COLLATE utf8mb4_general_ci,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2020-07-16T14:53:26.775732 #12404] DEBUG -- : [8dde284a-03d8-4956-81c1-cbb39a34cdd7]   [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+D, [2020-07-16T14:53:26.781894 #12404] DEBUG -- : [8dde284a-03d8-4956-81c1-cbb39a34cdd7]   [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T14:53:26.786151 #12404]  INFO -- : [8dde284a-03d8-4956-81c1-cbb39a34cdd7]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 6.4ms | Allocations: 2399)
+I, [2020-07-16T14:53:26.786233 #12404]  INFO -- : [8dde284a-03d8-4956-81c1-cbb39a34cdd7]   Rendered tourist/tours/index.html.erb within layouts/application (Duration: 57.7ms | Allocations: 4389)
+I, [2020-07-16T14:53:26.793583 #12404]  INFO -- : [8dde284a-03d8-4956-81c1-cbb39a34cdd7] Completed 200 OK in 79ms (Views: 67.6ms | ActiveRecord: 5.1ms | Allocations: 9573)
+I, [2020-07-16T14:53:26.878541 #12404]  INFO -- : [5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] Started GET "/packs/js/application-3b8d8ac3153abdb7602a.js" for 125.8.190.99 at 2020-07-16 14:53:26 +0000
+F, [2020-07-16T14:53:26.879193 #12404] FATAL -- : [5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f]   
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3b8d8ac3153abdb7602a.js"):
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f]   
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[5b5e7c2d-2fb8-4d1c-bd71-e79ad7fd203f] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-07-16T14:53:31.948810 #12404]  INFO -- : [9382c0c9-564c-49a2-b6b6-d2662c2b6ee0] Started GET "/" for 125.8.190.99 at 2020-07-16 14:53:31 +0000
+I, [2020-07-16T14:53:31.949547 #12404]  INFO -- : [9382c0c9-564c-49a2-b6b6-d2662c2b6ee0] Processing by Home::ToursController#index as HTML
+I, [2020-07-16T14:53:31.953483 #12404]  INFO -- : [9382c0c9-564c-49a2-b6b6-d2662c2b6ee0]   Rendering home/tours/index.html.erb within layouts/application
+D, [2020-07-16T14:53:31.956964 #12404] DEBUG -- : [9382c0c9-564c-49a2-b6b6-d2662c2b6ee0]   [1m[36mTour Load (0.8ms)[0m  [1m[34mSELECT `tours`.* FROM `tours` WHERE (is_active = 1) LIMIT 9 OFFSET 0[0m
+I, [2020-07-16T14:53:31.957387 #12404]  INFO -- : [9382c0c9-564c-49a2-b6b6-d2662c2b6ee0]   Rendered partial/_tours_second_wrapper.html.erb (Duration: 2.3ms | Allocations: 841)
+I, [2020-07-16T14:53:31.957457 #12404]  INFO -- : [9382c0c9-564c-49a2-b6b6-d2662c2b6ee0]   Rendered home/tours/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1334)
+I, [2020-07-16T14:53:31.958788 #12404]  INFO -- : [9382c0c9-564c-49a2-b6b6-d2662c2b6ee0] Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.8ms | Allocations: 3477)
+I, [2020-07-16T14:53:32.033830 #12404]  INFO -- : [b67c786c-f129-4724-ba41-08237951bd40] Started GET "/packs/js/application-3b8d8ac3153abdb7602a.js" for 125.8.190.99 at 2020-07-16 14:53:32 +0000
+F, [2020-07-16T14:53:32.034385 #12404] FATAL -- : [b67c786c-f129-4724-ba41-08237951bd40]   
+[b67c786c-f129-4724-ba41-08237951bd40] ActionController::RoutingError (No route matches [GET] "/packs/js/application-3b8d8ac3153abdb7602a.js"):
+[b67c786c-f129-4724-ba41-08237951bd40]   
+[b67c786c-f129-4724-ba41-08237951bd40] actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+[b67c786c-f129-4724-ba41-08237951bd40] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+[b67c786c-f129-4724-ba41-08237951bd40] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[b67c786c-f129-4724-ba41-08237951bd40] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+[b67c786c-f129-4724-ba41-08237951bd40] activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+[b67c786c-f129-4724-ba41-08237951bd40] railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:76:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+[b67c786c-f129-4724-ba41-08237951bd40] puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+[b67c786c-f129-4724-ba41-08237951bd40] puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+[b67c786c-f129-4724-ba41-08237951bd40] puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+[b67c786c-f129-4724-ba41-08237951bd40] puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
