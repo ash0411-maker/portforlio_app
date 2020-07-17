@@ -25,7 +25,7 @@
 									にレビューを書きました。
 								</h4>
 						<% end %>
-						<span><%= time_ago_in_words(notice.created_at) %> ago</span>
+						<span><%= time_ago_in_words(notice.created_at) %> 前</span>
 					</div>
 				<% end %>
 				<%= paginate @notifications, class: "paginate" %>
@@ -33,4 +33,3 @@
 		</div>
 	</div>
 </div>
-

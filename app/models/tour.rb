@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Tour < ApplicationRecord
-
   belongs_to :guide
   belongs_to :genre
   belongs_to :city

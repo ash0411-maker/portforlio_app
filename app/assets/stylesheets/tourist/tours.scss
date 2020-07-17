@@ -9,12 +9,12 @@
     background-attachment: fixed;
 	background-size: cover;
 	background-position: center;
-	height: 450px;
+	height: 500px;
 }
 
 .tourist-top-image-box {
     width: 40%;
-    height: 450px;
+    height: 500px;
     background-color: rgba( 0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
     position: relative;
@@ -24,8 +24,17 @@
     font-size: 30px;
     padding: 90px;
     position: absolute;
-    top: 70px;
+    top: 150px;
+    left: 20px;
+    width: 100%;
+}
+
+.tourist-login-message {
+    font-size: 20px;
+    position: absolute;
+    top: 40px;
     left: 70px;
+    color: lime;
 }
 
 
@@ -40,32 +49,32 @@
     margin-top: 40px;
 }
 
-.genre-tab li {
-    color: white;
-    float: left;
-    margin: 0 10px -1px 0;
-    padding: 10px 20px;
-    border: 1px solid #fb4343;
-    cursor: pointer;
-    list-style: none;
-    transition: .3s;
+.tourist-genre-btn {
+    margin-right: 10px;
+    font-family: "M PLUS 1p";
+    font-weight: bold;
 }
 
-.tab li.active {
-    color: #fff;
-    background: #fb4343;
-    cursor: auto;
-  }
+.genre_name {
+    color: limegreen;
+    margin-bottom: 30px;
+    font-family: "M PLUS 1p";
+	font-weight: bold;
+}
 
 
 // 予約へ進むボタン
 .order-btn{
-	margin: 80px 0 0 20px;
+    margin: 80px 0 0 20px;
+    font-family: "M PLUS 1p";
+	font-weight: bold;
 }
 
 // チャットルームボタン
 .chat-room-btn{
-	margin: 50px 0 0 120px;
+    margin: 50px 0 0 120px;
+    font-family: "M PLUS 1p";
+	font-weight: bold;
 }
 
 

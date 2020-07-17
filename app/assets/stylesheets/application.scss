@@ -36,6 +36,10 @@
 	min-height: 100vh;
 }
 
+body {
+	font-family: "M PLUS 1p";
+	font-weight: bold;
+}
 
 
  /* header */
@@ -47,6 +51,8 @@
     position: sticky;
 	top: 0;
 	z-index: 1000;
+	font-family: "M PLUS 1p";
+	font-weight: bold;
 }
 
 .logo {
@@ -148,7 +154,7 @@ nav li a{
 //ツアー一覧ページ
 .tours-first-wrapper {
 	background-color: black;
-	height: 580px;
+	height: 640px;
 	color: white;
 }
 
@@ -159,9 +165,13 @@ nav li a{
 
 .tours-photo-index {
 	border-radius: 5%;
+	transition: 0.5s;
+	box-shadow: 0 15px 15px #666666; 
 }
 
-
+.tours-photo-index:hover {
+	transform: scale(1.1, 1.1);
+}
 
 
 
@@ -169,6 +179,7 @@ nav li a{
 // -----  ツアー詳細ページ -------
 .tour-img {
 	border-radius: 3%;
+	box-shadow: 0 3px 5px gray; 
 }
 
 .tour-top-wrapper {
@@ -275,7 +286,17 @@ nav li a{
 
 .guide-body-title{
 	margin-left: 140px;
+	opacity: 0;
+    transform: translateX(-60px);
+    transition: all 1s;
 }
+
+.guide-body-title.tour-scrollin {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 .guide-body-text{
 	line-height: 50px;
@@ -317,3 +338,20 @@ footer {
 	line-height: 70px;
 	padding-right: 40px;
 }
+
+
+
+.pagination>li>a {
+	border: none;
+	color: black;
+  }
+
+  .pagination>.active>a {
+	background: limegreen;
+	border-radius: 15px;
+  }
+  
+  .pagination>li>a:hover {
+	border-radius: 15px;
+	background: limegreen;
+  }

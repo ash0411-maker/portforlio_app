@@ -7,9 +7,9 @@ class Tourist::ToursController < ApplicationController
     @genres = Genre.all
     if params[:genre_id]
       @genre = Genre.find(params[:genre_id])
-      @tours = @genre.tours.order(created_at: :desc).page(params[:page]).per(10)
+      @tours = @genre.tours.order(created_at: :desc).page(params[:page]).per(9)
     else
-      @tours = Tour.all.page(params[:page]).per(9)
+      @tours = Tour.where('is_active = ?', 1).page(params[:page]).per(9)
     end
   end
 

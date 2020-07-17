@@ -5,13 +5,11 @@
 			<div class = "col-xs-8 col-xs-offset-1">
 				<h2>
 					チャットはまだありません。<br/>
-					予約が入ればメッセージを送りましょう！
+					予約が入ればメッセージを送れます！
 				</h2>
-				<span>
-					<%= image_tag 'guide_chat.png', size: '900x400' %>
-				</span>
 			</div>
 		</div>
+		<%= image_tag 'chat_example.jpeg', size: '1200x650' %>
 	</div>
 
 <!------ チャットをしていた場合 ------>
@@ -23,6 +21,7 @@
 				<table class = "table">
 					<thead>
 						<tr class = "active">
+							<th></th>
 							<th class = "text-center">チャット相手</th>
 							<th class = "text-center">チャット件数</th>
 							<th class = "text-center">最新メッセージ</th>
@@ -32,6 +31,17 @@
 					<tbody>
 						<% @rooms.each do |room| %>
 							<tr class = "text-center">
+								<td>
+									<% room.chats.each do |chat| %>
+										<% if chat.is_tourist == true %>
+											<% chat.chat_notices.each do |notice| %>
+												<% if notice.checked == false %>
+													<i class="fas fa-circle" style = "color: orange;"></i>
+												<% end %>
+											<% end %>
+										<% end %>
+									<% end %>
+								</td>
 								<td>
 									<%= room.tourist.family_name %> <%= room.tourist.name %>
 								</td>

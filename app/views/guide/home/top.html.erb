@@ -1,15 +1,71 @@
-<div class = "contaienr">
-    <div class = "row">
-		<div class = "col-xs-8 col-xs-offset-1">
-			<h1 class = "guide_signin_text"><%= flash[:notice] %></h1>
-			<div>
-				<h1>
-					本日に入った予約件数は
-					<%= link_to guide_guide_orders_path(current_guide) do %>
-						<%= @orders.count %>件です
-					<% end %>
-				</h1>
+<div class = "guide-top">
+	<h3><%= flash[:notice] %></h3>
+	<h1 class = "guide-top-text">
+		本日に入った予約件数は
+		<%= link_to guide_guide_orders_path(current_guide) do %>
+			<%= @orders.count %>件です
+		<% end %>
+	</h1>
+</div>
+
+<div class = "about-guide-wrapper">
+	<h1>FANTRAがあなたの活動をサポート</h1>
+	<div class = "container">
+		<div class = "row">
+			<div class = "top-fadein">
+				<div class = "col-xs-3 col-xs-offset-1 about-guide-icon">
+					<span class = "guide-service-icon">
+						<i class = "far fa-id-card fa-5x"></i>
+					</span>
+					<h2 class = "icon-text"><strong>信頼を可視化</strong></h2>
+					<h4 class = "icon-text">
+						あなたについて、ツアーについての情報を開示することで顧客に信頼性をアピールすることができます。
+					</h4>
+				</div>
+				<div class = "col-xs-3 col-xs-offset-1 about-guide-icon">
+					<span class = "guide-service-icon">
+						<i class = "far fa-calendar-alt fa-5x"></i>
+					</span>
+					<h2 class = "icon-text"><strong>時間の有効活用</strong></h2>
+					<h4 class = "icon-text">
+						あなたの空き時間を有効してガイドとして働いてみませんか？好きな世界を好きな時にシェアしましょう。
+					</h4>
+				</div>
+				<div class = "col-xs-3 col-xs-offset-1 about-guide-icon">
+					<span class = "guide-service-icon">
+						<i class = "far fa-envelope fa-5x"></i>
+					</span>
+					<h2 class = "icon-text"><strong>お問い合わせ</strong></h2>
+					<h4 class = "icon-text">
+						いつでも利用が可能となっております。さらなる世界のシェアをするためにお手伝いさせていただきます。
+					</h4>
+				</div>
 			</div>
 		</div>
-  </div>
+	</div>
+</div>
+
+<div class = "guide-images-wrapper">
+	<div class = "container">
+		<div class = "guide-images-box">
+			<div class = "row">
+				<div class = "col-xs-4 col-xs-offset-1">
+					<h2>FANTRAは人の暖かみを通じて世界中に特別な体験をシェアします。</h2>
+				</div>
+				<div class = "col-xs-4 col-xs-offset-1">
+					<%= image_tag 'IMG_9162.JPG', size: '590x650', class: "about-guide-image" %>
+				</div>
+			</div>
+		</div>
+		<div class = "guide-images-box">
+			<div class = "row">
+				<div class = "col-xs-4">
+					<%= image_tag 'IMG_0205.JPG', size: '590x650', class: "about-guide-image" %>
+				</div>
+				<div class = "col-xs-4 col-xs-offset-3">
+					<h2>あなたの好きなことを仕事にして、楽しい時間をゲストと過ごしましょう</h2>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

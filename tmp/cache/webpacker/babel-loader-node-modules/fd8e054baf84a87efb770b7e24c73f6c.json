@@ -1,1 +1,0 @@
-{"ast":null,"code":"define([\"../core\"], function (jQuery) {\n  \"use strict\";\n\n  jQuery.readyException = function (error) {\n    window.setTimeout(function () {\n      throw error;\n    });\n  };\n});","map":null,"metadata":{},"sourceType":"module"}

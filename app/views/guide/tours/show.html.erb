@@ -1,5 +1,16 @@
 <!----- ツアー写真 ----->
 <div class = "tour-image-wrapper">
+	<% if @book_marks.count == 0 %>
+		<span class = "book_mark">
+			<span class = "book-mark-count"><%= @book_marks.count %></span>
+			<i class="fa fa-flag fa-5x" aria-hidden="true" style = "color: white;" ></i>
+		</span>
+	<% else %>
+		<span class = "book_mark">
+			<span class = "book-mark-count"><%= @book_marks.count %></span>
+			<i class="fa fa-flag fa-5x" aria-hidden="true" style = "color: red;" ></i>
+		</span>
+	<% end %>
 	<%= render 'partial/tour_image_wrapper', tour_photos: @tour_photos %>
 </div>
 

@@ -9,12 +9,12 @@
     background-attachment: fixed;
 	background-size: cover;
 	background-position: center;
-	height: 580px;
+	height: 600px;
 }
 
 .home-top-image-box {
     width: 45%;
-    height: 580px;
+    height: 600px;
     background-color: rgba( 0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
     position: relative;
@@ -24,18 +24,28 @@
 .home-top-image-box-text:first-child{
     text-align: center;
     display: block;
-    padding: 130px 0 80px;
+    padding: 10px 0 80px;
 }
 
 .home-top-image-box-text {
     text-align: center;
     display: block;
-    font-size: 21px;
+    font-size: 25px;
+}
+
+.top-main-text {
+    text-align: left;
+    padding-left: 50px;
+    font-size: 80px;
+    margin-bottom: 60px;
+    font-family: 'Coda Caption', sans-serif;
 }
 
 .registration-btn {
     display: block;
-    margin-top: 20px;
+    margin-top: 10px;
+    font-family: "M PLUS 1p";
+	font-weight: bold;
 }
 
 .registration-btn a {
@@ -44,4 +54,43 @@
 
 .registration-logo {
     padding-right: 10px;
+}
+
+.about-fantra {
+    background-color: black;
+    color: white;
+    height: 450px;
+    font-family: "M PLUS 1p";
+	font-weight: bold;
+}
+
+.icon-headline {
+    margin: 50px 0 50px;
+}
+
+.icon-text {
+    margin-top: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.service-icon {
+    margin: 0 auto;
+    color: limegreen;
+    height: 120px;
+    width: 120px;
+    display: block;
+    line-height: 7.5rem;
+    font-size: 2.25rem;
+}
+
+
+.top-fadein {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s;
+}
+.top-fadein.top-scrollin {
+    opacity: 1;
+    transform: translateY(0);
 }
