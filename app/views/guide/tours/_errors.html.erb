@@ -1,9 +1,9 @@
 <% if tour.errors.any? %>
-    <div class ="error_explanation">
+    <div class ="error_explanation alert clear">
     	<h2><%= tour.errors.count %>件のエラーがあります。</h2>
     	<ul>
 		    <% tour.errors.full_messages.each do |message| %>
-		    	<li><%= message %></li>
+		    	<li class = "col-xs-4 col-xs-offset-1">・<%= message %></li>
 		    <% end %>
     	</ul>
     </div>

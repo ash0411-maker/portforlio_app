@@ -7,7 +7,6 @@
 				<% else %>
 					<h3><%= @guide %>さんとのチャットルーム</h3>
 				<% end %>
-				<h3 class = "vacant-chat"><%= flash[:warning] %></h3>
 				<div class = "chat-field">
                     <% @chats.each do |chat| %>
                     <%# ------- メッセージがtouristによるものだったら、メッセージを右に寄せる -------- %>
@@ -44,6 +43,7 @@
 						 	<%= f.submit "メッセージを送る", class: "btn btn-success"%>
 						<% end %>
 					</div>
+					<p class = "vacant-chat"><%= flash[:warning] %></p>
 				</div>
 			</div>
 		</div>
