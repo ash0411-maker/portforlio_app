@@ -78,6 +78,9 @@ jobs:
           path: /home/circleci/FANTRA/tmp/screenshots/
 
     deploy:
+      machine:
+        enabled: true
+      steps:
         - add_ssh_keys:
             fingerprints:
               - 72:dc:97:29:ba:51:58:5c:69:e5:a2:10:ab:31:5a:d3
