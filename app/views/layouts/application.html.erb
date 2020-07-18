@@ -34,6 +34,9 @@
                 <%= attachment_image_tag current_guide, :selfy_image, :fill, 40, 40, format: 'jpeg', class: "guide_selfy_image" %>
                 <span class = "guide-login-name">マイページ</span>
               <% end %>
+              <li>
+                  <%= link_to "ガイドログアウト", destroy_tourist_session_path, method: :delete %>
+                </li>
             </span>
 
           <%# ---- ToursitのFANTRAロゴ・マイページリンク・都市検索窓 ---- %>

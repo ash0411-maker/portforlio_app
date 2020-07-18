@@ -1,16 +1,16 @@
 <div class = "container">
 	<div class = "row">
 			<% if @genre %>
-				<h1 class = "col-xs-4 col-xs-offset-1 genre_name"><%= @genre.name %></h1>
+				<h1 class = "col-md-4 col-md-offset-1 genre_name"><%= @genre.name %></h1>
 			<% else %>
-				<h1 class = "col-xs-4 col-xs-offset-1 genre_name"></h1>
+				<h1 class = "col-md-4 col-md-offset-1 genre_name"></h1>
 			<% end %>
 	</div>
 	<div class = "row">
 	<%# ----- ツアー写真一覧 ----- %>
 		<% tours.each do |tour| %>
 			<% if tour.is_active == true %>
-				<div class = "col-xs-4">
+				<div class = "col-md-4 col-xs-12">
 					<div class = "tours-phots-box">
 						<% tour_photos = tour.tour_photos %>
 						<% if tourist_signed_in? %>

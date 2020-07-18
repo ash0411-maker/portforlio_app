@@ -57,3 +57,6 @@ $(function() {
         event.preventDefault();
     });
 });
+
+
+console.log("hello");
