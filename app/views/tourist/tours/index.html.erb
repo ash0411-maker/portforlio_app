@@ -12,11 +12,11 @@
 	<%# ---- ジャンル検索ボタン ---- %>
     <div class = "container">
         <div class = "row">
-            <div class = "genres-box">
-                <div class = "col-xs-4 col-xs-offset-1">
+            <div class = "genres-box-tab">
+                <div class = "col-md-4 col-md-offset-1">
                     <h3 class = "tourist-headline">気になるジャンルから選択</h3>
                 </div>
-                <div class= "col-xs-5 col-xs-offset-2">
+                <div class= "col-md-5 col-md-offset-2 col-xs-offset-2">
                     <% @genres.each do |genre| %>
                         <%= link_to tourist_tourist_tours_path(current_tourist, genre_id: genre.id), class: "btn btn-default tourist-genre-btn" do %>
                             <% genre.name %>

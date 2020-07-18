@@ -1,7 +1,7 @@
 <%# ----- ツアー詳細へのリンク ----- %>
 <%= attachment_image_tag tour_photos[0], :image, :fill, 350, 280, format: 'jpeg',class: "tours-photo-index" %>
-<h3><%= tour.title %></h3>
-<h4>¥<%= number_with_delimiter(tour.price) %>・<%= tour.time %>・<%= tour.city.name %></h4>
+<h3 class = "tour-link-title"><%= tour.title %></h3>
+<h4 class = "tour-link-info">¥<%= number_with_delimiter(tour.price) %>・<%= tour.time %>・<%= tour.city.name %></h4>
 
 <% if tourist_signed_in? %>
 	<div class = "book-marks">

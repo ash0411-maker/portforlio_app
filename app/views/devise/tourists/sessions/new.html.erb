@@ -1,27 +1,27 @@
 <div class = "container">
   <div class = "row">
-    <div class = "col-xs-8 col-xs-offset-4">
-      <h2>ツーリストログイン画面</h2>
+    <div class = "col-md-8 col-md-offset-4 col-xs-12">
+      <h3>ツーリストログイン画面</h3>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
         <div class = "row">
          <div class="guest-login">
-           <%= link_to 'ゲストログイン（閲覧用）', guest_tourist_path, method: :post, class: "btn btn-primary col-xs-6 devise-login-text" %>
+           <%= link_to 'ゲストログイン（閲覧用）', guest_tourist_path, method: :post, class: "btn btn-primary col-md-6 col-xs-10 devise-login-text" %>
          </div>
         </div>
 
         <div class = "row">
           <div class="guest-login">
             <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-xs-6 devise-login-text" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-md-6 col-xs-10 devise-login-text" %>
           </div>
         </div>
 
         <div class = "row">
           <div class="guest-login">
             <%= f.label :password %><br />
-            <%= f.password_field :password, autocomplete: "current-password", class: "col-xs-6 devise-login-text" %>
+            <%= f.password_field :password, autocomplete: "current-password", class: "col-md-6 col-xs-10 devise-login-text" %>
           </div>
         </div>
 
@@ -34,7 +34,7 @@
 
         <div class = "row">
           <div class="devise-field">
-            <%= f.submit "ログイン", class: "btn btn-warning col-xs-6 devise-login-text" %>
+            <%= f.submit "ログイン", class: "btn btn-warning col-md-6 col-xs-10 devise-login-text" %>
           </div>
         </div>
       <% end %>

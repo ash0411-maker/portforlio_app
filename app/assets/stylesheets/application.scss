@@ -291,7 +291,7 @@ nav li a{
 
 .tour-img-1 {
 	float: left;
-	margin-right: 20px;
+  margin-right: 20px;
 }
 
 .tour-img-2-4 {
@@ -320,6 +320,10 @@ nav li a{
 	padding-left: 15px;
 }
 
+.tour-images-width-phone {
+  display: none;
+}
+
 
 
 // ----- ツアー概要 -----
@@ -329,6 +333,9 @@ nav li a{
 	color: white;
 }
 
+.tour-info-width-phone {
+  display: none;
+}
 
 .left-bar{
 	margin: 55px 0 0 40px;
@@ -365,8 +372,8 @@ nav li a{
 .guide-body-title{
 	margin-left: 140px;
 	opacity: 0;
-    transform: translateX(-60px);
-    transition: all 1s;
+  transform: translateX(-60px);
+  transition: all 1s;
 }
 
 .guide-body-title.tour-scrollin {
@@ -435,21 +442,107 @@ footer {
 
 
 
-  
-  // レスポンシブ
-@media screen and (max-width:425px) {
-	header {
-		background-color: black;
-		width: 100%;
-		height: 75px;
-		position: relative;
-		position: sticky;
-		top: 0;
-		z-index: 1000;
-		font-family: "M PLUS 1p";
-		font-weight: bold;
-	}
 
-	body {
-	  width: 100%;
-	}
+  //  ----------   レスポンシブ   ---------------
+@media screen and (max-width:480px) {
+
+body {
+	width: 100%;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.header-city-search {
+  display: none;
+}
+
+.header-city-search-phone-width {
+  display: none;
+}
+
+// ツアー詳細画面
+.tour-image-wrapper {
+  height: 350px;
+  padding: 0 0 0 0;
+	background-color: black;
+	position: relative;
+}
+
+
+//  --- ツアー写真 ---
+ .tour-images-width-laptop {
+  display: none;
+ }
+
+ .tour-images-width-phone {
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+ }
+
+ #theTarget {
+   margin: 20px auto 0;
+   width: 80%;
+ }
+
+ .tour-link-title {
+   text-align: center;
+ }
+
+ .tour-link-info {
+  text-align: center;
+}
+
+
+
+//  --- ツアー情報 ---
+ .tour-info-width-phone {
+  display: block;
+}
+
+.tour-info-width-laptop {
+  display: none;
+}
+
+.tour-info-wrapper {
+  padding-top: 0px;
+	background-color: black;
+  color: white;
+  height: 450px;
+}
+
+.tour-city-name {
+  float: left;
+  font-size: 20px;
+  padding-left: 120px;
+}
+
+.tour-genre-name {
+  float: left;
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+
+//  --- ツアー情報詳細 ---
+.guide-tour-title {
+  text-align: center;
+}
+
+ .guide-body-title{
+  margin-left: 0;
+  text-align: center;
+	opacity: 0;
+  transform: translateX(-60px);
+  transition: all 1s;
+}
+
+.order-btn{
+  margin: 30px auto 20px;
+  font-weight: bold;
+}
+
+}
