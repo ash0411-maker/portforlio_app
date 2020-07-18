@@ -25,3 +25,19 @@
 	height: 200px;
 	width: 100%;
 }
+
+
+
+  //  ----------   レスポンシブ   ---------------
+  @media screen and (max-width:480px) {
+  .order-form-group {
+    margin: 20px 0 20px;
+    text-align: center;
+  }
+
+  .order-new-btn {
+    margin-left: 100px;
+  }
+  }
+
+
