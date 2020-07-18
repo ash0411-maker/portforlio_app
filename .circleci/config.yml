@@ -3,6 +3,14 @@ orbs:
   ruby: circleci/ruby@0.1.2
 
 jobs:
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - 72:dc:97:29:ba:51:58:5c:69:e5:a2:10:ab:31:5a:d3
+      - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "/var/www/ash.me/deploy-me.sh"
   build:
     docker:
       # specify the version you desire here
