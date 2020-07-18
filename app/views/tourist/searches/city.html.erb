@@ -49,7 +49,9 @@
         </div>
     <% else %>
         <h1 class = "col-xs-offset-1">
-            <span class = "city-search-result"><%= @city %></span>の検索結果
+            <% unless @city == ""%>
+                <span class = "city-search-result"><%= @city %></span>の検索結果
+            <% end %>
         </h1>
         <%= render 'partial/tours_second_wrapper', tours: @city_tours, genre: @genre, city: @city %>
     <% end %>

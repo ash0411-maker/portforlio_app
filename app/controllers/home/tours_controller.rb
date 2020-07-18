@@ -2,7 +2,7 @@
 
 class Home::ToursController < ApplicationController
   def index
-    @tours = Tour.all.page(params[:page]).per(9)
+    @tours = Tour.where('is_active = ?', 1).page(params[:page]).per(9)
   end
 
   def show

@@ -30,6 +30,10 @@
 	color: lime;
 }
 
+.error-message {
+	float: left;
+}
+
 .wrapper {
 	display: flex;
 	flex-direction: column;
@@ -240,6 +244,7 @@ nav li a{
 .tours-photo-index {
 	border-radius: 5%;
 	transition: 0.5s;
+	box-shadow: 0 15px 15px #666666; 
 }
 
 .tours-photo-index:hover {
@@ -252,6 +257,7 @@ nav li a{
 // -----  ツアー詳細ページ -------
 .tour-img {
 	border-radius: 3%;
+	box-shadow: 0 3px 5px gray; 
 }
 
 .tour-top-wrapper {
@@ -411,10 +417,26 @@ footer {
 	padding-right: 40px;
 }
 
+.pagination>li>a {
+	border: none;
+	color: black;
+  }
+
+  .pagination>.active>a {
+	background: limegreen;
+	border-radius: 15px;
+  }
+  
+  .pagination>li>a:hover {
+	border-radius: 15px;
+	background: limegreen;
+
+  }
 
 
 
-// レスポンシブ
+  
+  // レスポンシブ
 @media screen and (max-width:425px) {
 	header {
 		background-color: black;
@@ -431,5 +453,3 @@ footer {
 	body {
 	  width: 100%;
 	}
-
-  }

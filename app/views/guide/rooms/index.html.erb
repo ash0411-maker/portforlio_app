@@ -21,6 +21,7 @@
 				<table class = "table">
 					<thead>
 						<tr class = "active">
+							<th></th>
 							<th class = "text-center">チャット相手</th>
 							<th class = "text-center">チャット件数</th>
 							<th class = "text-center">最新メッセージ</th>
@@ -30,6 +31,17 @@
 					<tbody>
 						<% @rooms.each do |room| %>
 							<tr class = "text-center">
+								<td>
+									<% room.chats.each do |chat| %>
+										<% if chat.is_tourist == true %>
+											<% chat.chat_notices.each do |notice| %>
+												<% if notice.checked == false %>
+													<i class="fas fa-circle" style = "color: orange;"></i>
+												<% end %>
+											<% end %>
+										<% end %>
+									<% end %>
+								</td>
 								<td>
 									<%= room.tourist.family_name %> <%= room.tourist.name %>
 								</td>
