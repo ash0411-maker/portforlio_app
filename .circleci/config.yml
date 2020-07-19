@@ -45,14 +45,16 @@ jobs:
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
+      - run: bundle exec bin/webpack
+
       # googlemapAPI
       - run:
           name: GoogleMap API
           command: |
             touch .env
-            echo GOOGLEMAP=$GOOGLEMAP > .env
-            echo S3_ACCESS_KEY_ID=$S3_ACCESS_KEY_ID > .env
-            echo S3_SECRET_ACCESS_KEY=$S3_SECRET_ACCESS_KEY > .env
+            # echo GOOGLEMAP=$GOOGLEMAP > .env
+            # echo S3_ACCESS_KEY_ID=$S3_ACCESS_KEY_ID > .env
+            # echo S3_SECRET_ACCESS_KEY=$S3_SECRET_ACCESS_KEY > .env
 
 # rspec
       # run tests!
