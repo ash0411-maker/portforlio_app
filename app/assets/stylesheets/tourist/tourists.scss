@@ -6,6 +6,16 @@
   display: none;
 }
 
+.tourist-chat-icon {
+  position: relative;
+}
+
+.tourist-circle {
+  position: absolute;
+  top: 80px;
+  font-size: 40px;
+}
+
 
   //  ----------   レスポンシブ   ---------------
 @media screen and (max-width:480px) {

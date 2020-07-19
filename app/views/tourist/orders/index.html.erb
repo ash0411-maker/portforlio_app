@@ -2,19 +2,25 @@
 	<% if @orders.count == 0 %>
 		<div class = "container">
 			<div class = "row">
+				<%= link_to "もどる", tourist_tourist_path(current_tourist), class: "btn btn-default btn-lg col-md-2 col-md-offset-1 col-xs-3" %>
+			</div>
+			<div class = "row">
 				<div class = "col-xs-9 col-xs-offset-1">
 					<h1>まだ予約はありません。</h1>
 				</div>
 			</div>
 		</div>
 	<% else %>
-		<ul class = "order-tab clearfix">
-			<li class = "order-active">今後の予約</li>
-			<li>過去の予約</li>
-			<h3 class = "push-to-review">ガイドの応援のために過去の予約からレビューを投稿しましょう！</h3>
-			<h3 class = "push-to-review-phoen-width">ガイドの応援のために</br>過去の予約からレビューを</br>投稿しましょう！</h3>
-		</ul>
 		<div class = "container">
+			<div class = "row">
+				<h2><%= link_to "もどる", tourist_tourist_path(current_tourist), class: "btn btn-default btn-lg col-md-2 col-md-offset-1 col-xs-3" %></h2>
+			</div>
+			<ul class = "order-tab clearfix">
+				<li class = "order-active">今後の予約</li>
+				<li>過去の予約</li>
+				<h3 class = "push-to-review">ガイドの応援のために過去の予約からレビューを投稿しましょう！</h3>
+				<h3 class = "push-to-review-phoen-width">ガイドの応援のために</br>過去の予約からレビューを</br>投稿しましょう！</h3>
+			</ul>
 			<div class = "reserved-tour-box">
 				<div class = "row">
 					<% @orders.each do |order| %>
@@ -40,3 +46,6 @@
 		</div>
 	<% end %>
 </div>
+
+
+

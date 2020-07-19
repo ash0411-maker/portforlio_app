@@ -35,24 +35,17 @@
                 <%= attachment_image_tag current_guide, :selfy_image, :fill, 40, 40, format: 'jpeg', class: "guide_selfy_image" %>
                 <span class = "guide-login-name">マイページ</span>
               <% end %>
-              <li>
-                  <%= link_to "ガイドログアウト", destroy_tourist_session_path, method: :delete %>
-                </li>
             </span>
 
           <%# ---- ToursitのFANTRAロゴ・マイページリンク・都市検索窓 ---- %>
           <% elsif tourist_signed_in? %>
             <%= link_to "FANTRA", tourist_tourist_tours_path(current_tourist), class: "logo" %>
-            
             <span class = "header-city-search">
               <%= form_tag(tourist_tourist_searches_city_path(current_tourist), method: :get) do %>
                 <%= text_field_tag 'search[city]' %>
                 <%= button_tag '<i class="fa fa-search"></i>ツアー都市'.html_safe, :type => "submit",:class =>"btn btn-default" %>
               <% end %>
             </span>
-            <li>
-                  <%= link_to "ログアウト", destroy_tourist_session_path, method: :delete %>
-                </li>
 
           <%# ---- 非ログイン時のFANTRAロゴ ---- %>
           <% else %>
@@ -61,8 +54,8 @@
 
 
   <%# ---- ハンバンガーメニュー ---- %>
-          <div id = "sp-menu">
-            <h2>MENU</h2>
+          <%# ---- <div id = "sp-menu">   ---- %>
+            <%# ---- <h2>MENU</h2> ---- %>
           <%# ---- Adminログイン時のheader ---- %>
             <% if admin_signed_in? %>
               <ul>
@@ -182,16 +175,10 @@
                 </li>
               </ul>
             <% end %>
-          </div>
+          <!----- </div> ----->
 
   <!----- ハンバンガーアイコン ----->
-          <div id = "hm-icon">
-            <div class="menu-trigger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
+
         </nav>
       </header>
       <%= yield %>
