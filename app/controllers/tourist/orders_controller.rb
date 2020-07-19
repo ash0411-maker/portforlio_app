@@ -9,6 +9,15 @@ class Tourist::OrdersController < ApplicationController
     @review = Review.new
   end
 
+  def show
+    @order = Order.find(params[:id])
+    rooms = current_tourist.rooms
+    @guide_ids = []
+    rooms.each do |room|
+      @guide_ids << room.guide_id
+    end
+  end
+
   def new
     @tour = Tour.find_by(id: params[:tour_id])
     @tourist = Tourist.find_by(id: params[:tourist_id])

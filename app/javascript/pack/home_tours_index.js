@@ -10,5 +10,3 @@ $(function(){
         });
     });
 });
-
-alert("aaaaaa");

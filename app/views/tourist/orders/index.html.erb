@@ -1,102 +1,42 @@
-<% if @orders.count == 0 %>
-	<div class = "container">
-		<div class = "row">
-			<div class = "col-xs-9 col-xs-offset-1">
-				<h1>まだ予約はありません。</h1>
+<div class = "order-index-page">
+	<% if @orders.count == 0 %>
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-xs-9 col-xs-offset-1">
+					<h1>まだ予約はありません。</h1>
+				</div>
 			</div>
 		</div>
-	</div>
-<% else %>
-	<div class = "container">
-
-	<!---- 今後のツアー ----->
-		<div class = "row">
-			<div class = "col-xs-12">
-				<h2>予約中のツアー</h2>
-				<table class = "table table-bordered">
-					<thead class = "text-center">
-						<tr class = "active">
-							<%= render 'thead' %>
-							<th class = "text-center"></th>
-						</tr>
-					</thead>
+	<% else %>
+		<ul class = "order-tab clearfix">
+			<li class = "order-active">今後の予約</li>
+			<li>過去の予約</li>
+			<h3 class = "push-to-review">ガイドの応援のために過去の予約からレビューを投稿しましょう！</h3>
+			<h3 class = "push-to-review-phoen-width">ガイドの応援のために</br>過去の予約からレビューを</br>投稿しましょう！</h3>
+		</ul>
+		<div class = "container">
+			<div class = "reserved-tour-box">
+				<div class = "row">
 					<% @orders.each do |order| %>
 						<% unless order.status == "ツアー終了" or order.status == "レビュー済み" %>
-							<tbody>
-								<tr class = "text-center">
-									<%= render 'tbody', order: order, review: @review %>
-									<% if order.status == "ツアー開始前" %>
-										<td>
-											<h3><%= link_to "キャンセル", tourist_tourist_order_path(current_tourist,order), method: :delete,data: {confirm:'このツアーを本当にキャンセルしてもよろしいですか？ツアー前日だとキャンセル料が発生します。'}, class: "btn btn-danger btn-lg" %>
-											</h3>
-										</td>
-									<% else %>
-										<td>
-											<h3>ツアー前日以降ですので、<br/>キャセルできません。</h3>
-										</td>
-									<% end %>
-								</tr>
-							</tbody>
+							<div class = "col-md-4 col-xs-12">
+								<div class = "reserved-tour clearfix">
+									<% tour = Tour.find_by(id: order.tour_id) %>
+									<%= attachment_image_tag tour.tour_photos[0], :image, :fill, 300, 280, format: 'jpeg', class: "order-tour-image" %>
+									<div class = "order-tour-text">
+										<h4><%= order.tour_city %></h4>
+										<h4><%= order.tour_time %></h4>
+									</div>
+									<div class = "order-tour-link">
+										<h3><%= link_to "予約確認へ", tourist_tourist_order_path(current_tourist, order), class: "btn btn-default btn-primary" %></h3>
+										<h3><%= link_to "ツアー詳細へ", tourist_tourist_tour_path(current_tourist, order.tour_id), class: "btn btn-default btn-warning" %></h3>
+									</div>
+								</div>
+							</div>
 						<% end %>
 					<% end %>
-				</table>
+				</div>
 			</div>
 		</div>
-	<!---- 今後のツアー ----->
-
-
-	<!---- 終了済みでレビュー待ちのツアー ----->
-		<div class = "row">
-			<div class = "col-xs-12">
-				<h2>レビュー待ちのツアー</h2>
-				<table class = "table table-bordered">
-					<thead class = "text-center">
-						<tr class = "active">
-							<%= render 'thead' %>
-							<th class = "text-center">レビュー作成</th>
-						</tr>
-					</thead>
-					<% @orders.each do |order| %>
-						<% if order.status == "ツアー終了" %>
-							<tbody>
-								<tr class = "text-center">
-									<%= render 'tbody', order: order, review: @review %>
-									</td>
-								</tr>
-							</tbody>
-						<% end %>
-					<% end %>
-				</table>
-			</div>
-		</div>
-
-
-
-	<!---- レビュー済みのツアー ----->
-		<div class = "row">
-			<div class = "col-xs-12">
-				<h2>レビュー済みのツアー</h2>
-				<table class = "table table-bordered">
-					<thead class = "text-center">
-						<tr class = "active">
-							<%= render 'thead' %>
-							<th class = "text-center"></th>
-						</tr>
-					</thead>
-					<% @orders.each do |order| %>
-						<% if order.status == "レビュー済み" %>
-							<tbody>
-								<tr class = "text-center">
-									<%= render 'tbody', order: order, review: @review %>
-									<td>
-										レビューをありがとうございました。
-									</td>
-								</tr>
-							</tbody>
-						<% end %>
-					<% end %>
-				</table>
-			</div>
-		</div>
-	</div>
-<% end %>
+	<% end %>
+</div>
