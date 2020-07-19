@@ -45,6 +45,7 @@ jobs:
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
+      - run: bundle exec bin/webpack
       - run: bundle exec rake webpacker:compile
 
       # googlemapAPI
