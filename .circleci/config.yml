@@ -17,6 +17,11 @@ jobs:
       - image: selenium/standalone-chrome
         name:  "chrome"
 
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:9.4
+
     working_directory: ~/FANTRA
 
     steps:
@@ -31,7 +36,7 @@ jobs:
 
       - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
       - run: yarn install
-      - run: bundle exec bin/webpack
+      - run: bundle exec rake webpacker:compile
       - save_cache:
           paths:
             - ./vendor/bundle
@@ -49,6 +54,7 @@ jobs:
             echo GOOGLEMAP=$GOOGLEMAP > .env
             echo S3_ACCESS_KEY_ID=$S3_ACCESS_KEY_ID > .env
             echo S3_SECRET_ACCESS_KEY=$S3_SECRET_ACCESS_KEY > .env
+
 # rspec
       # run tests!
       - run:
