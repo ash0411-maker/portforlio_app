@@ -10,3 +10,5 @@ $(function(){
         });
     });
 });
+
+console.log("hello");
