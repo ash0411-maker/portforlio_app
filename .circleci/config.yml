@@ -37,8 +37,8 @@ jobs:
       - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - run: rm -rf bin/webpack*
-      - run: rails webpacker:install
-      - run: RAILS_ENV=test bundle exec rails webpacker:compile
+      - run: bundle exec bin/webpack
+      - run: RAILS_ENV=test bundle exec rake assets:precompile
 
       - run: yarn install
       - save_cache:
