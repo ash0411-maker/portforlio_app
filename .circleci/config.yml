@@ -35,9 +35,9 @@ jobs:
             - v2-dependencies-
 
       - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - run: yarn install
       - run: bundle exec bin/webpack
       - run: RAILS_ENV=test bundle exec rake assets:precompile
-      - run: yarn install
       - save_cache:
           paths:
             - ./vendor/bundle
