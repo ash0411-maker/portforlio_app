@@ -35,6 +35,11 @@ jobs:
             - v2-dependencies-
 
       - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - run: rm -rf bin/webpack*
+      - run: rails webpacker:install
+      - run: RAILS_ENV=test bundle exec rails webpacker:compile
+
       - run: yarn install
       - save_cache:
           paths:
@@ -44,9 +49,6 @@ jobs:
       # Database setup
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
-
-      - run: bundle exec bin/webpack
-      - run: bundle exec rake webpacker:compile
 
       # googlemapAPI
       - run:
