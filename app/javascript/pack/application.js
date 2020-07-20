@@ -9,6 +9,10 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 import "cocoon";
+require("pack/home_tours_index.js")
+require("pack/order.js")
+require("pack/skpper.js")
+require("pack/tour_show.js")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -21,8 +25,8 @@ import "cocoon";
 
 
 // ハンバンガーメニュー
-console.log("hello");
 $(function() {
+    console.log("hello");
     $('.menu-trigger').on('click', function(event) {
         $(this).toggleClass('active');
         $('#sp-menu').fadeToggle();

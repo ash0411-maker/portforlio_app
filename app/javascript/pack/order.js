@@ -1,4 +1,5 @@
 $(function() {
+    console.log("hello");
     $('.order-tab li').click(function() {
         var index = $('.order-tab li').index(this);
         $('.order-tab li').removeClass('order-active');

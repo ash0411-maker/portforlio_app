@@ -1,4 +1,5 @@
 $(function(){
+    console.log("hello");
     $(window).scroll(function (){
         $('.top-fadein').each(function(){
             var elemPos = $(this).offset().top;
@@ -10,5 +11,3 @@ $(function(){
         });
     });
 });
-
-console.log("hello");
