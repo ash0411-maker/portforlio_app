@@ -1,3 +1,6 @@
+import 'jquery-ujs/src/rails';
+
+
 $(function(){
     console.log("hello");
     $(window).scroll(function (){

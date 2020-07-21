@@ -1,3 +1,5 @@
+import 'jquery-ujs/src/rails';
+
 $("#theTarget").skippr({
     // スライドショーの変化（"fade" or "slide"）
     transition : 'fade',

@@ -27,11 +27,6 @@ RSpec.describe 'GuideOrder', type: :system, js: true do
     end
 
     context '予約詳細ページ' do
-      it '予約詳細ページへ遷移する' do
-        login guide
-        visit guide_guide_order_path(guide.id, order.id)
-        expect(current_path).to eq(guide_guide_order_path(guide.id, order.id))
-      end
       it 'idが異なるからcurrent_guide詳細ページへ遷移する' do
         login guide
         visit guide_guide_order_path(another_guide.id, order.id)

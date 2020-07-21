@@ -1,3 +1,5 @@
+import 'jquery-ujs/src/rails';
+
 $(function(){
     $(window).scroll(function (){
         $('.guide-body-title').each(function(){

@@ -1,3 +1,5 @@
+import 'jquery-ujs/src/rails';
+
 $(function() {
     console.log("hello");
     $('.order-tab li').click(function() {

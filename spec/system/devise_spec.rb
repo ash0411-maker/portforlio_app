@@ -148,7 +148,7 @@ RSpec.describe 'Devise', type: :system, js: true do
         fill_in 'tourist[password]', with: 'password'
         fill_in 'tourist[password_confirmation]', with: 'password'
         click_button '新規登録'
-        expect(page).to have_content 'マイページ'
+        expect(page).to have_content 'アカウント登録が完了しました'
       end
       it '新規登録に失敗する' do
         fill_in 'tourist[email]', with: ''
@@ -164,7 +164,7 @@ RSpec.describe 'Devise', type: :system, js: true do
         fill_in 'tourist[email]', with: 'test@example.com'
         fill_in 'tourist[password]', with: '123456'
         click_button 'ログイン'
-        expect(page).to have_content 'マイページ'
+        expect(page).to have_content 'ログインしました。'
       end
       it 'ログインに失敗する' do
         visit new_tourist_session_path
