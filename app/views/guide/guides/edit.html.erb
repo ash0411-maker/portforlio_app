@@ -1,100 +1,71 @@
 <div class = "container">
 	<div class = "row">
-		<div class = "col-xs-3 col-xs-offset-1">
-			<h1>登録情報編集</h1>
-		</div>
-		<div class = "col-xs-6">
-			<h3>全項目を登録してツアーを投稿しましょう！</h3>
-		</div>
+    <div class = "guide-edit-title">
+      <div class = "col-md-3 col-md-offset-1 col-xs-12">
+        <h1>登録情報編集</h1>
+      </div>
+      <div class = "col-md-6 col-xs-12">
+        <h3>全項目を登録してツアーを投稿しましょう！</h3>
+      </div>
+    </div>
 	</div>
-	<%= form_for(@guide, url: guide_guide_path(current_guide)) do |f| %>
-		<div class = "row">
-		    <div class = "col-xs-11">
-
-		    <!---- エラーメッセージ ---->
-		    	<% if @guide.errors.any? %>
-				    <div id="error_explanation">
-				    	<h2><%= @guide.errors.count %>件のエラーが発生しました。</h2>
-				    	<ul>
-						    <% @guide.errors.full_messages.each do |message| %>
-						    	<li><%= message %></li>
-						    <% end %>
-				    	</ul>
-				    </div>
-			    <% end %>
-
-                <!-- 氏名 -->
-			    <table class = "table table-bordered">
-			    	<tr class = "text-center">
-			    		<td class = "active">お名前</td>
-			    		<td>
-			    			<%= f.label :姓 %><br/><%= f.text_field :family_name %>
-			    		</td>
-			    		<td>
-			    			<%= f.label :名 %><br/><%= f.text_field :name %>
-			    		</td>
-			    		<td>
-			    			<%= f.label :国籍 %><br/><%= f.text_field :nationality %>
-			    		</td>
-			    	</tr>
-
-
-			    <!-- 住所 -->
-			    	<tr class = "text-center">
-			    		<td class = "active">住所</td>
-			    		<td>
-			    			<%= f.label :郵便番号 %><br/><%= f.text_field :postal_code %>
-			    		</td>
-			    		<td>
-			    			<%= f.label :住所 %><br/><%= f.text_field :address %>
-			    		</td>
-			    	</tr>
-
-
-			    <!-- 電話番号、メアド -->
-			    	<tr class = "text-center">
-			    		<td class = "active">住所</td>
-			    		<td>
-			    			<%= f.label :電話番号 %><br/><%= f.text_field :phone_number %>
-			    		</td>
-			    		<td>
-			    			<%= f.label :メールアドレス %><br/><%= f.text_field :email %>
-			    		</td>
-			    	</tr>
-
-
-
-			    <!-- 顔写真・身分証明書 -->
-			    	<tr class = "text-center">
-			    		<td class = "active">プロフィール写真。身分証明書</td>
-			    		<td>
-			    			<%= f.label :あなたが写っている写真 %><br/><%= f.attachment_field :selfy_image %>
-			    		</td>
-			    		<td>
-			    			<%= f.label :身分証明書 %><br/><%= f.attachment_field :identification_image %>
-			    		</td>
-			    	</tr>
-			    </table>
-			</div>
-		</div>
-
-	<!-- 自己紹介 -->
-		<div class = "row">
-			<div class = "col-xs-8">
-			    <div class =  "panel panel-default">
-			    	<div class="panel-heading text-center">
-			    		<h3 class="panel-title">自己紹介(400文字以内)</h3>
-			    	</div>
-			    	<div class = "panel-body" >
-			    		<%= f.text_area :introduction, class: "guide-introduction-area" %>
-			    	</div>
-			    </div>
-			</div>
-			<div class = "col-xs-3">
-	    		<%= f.submit  "編集", class: "btn btn-success btn-lg guide-edit-btn", data: {confirm:'こちらの内容で更新しますか？。'} %>
-	    	</div>
-		</div>
+  <% if @guide.errors.any? %>
+	  <div id = "error_explanation">
+	  	<h2><%= @guide.errors.count %>件のエラーが発生しました。</h2>
+	  	<ul>
+		    <% @guide.errors.full_messages.each do |message| %>
+		    	<li><%= message %></li>
+		    <% end %>
+	  	</ul>
+	  </div>
 	<% end %>
+  <div class = "row">
+    <%= form_for(@guide, url: guide_guide_path(current_guide)) do |f| %>
+      <div class = "col-md-12">
+        <div class = "guide-show-phone-width">
+          <div class = "guide-info-text">
+            <h4>姓</h4>
+            <%= f.text_field :family_name, class: "guide-edit-field" %>
+          </div>
+          <div class = "guide-info-text">
+            <h4>名</h4>
+            <%= f.text_field :name, class: "guide-edit-field" %>
+          </div>
+          <div class = "guide-info-text">
+            <h4>国籍</h4>
+            <%= f.text_field :nationality, class: "guide-edit-field" %>
+          </div>
+          <div class = "guide-info-text">
+            <h4>郵便番号</h4>
+            <%= f.text_field :postal_code, class: "guide-edit-field" %>
+          </div>
+          <div class = "guide-info-text">
+            <h4>住所</h4>
+            <%= f.text_field :address, class: "guide-edit-field" %>
+          </div>
+          <div class = "guide-info-text">
+            <h4>電話番号</h4>
+            <%= f.text_field :phone_number, class: "guide-edit-field" %>
+          </div>
+          <div class = "guide-info-text">
+            <h4>メールアドレス</h4>
+            <%= f.text_field :email, class: "guide-edit-field" %>
+          </div>
+          <div class = "guide-info-text">
+            <h4>あなたの写真</h4>
+            <%= f.attachment_field :selfy_image %>
+          </div>
+          <div class = "guide-info-text">
+            <h4>身分証明書</h4>
+            <%= f.attachment_field :identification_image %>
+          </div>
+          <div class = "guide-info-text">
+            <h4>自己紹介（400文字）</h4>
+            <%= f.text_area :introduction, class: "guide-edit-text-area" %>
+            <%= f.submit  "編集", class: "btn btn-success btn-lg guide-edit-btn", data: {confirm:'こちらの内容で更新しますか？。'} %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-

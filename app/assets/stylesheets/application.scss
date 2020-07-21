@@ -60,6 +60,10 @@ body {
 	font-weight: bold;
 }
 
+.application-wrapper {
+	padding: 40px 0 40px;
+}
+
 .logo {
 	line-height: 70px;
     color: #FAFAFA;
@@ -193,6 +197,10 @@ nav li a{
 	padding-left: 30px;
 }
 
+.selfy_image {
+	border-radius: 10px;
+}
+
 .guide-login-name {
 	color: white;
 }
@@ -229,7 +237,7 @@ nav li a{
 
 
 
-//ツアー一覧ページ
+//---  ツアー一覧ページ ---
 .tours-first-wrapper {
 	background-color: black;
 	height: 640px;
@@ -331,22 +339,32 @@ nav li a{
 	padding-top: 60px;
 	background-color: black;
 	color: white;
+	height: 250px;
 }
 
 .tour-info-width-phone {
   display: none;
 }
 
+.tour-info-width-laptop {
+	padding: 40px 0 0;
+  }
+
 .left-bar{
-	margin: 55px 0 0 40px;
+	
 }
+
+.order-btn{
+	margin: 30px auto 20px;
+	font-weight: bold;
+  }
 
 .city-name{
 	margin: 30px 0;
 }
 
 .right-bar{
-	margin-left: -100px;
+	margin-left: -120px;
 }
 
 .contents_of_price{
@@ -354,7 +372,7 @@ nav li a{
 }
 
 .edit-tour-btn{
-	margin: 80px 0 0 40px;
+	margin: 30px 0 0 40px;
 }
 
 .tour-body-title{
@@ -508,22 +526,24 @@ body {
 }
 
 .tour-info-wrapper {
-  padding-top: 0px;
-	background-color: black;
+  padding: 0;
+  background-color: black;
   color: white;
   height: 450px;
 }
 
 .tour-city-name {
-  float: left;
+  float: none;
   font-size: 20px;
-  padding-left: 120px;
+  padding-left: 70px;
+  display: block;
 }
 
 .tour-genre-name {
-  float: left;
+  float: none;
   font-size: 20px;
-  padding-left: 30px;
+  padding-left: 70px;
+  display: block;
 }
 
 
@@ -543,6 +563,10 @@ body {
 .order-btn{
   margin: 30px auto 20px;
   font-weight: bold;
+}
+
+.edit-tour-btn{
+	margin: 30px 0 0 40px;
 }
 
 }

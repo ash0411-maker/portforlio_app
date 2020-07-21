@@ -3,48 +3,84 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-
-// ツアーの新規投稿
-.right-bar{
-	padding-top: 40px;
+.guide-tour-page {
+  margin: 20px 0 60px;
 }
 
-//body入力フィールド
-.tour-body{
-	width: 90%;
-	height: 300px;
+.guide-tour-info-text {
+	border-bottom: dotted 0.1px gray;
+	margin-bottom: 40px;
+  }
+
+.guide-tour-text-field {
+  height: 50px;
+  font-size: 20px;
 }
 
-// contents_of_price入力フィールド
-.contents_of_price{
-	height: 50px;
+.guide-tour-text-area {
+  height: 200px;
+  font-size: 15px;
+  width: 60%;
 }
 
-// ツアー写真送信ボタン
-.tour-photo-submit {
-	margin-top: 40px;
+// ----- ツアー一覧 ------
+.guide-genre-panel {
+  text-align: center;
 }
 
-.meetingpoint_introduction_text_area {
-	height: 180px;
-	width: 90%;
+.guide-genre-panel p {
+  float: left;
+  margin-right: 30px;
 }
 
-.guide-tour-body-text {
-	height: 180px;
-	width: 100%;
+.tours-info-box {
+  box-shadow: 0 15px 15px #666666;
+  border: solid 0.1px gray;
+  border-radius: 8px;
+  margin: 30px 0 0 30px;
+  padding: 15px;
+  border-radius: 5%;
+	box-shadow: 0 15px 15px #666666;
 }
 
+.tours-info-box h4 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.tours-image {
+  margin-bottom: 20px;
+  border-radius: 5%;
+  box-shadow: 0 10px 10px #666666;
+}
+
+.tours-image:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.5s;
+}
+
+
+
+
+@media screen and (max-width:480px) {
 .tour-photos-example-wrapper {
-	margin-top: 40px;
+	display: none;
 }
 
-.tour-photos-example-text {
-	margin-bottom: 20px;
-	color: red;
+.guide-tour-text-area {
+  height: 200px;
+  font-size: 15px;
+  width: 90%;
 }
 
-// ブックマーク数
-.book-mark-count {
-	font-size: 30px;
+.tours-info-box {
+  box-shadow: 0 15px 15px #666666;
+  border: solid 0.1px gray;
+  border-radius: 8px;
+  margin: 30px 0 0 30px;
+  padding: 7px;
+  border-radius: 5%;
+	box-shadow: 0 15px 15px #666666;
+}
+
 }

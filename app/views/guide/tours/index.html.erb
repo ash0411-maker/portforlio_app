@@ -1,54 +1,31 @@
-<div class = "container">
-	<div class = "row">
-		<div class = "col-xs-5 col-xs-offset-3">
-			<h1>ツアー情報</h1>
-		</div>
-	</div>
-	<div class = "row">
-        <div class = "col-xs-2">
-            <div class =  "panel panel-default category-search-box">
-                <div class = "panel-heading">
-                    <h3 class="panel-title">ジャンル検索</h3>
-                </div>
-                <div class = "panel-body" >
-                    <% @genres.each do |genre| %>
-                        <p>
-                            <%= link_to guide_guide_tours_path(current_guide, genre_id: genre.id) do %>
-                                <%= genre.name %>
-                            <% end %>
-                        </p>
-                    <% end %>
-                </div>
-            </div>
-        </div>
-        <div class = "col-xs-10">
-            <table class = "table">
-                <thead>
-                    <tr>
-                        <th class = "active text-center">紹介者</th>
-                        <th class = "active text-center">ツアー名</th>
-                        <th class = "active text-center">ブックマーク数</th>
-                        <th class = "active text-center">都市</th>
-                        <th class = "active text-center">ジャンル</th>
-                        <th class = "active text-center"></th>
-                    </tr>
-                </thead>
-                <% @tours.each do |tour| %>
-                    <tbody>
-                        <tr class = "text-center">
-                            <td><%= tour.guide.name %>さん</td>
-                            <td><%= tour.title %></td>
-                            <td><%= tour.book_marks.count %></td>
-                            <td><%= tour.city.name %></td>
-                            <td><%= tour.genre.name %></td>
-                            <td>
-                                <%= link_to "ツアー詳細", guide_guide_tour_path(current_guide, tour), class: "btn btn-default" %>
-                            </td>
-                        </tr>
-                    </tbody>
+<div class = "application-wrapper">
+  <div class = "container">
+    <div class = "row">
+      <h1 class = "col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-2">ツアー情報一覧</h1>
+      <div class = "col-md-6 col-xs-10 col-xs-offset-2">
+        <div class =  "panel panel-default category-search-box">
+          <div class = "panel-heading">
+            <h3 class="panel-title">ジャンル検索</h3>
+          </div>
+          <div class = "panel-body guide-genre-panel clearfix" >
+            <% @genres.each do |genre| %>
+              <p>
+                <%= link_to guide_guide_tours_path(current_guide, genre_id: genre.id) do %>
+                  <%= genre.name %>
                 <% end %>
-            </table>
+              </p>
+            <% end %>
+          </div>
         </div>
-        <%= paginate @tours, class: "paginate" %>
+      </div>
     </div>
+    <div class = "row">
+      <% @tours.each do |tour| %>
+        <div class = "col-md-4 col-xs-12">
+          <%= render 'partial/tours_photos_link', tour: tour %>
+        </div>
+      <% end %>
+    </div>
+  <%= paginate @tours, class: "paginate" %>
+  </div>
 </div>

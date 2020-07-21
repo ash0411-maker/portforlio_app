@@ -2,20 +2,133 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.guide-show-laptop-width {
+  display: none;
+}
 
-// ガイド詳細画面
-.selfy_image{
-	border-radius: 40%;
+.guide-show-phone-width {
+  display: block;
+  width: 90%;
+  margin: 20px auto 0;
+}
+
+.guide-info-text {
+  border-bottom: dotted 0.1px gray;
+  margin-bottom: 20px;
+}
+
+.guide-phone-selfy-image {
+  border-radius: 40%;
+}
+
+.guide-button-to-edit {
+  text-align: center;
+}
+
+.your-tour-phone-width {
+  margin: 50px auto 50px;
+}
+
+.guide-tour-info-box {
+  border: solid 0.1px gray;
+  border-radius: 10px;
+  box-shadow: 0 15px 15px #666666;
+  margin-bottom: 100px;
+  padding: 10px 30px 30px;
+}
+
+.guide-tour-btn {
+  margin-right: 20px;
+}
+
+.your-tour-photo {
+  margin-bottom: 20px;
+}
+
+
+
+// ------  ガイド編集ページ  --------
+.guide-edit-field {
+  height: 40px;
+  font-size: 20px;
+}
+
+.guide-edit-text-area {
+  height: 200px;
+  width: 60%;
 }
 
 .guide-edit-btn {
-	margin: 60px 0 0 25px;
+  margin: 0 0 50px 100px;
 }
 
 
 
-// ガイド編集画面
-.guide-introduction-area {
-	width: 90%;
-	height: 200px;
+
+
+
+
+
+
+@media screen and (max-width:480px) {
+
+  // -------  ガイド詳細ページ  ---------
+	.guide-show-laptop-width {
+    display: none;
+  }
+
+  .guide-show-phone-width {
+    display: block;
+    width: 90%;
+    margin: 20px auto 0;
+  }
+  
+  .guide-info-text {
+    border-bottom: dotted 0.1px gray;
+    margin-bottom: 20px;
+  }
+
+  .guide-phone-selfy-image {
+    border-radius: 40%;
+  }
+
+  .guide-button-to-edit {
+    text-align: center;
+  }
+
+  .your-tour-phone-width {
+    margin: 50px auto 50px;
+  }
+
+  .guide-tour-info-box {
+    border: solid 0.1px gray;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px #666666;
+    margin-bottom: 100px;
+    padding: 15px;
+  }
+
+  .guide-tour-btn {
+    margin-right: 20px;
+  }
+
+  .your-tour-photo {
+    margin-bottom: 20px;
+  }
+
+  .guide-to-edit-btn {
+    margin: 20px auto;
+  }
+
+
+  // -------- ガイド編集  --------
+
+  .guide-edit-title {
+    font-size: 20px;
+  }
+
+  .guide-edit-text-area {
+    height: 200px;
+    width: 100%;
+  }
 }

@@ -15,7 +15,8 @@
 
 
 .room-wrapper{
-	position: relative;
+  position: relative;
+  padding: 40px 0 40px;
 }
 
 .chat-form-field{
@@ -57,6 +58,19 @@
 
   .rooms-index-title {
     font-size: 20px;
+  }
+
+  .room-wrapper{
+    position: relative;
+    padding: 40px 0 150px;
+  }
+
+  .btn-to-rooms {
+    display: none;
+  }
+
+  .chat-form {
+    padding: 20px;
   }
 
 }

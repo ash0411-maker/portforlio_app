@@ -67,7 +67,7 @@ Rails.application.routes.draw do
       get 'guides/cannnot_delete' => 'guides#cannot_delete', as: 'cannot_guide_delete'
       resources :tours
       resources :notifications, only: %i[index]
-      resources :orders, only: %i[index update]
+      resources :orders, only: %i[index show update]
       resources :rooms, only: %i[show index create] do
         resources :chats, only: %i[create]
       end

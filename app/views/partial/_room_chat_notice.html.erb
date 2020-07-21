@@ -1,0 +1,9 @@
+<% room.chats.each do |chat| %>
+  <% if chat.is_tourist == false %>
+    <% chat.chat_notices.each do |notice| %>
+      <% if notice.checked == false %>
+        <i class="fas fa-circle " style = "color: orange;"></i>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -15,19 +15,19 @@
 						<% tour_photos = tour.tour_photos %>
 						<% if tourist_signed_in? %>
 							<%= link_to tourist_tourist_tour_path(current_tourist, tour) do %>
-								<%= render 'partial/tours_photos_link', tour_photos: tour_photos, tour: tour %>
+								<%= render 'partial/tours_photos_link', tour: tour %>
 							<% end %>
 						<% elsif guide_signed_in? %>
 							<%= link_to guide_guide_tour_path(current_guide, tour) do %>
-								<%= render 'partial/tours_photos_link', tour_photos: tour_photos, tour: tour %>
+								<%= render 'partial/tours_photos_link', tour: tour %>
 							<% end %>
 						<% elsif admin_signed_in? %>
 							<%= link_to admin_tour_path(tour) do %>
-								<%= render 'partial/tours_photos_link', tour_photos: tour_photos, tour: tour %>
+								<%= render 'partial/tours_photos_link', tour: tour %>
 							<% end %>
 						<% else %>
 							<%= link_to home_tour_path(tour) do %>
-								<%= render 'partial/tours_photos_link', tour_photos: tour_photos, tour: tour %>
+								<%= render 'partial/tours_photos_link', tour: tour %>
 							<% end %>
 						<% end %>
 					</div>
