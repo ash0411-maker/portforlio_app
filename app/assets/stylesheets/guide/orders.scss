@@ -4,6 +4,10 @@
 
 
 //  ------  予約一覧画面  --------
+.order-stauts-flash {
+  margin-left: 60px;
+  color: limegreen;
+}
 
 .order-status-tab {
   margin-bottom: 30px;
@@ -66,6 +70,10 @@
 
 .order-stauts-form-box h4 {
   color: green;
+}
+
+.order-stauts-form-box h3 {
+  margin-left: -70px;
 }
 
 

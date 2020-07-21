@@ -2,7 +2,7 @@
 	<h3><%= flash[:notice] %></h3>
 	<h1 class = "guide-top-text">
 		本日に入った予約件数は
-		<%= link_to guide_guide_orders_path(current_guide) do %>
+		<%= link_to guide_guide_orders_path(current_guide, order_status: "just_in_orders") do %>
 			<%= @orders.count %>件です
 		<% end %>
 	</h1>

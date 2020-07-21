@@ -59,9 +59,6 @@ Rails.application.routes.draw do
     get 'guides/thanks' => 'guides#thanks', as: 'thanks'
     resources :guides, only: %i[show edit update destroy] do
       get 'home/top'
-      get 'orders/new_order' => 'orders#new_order', as: 'new_order'
-      get 'orders/finished_tour' => 'orders#finished_tour', as: 'finished_tour'
-      get 'orders/day_before_touring' => 'orders#day_before_touring', as: 'day_before_touring'
       get 'gudies/to_guide_edit' => 'guides#to_guide_edit', as: 'to_guide_edit'
       get 'guides/delete' => 'guides#delete', as: 'guide_delete'
       get 'guides/cannnot_delete' => 'guides#cannot_delete', as: 'cannot_guide_delete'

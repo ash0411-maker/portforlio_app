@@ -4,17 +4,18 @@
       <div class = "order-show-box col-md-8 col-md-offset-2">
         <div class = "col-md-5">
           <%= attachment_image_tag @tour.tour_photos[0], :image, :fill, 300, 280, format: 'jpeg' %>
-          <div class = "order-stauts-form-box">
+          <div class = "order-stauts-form-box"> 
             <h4>こちらから予約ステータスを変更</h4>
-            <% if @order.status != "ツアー終了" or "レビュー済み" %>
-              <%= form_for(@order, url: guide_guide_order_path(current_guide, @order)) do |f| %>
-                <%= f.select :status, Order.statuses.keys.to_a, data: { confirm: "本当に更新しますか?" } %>
-                <%= f.submit "更新", class: "btn btn-warning" %>
-              <% end %>
-            <% elsif @order.status == "ツアー終了" %>
-              レビュー待ちです
-            <% elsif @order.status == "レビュー済み" %>
-              レビューを受けました。
+            <% case @order.status %>
+              <% when "ツアー開始前", "ツアー前日", "ツアー当日" %>
+                <%= form_for(@order, url: guide_guide_order_path(current_guide, @order)) do |f| %>
+                  <%= f.select :status, Order.statuses.keys.to_a, data: { confirm: "本当に更新しますか?" } %>
+                  <%= f.submit "更新", class: "btn btn-warning" %>
+                <% end %>
+              <% when "ツアー終了" %>
+                <h3>レビュー待ちです</h3>
+              <% when "レビュー済み" %>
+                <h3>レビューを受けました。</h3>
             <% end %>
           </div>
         </div>

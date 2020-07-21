@@ -2,7 +2,7 @@
 
 class Guide::OrdersController < ApplicationController
   before_action :authenticate_guide!
-  before_action :correct_guide, only: %i[index update new_order day_before_touring finished_tour]
+  before_action :correct_guide, only: %i[index show update]
 
   def index
     @orders = current_guide.orders
@@ -33,7 +33,7 @@ class Guide::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     if @order.update(order_params)
       flash[:notice] = '予約ステータスを更新しました'
-      redirect_to guide_guide_orders_path(current_guide)
+      redirect_to guide_guide_orders_path(current_guide, order_status: "just_in_orders")
     end
   end
 

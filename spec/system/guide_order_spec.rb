@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'GuideOrder', type: :system, js: true do
-  let(:order) { create(:order_a) }
+  let(:order) { create(:order) }
   let(:guide) { create(:guide) }
   let(:tour) { create(:tour) }
   let(:another_guide) { create(:another_guide) }
@@ -27,48 +27,22 @@ RSpec.describe 'GuideOrder', type: :system, js: true do
     end
 
     context '予約詳細ページ' do
-      it '新規予約確認ページへ遷移する' do
+      it '予約詳細ページへ遷移する' do
         login guide
-        visit guide_guide_new_order_path(guide.id)
-        expect(current_path).to eq(guide_guide_new_order_path(guide.id))
+        visit guide_guide_order_path(guide.id, order.id)
+        expect(current_path).to eq(guide_guide_order_path(guide.id, order.id))
       end
       it 'idが異なるからcurrent_guide詳細ページへ遷移する' do
         login guide
         visit guide_guide_order_path(another_guide.id, order.id)
         expect(current_path).to eq(guide_guide_path(guide.id))
       end
-      it 'ログインなしで新規予約確認ページに遷移しない' do
-        visit guide_guide_new_order_path(guide.id)
-        expect(current_path).to eq(new_guide_session_path)
-      end
-      it 'ツアー前日・当日ページへ遷移する' do
-        login guide
-        visit guide_guide_day_before_touring_path(guide.id)
-        expect(current_path).to eq(guide_guide_day_before_touring_path(guide.id))
-      end
-      it 'idが異なるからcurrent_guide詳細ページへ遷移する' do
-        login guide
-        visit guide_guide_day_before_touring_path(another_guide.id)
-        expect(current_path).to eq(guide_guide_path(guide.id))
-      end
-      it 'ログインなしでツアー前日・当日ページに遷移しない' do
-        visit guide_guide_day_before_touring_path(guide.id)
-        expect(current_path).to eq(new_guide_session_path)
-      end
-      it 'ツアー終了ページへ遷移する' do
-        login guide
-        visit guide_guide_finished_tour_path(guide.id)
-        expect(current_path).to eq(guide_guide_finished_tour_path(guide.id))
-      end
-      it 'idが異なるからcurrent_guide詳細ページへ遷移する' do
-        login guide
-        visit guide_guide_finished_tour_path(another_guide.id)
-        expect(current_path).to eq(guide_guide_path(guide.id))
-      end
-      it 'ログインなしでツアー終了ページに遷移しない' do
-        visit guide_guide_finished_tour_path(guide.id)
+      it 'ログイン無しで遷移しない' do
+        visit guide_guide_order_path(another_guide.id, order.id)
         expect(current_path).to eq(new_guide_session_path)
       end
     end
   end
 end
+
+
