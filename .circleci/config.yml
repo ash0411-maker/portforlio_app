@@ -36,7 +36,6 @@ jobs:
 
       - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
       - run: yarn install
-      - run: bundle exec bin/webpack
       - save_cache:
           paths:
             - ./vendor/bundle
