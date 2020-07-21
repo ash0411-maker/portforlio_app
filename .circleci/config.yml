@@ -36,6 +36,7 @@ jobs:
 
       - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
       - run: yarn install
+      - run: NODE_ENV=test bundle exec rails webpacker:compile
       - save_cache:
           paths:
             - ./vendor/bundle
