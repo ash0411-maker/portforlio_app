@@ -163,8 +163,19 @@ body {
 	width: 35%;
 }
 
+.guide-hm-menu-box {
+	margin: 0 auto;
+	width: 40%;
+}
+
 .tourist-hm-menu li {
 	float: left;
+	text-align: center;
+}
+
+.guide-hm-menu li {
+	float: left;
+	margin: 0 0 0 90px;
 	text-align: center;
 }
 
@@ -179,6 +190,13 @@ body {
 	font-weight: bold;
 }
 
+.guide-notice-icon {
+	padding-left: 30px;
+}
+
+.guide-tour-icon {
+	padding-left: 60px;
+}
 
 li{
 	list-style: none;

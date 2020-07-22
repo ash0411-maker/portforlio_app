@@ -13,11 +13,11 @@
 	<!------- ブックマークがあった場合 ------->
 		<% else %>
 			<div class = "container">
-				<div class = "reserved-tour-box">
+				<div class = "book-mark-tour-box">
 					<div class = "row">
 						<% @book_marks.each do |book_mark| %>
 							<div class = "col-md-4 col-xs-12">
-								<div class = "reserved-tour clearfix">
+								<div class = "book-mark-tour clearfix">
 									<% tour = Tour.find_by(id: book_mark.tour_id) %>
 									<%= attachment_image_tag book_mark.tour.tour_photos[0], :image, :fill, 300, 280, format: 'jpeg', class: "book-mark-tour-image" %>
 									<div class = "book-mark-tour-text">

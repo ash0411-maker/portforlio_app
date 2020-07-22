@@ -79,56 +79,47 @@
           <% elsif guide_signed_in? %>
             <div class = "sp-menu">
               <h2>MENU</h2>
-              <ul>
-                <li>
-                  <%= link_to guide_guide_rooms_path(current_guide) do %>
-                    <% if unchecked_guide_chat_notices.any? %>
-                      <span class = "bell">
-                        <i class="far fa-comment fa-2x"></i>
-                        <span class = "circle">
-                          <i class="fas fa-circle" style = "color: orange;"></i>
-                        </span>
-                      </span>
-                    <% else %>
-                      <i class="far fa-comment fa-2x"></i>
-                    <% end %>
-                    チャット
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to guide_guide_notifications_path(current_guide) do %>
-                    <% if unchecked_notifications.any? %>
-                      <span class = "bell">
-                        <i class="far fa-bell fa-2x"></i>
-                        <span class = "circle">
-                          <i class="fas fa-circle" style = "color: orange;"></i>
-                        </span>
-                      </span>
-                      <% else %>
-                        <i class="far fa-bell fa-2x"></i>
+              <div class = "guide-hm-menu-box clearfix">
+                <ul>
+                  <div class = "guide-hm-menu clearfix">
+                    <li class = "guide-notice-icon">
+                      <%= link_to guide_guide_notifications_path(current_guide) do %>
+                        <% if unchecked_notifications.any? %>
+                          <span class = "bell">
+                            <i class="far fa-bell fa-3x"></i>
+                            <span class = "circle">
+                              <i class="fas fa-circle" style = "color: orange;"></i>
+                            </span>
+                          </span>
+                        <% else %>
+                          <i class="far fa-bell fa-3x"></i>
+                        <% end %>
+                        <h3>通知</h3>
                       <% end %>
-                      通知
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to guide_guide_tours_path(current_guide) do %>
-                    <i class="fas fa-plane-departure fa-2x"></i>
-                    ツアー一覧
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to new_guide_guide_tour_path(current_guide) do %>
-                    <i class="fas fa-file-signature fa-2x"></i>
-                    ツアー投稿
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to destroy_guide_session_path, method: :delete do %>
-                    <i class="fas fa-sign-out-alt fa-2x"></i>
-                    ログアウト
-                  <% end %>
-                </li>
-            </ul>
+                    </li>
+                    <li class = "guide-tour-icon">
+                      <%= link_to guide_guide_tours_path(current_guide) do %>
+                        <i class="fas fa-plane-departure fa-3x"></i>
+                        <h3>ツアー</h3>
+                      <% end %>
+                    </li>
+                  </div>
+                  <div class = "guide-hm-menu clearfix">
+                    <li>
+                      <%= link_to new_guide_guide_tour_path(current_guide) do %>
+                        <i class="fas fa-file-signature fa-3x"></i>
+                        <h3>ツアー投稿</h3>
+                      <% end %>
+                    </li>
+                    <li>
+                      <%= link_to destroy_guide_session_path, method: :delete do %>
+                        <i class="fas fa-sign-out-alt fa-3x"></i>
+                        <h3>ログアウト</h3>
+                      <% end %>
+                    </li>
+                  </div>
+                </div>
+              </ul>
           </div>
           <%# ---- Touristログイン時のheader ---- %>
           <% elsif tourist_signed_in? %>
@@ -241,16 +232,16 @@
                   <span></span>
                 </a>
                 <span class = "header-notice">
-                  <%= link_to guide_guide_notifications_path(current_guide) do %>
-                    <% if unchecked_notifications.any? %>
+                  <%= link_to guide_guide_rooms_path(current_guide) do %>
+                    <% if unchecked_guide_chat_notices.any? %>
                       <span class = "bell">
-                        <i class="far fa-bell fa-2x"></i>
+                        <i class="far fa-comment fa-3x"></i>
                         <span class = "circle">
                           <i class="fas fa-circle" style = "color: orange;"></i>
                         </span>
                       </span>
                     <% else %>
-                      <i class="far fa-bell fa-2x"></i>
+                      <i class="far fa-comment fa-3x"></i>
                     <% end %>
                   <% end %>
                 </span>
