@@ -56,8 +56,7 @@
 
 
   <%# ---- ハンバンガーメニュー ---- %>
-          <div id = "sp-menu">
-            <h2>MENU</h2>
+
           <%# ---- Adminログイン時のheader ---- %>
             <% if admin_signed_in? %>
               <ul>
@@ -177,16 +176,7 @@
                 </li>
               </ul>
             <% end %>
-          </div>
 
-  <!----- ハンバンガーアイコン ----->
-          <div id="hm-icon">
-            <a class="menu-trigger" href="#">
-              <span></span>
-              <span></span>
-              <span></span>
-            </a>
-          </div>
         </nav>
       </header>
       <%= yield %>
