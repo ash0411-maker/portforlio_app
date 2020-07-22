@@ -4,15 +4,11 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 import "cocoon";
-require("home_tours_index.js")
-require("order.js")
-require("skpper.js")
-require("tour_show.js")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -26,10 +22,9 @@ require("tour_show.js")
 
 // ハンバンガーメニュー
 $(function() {
-    console.log("hello");
     $('.menu-trigger').on('click', function(event) {
-        $(this).toggleClass('active');
-        $('#sp-menu').fadeToggle();
+        $(this).toggleClass('hm-active');
+        $('.sp-menu').fadeToggle();
         event.preventDefault();
     });
 });

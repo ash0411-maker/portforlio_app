@@ -1,0 +1,14 @@
+<div class = "col-md-4 col-xs-12">
+	<div class = "reserved-tour clearfix">
+		<% tour = Tour.find_by(id: order.tour_id) %>
+		<%= attachment_image_tag tour.tour_photos[0], :image, :fill, 300, 280, format: 'jpeg', class: "order-tour-image" %>
+		<div class = "order-tour-text">
+			<h4><%= order.tour_city %></h4>
+			<h4><%= order.tour_time %></h4>
+		</div>
+		<div class = "order-tour-link">
+			<h3><%= link_to "予約確認へ", tourist_tourist_order_path(current_tourist, order), class: "btn btn-default btn-primary" %></h3>
+			<h3><%= link_to "ツアー詳細へ", tourist_tourist_tour_path(current_tourist, order.tour_id), class: "btn btn-default btn-warning" %></h3>
+		</div>
+	</div>
+</div>

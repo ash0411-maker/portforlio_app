@@ -1,29 +1,30 @@
 {
-  "application.js": "/packs/js/application-da82913621973079cf53.js",
-  "application.js.map": "/packs/js/application-da82913621973079cf53.js.map",
+  "application.js": "/packs/js/application-860f2b52231032cf8fd2.js",
+  "application.js.map": "/packs/js/application-860f2b52231032cf8fd2.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-da82913621973079cf53.js"
+        "/packs/js/application-860f2b52231032cf8fd2.js"
       ],
       "js.map": [
-        "/packs/js/application-da82913621973079cf53.js.map"
+        "/packs/js/application-860f2b52231032cf8fd2.js.map"
       ]
     },
     "home_tours_index": {
       "js": [
-        "/packs/js/home_tours_index-e8a774ad43a324a016d3.js"
+
+        "/packs/js/home_tours_index-6c0e4051a31f9a3f3eea.js"
       ],
       "js.map": [
-        "/packs/js/home_tours_index-e8a774ad43a324a016d3.js.map"
+        "/packs/js/home_tours_index-6c0e4051a31f9a3f3eea.js.map"
       ]
     },
     "order": {
       "js": [
-        "/packs/js/order-dd268f998a8f63893f9a.js"
+        "/packs/js/order-be1b77728877a2669af3.js"
       ],
       "js.map": [
-        "/packs/js/order-dd268f998a8f63893f9a.js.map"
+        "/packs/js/order-be1b77728877a2669af3.js.map"
       ]
     },
     "skipper": {
@@ -42,23 +43,23 @@
         "/packs/js/skippr-7d4e4424c5f4c032a3b7.js.map"
       ]
     },
-    "tour_show_": {
+    "tour_show": {
       "js": [
-        "/packs/js/tour_show_-4fd4738a848c9f2ccfc2.js"
+        "/packs/js/tour_show-c6b01a9dd669933b84eb.js"
       ],
       "js.map": [
-        "/packs/js/tour_show_-4fd4738a848c9f2ccfc2.js.map"
+        "/packs/js/tour_show-c6b01a9dd669933b84eb.js.map"
       ]
     }
   },
-  "home_tours_index.js": "/packs/js/home_tours_index-e8a774ad43a324a016d3.js",
-  "home_tours_index.js.map": "/packs/js/home_tours_index-e8a774ad43a324a016d3.js.map",
-  "order.js": "/packs/js/order-dd268f998a8f63893f9a.js",
-  "order.js.map": "/packs/js/order-dd268f998a8f63893f9a.js.map",
+  "home_tours_index.js": "/packs/js/home_tours_index-6c0e4051a31f9a3f3eea.js",
+  "home_tours_index.js.map": "/packs/js/home_tours_index-6c0e4051a31f9a3f3eea.js.map",
+  "order.js": "/packs/js/order-be1b77728877a2669af3.js",
+  "order.js.map": "/packs/js/order-be1b77728877a2669af3.js.map",
   "skipper.js": "/packs/js/skipper-896d9412fbab23384630.js",
   "skipper.js.map": "/packs/js/skipper-896d9412fbab23384630.js.map",
   "skippr.js": "/packs/js/skippr-7d4e4424c5f4c032a3b7.js",
   "skippr.js.map": "/packs/js/skippr-7d4e4424c5f4c032a3b7.js.map",
-  "tour_show_.js": "/packs/js/tour_show_-4fd4738a848c9f2ccfc2.js",
-  "tour_show_.js.map": "/packs/js/tour_show_-4fd4738a848c9f2ccfc2.js.map"
+  "tour_show.js": "/packs/js/tour_show-c6b01a9dd669933b84eb.js",
+  "tour_show.js.map": "/packs/js/tour_show-c6b01a9dd669933b84eb.js.map"
 }

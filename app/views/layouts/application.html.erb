@@ -54,31 +54,31 @@
             <%= link_to "FANTRA", root_path, class: "logo" %>
           <% end %>
 
-
   <%# ---- ハンバンガーメニュー ---- %>
 
           <%# ---- Adminログイン時のheader ---- %>
-            <% if admin_signed_in? %>
-              <ul>
-                <li>
-                  <%= link_to "チャット", admin_rooms_path %>
-                </li>
-                <li>
-                  <%= link_to "ガイド", admin_guides_path %>
-                </li>
-                <li>
-                  <%= link_to "ツーリスト", admin_tourists_path %>
-                </li>
-                <li>
-                  <%= link_to "ツアー", admin_tours_path %>
-                </li>
-                <li>
-                  <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-                </li>
-              </ul>
-
-            <%# ---- Guideログイン時のheader ---- %>
-            <% elsif guide_signed_in? %>
+          <% if admin_signed_in? %>
+            <ul>
+              <li>
+                <%= link_to "チャット", admin_rooms_path %>
+              </li>
+              <li>
+                <%= link_to "ガイド", admin_guides_path %>
+              </li>
+              <li>
+                <%= link_to "ツーリスト", admin_tourists_path %>
+              </li>
+              <li>
+                <%= link_to "ツアー", admin_tours_path %>
+              </li>
+              <li>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+              </li>
+            </ul>
+          <%# ---- Guideログイン時のheader ---- %>
+          <% elsif guide_signed_in? %>
+            <div class = "sp-menu">
+              <h2>MENU</h2>
               <ul>
                 <li>
                   <%= link_to guide_guide_rooms_path(current_guide) do %>
@@ -104,10 +104,10 @@
                           <i class="fas fa-circle" style = "color: orange;"></i>
                         </span>
                       </span>
-                    <% else %>
-                      <i class="far fa-bell fa-2x"></i>
-                    <% end %>
-                    通知
+                      <% else %>
+                        <i class="far fa-bell fa-2x"></i>
+                      <% end %>
+                      通知
                   <% end %>
                 </li>
                 <li>
@@ -128,55 +128,127 @@
                     ログアウト
                   <% end %>
                 </li>
-              </ul>
+            </ul>
+          </div>
+          <%# ---- Touristログイン時のheader ---- %>
+          <% elsif tourist_signed_in? %>
+            <div class = "sp-menu">
+              <h2>MENU</h2>
+              <div class = "tourist-hm-menu-box clearfix">
+                <div class = "tourist-hm-menu clearfix">
+                  <li>
+                    <%= link_to destroy_tourist_session_path, method: :delete, class: "btn btn-lg" do %>
+                      <i class="fas fa-sign-out-alt fa-3x"></i>
+                      <h3>ログアウト</h3>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to  edit_tourist_tourist_path(current_tourist), class: "btn btn-lg" do %>
+                      <i class="fas fa-address-card fa-3x"></i>
+                      <h3>個人情報変更</h3>
+                    <% end %>
+                  </li>
+                  <li>
+                  <%= link_to  tourist_tourist_orders_path(current_tourist), class: "btn btn-lg" do %>
+                    <i class="far fa-calendar-check fa-3x"></i>
+                    <h3>予約一覧</h3>
+                  <% end %>
+                </div>
+                </li>
+                <div class = "tourist-hm-menu clearfix">
+                  <li>
+                    <% if unchecked_tourist_chat_notices.any? %>
+                      <%= link_to tourist_tourist_rooms_path(current_tourist), class: "btn btn-lg" do %>
+                        <i class="far fa-comments fa-3x tourist-chat-icon"></i>
+                        <h2>チャット</h2>
+                        <span class = "tourist-circle">
+                          <i class="fas fa-circle" style = "color: orange;"></i>
+                        </span>
+                      <% end %>
+                    <% else %>
+                      <%= link_to tourist_tourist_rooms_path(current_tourist), class: "btn btn-lg" do %>
+                        <i class="far fa-comments fa-3x"></i>
+                        <h2>チャット</h2>
+                      <% end %>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to tourist_tourist_book_marks_path(current_tourist), class: "btn btn-lg" do %>
+                      <i class="fas fa-flag fa-3x"></i>
+                      <h3>ブックマーク</h3>
+                    <% end %>
+                  </li>
+                </div>
+              </div>
+            </div>
+          <%# ---- 非ログイン時のheader ---- %>
+          <% else %>
+            <ul>
+              <li>
+                  <%= link_to guide_session_path do %>
+                    <i class="fas fa-hiking fa-2x"></i>
+                    ガイドログイン
+                  <% end %>
+              </li>
+              <li>
+                  <%= link_to tourist_session_path do %>
+                    <i class="fas fa-suitcase-rolling fa-2x"></i>
+                    ツーリストログイン
+                  <% end %>
+              </li>
+            </ul>
+          <% end %>
 
-            <%# ---- Touristログイン時のheader ---- %>
-            <% elsif tourist_signed_in? %>
-            <%= link_to tourist_tourist_path(current_tourist) do %>
-              <span class = "login_name">
-                <i class="fas fa-address-card fa-2x"></i>
-                <%= current_tourist.name %>さんのマイページ
-              </span>
-            <% end %>
-              <ul>
-                <li>
+  <!----- ハンバンガーアイコン ----->
+          <% if tourist_signed_in? %>
+            <div class = "hm-icon-box">
+              <div class = "hm-icon">
+                <a class= "menu-trigger" href="#">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </a>
+                <span class = "header-notice">
                   <%= link_to tourist_tourist_chat_notices_path(current_tourist) do %>
                     <% if unchecked_tourist_chat_notices.any? %>
                       <span class = "bell">
-                        <i class="far fa-bell fa-2x"></i>
+                        <i class="far fa-bell fa-3x"></i>
                           <span class = "circle">
                             <i class="fas fa-circle" style = "color: orange;"></i>
                           </span>
                       </span>
                     <% else %>
+                      <i class="far fa-bell fa-3x"></i>
+                    <% end %>
+                  <% end %>
+                </span>
+              </div>
+            </div>
+          <% elsif guide_signed_in? %>
+            <div class = "hm-icon-box">
+              <div class = "hm-icon">
+                <a class= "menu-trigger" href="#">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </a>
+                <span class = "header-notice">
+                  <%= link_to guide_guide_notifications_path(current_guide) do %>
+                    <% if unchecked_notifications.any? %>
+                      <span class = "bell">
+                        <i class="far fa-bell fa-2x"></i>
+                        <span class = "circle">
+                          <i class="fas fa-circle" style = "color: orange;"></i>
+                        </span>
+                      </span>
+                    <% else %>
                       <i class="far fa-bell fa-2x"></i>
                     <% end %>
-                    通知
                   <% end %>
-                </li>
-                <li>
-                  <%= link_to "ログアウト", destroy_tourist_session_path, method: :delete %>
-                </li>
-              </ul>
-
-            <%# ---- 非ログイン時のheader ---- %>
-            <% else %>
-              <ul>
-                <li>
-                    <%= link_to guide_session_path do %>
-                      <i class="fas fa-hiking fa-2x"></i>
-                      ガイドログイン
-                    <% end %>
-                </li>
-                <li>
-                    <%= link_to tourist_session_path do %>
-                      <i class="fas fa-suitcase-rolling fa-2x"></i>
-                      ツーリストログイン
-                    <% end %>
-                </li>
-              </ul>
-            <% end %>
-
+                </span>
+              </div>
+            </div>
+          <% end %>
         </nav>
       </header>
       <%= yield %>
