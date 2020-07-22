@@ -239,6 +239,10 @@ li{
 	padding-left: 30px;
 }
 
+.guide-phone-my-page {
+	display: none;
+}
+
 .selfy_image {
 	border-radius: 10px;
 }
@@ -558,10 +562,45 @@ body {
 	text-align: center;
 }
 
+.guide-hm-menu-box {
+	margin: 50px auto 0;
+	width: 100%;
+}
+
+.guide-hm-menu li {
+	float: none;
+	font-size: 20px;
+}
+
 .header-city-search-phone-width {
 	display: block;
 	margin: 20px 0 0 20px;
 }
+
+.guide-mypage-link {
+	color: white;
+	line-height: 70px;
+	padding-left: 30px;
+	display: none;
+}
+
+.guide-phone-my-page {
+	display: block;
+}
+
+.guide-tour-icon {
+	padding-left: 0px;
+}
+
+.guide-notice-icon {
+	padding-left: 0px;
+}
+
+.guide-new-tour-icon {
+	padding-left: -20px;
+}
+
+
 
 
 

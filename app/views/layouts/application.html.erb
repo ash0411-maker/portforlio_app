@@ -82,6 +82,12 @@
               <div class = "guide-hm-menu-box clearfix">
                 <ul>
                   <div class = "guide-hm-menu clearfix">
+                    <li class = "guide-phone-my-page">
+                      <%= link_to guide_guide_path(current_guide) do %>
+                        <%= attachment_image_tag current_guide, :selfy_image, :fill, 60, 60, format: 'jpeg', class: "guide_selfy_image" %>
+                        <h3>マイページ</h3>
+                      <% end %>
+                    </li>
                     <li class = "guide-notice-icon">
                       <%= link_to guide_guide_notifications_path(current_guide) do %>
                         <% if unchecked_notifications.any? %>
@@ -105,13 +111,13 @@
                     </li>
                   </div>
                   <div class = "guide-hm-menu clearfix">
-                    <li>
+                    <li class = "guide-new-tour-icon">
                       <%= link_to new_guide_guide_tour_path(current_guide) do %>
                         <i class="fas fa-file-signature fa-3x"></i>
                         <h3>ツアー投稿</h3>
                       <% end %>
                     </li>
-                    <li>
+                    <li class = "guide-logout-icon">
                       <%= link_to destroy_guide_session_path, method: :delete do %>
                         <i class="fas fa-sign-out-alt fa-3x"></i>
                         <h3>ログアウト</h3>
