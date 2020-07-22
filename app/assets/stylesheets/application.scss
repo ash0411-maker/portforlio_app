@@ -194,6 +194,10 @@ li{
 	top: 20px;
 }
 
+.header-city-search-phone-width {
+	display: none;
+}
+
 // 
 .admin_search {
 	height: 40px;
@@ -232,8 +236,9 @@ li{
 
 .circle {
 	position: absolute;
-	left: 15px;
-	bottom: -30px;
+	right: -5px;
+	bottom: -5px;
+	font-size: 20px;
 }
 
 
@@ -533,6 +538,11 @@ body {
 .tourist-hm-menu li {
 	float: left;
 	text-align: center;
+}
+
+.header-city-search-phone-width {
+	display: block;
+	margin: 20px 0 0 20px;
 }
 
 

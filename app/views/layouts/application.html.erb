@@ -135,6 +135,12 @@
             <div class = "sp-menu">
               <h2>MENU</h2>
               <div class = "tourist-hm-menu-box clearfix">
+                <span class = "header-city-search-phone-width">
+                  <%= form_tag(tourist_tourist_searches_city_path(current_tourist), method: :get) do %>
+                    <%= text_field_tag 'search[city]' %>
+                    <%= button_tag '<i class="fa fa-search"></i>ツアー都市'.html_safe, :type => "submit",:class =>"btn btn-default" %>
+                  <% end %>
+                </span>
                 <div class = "tourist-hm-menu clearfix">
                   <li>
                     <%= link_to destroy_tourist_session_path, method: :delete, class: "btn btn-lg" do %>
@@ -159,11 +165,13 @@
                   <li>
                     <% if unchecked_tourist_chat_notices.any? %>
                       <%= link_to tourist_tourist_rooms_path(current_tourist), class: "btn btn-lg" do %>
-                        <i class="far fa-comments fa-3x tourist-chat-icon"></i>
-                        <h2>チャット</h2>
-                        <span class = "tourist-circle">
-                          <i class="fas fa-circle" style = "color: orange;"></i>
-                        </span>
+                        <div class = "tourist-chat-icon">
+                          <i class="far fa-comments fa-3x"></i>
+                          <h2>チャット</h2>
+                          <span class = "tourist-circle">
+                            <i class="fas fa-circle" style = "color: orange;"></i>
+                          </span>
+                        </div>
                       <% end %>
                     <% else %>
                       <%= link_to tourist_tourist_rooms_path(current_tourist), class: "btn btn-lg" do %>
@@ -214,7 +222,7 @@
                       <span class = "bell">
                         <i class="far fa-bell fa-3x"></i>
                           <span class = "circle">
-                            <i class="fas fa-circle" style = "color: orange;"></i>
+                            <i class="fas fa-circle fa-1x" style = "color: orange;"></i>
                           </span>
                       </span>
                     <% else %>
