@@ -56,8 +56,6 @@ body {
     position: sticky;
 	top: 0;
 	z-index: 1000;
-	font-family: "M PLUS 1p";
-	font-weight: bold;
 }
 
 .application-wrapper {
@@ -74,96 +72,118 @@ body {
 
 
 // ハンバーガーメニュー
-#hm-icon{
+.hm-icon-box {
+	position: relative;
+}
+
+.hm-icon{
 	position: fixed;
-	right: 20px;
-	top: 20px;
+	right: 40px;
+	top: 15px;
 	z-index: 10;
-  }
-  .menu-trigger,
-  .menu-trigger span {
+	background-color: rgb(250, 250, 250);
+	border-radius: 20px;
+	width: 9%;
+	padding: 3px 9px 0 20px;
+}
+
+.header-notice a {
+	position: absolute;
+	right: 10px;
+	color: black;
+}
+
+
+.menu-trigger,
+.menu-trigger span {
 	display: inline-block;
 	transition: all .4s;
 	box-sizing: border-box;
-	color: white;
-  }
-  .menu-trigger {
+	color: limegreen;
+}
+
+.menu-trigger {
 	position: relative;
 	width: 50px;
 	height: 44px;
-  }
-  .menu-trigger span {
+}
+
+.menu-trigger span {
 	position: absolute;
 	left: 0;
 	width: 100%;
 	height: 4px;
-	background-color: white;
+	background-color: black;
 	border-radius: 4px;
-  }
-  .menu-trigger span:nth-of-type(1) {
+}
+
+.menu-trigger span:nth-of-type(1) {
 	top: 0;
-  }
-  .menu-trigger span:nth-of-type(2) {
+}
+
+.menu-trigger span:nth-of-type(2) {
 	top: 20px;
-  }
-  .menu-trigger span:nth-of-type(3) {
+}
+
+.menu-trigger span:nth-of-type(3) {
 	bottom: 0;
-  }
-  .menu-trigger.active span:nth-of-type(1) {
+}
+
+.menu-trigger.hm-active span:nth-of-type(1) {
 	-webkit-transform: translateY(20px) rotate(-45deg);
 	transform: translateY(20px) rotate(-45deg);
-	background-color: #fff;
-  }
-  .menu-trigger.active span:nth-of-type(2) {
+	background-color: #000;
+}
+
+.menu-trigger.hm-active span:nth-of-type(2) {
 	opacity: 0;
-  }
-  .menu-trigger.active span:nth-of-type(3) {
+}
+
+.menu-trigger.hm-active span:nth-of-type(3) {
 	-webkit-transform: translateY(-20px) rotate(45deg);
 	transform: translateY(-20px) rotate(45deg);
-	background-color: #fff;
-  }
+	background-color: #000;
+}
 
 // ハンバーガーsp
-  #sp-menu {
+.sp-menu {
 	position: fixed;
 	top: 0;
 	left: 0;
 	background: #000;
-	color: #fff;
+	color: #000;
 	width: 100%;
 	min-height: 100%;
 	display: none;
 	z-index: 9;
-  }
-  #sp-menu li{
+}
+
+.tourist-hm-menu-box {
+	margin: 0 auto;
+	width: 35%;
+}
+
+.tourist-hm-menu li {
+	float: left;
+	text-align: center;
+}
+
+.sp-menu li{
 	text-align: center;
 	margin-bottom: 30px;
-  }
-  #sp-menu a{
+}
+
+.sp-menu a{
 	color: #fff;
 	text-decoration: none;
 	font-weight: bold;
-  }
+}
+
 
 li{
 	list-style: none;
-	margin-top: 5px;
 }
 
-nav ul{
-	float: right;
-}
-
-nav li{
-	float: left;
-	line-height: 70px;
-	padding: 0 15px 0;
-}
-
-nav li a{
-    color: white;
-	font-size: 16px;
-}
 
 // 都市検索窓
 .header-city-search {
@@ -480,6 +500,42 @@ body {
 .header-city-search-phone-width {
   display: none;
 }
+
+
+
+// ハンバーガーメニュー
+.hm-icon-box {
+	position: relative;
+}
+
+.hm-icon{
+	position: fixed;
+	right: 40px;
+	top: 15px;
+	z-index: 10;
+	background-color: rgb(250, 250, 250);
+	border-radius: 20px;
+	width: 35%;
+	padding: 3px 9px 0 20px;
+}
+
+.header-notice a {
+	position: absolute;
+	right: 5px;
+	color: black;
+}
+
+.tourist-hm-menu-box {
+	margin: 50px auto 0;
+	width: 100%;
+}
+
+.tourist-hm-menu li {
+	float: left;
+	text-align: center;
+}
+
+
 
 // ツアー詳細画面
 .tour-image-wrapper {
