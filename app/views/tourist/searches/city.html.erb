@@ -27,35 +27,39 @@
     </div>
 </div>
 <div class = "tours-second-wrapper">
-    <% if @city_tours.nil? %>
-        <h1 class = "col-xs-offset-1">
-            <span class = "city-search-result"><%= @city %></span>の検索結果はありません。
-        </h1>
-        <div class = "col-xs-offset-1">
-            <div class = "serach_nil">
-                <table class = "table">
-                    <thead>
-                        <th class = "text-center">登録されている都市</th>
-                    </thead>
-                    <tbody>
-                        <% @cities.each do |city| %>
-                            <tr>
-                                <td>
-                                    <%= city.name %>
-                                </td>
-                            </tr>
-                        <% end %>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    <% else %>
-        <h1 class = "col-xs-offset-1">
-            <% unless @city == ""%>
-                <span class = "city-search-result"><%= @city %></span>の検索結果
+    <div class = "container">
+        <div class = "row">
+            <% if @city_tours.nil? %>
+                <h1 class = "col-xs-offset-1">
+                    <span class = "city-search-result"><%= @city %></span>の検索結果はありません。
+                </h1>
+                <div class = "col-xs-10 col-xs-offset-2">
+                    <div class = "serach_nil">
+                        <table class = "table">
+                            <thead>
+                                <th class = "text-center">登録されている都市</th>
+                            </thead>
+                            <tbody>
+                                <% @cities.each do |city| %>
+                                    <tr>
+                                        <td>
+                                            <%= city.name %>
+                                        </td>
+                                    </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            <% else %>
+                <h1 class = "col-xs-offset-1">
+                    <% unless @city == ""%>
+                        <span class = "city-search-result"><%= @city %></span>の検索結果
+                    <% end %>
+                </h1>
+                <%= render 'partial/tours_second_wrapper', tours: @city_tours, genre: @genre, city: @city %>
             <% end %>
-        </h1>
-        <%= render 'partial/tours_second_wrapper', tours: @city_tours, genre: @genre, city: @city %>
-    <% end %>
+        </div>
+    </div>
 </div>
 
