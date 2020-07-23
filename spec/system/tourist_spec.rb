@@ -7,14 +7,6 @@ RSpec.describe 'Tourist', type: :system, js: true do
   let(:another_tourist) { create(:tourist) }
 
   describe 'Toutist関連ページ' do
-    context 'Tourist詳細ページ' do
-      it 'Tourist詳細ページへ遷移する' do
-        login tourist
-        visit tourist_tourist_path(tourist.id)
-        expect(current_path).to eq(tourist_tourist_path(tourist.id))
-      end
-    end
-
     context 'Tourist編集ページ' do
       it 'Tourist編集ページへ遷移する' do
         login tourist
