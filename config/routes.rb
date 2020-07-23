@@ -74,7 +74,7 @@ Rails.application.routes.draw do
   namespace :tourist do
     get 'orders/thanks' => 'orders#thanks', as: 'orders_thanks'
     get 'tourists/thanks' => 'tourists#thanks', as: 'tourist_thanks'
-    resources :tourists, only: %i[show edit update destroy] do
+    resources :tourists, only: %i[edit update destroy] do
       get 'searches/city'
       get 'orders/confirm' => 'orders#confirm', as: 'order_confirm'
       get 'book_marks/index' => 'book_marks#index', as: 'book_marks'

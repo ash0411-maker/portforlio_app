@@ -68,7 +68,7 @@ RSpec.describe 'TouristOrder', type: :system, js: true do
       it 'idが異なるから違うユーザーの予約一覧ページに遷移せず、current_touristのtourist詳細ページに遷移' do
         login tourist
         visit tourist_tourist_orders_path(another_tourist.id)
-        expect(current_path).to eq(tourist_tourist_path(tourist.id))
+        expect(current_path).to eq(edit_tourist_tourist_path(tourist.id))
       end
     end
   end

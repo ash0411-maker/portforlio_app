@@ -13,15 +13,6 @@ RSpec.describe 'Tourist', type: :system, js: true do
         visit tourist_tourist_path(tourist.id)
         expect(current_path).to eq(tourist_tourist_path(tourist.id))
       end
-      it 'idが異なるからcurrent_touristの詳細ページへ遷移する' do
-        login tourist
-        visit tourist_tourist_path(another_tourist.id)
-        expect(current_path).to eq(tourist_tourist_path(tourist.id))
-      end
-      it 'ログインなしで詳細ページに遷移しない' do
-        visit tourist_tourist_path(tourist.id)
-        expect(current_path).to eq(new_tourist_session_path)
-      end
     end
 
     context 'Tourist編集ページ' do
@@ -33,7 +24,7 @@ RSpec.describe 'Tourist', type: :system, js: true do
       it 'idが異なるからcurrent_touristの詳細ページへ遷移する' do
         login tourist
         visit edit_tourist_tourist_path(another_tourist.id)
-        expect(current_path).to eq(tourist_tourist_path(tourist.id))
+        expect(current_path).to eq(edit_tourist_tourist_path(tourist.id))
       end
       it 'ログインなしで編集ページに遷移しない' do
         visit edit_tourist_tourist_path(tourist.id)
