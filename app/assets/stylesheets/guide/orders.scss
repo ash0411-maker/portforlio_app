@@ -46,6 +46,14 @@
   margin: 40px 0 0 120px;
 }
 
+.guide-order-show-btn {
+  float: left;
+}
+
+.guide-order-chat-btn {
+  float: left;
+  margin-left: 40px;
+}
 
 
 //  -------- 　予約詳細画面　 ------------
@@ -93,19 +101,8 @@
   }
   .order-btn-box {
     margin: 40px 0 30px 10px;
+    padding-bottom: 40px;
   }
   
-
-}
-
-
-
-
-
-
-
-
-
-@media screen and (max-width:480px) {
 
 }
