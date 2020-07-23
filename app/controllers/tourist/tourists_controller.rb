@@ -13,7 +13,7 @@ class Tourist::TouristsController < ApplicationController
   def update
     @tourist = Tourist.find(params[:id])
     if @tourist.update(tourist_params)
-      redirect_to tourist_tourist_path(@tourist)
+      redirect_to edit_tourist_tourist_path(@tourist)
       flash[:notice] = '個人情報を更新しました。'
     else
       render 'edit'
@@ -40,6 +40,6 @@ class Tourist::TouristsController < ApplicationController
 
   def correct_tourist
     tourist = Tourist.find(params[:id])
-    redirect_to tourist_tourist_path(current_tourist) if current_tourist != tourist
+    redirect_to edit_tourist_tourist_path(current_tourist) if current_tourist != tourist
   end
 end

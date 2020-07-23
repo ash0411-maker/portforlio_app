@@ -3,7 +3,26 @@
         <div class = "row">
             <div class = "col-xs-8 co-xs-offset-2">
                 <h1>予約詳細</h1>
-                <%= link_to "予約一覧へもどる", tourist_tourist_orders_path(current_tourist), class: "btn btn-primary btn-lg" %>
+                <h3 class = "flash"><%= flash[:notice] %></h3>
+                <% if @review.errors.any? %>
+                    <div class ="error_explanation alert clear">
+                        <h2><%= @review.errors.count %>件のエラーがあります。</h2>
+                        <ul>
+                            <% @review.errors.full_messages.each do |message| %>
+                                <li class = "col-xs-4 col-xs-offset-1">・<%= message %></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                <% elsif @review_new.errors.any? %>
+                    <div class ="error_explanation alert clear">
+                        <h2><%= @review_new.errors.count %>件のエラーがあります。</h2>
+                        <ul>
+                            <% @review_new.errors.full_messages.each do |message| %>
+                                <li class = "col-xs-4 col-xs-offset-1">・<%= message %></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                <% end %>
             </div>
             <div class = "col-md-6 col-xs-12">
                 <div class = "order-show-box">
@@ -41,6 +60,31 @@
                 </div>
             </div>
             <div class = "col-md-6 col-xs-12">
+                <div class = "oreder-warning">
+                     <% if @order.status == "ツアー終了" %>
+                        <h2>レビュー投稿（400文字以内）</h2>
+                        <%= form_for(@review_new, url: tourist_tourist_tour_reviews_path(current_tourist, tour_id: @order.tour_id, order_id: @order.id)) do |f| %>
+                            <div>
+                                <%= f.text_area :comment, class: "review-text-field" %>
+                            </div>
+                            <div>
+                                <%= f.submit "送信", class: "btn btn-success" %>
+                            </div>
+                        <% end %>
+                    <% elsif @order.status == "レビュー済み"%>
+                        <h2>レビュー編集（400文字以内）</h2>
+                        <%= form_for(@review, url: tourist_tourist_tour_review_path(current_tourist, tour_id: @order.tour_id, order_id: @order.id, review_id: @review)) do |f| %>
+                            <div>
+                                <%= f.text_area :comment, class: "review-text-field" %>
+                            </div>
+                            <div>
+                                <%= f.submit "送信", class: "btn btn-success" %>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+
+
                 <div class = "oreder-warning">
                     <h2>ツアー説明</h2>
                     <h4 class = "order-confirm-body"><%= @order.tour_body %></h4>
