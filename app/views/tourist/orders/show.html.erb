@@ -4,25 +4,6 @@
             <div class = "col-xs-8 co-xs-offset-2">
                 <h1>予約詳細</h1>
                 <h3 class = "flash"><%= flash[:notice] %></h3>
-                <% if @review.errors.any? %>
-                    <div class ="error_explanation alert clear">
-                        <h2><%= @review.errors.count %>件のエラーがあります。</h2>
-                        <ul>
-                            <% @review.errors.full_messages.each do |message| %>
-                                <li class = "col-xs-4 col-xs-offset-1">・<%= message %></li>
-                            <% end %>
-                        </ul>
-                    </div>
-                <% elsif @review_new.errors.any? %>
-                    <div class ="error_explanation alert clear">
-                        <h2><%= @review_new.errors.count %>件のエラーがあります。</h2>
-                        <ul>
-                            <% @review_new.errors.full_messages.each do |message| %>
-                                <li class = "col-xs-4 col-xs-offset-1">・<%= message %></li>
-                            <% end %>
-                        </ul>
-                    </div>
-                <% end %>
             </div>
             <div class = "col-md-6 col-xs-12">
                 <div class = "order-show-box">

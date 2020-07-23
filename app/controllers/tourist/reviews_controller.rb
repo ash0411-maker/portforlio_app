@@ -16,7 +16,7 @@ class Tourist::ReviewsController < ApplicationController
       # -------- 通知機能（レビューコメント）--------
       redirect_to tourist_tourist_tour_path(current_tourist, @tour)
     else
-      flash[:notice] = 'レビューコメントを入力してください'
+      flash[:notice] = 'レビューコメントを正しく入力してください'
       order = Order.find(params[:order_id])
       redirect_to tourist_tourist_order_path(current_tourist, order.id)
     end
@@ -29,7 +29,7 @@ class Tourist::ReviewsController < ApplicationController
     if review.update(review_params)
       redirect_to tourist_tourist_tour_path(current_tourist, tour)
     else
-      flash[:notice] = 'レビューコメントを入力してください'
+      flash[:notice] = 'レビューコメントを正しく入力してください'
       redirect_to tourist_tourist_order_path(current_tourist, order.id)
     end
   end
