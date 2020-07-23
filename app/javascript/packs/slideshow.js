@@ -1,5 +1,9 @@
-$(function() {
-    $('.theTarget').slick({
-        dots: true,
-    });
-});
+const jQuery = require('jquery');
+require('slick-carousel');
+(function($) {
+    $(function() {
+        $('.theTarget').slick({
+            dots: true,
+        });
+    })
+})(jQuery);
