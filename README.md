@@ -17,13 +17,17 @@
 　旅行
 
 ## 使用技術
-Ruby 2.6.6, Rails 6.0.3.2  
-Docker,Docker-compose  
-Bootstrap,JQuery  
-git, Github  
-nginx,puma  
-circleci  
+・MySQL  
+・nginx,puma  
+・Ruby 2.6.6, Rails 6.0.3.2  
+・CircleCi（テスト・デプロイ）  
+・RSpec（テストフレームワーク）  
+・Docker,Docker-compose（開発環境）  
+・AWS/本番環境（EC2, RDS, VPC, EIP, Route53, IAM, S3）    
+・Amazon Linux  
+・VSCode, Vim  
 
+<img width="969" alt="スクリーンショット 2020-07-23 9 32 25" src="https://user-images.githubusercontent.com/59913383/88266239-d9298c80-cd09-11ea-9628-c174f087e88a.png">
 
 ## 機能一覧
 【機能一覧】  
