@@ -1,6 +1,20 @@
 <div class = "application-wrapper">
   <div class = "container">
     <h3 class = "order-stauts-flash"><%= flash[:notice] %></h3>
+    <div class = "row">
+      <div class = "col-md-4 col-md-offset-2 col-xs-10 col-xs-offset-1">
+        <table class = "table table-bordered">
+          <tr>
+            <th class = "active">
+              <h3>総利益</h3>
+            </th>
+            <th>
+              <h3>¥ <%= number_with_delimiter(@guide_total_sales) %></h3>
+            </th>
+          </tr>
+        </table>
+      </div>
+    </div>
     <div class = "order-status-tab clearfix">
       <ul>
         <li>
