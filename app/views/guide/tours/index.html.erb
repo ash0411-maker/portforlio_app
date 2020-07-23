@@ -22,11 +22,11 @@
     <div class = "row">
       <% @tours.each do |tour| %>
         <div class = "col-md-4 col-xs-12">
-          <%= render 'partial/tours_photos_link', tour: tour %>
+          <%= render 'partial/tours_second_wrapper', tours: @tours, genre: @genre %>
         </div>
       <% end %>
     </div>
-  <%= paginate @tours, class: "paginate" %>
+    <%= paginate @tours, class: "paginate" %>
   </div>
 </div>
 
