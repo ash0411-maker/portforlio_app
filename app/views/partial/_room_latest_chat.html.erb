@@ -1,0 +1,8 @@
+<% chats = [] %>
+<% room.chats.each do |chat| %>
+  <% chats << chat.message %>
+<% end %>
+<% latest_chat =  chats[-1] %>
+<div class = "col-md-6 col-xs-12">
+  <h4><%= latest_chat.present? ?  latest_chat[0..10] << "..." : "" %></h4>
+</div>

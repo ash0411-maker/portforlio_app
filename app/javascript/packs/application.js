@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
@@ -20,30 +20,12 @@ import "cocoon";
 //= require bootstrap-sprockets
 
 
-$(function(){
-    $(window).scroll(function (){
-        $('.top-fadein').each(function(){
-            var elemPos = $(this).offset().top;
-            var scroll = $(window).scrollTop();
-            var windowHeight = $(window).height();
-            if (scroll > elemPos - windowHeight +80){
-                $(this).addClass('top-scrollin');
-            }
-        });
+// ハンバンガーメニュー
+$(function() {
+    $('.menu-trigger').on('click', function(event) {
+        $(this).toggleClass('hm-active');
+        $('.sp-menu').fadeToggle();
+        event.preventDefault();
     });
 });
 
-
-
-$(function(){
-    $(window).scroll(function (){
-        $('.guide-body-title').each(function(){
-            var elemPos = $(this).offset().top;
-            var scroll = $(window).scrollTop();
-            var windowHeight = $(window).height();
-            if (scroll > elemPos - windowHeight +80){
-                $(this).addClass('tour-scrollin');
-            }
-        });
-    });
-});

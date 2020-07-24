@@ -1,80 +1,67 @@
 <div class = "row">
-	<div class = "col-xs-9">
-		<table class = "table table-bordered">
-			<tr class = "text-center">
-				<td>
-					<%= f.label :ツアーの題名（20文字以内） %><br/>
-	  			    <%= f.text_field :title %>
-	  			</td>
-	  			<td>
-	  				<%= f.label :ジャンル %><br/>
-	  				<%= f.collection_select :genre_id, Genre.all, :id, :name, :prompt => "--ジャンル--" %>
-	  			</td>
-	  			<td>
-	  				<%= f.label :案内する都市 %><br/>
-	  				<%= f.collection_select :city_id, City.all, :id, :name, :prompt => "--都市名--" %>
-	  			</td>
-	  			<td>
-	  				<%= f.label :ツアーを公開をしますか？ %><br/>
-		  			<%= f.select :is_active,[["はい", "true"], ["いいえ", "false"]]  %>
-	  			</td>
-			</tr>
-			<tr class = "text-center">
-				<td>
-					<%= f.label :定員 %><br/>
-	    	  		<%= f.text_field :capacity %>人
-	  			</td>
-	  			<td>
-	  				<%= f.label :所要時間 %><br/>
-	    	  		<%= f.text_field :time, placeholder: "4時間、2日など" %>
-	  			</td>
-	  			<td>
-	  				<%= f.label :ツア一１人あたりの価格 %><br/>
-	    	  		<%= f.text_field :price %>円
-	  			</td>
-	  			<td>
-	  				<%= f.label :価格に含まれるサービス %><br/>
-	    	  		<%= f.text_area :contents_of_price, class: "contents_of_price", placeholder: "移動費、食費、入場料等" %>
-	  			</td>
-			</tr>
-		</table>
-		<table class = "table">
-			<thead>
-				<tr class = "active">
-					<th class = "text-center">集合場所</th>
-					<th class = "text-center">集合場所の詳細説明(400文字以内）</th>
-					<th class = "text-center">ツアー内容の説明(800文字以内）</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class = "text-center">
-					<td><%= f.text_field :meetingpoint_address, placeholder: "住所、もしくは建物名" %></td>
-					<td><%= f.text_area :meetingpoint_introduction, class: "meetingpoint_introduction_text_area",
-						placeholder: "集合場所の説明・詳細を入力しましょう！この土地は平安時代より貴族や天皇の行楽地として使われいました。現在でも歴史風土保存地区として保存されております。そんな場所にある広沢池にある観音様の前で集合します。この辺りで	目立つ人工物はこれしかありませんので、目立った物があれば集合場所と思ってもらって構いません。" %>
-					</td>
-					<td>
-						<%= f.text_area :body, class: "guide-tour-body-text",
-						placeholder: "旅程や行うアクティビティーの説明を入力しましょう！あなたのツアーにはどんな魅力がありますか？このツアーをなぜやりたいのか、思いなどを書いて観光客に新たな経験をプレゼントしてあげましょう。他にあなたのツアーでは何を	するのか説明をして何をするのか明確にした上で観光客を喜ばせましょう。時にはツアー説明に乗っていないサプライズをするのもいいかも？ツアーガイドという経験を提供する仕事を楽しんでください。" %>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<div class = "form_field col-xs-3">
-		<div id = "tour_photos">
-			<%= f.fields_for :tour_photos do |tour_photo| %>
-				<%= f.label "ツアー写真(５枚選んでください)" %>
-				<%= render 'tour_photo_fields', f: tour_photo %>
-			<% end %>
-			<div id = "links">
-				<%= link_to_add_association '写真を追加',f, :tour_photos, class: "btn btn-info add-photo-btn" %>
-			</div>
-		</div>
-	</div>
+  <div class = "col-md-7 col-xs-12">
+    <div class = "guide-tour-info-text">
+      <h4>ツアーの題名（20文字以内）</h4>
+      <%= f.text_field :title, class: "guide-tour-text-field" %>
+    </div>
+    <div class = "guide-tour-info-text">
+      <h4>ジャンル</h4>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name, :prompt => "--ジャンル--", class: "guide-tour-text-field" %>
+    </div>
+    <div class = "guide-tour-info-text">
+      <h4>案内する都市</h4>
+      <%= f.collection_select :city_id, City.all, :id, :name, :prompt => "--都市名--", class: "guide-tour-text-field" %>
+    </div>
+    <div class = "guide-tour-info-text">
+      <h4>ツアーを公開をしますか？</h4>
+      <%= f.select :is_active,[["はい", "true"], ["いいえ", "false"]], class: "guide-tour-text-field"  %>
+    </div>
+    <div class = "guide-tour-info-text">
+      <h4>定員（半角数字）</h4>
+      <%= f.text_field :capacity, class: "guide-tour-text-field" %>人
+    </div>
+    <div class = "guide-tour-info-text">
+      <h4>所要時間</h4>
+      <%= f.text_field :time, placeholder: "4時間、2日など", class: "guide-tour-text-field" %>
+    </div>
+    <div class = "guide-tour-info-text">
+      <h4>ツア一１人あたりの価格（半角数字）</h4>
+      <%= f.text_field :price, placeholder: "10000", class: "guide-tour-text-field" %>円
+    </div>
+    <div class = "guide-tour-info-text">
+      <h4>価格に含まれるサービス</h4>
+      <%= f.text_area :contents_of_price, class: "contents_of_price", placeholder: "移動費、食費、入場料等", class: "guide-tour-text-field" %>
+    </div>
+    <div class = "guide-tour-info-text">
+      <h4>集合場所</h4>
+      <%= f.text_field :meetingpoint_address, placeholder: "住所、もしくは建物名", class: "guide-tour-text-field" %>
+    </div>
+    <div class = "guide-tour-info-text">
+      <h4>集合場所の詳細説明(400文字以内）</h4>
+      <%= f.text_area :meetingpoint_introduction, class: "guide-tour-text-area",
+					placeholder: "集合場所の説明・詳細を入力しましょう！この土地は平安時代より貴族や天皇の行楽地として使われいました。現在でも歴史風土保存地区として保存されております。そんな場所にある広沢池にある観音様の前で集合します。この辺りで	目立つ人工物はこれしかありませんので、目立った物があれば集合場所と思ってもらって構いません。" %>
+    </div>
+    <div class = "guide-tour-info-text">
+      <h4>ツアー内容の説明(800文字以内）</h4>
+      <%= f.text_area :body, class: "guide-tour-text-area",
+					placeholder: "旅程や行うアクティビティーの説明を入力しましょう！あなたのツアーにはどんな魅力がありますか？このツアーをなぜやりたいのか、思いなどを書いて観光客に新たな経験をプレゼントしてあげましょう。他にあなたのツアーでは何を	するのか説明をして何をするのか明確にした上で観光客を喜ばせましょう。時にはツアー説明に乗っていないサプライズをするのもいいかも？ツアーガイドという経験を提供する仕事を楽しんでください。" %>
+    </div>
+  </div>
+  <div class = "col-md-3 col-xs-12">
+    <div id = "tour_photos">
+      <%= f.fields_for :tour_photos do |tour_photo| %>
+        <%= f.label "ツアー写真(５枚選んでください)" %>
+        <%= render 'tour_photo_fields', f: tour_photo %>
+      <% end %>
+      <div id = "links">
+        <%= link_to_add_association '写真を追加',f, :tour_photos, class: "btn btn-info add-photo-btn" %>
+      </div>
+    </div>
+  </div>
 </div>
 <div class = "tour-photos-example-wrapper">
-    <div class = "row">
-        <h3 class = "tour-photos-example-text col-xs-offset-2">※ツアー写真は上から順に以下のように表示されます。</h3>
-        <%= image_tag 'tour_photos_example.jpeg', size: '1200x500' %>
-    </div>
+  <div class = "row">
+    <h3 class = "tour-photos-example-text col-xs-offset-2">※ツアー写真は上から順に以下のように表示されます。</h3>
+    <%= image_tag 'tour_photos_example.jpeg', size: '1200x500' %>
+  </div>
 </div>

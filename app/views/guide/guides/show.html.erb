@@ -1,156 +1,62 @@
 <div class = "container">
-	<div class = "row">
-		<h2 class = "flash"><%= flash[:notice] %></h2>
-		<h1>マイページ</h1>
-	<!----- ツアーガイド情報 ----->
-		<div class = "col-xs-7 col-xs-offset-1">
-			<table class = "table table-bordered">
-				<thead>
-					<tr>
-						<th class = "col-xs-4 active text-center">
-							<h4>名前</h4>
-						</th>
-						<th class = " text-center">
-							<h4><%= @guide.family_name %>  <%= @guide.name %></h4>
-						</th>
-					</tr>
-
-					<tr>
-						<th class = "col-xs-4 active text-center">
-							<h4>国籍</h4>
-						</th>
-						<th class = " text-center">
-							<h4><%= @guide.nationality %></h4>
-						</th>
-					</tr>
-
-					<tr>
-						<th class = "active text-center">
-							<h4>登録住所</h4>
-						</th>
-						<th class = " text-center">
-							<h4>
-								<p>〒 <%= @guide.postal_code %></p>
-								<p><%= @guide.address %></p>
-							</h4>
-						</th>
-					</tr>
-
-					<tr>
-						<th class = "col-xs-4 active text-center">
-							<h4>電話番号</h4>
-						</th>
-						<th class = " text-center">
-							<h4><%= @guide.phone_number %></h4>
-						</th>
-					</tr>
-
-					<tr>
-						<th class = "col-xs-4 active text-center">
-							<h4>メールアドレス</h4>
-
-						</th>
-						<th class = " text-center"><h4>
-							<%= @guide.email %></h4>
-						</th>
-					</tr>
-
-					<tr>
-						<th class = "col-xs-4 active text-center guide-identification">
-							<h4>自己紹介</h4>
-						</th>
-						<th class = "text-center">
-							<p class = "guide-introduction">
-								<%= @guide.introduction %>
-							</p>
-						</th>
-					</tr>
-
-					<tr>
-						<th class = "col-xs-4 active text-center guide-identification">
-							<h4>身分証明書</h4>
-						</th>
-						<th class = " text-center">
-							<%= attachment_image_tag @guide, :identification_image, :fill, 300, 200, format: 'jpeg' %>
-						</th>
-					</tr>
-				</thead>
-			</table>
-		</div>
-	<!----- ツアーガイド情報 ----->
-
-
-
-<!----- ツアーガイドの顔が写ってる写真、編集ボタン ---->
-		<div class = "col-xs-3">
-			<% if @guide.selfy_image_id.nil? %>
-				<%= image_tag 'no_image.jpg', size: '200x200' %>
-			<% else %>
-				<%= attachment_image_tag @guide, :selfy_image, :fill, 200, 200, format: 'jpeg', class: "selfy_image" %>
-			<% end %>
-			<div class = "guide-button-to-edit">
-				<%= link_to "登録情報編集へ", edit_guide_guide_path(@guide), class: "btn btn-success btn-lg guide-edit-btn" %>
-			</div>
-		</div>
-	</div>
-<!----- ツアーガイドの顔が写ってる写真、編集ボタン ----->
-
-
-
-<!----- ツアーガイドが提供するツアー一覧 ---->
-	<div class = "row">
-		<div class = "col-xs-10 col-xs-offset-1">
-			<% if @tours.count == 0 %>
-				<div class = "text-center">
-					<h1>最高のツアーを生み出しましょう！</h1>
-					<%= link_to "ツアー新規投稿", new_guide_guide_tour_path(current_guide), class: "btn btn-warning btn-lg" %>
-				</div>
-			<% else %>
-				<h1>あなたが提供しているツアー</h1>
-				<table class = "table table-bordered">
-					<thead>
-						<thead>
-							<tr>
-								<th class = "text-center">ツアー題名</th>
-								<th class = "text-center">所要時間</th>
-								<th class = "text-center">定員</th>
-								<th class = "text-center">価格</th>
-								<th class = "text-center">価格に含まれるサービス</th>
-								<th></th>
-								<th></th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<% @tours.each do |tour| %>
-								<tr class = "text-center">
-									<td><%= tour.title %></td>
-									<td><%= tour.time %></td>
-									<td><%= tour.capacity %>名</td>
-									<td>¥ <%= number_with_delimiter(tour.price) %></td>
-									<td><%= tour.contents_of_price %></td>
-									<td>
-										<%= link_to "紹介ページ", guide_guide_tour_path(current_guide, tour), class: "btn btn-warning" %>
-									</td>
-									<td>
-										<%= link_to "編集", edit_guide_guide_tour_path(current_guide, tour), class: "btn btn-success" %>
-									</td>
-									<td>
-										<%= link_to "削除", guide_guide_tour_path(current_guide, tour), method: :delete, data: {confirm:'このツアーを削除してよろしいですか？。'}, class: "btn btn-danger" %>
-									</td>
-								</tr>
-							<% end %>
-						</tbody>
-					</thead>
-				</table>
-			<% end %>
-		</div>
-	</div>
+  <div class = "row">
+    <div class = "col-md-12">
+      <div class = "guide-show-phone-width">
+        <%= attachment_image_tag @guide, :selfy_image, :fill, 250, 200, format: 'jpeg', class: "guide-phone-selfy-image" %>
+        <div class = "guide-button-to-edit">
+          <%= link_to "登録情報編集へ", edit_guide_guide_path(@guide), class: "btn btn-success btn-lg guide-to-edit-btn" %>
+        </div>
+        <div class = "guide-info-text">
+          <h4>お名前</h4>
+          <h3><%= @guide.family_name %>  <%= @guide.name %></h3>
+        </div>
+        <div class = "guide-info-text">
+          <h4>国籍</h4>
+          <h3><%= @guide.nationality %></h3>
+        </div>
+        <div class = "guide-info-text">
+          <h4>郵便番号</h4>
+          <h3><%= @guide.postal_code %></h3>
+        </div>
+        <div class = "guide-info-text">
+          <h4>住所</h4>
+          <h3><%= @guide.address %></h3>
+        </div>
+        <div class = "guide-info-text">
+          <h4>電話番号</h4>
+          <h3><%= @guide.phone_number %></h3>
+        </div>
+        <div class = "guide-info-text">
+          <h4>メールアドレス</h4>
+          <h3><%= @guide.email %></h3>
+        </div>
+        <div class = "guide-info-text">
+          <h4>身分証明書</h4>
+          <%= attachment_image_tag @guide, :identification_image, :fill, 280, 200, format: 'jpeg', class: "guide-phone-identification-image" %>
+        </div>
+        <div class = "guide-info-text">
+          <h4>自己紹介</h4>
+          <h3><%= @guide.introduction %></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "your-tour-phone-width">
+      <h3>あなたが提供しているツアー</h3>
+        <% @tours.each do |tour| %>
+          <div class = "col-md-4">
+            <div class = "guide-tour-info-box">
+              <%= attachment_image_tag tour.tour_photos[0], :image, :fill, 300, 300, format: 'jpeg',class: "your-tour-photo" %>
+              <h4><%= tour.title %></h4>
+              <h4>￥<%= tour.price %></h4>
+              <h4><%= tour.time %></h4>
+              <%= link_to "紹介ページ", guide_guide_tour_path(current_guide, tour), class: "btn btn-warning guide-tour-btn" %>
+              <%= link_to "編集", edit_guide_guide_tour_path(current_guide, tour), class: "btn btn-success guide-tour-btn" %>
+              <%= link_to "削除", guide_guide_tour_path(current_guide, tour), method: :delete, data: {confirm:'このツアーを削除してよろしいですか？。'}, class: "btn btn-danger" %>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
 </div>
-<!----- ツアーガイドが提供するツアー一覧 ---->
-
-
-
-
-
-

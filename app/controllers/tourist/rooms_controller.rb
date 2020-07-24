@@ -29,7 +29,7 @@ class Tourist::RoomsController < ApplicationController
     if @room.save
       redirect_to tourist_tourist_room_path(current_tourist, @room)
     else
-      redirect_to tourist_tourist_path(current_tourist)
+      redirect_to edit_tourist_tourist_path(current_tourist)
     end
   end
 
@@ -41,6 +41,6 @@ class Tourist::RoomsController < ApplicationController
 
   def correct_tourist
     tourist = Tourist.find(params[:tourist_id])
-    redirect_to tourist_tourist_path(current_tourist) if current_tourist != tourist
+    redirect_to edit_tourist_tourist_path(current_tourist) if current_tourist != tourist
   end
 end

@@ -1,102 +1,52 @@
-<% if @orders.count == 0 %>
-	<div class = "container">
-		<div class = "row">
-			<div class = "col-xs-9 col-xs-offset-1">
-				<h1>まだ予約はありません。</h1>
+<div class = "order-index-page">
+	<% if @orders.count == 0 %>
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-xs-9 col-xs-offset-1">
+					<h1>まだ予約はありません。</h1>
+					<h3 class = "flash"><%= flash[:notice] %></h3>
+				</div>
 			</div>
 		</div>
-	</div>
-<% else %>
-	<div class = "container">
+	<% else %>
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-xs-9 col-xs-offset-1">
+					<h3 class = "flash"><%= flash[:notice] %></h3>
+				</div>
+			</div>
 
-	<!---- 今後のツアー ----->
-		<div class = "row">
-			<div class = "col-xs-12">
-				<h2>予約中のツアー</h2>
-				<table class = "table table-bordered">
-					<thead class = "text-center">
-						<tr class = "active">
-							<%= render 'thead' %>
-							<th class = "text-center"></th>
-						</tr>
-					</thead>
+     <%# ---- タブ ---- %>
+			<ul class = "order-tab clearfix">
+				<li class = "order-active current-order-tab">今後の予約</li>
+				<li class = "finished-order-tab">過去の予約</li>
+				<h3 class = "push-to-review">ガイドの応援のために過去の予約からレビューを投稿しましょう！</h3>
+				<h3 class = "push-to-review-phoen-width">ガイドの応援のために</br>過去の予約からレビューを</br>投稿しましょう！</h3>
+			</ul>
+
+    <%# ---- 今後のツアー ---- %>
+			<div class = "">
+				<div class = "row">
 					<% @orders.each do |order| %>
 						<% unless order.status == "ツアー終了" or order.status == "レビュー済み" %>
-							<tbody>
-								<tr class = "text-center">
-									<%= render 'tbody', order: order, review: @review %>
-									<% if order.status == "ツアー開始前" %>
-										<td>
-											<h3><%= link_to "キャンセル", tourist_tourist_order_path(current_tourist,order), method: :delete,data: {confirm:'このツアーを本当にキャンセルしてもよろしいですか？ツアー前日だとキャンセル料が発生します。'}, class: "btn btn-danger btn-lg" %>
-											</h3>
-										</td>
-									<% else %>
-										<td>
-											<h3>ツアー前日以降ですので、<br/>キャセルできません。</h3>
-										</td>
-									<% end %>
-								</tr>
-							</tbody>
+              				<%= render 'partial/tourist_order_index', order: order %>
 						<% end %>
 					<% end %>
-				</table>
+				</div>
 			</div>
-		</div>
-	<!---- 今後のツアー ----->
 
-
-	<!---- 終了済みでレビュー待ちのツアー ----->
-		<div class = "row">
-			<div class = "col-xs-12">
-				<h2>レビュー待ちのツアー</h2>
-				<table class = "table table-bordered">
-					<thead class = "text-center">
-						<tr class = "active">
-							<%= render 'thead' %>
-							<th class = "text-center">レビュー作成</th>
-						</tr>
-					</thead>
+    <%# ---- 終了済みのツアー ---- %>
+      <div class = "">
+				<div class = "row">
 					<% @orders.each do |order| %>
-						<% if order.status == "ツアー終了" %>
-							<tbody>
-								<tr class = "text-center">
-									<%= render 'tbody', order: order, review: @review %>
-									</td>
-								</tr>
-							</tbody>
+						<% if order.status == "ツアー終了" or order.status == "レビュー済み" %>
+							<%= render 'partial/tourist_order_index', order: order %>
 						<% end %>
 					<% end %>
-				</table>
+				</div>
 			</div>
 		</div>
+	<% end %>
+</div>
 
-
-
-	<!---- レビュー済みのツアー ----->
-		<div class = "row">
-			<div class = "col-xs-12">
-				<h2>レビュー済みのツアー</h2>
-				<table class = "table table-bordered">
-					<thead class = "text-center">
-						<tr class = "active">
-							<%= render 'thead' %>
-							<th class = "text-center"></th>
-						</tr>
-					</thead>
-					<% @orders.each do |order| %>
-						<% if order.status == "レビュー済み" %>
-							<tbody>
-								<tr class = "text-center">
-									<%= render 'tbody', order: order, review: @review %>
-									<td>
-										レビューをありがとうございました。
-									</td>
-								</tr>
-							</tbody>
-						<% end %>
-					<% end %>
-				</table>
-			</div>
-		</div>
-	</div>
-<% end %>
+<%= javascript_pack_tag 'order.js' %>

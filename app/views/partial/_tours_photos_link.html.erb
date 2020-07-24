@@ -1,7 +1,14 @@
-<%# ----- ツアー詳細へのリンク ----- %>
-<%= attachment_image_tag tour_photos[0], :image, :fill, 350, 280, format: 'jpeg',class: "tours-photo-index" %>
-<h3><%= tour.title %></h3>
-<h4>¥<%= number_with_delimiter(tour.price) %>・<%= tour.time %>・<%= tour.city.name %></h4>
+<div class = "tours-info-box clearfix">
+  <%= attachment_image_tag tour.tour_photos[0], :image, :fill, 300, 280, format: 'jpeg', class: "tours-image" %>
+  <div class = "tours-info-text">
+    <h4><%= tour.title %></h4>
+    <h4><%= tour.city.name %></h4>
+    <h4>￥<%= number_with_delimiter(tour.price) %></h4>
+    <% if guide_signed_in? %>
+      <h4>ブックマーク数：<%= tour.book_marks.count %>件</h4>
+    <% end %>
+  </div>
+</div>
 
 <% if tourist_signed_in? %>
 	<div class = "book-marks">

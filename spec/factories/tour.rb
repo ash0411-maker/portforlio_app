@@ -14,5 +14,10 @@ FactoryBot.define do
     is_active { Faker::Boolean.boolean }
     meetingpoint_address { Faker::Lorem.characters(number: 5) }
     meetingpoint_introduction { Faker::Lorem.characters(number: 5) }
+    trait :with_nested_instances do
+      after( :create ) do |tour|
+        create :tour_photo, tour_id: tour.id, image_id: Faker::Lorem.characters(number: 10)
+      end
+    end
   end
 end

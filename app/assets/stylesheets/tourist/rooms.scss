@@ -3,11 +3,21 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-.room-wrapper{
-	position: relative;
+.chat-index-box {
+  border: solid 3px gray;
+  height: 60px;
+}
+
+.chat-index-box h4 {
+  float: left;
+  padding-left: 90px;
 }
 
 
+.room-wrapper{
+  position: relative;
+  padding: 40px 0 40px;
+}
 
 .chat-form-field{
 	z-index: 500px;
@@ -31,4 +41,38 @@
 
 .vacant-chat {
 	color: red;
+}
+
+
+
+
+@media screen and (max-width:480px) {
+  .chat-index-box {
+    border: solid 3px gray;
+    height: 90px;
+    width: 100%;
+  }
+
+  .chat-index-box h4 {
+    float: none;
+    padding-left: 0;
+  }
+
+  .rooms-index-title {
+    font-size: 20px;
+  }
+
+  .room-wrapper{
+    position: relative;
+    padding: 40px 0 150px;
+  }
+
+  .btn-to-rooms {
+    display: none;
+  }
+
+  .chat-form {
+    padding: 20px;
+  }
+
 }
