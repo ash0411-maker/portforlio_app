@@ -4,7 +4,7 @@ lock "~> 3.14.1"
 set :application, "FANTRA"
 set :repo_url, "git@github.com:ash0411-maker/portforlio_app.git"
 set :deploy_to, "/home/ec2-user/FANTRA"
-set :rbenv_ruby, '2.5.7'
+set :rbenv_ruby, '2.6.6'
 set :linked_files, %w{config/master.key .env}
 append :linked_dirs, "log", "public/system", "tmp"
 

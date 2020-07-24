@@ -60,4 +60,9 @@
 #     # password: "please use keys"
 #   }
 
+
 server '54.250.64.149', user: 'ec2-user', roles: %w{app web db}
+set :ssh_options, {
+    keys: [File.expand_path('~/.ssh/practice-aws-2.pem)')]
+   }
+
