@@ -15,7 +15,10 @@
               <% when "ツアー終了" %>
                 <h3>レビュー待ちです</h3>
               <% when "レビュー済み" %>
-                <h3>レビューを受けました。</h3>
+                <%= form_for(@order, url: guide_guide_order_path(current_guide, @order)) do |f| %>
+                  <%= f.select :status, Order.statuses.keys.to_a, data: { confirm: "本当に更新しますか?" } %>
+                  <%= f.submit "更新", class: "btn btn-warning" %>
+                <% end %>
             <% end %>
           </div>
         </div>

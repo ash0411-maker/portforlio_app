@@ -1,0 +1,74 @@
+{
+  "application.js": "/packs/js/application-860f2b52231032cf8fd2.js",
+  "application.js.map": "/packs/js/application-860f2b52231032cf8fd2.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-860f2b52231032cf8fd2.js"
+      ],
+      "js.map": [
+        "/packs/js/application-860f2b52231032cf8fd2.js.map"
+      ]
+    },
+    "guide_home": {
+      "js": [
+        "/packs/js/guide_home-98f4cdd852aae6611ef1.js"
+      ],
+      "js.map": [
+        "/packs/js/guide_home-98f4cdd852aae6611ef1.js.map"
+      ]
+    },
+    "home_tours_index": {
+      "js": [
+        "/packs/js/home_tours_index-2b7cfed0d5f7bfcdb9ed.js"
+      ],
+      "js.map": [
+        "/packs/js/home_tours_index-2b7cfed0d5f7bfcdb9ed.js.map"
+      ]
+    },
+    "order": {
+      "js": [
+        "/packs/js/order-be1b77728877a2669af3.js"
+      ],
+      "js.map": [
+        "/packs/js/order-be1b77728877a2669af3.js.map"
+      ]
+    },
+    "skipper": {
+      "js": [
+        "/packs/js/skipper-896d9412fbab23384630.js"
+      ],
+      "js.map": [
+        "/packs/js/skipper-896d9412fbab23384630.js.map"
+      ]
+    },
+    "skippr": {
+      "js": [
+        "/packs/js/skippr-7d4e4424c5f4c032a3b7.js"
+      ],
+      "js.map": [
+        "/packs/js/skippr-7d4e4424c5f4c032a3b7.js.map"
+      ]
+    },
+    "tour_show": {
+      "js": [
+        "/packs/js/tour_show-c6b01a9dd669933b84eb.js"
+      ],
+      "js.map": [
+        "/packs/js/tour_show-c6b01a9dd669933b84eb.js.map"
+      ]
+    }
+  },
+  "guide_home.js": "/packs/js/guide_home-98f4cdd852aae6611ef1.js",
+  "guide_home.js.map": "/packs/js/guide_home-98f4cdd852aae6611ef1.js.map",
+  "home_tours_index.js": "/packs/js/home_tours_index-2b7cfed0d5f7bfcdb9ed.js",
+  "home_tours_index.js.map": "/packs/js/home_tours_index-2b7cfed0d5f7bfcdb9ed.js.map",
+  "order.js": "/packs/js/order-be1b77728877a2669af3.js",
+  "order.js.map": "/packs/js/order-be1b77728877a2669af3.js.map",
+  "skipper.js": "/packs/js/skipper-896d9412fbab23384630.js",
+  "skipper.js.map": "/packs/js/skipper-896d9412fbab23384630.js.map",
+  "skippr.js": "/packs/js/skippr-7d4e4424c5f4c032a3b7.js",
+  "skippr.js.map": "/packs/js/skippr-7d4e4424c5f4c032a3b7.js.map",
+  "tour_show.js": "/packs/js/tour_show-c6b01a9dd669933b84eb.js",
+  "tour_show.js.map": "/packs/js/tour_show-c6b01a9dd669933b84eb.js.map"
+}
