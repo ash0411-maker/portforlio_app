@@ -16,21 +16,18 @@ class Tourist::ReviewsController < ApplicationController
       # -------- 通知機能（レビューコメント）--------
       redirect_to tourist_tourist_tour_path(current_tourist, @tour)
     else
-      flash[:notice] = 'レビューコメントを正しく入力してください'
-      order = Order.find(params[:order_id])
-      redirect_to tourist_tourist_order_path(current_tourist, order.id)
+      flash[:notice] = 'レビューコメントを入力してください'
+      redirect_to tourist_tourist_path(current_tourist)
     end
   end
 
   def update
-    review = Review.find(params[:review_id])
-    order = Order.find(params[:order_id])
-    tour = Tour.find(params[:tour_id])
-    if review.update(review_params)
-      redirect_to tourist_tourist_tour_path(current_tourist, tour)
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      redirect_to tourist_tourist_tour_path(current_tourist, @tour)
     else
-      flash[:notice] = 'レビューコメントを正しく入力してください'
-      redirect_to tourist_tourist_order_path(current_tourist, order.id)
+      flash[:notice] = 'レビューコメントを入力してください'
+      render 'edit'
     end
   end
 
@@ -42,7 +39,7 @@ class Tourist::ReviewsController < ApplicationController
 
   def correct_tourist
     tourist = Tourist.find(params[:tourist_id])
-    redirect_to eidt_tourist_tourist_path(current_tourist) if current_tourist != tourist
+    redirect_to tourist_tourist_path(current_tourist) if current_tourist != tourist
   end
 
   # -------- 通知機能（レビューコメント）--------

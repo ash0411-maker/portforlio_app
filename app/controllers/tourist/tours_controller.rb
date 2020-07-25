@@ -2,7 +2,6 @@
 
 class Tourist::ToursController < ApplicationController
   before_action :authenticate_tourist!, only: %i[show edit update destroy]
-  before_action :correct_tourist, only: %i[show index]
 
   def index
     @genres = Genre.all
@@ -25,12 +24,5 @@ class Tourist::ToursController < ApplicationController
     rooms.each do |room|
       @guide_ids << room.guide_id
     end
-  end
-
-  private
-
-  def correct_tourist
-    tourist = Tourist.find(params[:tourist_id])
-    redirect_to edit_tourist_tourist_path(current_tourist) if current_tourist != tourist
   end
 end

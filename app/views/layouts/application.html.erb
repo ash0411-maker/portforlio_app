@@ -61,28 +61,23 @@
 
           <%# ---- Adminログイン時のheader ---- %>
           <% if admin_signed_in? %>
-            <div class = "sp-menu">
-              <h2>MENU</h2>
-              <div class = "guide-hm-menu-box clearfix">
-                <ul>
-                  <li>
-                    <%= link_to "チャット", admin_rooms_path %>
-                  </li>
-                  <li>
-                    <%= link_to "ガイド", admin_guides_path %>
-                  </li>
-                  <li>
-                    <%= link_to "ツーリスト", admin_tourists_path %>
-                  </li>
-                  <li>
-                    <%= link_to "ツアー", admin_tours_path %>
-                  </li>
-                  <li>
-                    <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li>
+                <%= link_to "チャット", admin_rooms_path %>
+              </li>
+              <li>
+                <%= link_to "ガイド", admin_guides_path %>
+              </li>
+              <li>
+                <%= link_to "ツーリスト", admin_tourists_path %>
+              </li>
+              <li>
+                <%= link_to "ツアー", admin_tours_path %>
+              </li>
+              <li>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+              </li>
+            </ul>
           <%# ---- Guideログイン時のheader ---- %>
           <% elsif guide_signed_in? %>
             <div class = "sp-menu">
@@ -196,25 +191,20 @@
             </div>
           <%# ---- 非ログイン時のheader ---- %>
           <% else %>
-            <div class = "sp-menu">
-              <h2>MENU</h2>
-              <div class = "tourist-hm-menu-box clearfix">
-                <ul class = "header-login">
-                  <li>
-                      <%= link_to guide_session_path do %>
-                        <i class="fas fa-hiking fa-2x"></i>
-                        ガイドログイン
-                      <% end %>
-                  </li>
-                  <li>
-                      <%= link_to tourist_session_path do %>
-                        <i class="fas fa-suitcase-rolling fa-2x"></i>
-                        ツーリストログイン
-                      <% end %>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li>
+                  <%= link_to guide_session_path do %>
+                    <i class="fas fa-hiking fa-2x"></i>
+                    ガイドログイン
+                  <% end %>
+              </li>
+              <li>
+                  <%= link_to tourist_session_path do %>
+                    <i class="fas fa-suitcase-rolling fa-2x"></i>
+                    ツーリストログイン
+                  <% end %>
+              </li>
+            </ul>
           <% end %>
 
   <!----- ハンバンガーアイコン ----->
@@ -263,32 +253,6 @@
                       <i class="far fa-comment fa-3x"></i>
                     <% end %>
                   <% end %>
-                </span>
-              </div>
-            </div>
-          <% elsif admin_signed_in? %>
-            <div class = "hm-icon-box">
-              <div class = "hm-icon">
-                <a class= "menu-trigger" href="#">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </a>
-                <span class = "header-notice">
-                  <i class="fas fa-satellite fa-3x"></i>
-                </span>
-              </div>
-            </div>
-          <% else %>
-            <div class = "hm-icon-box">
-              <div class = "hm-icon">
-                <a class= "menu-trigger" href="#">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </a>
-                <span class = "header-notice">
-                  <i class="fas fa-sign-in-alt fa-3x"></i>
                 </span>
               </div>
             </div>

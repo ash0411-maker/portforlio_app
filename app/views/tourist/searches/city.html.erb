@@ -1,21 +1,19 @@
 <div class = "tours-first-wrapper">
-	<%# --- ツーリストトップ画面の写真 --- %>
-	<div class = "tourist-top-image">
-		<div class = "tourist-top-image-box">
-			<span class = "tourist-login-message"><%= flash[:notice] %></span>
-			<span class = "tourist-top-image-box-text">あなただけの特別な旅を</br>FANTRAで見つけましょう</span>
-
-		</div>
-	</div>
-
-	<%# ---- ジャンル検索ボタン ---- %>
+    <%# --- ツーリストトップ画面の写真 --- %>
+    <div class = "tourist-top-image">
+        <div class = "tourist-top-image-box">
+            <span class = "tourist-login-message"><%= flash[:notice] %></span>
+            <span class = "tourist-top-image-box-text">ツアー写真から予約に進みましょう</span>
+        </div>
+    </div>
+    <%# ---- ジャンル検索ボタン ---- %>
     <div class = "container">
         <div class = "row">
-            <div class = "genres-box-tab">
-                <div class = "col-md-4 col-md-offset-1">
+            <div class = "genres-box">
+                <div class = "col-xs-4 col-xs-offset-1">
                     <h3 class = "tourist-headline">気になるジャンルから選択</h3>
                 </div>
-                <div class= "col-md-5 col-md-offset-2 col-xs-offset-2">
+                <div class= "col-xs-5 col-xs-offset-2">
                     <% @genres.each do |genre| %>
                         <%= link_to tourist_tourist_tours_path(current_tourist, genre_id: genre.id), class: "btn btn-default tourist-genre-btn" do %>
                             <% genre.name %>
@@ -27,39 +25,35 @@
     </div>
 </div>
 <div class = "tours-second-wrapper">
-    <div class = "container">
-        <div class = "row">
-            <% if @city_tours.nil? %>
-                <h1 class = "col-xs-offset-1">
-                    <span class = "city-search-result"><%= @city %></span>の検索結果はありません。
-                </h1>
-                <div class = "col-xs-10 col-xs-offset-2">
-                    <div class = "serach_nil">
-                        <table class = "table">
-                            <thead>
-                                <th class = "text-center">登録されている都市</th>
-                            </thead>
-                            <tbody>
-                                <% @cities.each do |city| %>
-                                    <tr>
-                                        <td>
-                                            <%= city.name %>
-                                        </td>
-                                    </tr>
-                                <% end %>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            <% else %>
-                <h1 class = "col-xs-offset-1">
-                    <% unless @city == ""%>
-                        <span class = "city-search-result"><%= @city %></span>の検索結果
-                    <% end %>
-                </h1>
-                <%= render 'partial/tours_second_wrapper', tours: @city_tours, genre: @genre, city: @city %>
-            <% end %>
+    <% if @city_tours.nil? %>
+        <h1 class = "col-xs-offset-1">
+            <span class = "city-search-result"><%= @city %></span>の検索結果はありません。
+        </h1>
+        <div class = "col-xs-offset-1">
+            <div class = "serach_nil">
+                <table class = "table">
+                    <thead>
+                        <th class = "text-center">登録されている都市</th>
+                    </thead>
+                    <tbody>
+                        <% @cities.each do |city| %>
+                            <tr>
+                                <td>
+                                    <%= city.name %>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
+    <% else %>
+        <h1 class = "col-xs-offset-1">
+            <% unless @city == ""%>
+                <span class = "city-search-result"><%= @city %></span>の検索結果
+            <% end %>
+        </h1>
+        <%= render 'partial/tours_second_wrapper', tours: @city_tours, genre: @genre, city: @city %>
+    <% end %>
 </div>
 

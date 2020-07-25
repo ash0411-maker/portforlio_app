@@ -38,21 +38,18 @@ RSpec.describe 'Devise', type: :system, js: true do
         click_button 'ログイン'
         expect(current_path).to eq(new_admin_session_path)
       end
-      # ciecleciで通らない
+      #ciecleciで通らない
       # it 'かんたんログイン' do
       #   visit new_admin_session_path
       #   click_on 'かんたんログイン（閲覧用）'
       #   expect(current_path).to eq(guest_admin_path)
       # end
-
-      # 実際にログアウトできるがテストが通らない
-      # it 'ログアウト' do
-      #   login admin
-      #   visit admin_home_top_path
-      #   find(".hm-icon").click
-      #   click_on 'ログアウト'
-      #   expect(current_path).to eq(new_admin_session_path)
-      # end
+      it 'ログアウト' do
+        login admin
+        visit admin_home_top_path
+        click_on 'ログアウト'
+        expect(current_path).to eq(new_admin_session_path)
+      end
     end
 
     context 'Guide 会員ステータス変更' do
@@ -115,20 +112,18 @@ RSpec.describe 'Devise', type: :system, js: true do
         click_button 'ログイン'
         expect(current_path).to eq(new_guide_session_path)
       end
-      # ciecleciで通らない
+      #ciecleciで通らない
       # it 'かんたんログイン' do
       #   visit new_guide_session_path
       #   click_on 'ゲストログイン（閲覧用）'
       #   expect(current_path).to eq(guest_guide_path)
       # end
-      # ログアウトできるがテストが通らない
-      # it 'ログアウトに成功する' do
-      #   login guide
-      #   visit guide_guide_home_top_path(guide)
-      #   find(".hm-icon").click
-      #   click_on 'ログアウト'
-      #   expect(current_path).to eq(root_path)
-      # end
+      it 'ログアウトに成功する' do
+        login guide
+        visit guide_guide_home_top_path(guide)
+        click_on 'ログアウト'
+        expect(current_path).to eq(root_path)
+      end
     end
     context '退会に成功する' do
       before do
@@ -185,7 +180,7 @@ RSpec.describe 'Devise', type: :system, js: true do
         click_button 'ログイン'
         expect(current_path).to eq(new_guide_session_path)
       end
-      # ciecleciで通らない
+      #ciecleciで通らない
       # it 'かんたんログイン' do
       #   visit new_tourist_session_path
       #   click_on 'ゲストログイン（閲覧用）'
@@ -194,7 +189,6 @@ RSpec.describe 'Devise', type: :system, js: true do
       it 'ログアウト' do
         login tourist
         visit tourist_tourist_tours_path(tourist)
-        find(".hm-icon").click
         click_on 'ログアウト'
         expect(current_path).to eq(root_path)
       end

@@ -8,12 +8,10 @@
     "@rails/webpacker": "4.2.2",
     "cocoon": "github:nathanvda/cocoon#c24ba53",
     "jquery": "^3.5.1",
-    "slick-carousel": "^1.8.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   }
 }
