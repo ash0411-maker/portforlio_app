@@ -33,17 +33,29 @@
 // ------  ブックマーク一覧  ---------
 .book-mark-tour-image {
 	padding: 12px;
-  }
-  
-  .book-mark-tour-text {
+}
+
+.book-mark-tour-text {
 	float: left;
-  }
-  
-  .book-mark-tour-text h4 {
+}
+
+.book-mark-tour-text h4 {
 	padding: 20px 0 0 30px;
-  }
-  
-  .book-mark-tour-link {
+}
+
+.book-mark-tour-link {
 	float: left;
 	padding-left: 60px;
+}
+
+
+
+@media screen and (max-width:480px) {
+  .book_mark{
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 500;
   }
+}

@@ -27,7 +27,7 @@ class Tourist::ChatsController < ApplicationController
 
   def correct_tourist
     tourist = Tourist.find(params[:tourist_id])
-    redirect_to tourist_tourist_path(current_tourist) if current_tourist != tourist
+    redirect_to edit_tourist_tourist_path(current_tourist) if current_tourist != tourist
   end
 
   def save_chat_notice!(chat_id, guide_id)

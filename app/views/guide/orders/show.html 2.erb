@@ -1,0 +1,59 @@
+<div class = "application-wrapper">
+  <div class = "contaienr">
+    <div class = "row">
+      <div class = "order-show-box col-md-8 col-md-offset-2">
+        <div class = "col-md-5">
+          <%= attachment_image_tag @tour.tour_photos[0], :image, :fill, 300, 280, format: 'jpeg' %>
+          <div class = "order-stauts-form-box"> 
+            <h4>こちらから予約ステータスを変更</h4>
+            <% case @order.status %>
+              <% when "ツアー開始前", "ツアー前日", "ツアー当日" %>
+                <%= form_for(@order, url: guide_guide_order_path(current_guide, @order)) do |f| %>
+                  <%= f.select :status, Order.statuses.keys.to_a, data: { confirm: "本当に更新しますか?" } %>
+                  <%= f.submit "更新", class: "btn btn-warning" %>
+                <% end %>
+              <% when "ツアー終了" %>
+                <h3>レビュー待ちです</h3>
+              <% when "レビュー済み" %>
+                <%= form_for(@order, url: guide_guide_order_path(current_guide, @order)) do |f| %>
+                  <%= f.select :status, Order.statuses.keys.to_a, data: { confirm: "本当に更新しますか?" } %>
+                  <%= f.submit "更新", class: "btn btn-warning" %>
+                <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class = "col-md-5">
+          <div class = "show-order-boxes-wrapper clearfix">
+            <div class = "show-order-left-box">
+              <h3>予約番号：<strong><%= @order.id %></strong></h3>
+            </div>
+            <div class = "show-order-box">
+              <h4>予約されたツアー</h4>
+              <h3>
+                <%= link_to guide_guide_tour_path(current_guide, @order.tour_id) do %>
+                  <%= @order.tour_title %>
+                <% end %>
+              </h3>
+            </div>
+            <div class = "show-order-box">
+              <h4>予約日</h4>
+              <h3><strong><%= @order.tour_date.strftime("%Y-%m-%d %H:%M") %></strong></h3>
+            </div>
+            <div class = "show-order-box">
+              <h4>売り上げ（ガイド利益）</h4>
+              <h3><strong>￥<%= number_with_delimiter(@order.total_price) %>（¥ <%= number_with_delimiter(@order.guide_sales) %>）</strong></h3>
+            </div>
+            <div class = "show-order-box">
+              <h4>予約者（参加人数）</h4>
+              <h3><strong><%= @order.tourist.family_name %> <%= @order.tourist.name %>さん（<%= @order.total_people %>名）</strong></h3>
+            </div>
+            <div class = "show-order-box">
+              <h4>価格に含まれるサービス</h4>
+              <h3><strong><%= @order.tour_contents_of_price %> </strong></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

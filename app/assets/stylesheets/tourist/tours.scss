@@ -60,23 +60,17 @@
 .genre_name {
   color: limegreen;
   margin-bottom: 30px;
-  font-family: "M PLUS 1p";
-	font-weight: bold;
 }
 
 
 // 予約へ進むボタン
 .order-btn{
   margin: 80px 0 0 20px;
-  font-family: "M PLUS 1p";
-	font-weight: bold;
 }
 
 // チャットルームボタン
 .chat-room-btn{
   margin: 50px 0 0 120px;
-  font-family: "M PLUS 1p";
-	font-weight: bold;
 }
 
 
@@ -122,5 +116,9 @@
   .tourist-genre-btn {
     margin: 10px 20px 0 0;
     font-weight: bold;
+  }
+
+  .chat-room-btn{
+    margin: 50px 0 0 90px;
   }
 }

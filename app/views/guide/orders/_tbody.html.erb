@@ -1,0 +1,51 @@
+<% if order.status == "ツアー前日" %>
+	<tr class = "info">
+<% elsif order.status == "ツアー当日" %>
+	<tr class = "danger">
+<% end %>
+		<td class = "text-center">
+			<%= order.id %>
+		</td>
+		<td class = "text-center">
+			<%= order.tour_date.strftime("%Y-%m-%d %H:%M") %>
+		</td>
+		<td class = "text-center">
+			<%= order.tourist.family_name %> <%= order.tourist.name %>
+		</td>
+		<td class = "text-center">
+			<% if order.tourist.sex == "男性" %>
+				<i class="fas fa-mars fa-2x"></i>
+			<% elsif order.tourist.sex == "女性" %>
+				<i class="fas fa-venus fa-2x"></i>
+			<% end %>
+		</td>
+		<td class = "text-center">
+			<%= order.tourist.nationality %>
+		</td>
+		<td class = "text-center">
+			<%= order.total_people %>名
+		</td>
+
+		<td class = "text-center">
+			¥ <%= number_with_delimiter(order.guide_sales) %>
+		</td>
+
+
+
+	<!----- 注文ステータス更新欄 ----->
+		<td class = "text-center">
+			<% if order.status != "ツアー終了" or "レビュー済み" %>
+				<%= form_for(order, url: guide_guide_order_path(current_guide, order)) do |f| %>
+		       		<%= f.select :status, Order.statuses.keys.to_a, data: { confirm: "本当に更新しますか?" } %>
+		            <%= f.submit "更新", class: "btn btn-primary" %>
+		       	<% end %>
+		    <% elsif order.status == "ツアー終了" %>
+		    	レビュー待ちです
+		    <% else %>
+		    	レビューを受けました。
+		    <% end %>
+		</td>
+	</tr>
+
+
+
