@@ -4,6 +4,9 @@ require('slick-carousel');
     $(function() {
         $('.theTarget').slick({
             dots: true,
+            autoplay: true,
+            fade: true,
+            autoplaySpeed: 2000
         });
     })
 })(jQuery);
