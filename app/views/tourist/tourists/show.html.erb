@@ -1,17 +1,17 @@
 <div class = "contaienr">
     <div class = "row">
-		<div class = "col-xs-8 col-xs-offset-3">
+		<div class = "col-md-7 col-md-offset-3 col-xs-9 col-xs-offset-2">
 			<h3 class = "flash"><%=flash[:notice]%></h3>
 		</div>
 	</div>
 	<div class = "row">
-		<div class = "col-xs-4 col-xs-offset-3">
+		<div class = "col-md-3 col-md-offset-3 col-xs-9 col-xs-offset-3">
 			<%= link_to  edit_tourist_tourist_path(current_tourist), class: "btn btn-lg" do %>
 				<i class="fas fa-address-card fa-10x"></i>
 				<h3>個人情報変更</h3>
 			<% end %>
 		</div>
-        <div class = "col-xs-4">
+        <div class = "col-md-3 col-md-offset-1 col-xs-9 col-xs-offset-3">
 			<%= link_to  tourist_tourist_orders_path(current_tourist), class: "btn btn-lg" do %>
 				<i class="far fa-calendar-check fa-10x"></i>
 				<h3>予約一覧</h3>
@@ -19,13 +19,23 @@
 		</div>
 	</div>
     <div class = "row">
-		<div class = "col-xs-4 col-xs-offset-3">
-			<%= link_to tourist_tourist_rooms_path(current_tourist) do %>
-		        <i class="far fa-comments fa-10x"></i>
-		        <h2>チャット</h2>
-		    <% end %>
+		<div class = "col-md-2 col-md-offset-3 col-xs-9 col-xs-offset-3">
+			<% if unchecked_tourist_chat_notices.any? %>
+				<%= link_to tourist_tourist_rooms_path(current_tourist) do %>
+					<i class="far fa-comments fa-10x tourist-chat-icon"></i>
+					<h2>チャット</h2>
+					<span class = "tourist-circle">
+						<i class="fas fa-circle" style = "color: orange;"></i>
+					</span>
+				<% end %>
+            <% else %>
+            	<%= link_to tourist_tourist_rooms_path(current_tourist) do %>
+					<i class="far fa-comments fa-10x"></i>
+					<h2>チャット</h2>
+				<% end %>
+            <% end %>
 	    </div>
-		<div class = "col-xs-4">
+		<div class = "col-md-4 col-xs-9 col-xs-offset-2">
 			<%= link_to tourist_tourist_book_marks_path(current_tourist) do %>
                 <i class="fas fa-flag fa-10x"></i>
                 <h3>ブックマーク</h3>

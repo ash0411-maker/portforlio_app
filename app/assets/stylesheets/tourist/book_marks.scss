@@ -5,8 +5,8 @@
 
 .book-marks{
 	position: absolute;
-	top: 10px;
-	left: 20px;
+	top: 50px;
+	left: 70px;
 }
 
 .book_mark{
@@ -15,4 +15,47 @@
 	top: 30px;
 	right: 50px;
 	z-index: 500;
+}
+
+.book-mark-tour-box {
+	display: block;
+}
+
+.book-mark-tour {
+	height: 450px;
+	box-shadow: 0 15px 15px #666666;
+	border: solid 0.1px gray;
+	border-radius: 8px;
+	margin: 30px 0 0 30px;
+  }
+
+
+// ------  ブックマーク一覧  ---------
+.book-mark-tour-image {
+	padding: 12px;
+}
+
+.book-mark-tour-text {
+	float: left;
+}
+
+.book-mark-tour-text h4 {
+	padding: 20px 0 0 30px;
+}
+
+.book-mark-tour-link {
+	float: left;
+	padding-left: 60px;
+}
+
+
+
+@media screen and (max-width:480px) {
+  .book_mark{
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 500;
+  }
 }

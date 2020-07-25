@@ -2,7 +2,7 @@
 	<h3><%= flash[:notice] %></h3>
 	<h1 class = "guide-top-text">
 		本日に入った予約件数は
-		<%= link_to guide_guide_orders_path(current_guide) do %>
+		<%= link_to guide_guide_orders_path(current_guide, order_status: "just_in_orders") do %>
 			<%= @orders.count %>件です
 		<% end %>
 	</h1>
@@ -13,7 +13,7 @@
 	<div class = "container">
 		<div class = "row">
 			<div class = "top-fadein">
-				<div class = "col-xs-3 col-xs-offset-1 about-guide-icon">
+				<div class = "col-md-3 col-md-offset-1 col-xs-12 about-guide-icon">
 					<span class = "guide-service-icon">
 						<i class = "far fa-id-card fa-5x"></i>
 					</span>
@@ -22,7 +22,7 @@
 						あなたについて、ツアーについての情報を開示することで顧客に信頼性をアピールすることができます。
 					</h4>
 				</div>
-				<div class = "col-xs-3 col-xs-offset-1 about-guide-icon">
+				<div class = "col-md-3 col-md-offset-1 col-xs-12 about-guide-icon">
 					<span class = "guide-service-icon">
 						<i class = "far fa-calendar-alt fa-5x"></i>
 					</span>
@@ -31,7 +31,7 @@
 						あなたの空き時間を有効してガイドとして働いてみませんか？好きな世界を好きな時にシェアしましょう。
 					</h4>
 				</div>
-				<div class = "col-xs-3 col-xs-offset-1 about-guide-icon">
+				<div class = "col-md-3 col-md-offset-1 col-xs-12 about-guide-icon">
 					<span class = "guide-service-icon">
 						<i class = "far fa-envelope fa-5x"></i>
 					</span>
@@ -45,27 +45,56 @@
 	</div>
 </div>
 
-<div class = "guide-images-wrapper">
+<div class = "guide-images-wrapper-laptop-width">
 	<div class = "container">
 		<div class = "guide-images-box">
 			<div class = "row">
-				<div class = "col-xs-4 col-xs-offset-1">
+				<div class = "col-md-4 col-md-offset-1">
 					<h2>FANTRAは人の暖かみを通じて世界中に特別な体験をシェアします。</h2>
 				</div>
-				<div class = "col-xs-4 col-xs-offset-1">
+				<div class = "col-md-4 col-md-offset-1">
 					<%= image_tag 'IMG_9162.JPG', size: '590x650', class: "about-guide-image" %>
 				</div>
 			</div>
 		</div>
 		<div class = "guide-images-box">
 			<div class = "row">
-				<div class = "col-xs-4">
+				<div class = "col-md-4">
 					<%= image_tag 'IMG_0205.JPG', size: '590x650', class: "about-guide-image" %>
 				</div>
-				<div class = "col-xs-4 col-xs-offset-3">
+				<div class = "col-md-4 col-md-offset-3">
 					<h2>あなたの好きなことを仕事にして、楽しい時間をゲストと過ごしましょう</h2>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<div class = "guide-images-wrapper-phone-width">
+	<div class = "container">
+		<div class = "guide-images-box">
+			<div class = "row">
+				<div class = "col-xs-10 col-xs-offset-1">
+					<h2>FANTRAは人の暖かみを通じて世界中に特別な体験をシェアします。</h2>
+				</div>
+				<div class = "col-xs-10 col-xs-offset-1">
+					<%= image_tag 'IMG_9162.JPG', size: '300x300', class: "about-guide-image" %>
+				</div>
+			</div>
+		</div>
+		<div class = "guide-images-box">
+			<div class = "row">
+        <div class = "col-xs-10 col-xs-offset-1">
+					<h2>あなたの好きなことを仕事にして、楽しい時間をゲストと過ごしましょう</h2>
+				</div>
+				<div class = "col-xs-10 col-xs-offset-1">
+					<%= image_tag 'IMG_0205.JPG', size: '300x300', class: "about-guide-image" %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<%= javascript_pack_tag 'guide_home.js' %>
+

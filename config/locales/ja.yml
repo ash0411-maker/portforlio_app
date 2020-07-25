@@ -4,6 +4,7 @@ ja:
       guide: ガイド
       tourist: ツーリスト
       tour: ツアー
+      tour_photos: ツアー写真
     attributes:
       guide:
         email: メールアドレス
@@ -40,7 +41,7 @@ ja:
         meetingpoint_introduction: 集合場所の説明
         genre: ジャンル
         city: 都市名
-        tour_photos_image: ツアー写真
+        tour.tour_photos_image: ツアー写真
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

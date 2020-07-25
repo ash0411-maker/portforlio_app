@@ -4,66 +4,115 @@
 
 
 .guide-top {
-    padding: 50px 0 0 50px;
-    background-image: image-url("IMG_8651.JPG");
-    background-attachment: fixed;
+  padding-top: 50px;
+  text-align: center;
+  background-image: image-url("IMG_8651.JPG");
+  background-attachment: fixed;
 	background-size: cover;
-    background-position: bottom;
-    background-color: rgba( 0, 0, 0, 1);
-    backdrop-filter: blur(10px);
-    height: 600px;
-    text-align: center;
-    position: relative;
+  background-position: bottom;
+  background-color: rgba( 0, 0, 0, 1);
+  backdrop-filter: blur(10px);
+  height: 600px;
+  text-align: center;
+  position: relative;
 }
 
 .guide-top-text {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 .about-guide-wrapper {
-    background-color: rgb(221, 216, 216);
-    padding: 10px 0 50px;
+  background-color: rgb(221, 216, 216);
+  padding: 10px 0 50px;
 }
 
 .about-guide-wrapper h1 {
-    text-align: center;
-    margin: 80px 0 80px;
+  text-align: center;
+  margin: 80px 0 80px;
 }
 
 .about-guide-icon {
-    padding: 15px;
-    color: white;
-    background-color: limegreen;
-    border-radius: 10%;
+  padding: 15px;
+  color: white;
+  background-color: limegreen;
+  border-radius: 10%;
 }
 
 .guide-service-icon {
-    margin: 0 auto;
-    color: white;
-    height: 120px;
-    width: 120px;
-    display: block;
-    line-height: 7.5rem;
-    font-size: 2.25rem;
+  margin: 0 auto;
+  color: white;
+  height: 120px;
+  width: 120px;
+  display: block;
+  line-height: 7.5rem;
+  font-size: 2.25rem;
 }
 
 
 
-.guide-images-wrapper {
-    padding: 50px 0 50px;
+
+
+.guide-images-wrapper-laptop-width {
+  padding: 50px 0 50px;
 }
 
 .guide-images-box {
-    margin-bottom: 70px;
+  margin-bottom: 70px;
 }
 
 .guide-images-box h2 {
-    line-height: 60px;
-    font-weight: bold;
-    padding-top: 130px;
+  line-height: 60px;
+  font-weight: bold;
+  padding-top: 130px;
 }
 
 .about-guide-image {
-    border-radius: 20px;
-    box-shadow: 0 20px 20px gray; 
+  border-radius: 20px;
+  box-shadow: 0 20px 20px gray; 
+}
+
+.guide-images-wrapper-phone-width {
+  display: none;
+}
+
+
+
+
+
+
+@media screen and (max-width:480px) {
+  .guide-top {
+    padding-top: 50px;
+    text-align: center;
+    background-image: image-url("IMG_8651.JPG");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba( 0, 0, 0, 1);
+    backdrop-filter: blur(10px);
+    height: 500px;
+    text-align: center;
+    position: relative;
+  }
+
+  .guide-top-text {
+    font-size: 33px;
+  }
+
+  .guide-images-wrapper-laptop-width {
+    display: none;
+  }
+
+  .about-guide-icon {
+    padding: 15px;
+    margin: 30px auto 0;
+    color: white;
+    background-color: limegreen;
+    border-radius: 10%;
+  }
+
+  .guide-images-wrapper-phone-width {
+    display: block;
+    margin: 0 auto;
+  }
 }

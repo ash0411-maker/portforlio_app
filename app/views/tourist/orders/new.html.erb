@@ -4,17 +4,17 @@
 		<h3 class = "flash"><%= flash[:danger] %></h3>
 
         <%# ----- 注文フォーム ----- %>
-		<div class = "col-xs-4 col-xs-offset-2">
+		<div class = "col-md-4 col-md-offset-2 col-xs-12">
 			<%= form_for(@order, url: tourist_tourist_order_confirm_path(current_tourist), method: :get) do |f| %>
 
 				<div class = "row">
-					<div class="order-form-group">
+					<div class = "order-form-group">
 						<%= f.label :参加人数, "数字のみを入力してください" %><br/>
-						<%= f.text_field :total_people, class: "col-xs-4" %>名
+						<%= f.text_field :total_people, class: "col-md-4" %>名
 					</div>
 				</div>
 				<div class = "row">
-					<div class="order-form-group">
+					<div class= "order-form-group">
 						<%= f.datetime_select :tour_date %>
 					</div>
 				</div>
@@ -44,7 +44,7 @@
 
 
 	<%# ----- ツアー内容確認表 ----- %>
-		<div class = "col-xs-4">
+		<div class = "col-md-4 col-xs-12">
 			<div class="panel panel-default">
 				<div class="panel-heading text-center">
 			    	<h3 class="panel-title">ツアー内容</h3>

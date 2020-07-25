@@ -15,10 +15,10 @@ RSpec.describe 'touristTour', type: :system, js: true do
         visit tourist_tourist_rooms_path(tourist)
         expect(current_path).to eq(tourist_tourist_rooms_path(tourist))
       end
-      it 'idが異なるので、correct_touristで trueとなる' do
+      it 'idが異なるので、correct_touristでアクセスできない' do
         login another_tourist
         visit tourist_tourist_rooms_path(tourist)
-        expect(current_path).to eq(tourist_tourist_path(another_tourist))
+        expect(current_path).to eq(edit_tourist_tourist_path(another_tourist))
       end
       it 'ログインなしではアクセスできない' do
         visit tourist_tourist_rooms_path(tourist)

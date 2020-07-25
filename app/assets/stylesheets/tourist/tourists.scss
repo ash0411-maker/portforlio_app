@@ -1,3 +1,41 @@
 // Place all the styles related to the tourist/tourists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.tourist-edit-phone-width {
+  display: none;
+}
+
+.tourist-chat-icon {
+  position: relative;
+}
+
+.tourist-circle {
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  font-size: 25px;
+}
+
+
+  //  ----------   レスポンシブ   ---------------
+@media screen and (max-width:480px) {
+  .tourist-edit-laptop-width {
+    display: none;
+  }
+  
+  .tour-edit-form {
+    border-bottom: dotted 0.1px gray;
+    margin-bottom: 20px;
+  }
+
+  .tourist-edit-phone-width {
+    display: block;
+    margin-bottom: 80px;
+  }
+
+  .tourist-edit-submit {
+    margin-bottom: 30px;
+  }
+
+}

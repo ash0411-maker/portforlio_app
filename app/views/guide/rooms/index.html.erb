@@ -14,63 +14,7 @@
 
 <!------ チャットをしていた場合 ------>
 <% else %>
-	<div class = "container">
-		<div class = "row">
-			<div class = "col-xs-9">
-				<h2>チャット一覧</h2>
-				<table class = "table">
-					<thead>
-						<tr class = "active">
-							<th></th>
-							<th class = "text-center">チャット相手</th>
-							<th class = "text-center">チャット件数</th>
-							<th class = "text-center">最新メッセージ</th>
-							<th class = "text-center">チャットルーム</th>
-						</tr>
-					</thead>
-					<tbody>
-						<% @rooms.each do |room| %>
-							<tr class = "text-center">
-								<td>
-									<% room.chats.each do |chat| %>
-										<% if chat.is_tourist == true %>
-											<% chat.chat_notices.each do |notice| %>
-												<% if notice.checked == false %>
-													<i class="fas fa-circle" style = "color: orange;"></i>
-												<% end %>
-											<% end %>
-										<% end %>
-									<% end %>
-								</td>
-								<td>
-									<%= room.tourist.family_name %> <%= room.tourist.name %>
-								</td>
-
-								<td>
-									<%= room.chats.count %>件
-								</td>
-
-							<!------ 先頭の11文字を表示させる ------>
-								<% chats = [] %>
-								<% room.chats.each do |chat| %>
-									<% chats << chat.message %>
-								<% end %>
-								<% chat =  chats[-1] %>
-								<td>
-									<%= chat.present? ?  chat[0..10] << "..." : "" %>
-								</td>
-								<td>
-									<%= link_to "メッセージ確認", guide_guide_room_path(current_guide, room), class: "btn btn-default" %>
-								</td>
-
-							</tr>
-						<% end %>
-					</tbody>
-				</table>
-				<%= paginate @rooms, class: "paginate" %>
-			</div>
-		</div>
-	</div>
+	<%= render "partial/room_index", rooms: @rooms %>
 <% end %>
 
 

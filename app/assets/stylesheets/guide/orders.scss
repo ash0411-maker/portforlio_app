@@ -1,3 +1,114 @@
 // Place all the styles related to the guide/orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+//  ------  予約一覧画面  --------
+.order-stauts-flash {
+  margin-left: 60px;
+  color: limegreen;
+}
+
+.order-status-tab {
+  margin-bottom: 30px;
+}
+
+.order-status-tab li {
+  float: left;
+  margin-right: 20px;
+}
+
+.todays-order-boxes {
+  box-shadow: 0 15px 15px #666666;
+  border: solid 0.1px gray;
+  border-radius: 8px;
+  margin: 30px 0 0 30px;
+  padding: 15px;
+  border-radius: 5%;
+  box-shadow: 0 15px 15px #666666;
+}
+
+.todays-order-boxes-wrapper {
+  border-bottom: solid 0.1px gray;
+  position: relative;
+}
+
+.order-left-box{
+  float: left;
+  text-align: center;
+}
+
+.order-right-box {
+  float: left;
+  margin-left: 40%;
+}
+
+.order-btn-box {
+  margin: 40px 0 0 120px;
+}
+
+.guide-order-show-btn {
+  float: left;
+}
+
+.guide-order-chat-btn {
+  float: left;
+  margin-left: 40px;
+}
+
+
+//  -------- 　予約詳細画面　 ------------
+.order-show-box {
+  box-shadow: 0 15px 15px #666666;
+  border: solid 0.1px gray;
+  border-radius: 8px;
+  margin: 30px 0 0 30px;
+  padding: 15px;
+  border-radius: 5%;
+}
+
+
+.show-order-box {
+  border-bottom: solid 0.1px gray;
+  text-align: left;
+}
+
+.order-stauts-form-box {
+  margin: 60px 0 0 20px;
+}
+
+.order-stauts-form-box h4 {
+  color: green;
+}
+
+.order-stauts-form-box h3 {
+  margin-left: -70px;
+}
+
+
+
+
+
+
+@media screen and (max-width:480px) {
+  .order-left-box{
+    float: none;
+    text-align: left;
+  }
+
+  .order-right-box {
+    float: none;
+    margin-left: 0;
+  }
+  .order-btn-box {
+    margin: 40px 0 30px 10px;
+    padding-bottom: 40px;
+  }
+  
+  .order-status-tab li {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 15px;
+  }
+
+}

@@ -2,9 +2,9 @@
 	<% if admin_signed_in? %>
 		<div class = "row">
 			<%= form_for(@tour, url: admin_tour_path(@tour)) do |f| %>
-				<div class = "col-xs-8 col-xs-offset-4">
+				<div class = "col-md-8 col-md-offset-4">
 					<% if @tour.is_active == true %>
-						<span class = "col-xs-2 admin_tour_status">
+						<span class = "col-md-2 admin_tour_status">
 							<%= f.radio_button :is_active, true , checked: true %>
 							<%= f.label :is_active, "販売" %>
 						</span>
@@ -13,7 +13,7 @@
 							<%= f.label :is_active, "販売停止" %>
 						</span>
 				    <% else %>
-						<span class="col-xs-2 admin_tour_status">
+						<span class="col-md-2 admin_tour_status">
 							<%= f.radio_button :is_active, true , checked: false %>
 							<%= f.label :is_active, "販売" %>
 						</span>
@@ -33,17 +33,17 @@
 
 <%# ------- ツアー内容説明 -------- %>
 		<div class = "row">
-			<div class = "col-xs-8 col-xs-offset-4">
-				<h2 class = "guide-body-text"><%= tour.title %></h2>
+			<div class = "col-md-8 col-md-offset-4 col-xs-12">
+				<h2 class = "guide-tour-title"><%= tour.title %></h2>
 			</div>
 		</div>
 		<div class = "row">
-			<div class = "col-xs-4">
+			<div class = "col-md-4 col-xs-12">
 				<div class = "guide-body-title">
 					<h2>ツアー内容</h2>
 				</div>
 			</div>
-			<div class = "col-xs-8">
+			<div class = "col-md-8 col-xs-12">
 				<h4 class = "guide-body-text"><%= tour.body %></h4>
 			</div>
 		</div>
@@ -53,7 +53,7 @@
 <%# ------- ツアーガイド紹介 -------- %>
 	<div class = "row">
 		<div class = "guide-tour-details">
-			<div class = "col-xs-4">
+			<div class = "col-md-4 col-xs-12">
 				<div class = "guide-body-title">
 					<h2>ガイド紹介</h2>
 					<div class = "guide-introduction-text">
@@ -77,7 +77,7 @@
 					</div>
 				<% end %>
 			</div>
-			<div class = "col-xs-8">
+			<div class = "col-md-8 col-xs-12">
 				<div class = "tour-body-wrapper">
 					<h4 class = "guide-body-text"><%= tour.guide.introduction %></h4>
 				</div>
@@ -90,12 +90,12 @@
 <%# ----------- 集合場所 ------------ %>
 	<div class = "row">
 		<div class = "guide-tour-details">
-			<div class = "col-xs-4">
+			<div class = "col-md-4 col-xs-12">
 				<div class = "guide-body-title">
 					<h2>集合場所</h2>
 				</div>
 			</div>
-			<div class = "col-xs-8">
+			<div class = "col-md-8 col-xs-12">
 				<div class = "tour-body-wrapper">
 					<h4 class = "guide-body-text">
 						<%= tour.meetingpoint_address %><br/>
@@ -106,7 +106,7 @@
 					<style>
 					    #map {
 					    height: 500px;
-					    width: 70%;
+					    width: 100%;
 						}
 					</style>
 					<script>
@@ -135,12 +135,12 @@
 <%# ----------- レビュー一覧 ------------　%>
 	<div class = "row">
 		<div class = "guide-tour-details">
-			<div class = "col-xs-4">
+			<div class = "col-md-4 col-xs-12">
 				<div class = "guide-body-title">
 					<h2>レビュー</h2>
 				</div>
 			</div>
-			<div class = "col-xs-8">
+			<div class = "col-md-8 col-xs-12">
 					<div class = "tour-body-wrapper">
 						<% if reviews.count == 0 %>
 							<% if tourist_signed_in? %>

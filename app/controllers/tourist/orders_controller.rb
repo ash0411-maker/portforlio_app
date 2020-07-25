@@ -6,7 +6,17 @@ class Tourist::OrdersController < ApplicationController
 
   def index
     @orders = current_tourist.orders
-    @review = Review.new
+  end
+
+  def show
+    @order = Order.find(params[:id])
+    rooms = current_tourist.rooms
+    @review_new = current_tourist.reviews.new
+    @review = Review.find_by(tourist_id: current_tourist, tour_id: @order.tour_id)
+    @guide_ids = []
+    rooms.each do |room|
+      @guide_ids << room.guide_id
+    end
   end
 
   def new
@@ -43,10 +53,10 @@ class Tourist::OrdersController < ApplicationController
     @tourist = @order.tourist
     if @order.status == 'ツアー開始前'
       @order.destroy
-      redirect_to tourist_tourist_path(@tourist)
+      redirect_to tourist_tourist_orders_path(@tourist)
       flash[:notice] = '予約していたツアーをキャンセルしました。'
     else
-      redirect_to tourist_tourist_path(@tourist)
+      redirect_to tourist_tourist_orders_path(@tourist)
       flash[:notice] = '前日以降なのでキャンセルできません'
     end
   end
@@ -61,6 +71,6 @@ class Tourist::OrdersController < ApplicationController
 
   def correct_tourist
     tourist = Tourist.find(params[:tourist_id])
-    redirect_to tourist_tourist_path(current_tourist) if current_tourist != tourist
+    redirect_to edit_tourist_tourist_path(current_tourist) if current_tourist != tourist
   end
 end

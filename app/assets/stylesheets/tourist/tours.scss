@@ -5,38 +5,41 @@
 
 // ツアー一覧ページトップ画像
 .tourist-top-image {
-    background-image: image-url("IMG_1533.jpeg");
-    background-attachment: fixed;
+  background-image: image-url("IMG_1533.jpeg");
+  background-attachment: fixed;
 	background-size: cover;
 	background-position: center;
 	height: 500px;
 }
 
 .tourist-top-image-box {
-    width: 40%;
-    height: 500px;
-    background-color: rgba( 0, 0, 0, 0.5);
-    backdrop-filter: blur(3px);
-    position: relative;
+  width: 40%;
+  height: 500px;
+  background-color: rgba( 0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  position: relative;
 }
 
 .tourist-top-image-box-text {
-    font-size: 30px;
-    padding: 90px;
-    position: absolute;
-    top: 150px;
-    left: 20px;
-    width: 100%;
+  font-size: 30px;
+  padding: 90px;
+  position: absolute;
+  top: 150px;
+  left: 20px;
+  width: 100%;
 }
 
 .tourist-login-message {
-    font-size: 20px;
-    position: absolute;
-    top: 40px;
-    left: 70px;
-    color: lime;
+  font-size: 20px;
+  position: absolute;
+  top: 40px;
+  left: 70px;
+  color: lime;
 }
 
+.header-city-search-phone-width {
+  display: none;
+}
 
 
 // ジャンルタブメニュー
@@ -45,36 +48,77 @@
 	height: 180px;
 }
 
-.genres-box {
-    margin-top: 40px;
+.genres-box-tab {
+  margin-top: 40px;
 }
 
 .tourist-genre-btn {
-    margin-right: 10px;
-    font-family: "M PLUS 1p";
-    font-weight: bold;
+  margin-right: 10px;
+  font-weight: bold;
 }
 
 .genre_name {
-    color: limegreen;
-    margin-bottom: 30px;
-    font-family: "M PLUS 1p";
-	font-weight: bold;
+  color: limegreen;
+  margin-bottom: 30px;
 }
 
 
 // 予約へ進むボタン
 .order-btn{
-    margin: 80px 0 0 20px;
-    font-family: "M PLUS 1p";
-	font-weight: bold;
+  margin: 80px 0 0 20px;
 }
 
 // チャットルームボタン
 .chat-room-btn{
-    margin: 50px 0 0 120px;
-    font-family: "M PLUS 1p";
-	font-weight: bold;
+  margin: 50px 0 0 120px;
 }
 
 
+
+
+
+  //  ----------   レスポンシブ   ---------------
+@media screen and (max-width:480px) {
+  .tourist-top-image {
+    background-image: image-url("IMG_1533.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+    height: 400px;
+  }
+
+  .tourist-top-image-box {
+    width: 100%;
+    height: 400px;
+    background-color: rgba( 0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    position: relative;
+  }
+
+  .tourist-top-image-box-text {
+    font-size: 25px;
+    padding: 0px;
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .genres-box-tab {
+    margin-top: 40px;
+  }
+
+  .tourist-headline {
+    text-align: center;
+  }
+
+  .tourist-genre-btn {
+    margin: 10px 20px 0 0;
+    font-weight: bold;
+  }
+
+  .chat-room-btn{
+    margin: 50px 0 0 90px;
+  }
+}

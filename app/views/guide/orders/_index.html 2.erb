@@ -1,0 +1,47 @@
+<div class = "col-md-9 col-xs-12">
+  <div class = "todays-order-boxes">
+    <div class = "todays-order-boxes-wrapper clearfix">
+      <div class = "order-left-box">
+        <h3>予約番号</h3>
+        <h2><strong><%= order.id %></strong></h2>
+      </div>
+      <div class = "order-right-box">
+        <h3>売り上げ（ガイド利益）</h3>
+        <h2><strong>￥<%= number_with_delimiter(order.total_price) %>（¥ <%= number_with_delimiter(order.guide_sales) %>）</strong></h2>
+      </div>
+    </div>
+    <div class = "todays-order-boxes-wrapper clearfix">
+      <div class = "order-left-box">
+        <h3>予約者</h3>
+        <h2><strong><%= order.tourist.family_name %>さん</strong></h2>
+      </div>
+      <div class = "order-right-box">
+        <h3>参加人数</h3>
+        <h2><strong><%= order.total_people %>名</strong></h2>
+      </div>
+    </div>
+    <div class = "todays-order-boxes-wrapper clearfix">
+      <div class = "order-left-box">
+        <h3>予約日</h3>
+        <h2><strong><%= order.tour_date.strftime("%Y-%m-%d %H:%M") %></strong></h2>
+      </div>
+      <div class = "order-right-box order-btn-box">
+        <span class = "guide-order-show-btn">
+          <%= link_to "予約詳細", guide_guide_order_path(current_guide, order.id), class: "btn btn-lg btn-primary" %>
+        </span>
+        <% if @tourist_ids.include?(order.tourist.id) %>
+          <span class = "guide-order-chat-btn">
+            <%= link_to "チャットへ", guide_guide_room_path(current_guide, current_guide.rooms.find_by(tourist_id: order.tourist.id)), class: "btn btn-lg btn-warning" %>
+          </span>
+        <% else %>
+          <span class = "guide-order-chat-btn">
+            <%= form_for(Room.new, url: guide_guide_rooms_path(current_guide)) do |f| %>
+              <%= f.hidden_field :tourist_id, :value => order.tourist.id %>
+              <%= f.submit "チャットへ", class: "btn btn-lg btn-warning" %>
+            <% end %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,11 +6,17 @@
 
 
 .city-search-result {
-    color: green;
-    margin: 50px 0 100px;
+  color: green;
+  margin: 50px 0 100px;
 }
 
 .serach_nil {
-    height: 500px;
-    width: 30%;
+  width: 30%;
+}
+
+
+@media screen and (max-width:480px) {
+  .serach_nil {
+    width: 100%;
+  }
 }
