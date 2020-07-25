@@ -26,9 +26,14 @@
 
 
 <div class = "tour-images-width-phone">
-	<div id = "theTarget">
+	<div class = "theTarget">
 		<%= attachment_image_tag tour_photos[0], :image, :fill, 320, 300, format: 'jpeg', class: "tour-img" %>
+		<%= attachment_image_tag tour_photos[1], :image, :fill, 320, 300, format: 'jpeg', class: "tour-img" %>
+		<%= attachment_image_tag tour_photos[2], :image, :fill, 320, 300, format: 'jpeg', class: "tour-img" %>
+		<%= attachment_image_tag tour_photos[3], :image, :fill, 320, 300, format: 'jpeg', class: "tour-img" %>
+		<%= attachment_image_tag tour_photos[4], :image, :fill, 320, 300, format: 'jpeg', class: "tour-img" %>
 	</div>
 </div>
 
+<%= javascript_pack_tag 'slideshow.js' %>
 

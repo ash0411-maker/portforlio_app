@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
 
   <body>
@@ -58,23 +61,28 @@
 
           <%# ---- Adminログイン時のheader ---- %>
           <% if admin_signed_in? %>
-            <ul>
-              <li>
-                <%= link_to "チャット", admin_rooms_path %>
-              </li>
-              <li>
-                <%= link_to "ガイド", admin_guides_path %>
-              </li>
-              <li>
-                <%= link_to "ツーリスト", admin_tourists_path %>
-              </li>
-              <li>
-                <%= link_to "ツアー", admin_tours_path %>
-              </li>
-              <li>
-                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-              </li>
-            </ul>
+            <div class = "sp-menu">
+              <h2>MENU</h2>
+              <div class = "guide-hm-menu-box clearfix">
+                <ul>
+                  <li>
+                    <%= link_to "チャット", admin_rooms_path %>
+                  </li>
+                  <li>
+                    <%= link_to "ガイド", admin_guides_path %>
+                  </li>
+                  <li>
+                    <%= link_to "ツーリスト", admin_tourists_path %>
+                  </li>
+                  <li>
+                    <%= link_to "ツアー", admin_tours_path %>
+                  </li>
+                  <li>
+                    <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+                  </li>
+                </ul>
+              </div>
+            </div>
           <%# ---- Guideログイン時のheader ---- %>
           <% elsif guide_signed_in? %>
             <div class = "sp-menu">
@@ -255,6 +263,19 @@
                       <i class="far fa-comment fa-3x"></i>
                     <% end %>
                   <% end %>
+                </span>
+              </div>
+            </div>
+          <% elsif admin_signed_in? %>
+            <div class = "hm-icon-box">
+              <div class = "hm-icon">
+                <a class= "menu-trigger" href="#">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </a>
+                <span class = "header-notice">
+                  <i class="fas fa-satellite fa-3x"></i>
                 </span>
               </div>
             </div>
