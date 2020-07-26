@@ -43,7 +43,12 @@
   </div>
   <div class = "row">
     <div class = "your-tour-phone-width">
-      <h3>あなたが提供しているツアー</h3>
+      <% if @tours.count == 0 %>
+        <div class = "guide-show-new-tour-btn">
+          <%= link_to "あなたのツアーを投稿しましょう！", new_guide_guide_tour_path(current_guide), class: "btn btn-warning btn-lg" %>
+        </div>
+      <% else %>
+        <h3>あなたが提供しているツアー</h3>
         <% @tours.each do |tour| %>
           <div class = "col-md-4">
             <div class = "guide-tour-info-box">
@@ -57,6 +62,7 @@
             </div>
           </div>
         <% end %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -3,7 +3,6 @@
         <div class = "row">
             <div class = "col-xs-8 co-xs-offset-2">
                 <h1>予約詳細</h1>
-                <%= link_to "予約一覧へもどる", tourist_tourist_orders_path(current_tourist), class: "btn btn-primary btn-lg" %>
             </div>
             <div class = "col-md-6 col-xs-12">
                 <div class = "order-show-box">
@@ -41,6 +40,21 @@
                 </div>
             </div>
             <div class = "col-md-6 col-xs-12">
+                <% if @order.status == "ツアー終了" %>
+                    <h2>レビュー投稿で応援しましょう！</br>（400文字以内）</h2>
+                    <%= form_for(@review_new, url: tourist_tourist_tour_reviews_path(current_tourist, @order.tour_id, order_id: @order.id)) do |f| %>
+                        <%= f.text_area :comment, class: "review-text-field" %>
+                        <div>
+                            <%= f.submit  "レビュー投稿", class: "btn btn-success btn-lg" %>
+                        </div>
+                    <% end %>
+                <% elsif @order.status == "レビュー済み" %>
+                    <h2>レビュー編集</br>（400文字以内）</h2>
+                    <%= form_for(@review, url: tourist_tourist_tour_review_path(current_tourist, @order.tour_id, @review, order_id: @order.id)) do |f| %>
+                        <%= f.text_area :comment, class: "review-text-field" %>
+                        <%= f.submit  "レビュー投稿", class: "btn btn-success btn-lg" %>
+                    <% end %>
+                <% end %>
                 <div class = "oreder-warning">
                     <h2>ツアー説明</h2>
                     <h4 class = "order-confirm-body"><%= @order.tour_body %></h4>
