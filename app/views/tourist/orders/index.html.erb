@@ -25,7 +25,7 @@
 			</ul>
 
     <%# ---- 今後のツアー ---- %>
-			<div class = "">
+			<div class = "current_order">
 				<div class = "row">
 					<% @orders.each do |order| %>
 						<% unless order.status == "ツアー終了" or order.status == "レビュー済み" %>
@@ -36,7 +36,7 @@
 			</div>
 
     <%# ---- 終了済みのツアー ---- %>
-      <div class = "">
+      <div class = "finished_order">
 				<div class = "row">
 					<% @orders.each do |order| %>
 						<% if order.status == "ツアー終了" or order.status == "レビュー済み" %>
