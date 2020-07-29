@@ -18,14 +18,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require activestorage
-//= require turbolinks
-//= require channels
+
 //= require cocoon
 //= require_tree .
-
-
-
-
 
 
 // ハンバンガーメニュー

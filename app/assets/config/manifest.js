@@ -2,3 +2,10 @@
 //= link_directory ../stylesheets .css
 //= link chat_example.jpg
 //= link IMG_0205.JPG
+ //= link home_tours_index.js
+ //= link application.js
+ //= link guide_home.js
+ //= link tour_show.js
+ //= link slideshow.js
+ //= link slick.min.js
+ //= link tourist_order.js
