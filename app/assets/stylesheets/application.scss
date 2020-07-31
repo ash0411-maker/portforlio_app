@@ -539,11 +539,6 @@ body {
   display: none;
 }
 
-.header-city-search-phone-width {
-  display: none;
-}
-
-
 
 // ハンバーガーメニュー
 .hm-icon-box {
@@ -573,8 +568,8 @@ body {
 }
 
 .tourist-hm-menu li {
-	float: left;
-	text-align: center;
+	float: none;
+
 }
 
 .guide-hm-menu-box {
@@ -589,7 +584,7 @@ body {
 
 .header-city-search-phone-width {
 	display: block;
-	margin: 20px 0 0 20px;
+	margin: 20px 0 40px 20px;
 }
 
 .guide-mypage-link {
