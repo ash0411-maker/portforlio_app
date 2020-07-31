@@ -2,14 +2,15 @@
 <% if @rooms.count == 0 %>
 	<div class = "container">
 		<div class = "row">
-			<div class = "col-xs-8 col-xs-offset-1">
-				<h2>
+			<div class = "col-xs-11 col-xs-offset-1">
+				<h2 class = "none-chat-text">
 					チャットはまだありません。<br/>
 					予約が入ればメッセージを送れます！
 				</h2>
 			</div>
 		</div>
-		<%= image_tag 'chat_example.jpeg', size: '1200x650' %>
+		<%= image_tag 'chat_example_normal.jpeg', size: '1200x650', class: "chat_example_normal" %>
+		<%= image_tag 'chat_example_phone.jpeg', size: '320x550', class: "chat_example_phone" %>
 	</div>
 
 <!------ チャットをしていた場合 ------>
