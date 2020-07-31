@@ -33,10 +33,9 @@ class Guide::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     if @order.update(order_params)
       flash[:notice] = '予約ステータスを更新しました'
-      redirect_to guide_guide_orders_path(current_guide, order_status: "just_in_orders")
+      redirect_to guide_guide_orders_path(current_guide, order_status: 'just_in_orders')
     end
   end
-
 
   private
 
@@ -50,22 +49,22 @@ class Guide::OrdersController < ApplicationController
   end
 
   def order_status_params(order_status_params)
-    if order_status_params == "just_in_orders"
-      @order_status = "just_in_orders"
+    if order_status_params == 'just_in_orders'
+      @order_status = 'just_in_orders'
       @just_in_orders = current_guide.orders.where(created_at: Time.zone.now.all_day)
-    elsif order_status_params == "current_orders"
-      @order_status = "current_orders"
-      @current_orders = current_guide.orders.where(status: "ツアー開始前")
-    elsif order_status_params == "day_before_orders"
-      @order_status = "day_before_orders"
-      @day_before_orders = current_guide.orders.where(status: "ツアー前日")
-    elsif  order_status_params == "the_day_orders"
-      @order_status = "the_day_orders"
-      @the_day_orders = current_guide.orders.where(status: "ツアー当日")
-    elsif  order_status_params == "finished_orders"
-      @order_status = "finished_orders"
-      @finished_orders = current_guide.orders.where(status: "ツアー終了")
-      @reviewed_orders = current_guide.orders.where(status: "レビュー済み")
+    elsif order_status_params == 'current_orders'
+      @order_status = 'current_orders'
+      @current_orders = current_guide.orders.where(status: 'ツアー開始前')
+    elsif order_status_params == 'day_before_orders'
+      @order_status = 'day_before_orders'
+      @day_before_orders = current_guide.orders.where(status: 'ツアー前日')
+    elsif  order_status_params == 'the_day_orders'
+      @order_status = 'the_day_orders'
+      @the_day_orders = current_guide.orders.where(status: 'ツアー当日')
+    elsif  order_status_params == 'finished_orders'
+      @order_status = 'finished_orders'
+      @finished_orders = current_guide.orders.where(status: 'ツアー終了')
+      @reviewed_orders = current_guide.orders.where(status: 'レビュー済み')
     end
   end
 end

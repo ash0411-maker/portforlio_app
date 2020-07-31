@@ -1,12 +1,14 @@
-# config valid for current version and patch releases of Capistrano
-lock "~> 3.14.1"
+# frozen_string_literal: true
 
-set :application, "FANTRA"
-set :repo_url, "git@github.com:ash0411-maker/portforlio_app.git"
-set :deploy_to, "/home/ec2-user/FANTRA"
+# config valid for current version and patch releases of Capistrano
+lock '~> 3.14.1'
+
+set :application, 'FANTRA'
+set :repo_url, 'git@github.com:ash0411-maker/portforlio_app.git'
+set :deploy_to, '/home/ec2-user/FANTRA'
 set :rbenv_ruby, '2.6.6'
-set :linked_files, %w{config/master.key .env}
-append :linked_dirs, "log", "public/system", "tmp"
+set :linked_files, %w[config/master.key .env]
+append :linked_dirs, 'log', 'public/system', 'tmp'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

@@ -39,5 +39,3 @@ RSpec.describe 'GuideOrder', type: :system, js: true do
     end
   end
 end
-
-

@@ -33,16 +33,16 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
   gem 'selenium-webdriver'
-  gem 'capistrano'
-  gem 'capistrano-rails'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rbenv'
 end
 
 group :development do
@@ -71,4 +71,4 @@ gem 'paranoia'
 gem 'pry-byebug'
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
-gem "refile-s3"
+gem 'refile-s3'

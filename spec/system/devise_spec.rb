@@ -194,7 +194,7 @@ RSpec.describe 'Devise', type: :system, js: true do
       it 'ログアウト' do
         login tourist
         visit tourist_tourist_tours_path(tourist)
-        find(".hm-icon").click
+        find('.hm-icon').click
         click_on 'ログアウト'
         expect(current_path).to eq(root_path)
       end
