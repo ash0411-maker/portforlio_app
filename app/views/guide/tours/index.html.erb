@@ -20,11 +20,9 @@
       </div>
     </div>
     <div class = "row">
-      <% @tours.each do |tour| %>
-        <div class = "col-md-4 col-xs-12">
-          <%= render 'partial/tours_second_wrapper', tours: @tours, genre: @genre %>
-        </div>
-      <% end %>
+      <div class = "col-md-4 col-xs-12">
+        <%= render 'partial/tours_second_wrapper', tours: @tours, genre: @genre %>
+      </div>
     </div>
     <%= paginate @tours, class: "paginate" %>
   </div>

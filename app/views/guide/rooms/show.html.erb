@@ -15,14 +15,16 @@
 				<!-- メッセージがguideだったら、メッセージを右に寄せる -->
 				    <% unless chat.is_tourist %>
 					    <div class = "text-right bg-info">
-					    	<h4 class = "chat"><%= chat.message %>  :<%= current_guide.name %>さん</h4>
+							<h4><%= current_guide.name %>さん</h4>
+					    	<h4 class = "chat"><%= chat.message %></h4>
 					    	<span class = "chat-time">（<%= chat.created_at.to_s(:datetime_jp) %>）</span>
 					    </div>
 
-                <!-- メッセージがtouristによるものだったら、メッセージを左に寄せる -->
+        <!-- メッセージがtouristによるものだったら、メッセージを左に寄せる -->
 					<% else %>
 				    	<div class = "text-left bg-warning">
-				    		<h4><%= @tourist.name %>さん:  <%= chat.message %></h4>
+							<h4><%= @tourist.name %>さん</h4>
+				    		<h4 class = "chat"><%= chat.message %></h4>
 				    		<span class = "chat-time">（<%= chat.created_at.to_s(:datetime_jp) %>）</span>
 				    	</div>
 				    <% end %>
@@ -38,7 +40,7 @@
 		<div class = "contaienr">
 			<div class = "row">
 				<div class = "col-md-3 col-md-offset-9 col-xs-12">
-					<div class = "guide-btn-to-rooms">
+					<div class = "btn-to-rooms">
 						<%= link_to "チャット一覧へ戻る", guide_guide_rooms_path(current_guide), class: "btn btn-warning" %>
 					</div>
 					<div class = "guide-chat-form">
