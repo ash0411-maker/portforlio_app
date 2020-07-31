@@ -34,7 +34,8 @@ https://fantra.net/
 ・CircleCi（テスト・デプロイ）  
 ・RSpec（テストフレームワーク）  
 ・Docker,Docker-compose（開発環境）  
-・AWS/本番環境（EC2, RDS, VPC, EIP, Route53, IAM, S3）    
+・AWS/本番環境（EC2, RDS, VPC, EIP, Route53, IAM, S3）  
+・Mac Catalina(10.15.5)  
 ・Amazon Linux  
 ・VSCode, Vim  
 
