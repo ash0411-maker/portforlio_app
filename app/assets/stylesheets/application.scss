@@ -535,31 +535,39 @@ footer {
 
 
 
+
+
+
+
   //  ----------   レスポンシブ（タブレット）   ---------------
 @media screen and (max-width:992px) {
-    .hm-icon{
-      position: fixed;
-      right: 15px;
-      top: 15px;
-      z-index: 10;
-      background-color: rgb(250, 250, 250);
-      border-radius: 20px;
-      width: 130px;
-      padding: 3px 9px 0 20px;
-    }
+  .hm-icon{
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 10;
+    background-color: rgb(250, 250, 250);
+    border-radius: 20px;
+    width: 130px;
+    padding: 3px 9px 0 20px;
+  }
 
-    .tours-info-text h4 {
-      font-size: 40px;
-    }
+  .tours-info-text h4 {
+    font-size: 40px;
+  }
 
-    .header-city-search {
-      height: 40px;
-      float: right;
-      position: fixed;
-      left: 300px;
-      right: 10px;
-      top: 20px;
-    }
+  .header-city-search {
+    height: 40px;
+    float: right;
+    position: fixed;
+    left: 300px;
+    right: 10px;
+    top: 20px;
+  }
+
+  .tourist-hm-menu li {
+  float: none;
+}
 }
 
 
@@ -622,7 +630,6 @@ body {
 
 .tourist-hm-menu li {
 	float: none;
-
 }
 
 .guide-hm-menu-box {
@@ -637,7 +644,8 @@ body {
 
 .header-city-search-phone-width {
 	display: block;
-	margin: 20px 0 40px 20px;
+  margin: 20px 0 40px;
+  text-align: center;
 }
 
 .guide-mypage-link {
