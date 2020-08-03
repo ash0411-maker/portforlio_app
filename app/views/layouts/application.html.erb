@@ -294,7 +294,9 @@
           <% end %>
         </nav>
       </header>
-      <%= yield %>
+      <div class = "yield-wrapper">
+        <%= yield %>
+      </div>
       <!----- footer ----->
       <footer>
         <span><%= link_to "お問い合わせ", new_admin_contact_path, class: "contact-btn" %></span>

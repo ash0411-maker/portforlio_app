@@ -22,13 +22,13 @@
  @import "slick";
 
 
- .clearfix::after {
+.clearfix::after {
 	content: "";
 	display: block;
 	clear: both;
   }
 
- .flash {
+.flash {
 	color: lime;
 }
 
@@ -40,6 +40,9 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	width: 100%;
+  overflow: hidden;
+  padding-top: 75px;
 }
 
 body {
@@ -48,16 +51,16 @@ body {
 	width: 100%;
 }
 
-
  /* header */
  header {
 	background-color: black;
 	width: 100%;
 	height: 75px;
-	position: relative;
+  position: relative;
   position: sticky;
+  position: fixed;
 	top: 0;
-	z-index: 1000;
+  z-index: 1000;
 }
 
 .application-wrapper {
@@ -232,7 +235,7 @@ li{
 	display: none;
 }
 
-// 
+
 .admin_search {
 	height: 40px;
 	float: right;
@@ -303,7 +306,7 @@ li{
 //---  ツアー一覧ページ ---
 .tours-first-wrapper {
 	background-color: black;
-	height: 640px;
+	height: 550px;
 	color: white;
 }
 
@@ -320,6 +323,18 @@ li{
 
 .tours-photo-index:hover {
 	transform: scale(1.1, 1.1);
+}
+
+.tours-image {
+  margin-bottom: 20px;
+  border-radius: 5%;
+  box-shadow: 0 10px 10px #666666;
+  width: 100%;
+}
+
+.tours-image:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.5s;
 }
 
 
@@ -458,8 +473,8 @@ li{
 }
 
 .guide-body-title.tour-scrollin {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
@@ -510,21 +525,26 @@ footer {
 	color: black;
   }
 
-  .pagination>.active>a {
+.pagination>.active>a {
 	background: limegreen;
 	border-radius: 15px;
-  }
-  
-  .pagination>li>a:hover {
+}
+
+.pagination>li>a:hover {
 	border-radius: 15px;
 	background: limegreen;
-  }
+}
+
+
+
+
+
 
 
 
 
   //  ----------   レスポンシブ   ---------------
-@media screen and (max-width:480px) {
+@media screen and (max-width:768px) {
 
 body {
 	width: 100%;
@@ -539,6 +559,14 @@ body {
   display: none;
 }
 
+.logo {
+	line-height: 70px;
+  color: #FAFAFA;
+  padding-left: 15px;
+	font-size: 35px;
+	float: left;
+}
+
 
 // ハンバーガーメニュー
 .hm-icon-box {
@@ -547,12 +575,12 @@ body {
 
 .hm-icon{
 	position: fixed;
-	right: 40px;
+	right: 15px;
 	top: 15px;
 	z-index: 10;
 	background-color: rgb(250, 250, 250);
 	border-radius: 20px;
-	width: 35%;
+	width: 130px;
 	padding: 3px 9px 0 20px;
 }
 
@@ -624,9 +652,9 @@ body {
 
 
 //  --- ツアー写真 ---
- .tour-images-width-laptop {
+.tour-images-width-laptop {
   display: none;
- }
+}
 
  .tour-images-width-phone {
   display: block;
@@ -691,7 +719,7 @@ body {
   text-align: center;
 }
 
- .guide-body-title{
+.guide-body-title{
   margin-left: 0;
   text-align: center;
 	opacity: 0;
@@ -709,3 +737,8 @@ body {
 }
 }
 
+
+
+@media screen and (max-width:992px) {
+
+}
