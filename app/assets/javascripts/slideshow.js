@@ -1,9 +1,10 @@
 $(function() {
-    $('.theTarget').slick({
+    $('.slick').slick({
         dots: true,
         autoplay: true,
         fade: true,
-        autoplaySpeed: 3000
+        autoplaySpeed: 3000,
+        adaptiveHeight: false
     });
 })
 
