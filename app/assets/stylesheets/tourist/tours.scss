@@ -4,6 +4,12 @@
 
 
 // ツアー一覧ページトップ画像
+.tours-first-wrapper {
+  background-color: black;
+  height: 650px;
+  color: white;
+}
+
 .tourist-top-image {
   background-image: image-url("IMG_1533.jpeg");
   background-attachment: fixed;
@@ -43,6 +49,16 @@
 
 
 // ジャンルタブメニュー
+.tourist-headline {
+  float: left;
+  padding-left: 150px;
+}
+
+.genre-menu-btns-box {
+  float: right;
+  padding: 15px 130px 0 0;
+}
+
 .tourist-second-wrapper {
 	background-color: black;
 	height: 180px;
@@ -77,14 +93,84 @@
 
 
 
-  //  ----------   レスポンシブ   ---------------
-@media screen and (max-width:480px) {
+
+
+
+  //  ----------   レスポンシブ（タブレット）   ---------------
+@media screen and (max-width:992px) {
+  .tours-first-wrapper {
+    background-color: black;
+    height: 690px;
+    color: white;
+  }
+
+  .tourist-top-image-box {
+    width: 100%;
+    height: 500px;
+    background-color: rgba( 0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    position: relative;
+  }
+
+  .tourist-top-image-box-text {
+    font-size: 30px;
+    padding: 90px;
+    text-align: center;
+    width: 100%;
+  }
+
+
+
+  .genres-box-tab {
+    width: 100%;
+  }
+
+  .tourist-headline {
+    float: none;
+    text-align: center;
+    padding-left: 0px;
+  }
+
+  .genre-menu-btns-box {
+    float: none;
+    padding: 0px 0px 0 0;
+    margin: 0 0 0 200px;
+    width: 70%;
+  }
+
+  .tourist-genre-btn {
+    width: 40%;
+    float: left;
+    margin-top: 10px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+  //  ----------   レスポンシブ（スマホ）   ---------------
+@media screen and (max-width:768px) {
   .tourist-top-image {
     background-image: image-url("IMG_1533.jpeg");
     background-attachment: fixed;
     background-size: cover;
     background-position: right;
     height: 400px;
+  }
+
+  .genre-menu-btns-box {
+    float: none;
+    padding: 0px 0px 0 0;
+    margin: 0 0 0 40px;
+    width: 90%;
   }
 
   .tourist-top-image-box {

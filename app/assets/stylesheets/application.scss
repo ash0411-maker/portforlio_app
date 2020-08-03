@@ -227,9 +227,10 @@ li{
 .header-city-search {
 	height: 40px;
 	float: right;
-	position: absolute;
-	right: 540px;
-	top: 20px;
+	position: fixed;
+  left: 540px;
+  right: 10px;
+  top: 20px;
 }
 
 .header-city-search-phone-width {
@@ -305,12 +306,6 @@ li{
 
 
 //---  ツアー一覧ページ ---
-.tours-first-wrapper {
-	background-color: black;
-	height: 600px;
-	color: white;
-}
-
 .tours-phots-box {
 	margin-bottom: 50px;
 	padding-bottom: 10px;
@@ -540,13 +535,40 @@ footer {
 
 
 
+  //  ----------   レスポンシブ（タブレット）   ---------------
+  @media screen and (max-width:992px) {
+    .hm-icon{
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      z-index: 10;
+      background-color: rgb(250, 250, 250);
+      border-radius: 20px;
+      width: 130px;
+      padding: 3px 9px 0 20px;
+    }
+  
+    .tours-info-text h4 {
+      font-size: 40px;
+    }
+
+    .header-city-search {
+      height: 40px;
+      float: right;
+      position: fixed;
+      left: 300px;
+      right: 10px;
+      top: 20px;
+    }
+  }
 
 
 
 
 
 
-  //  ----------   レスポンシブ   ---------------
+
+  //  ----------   レスポンシブ（スマホ）   ---------------
 @media screen and (max-width:768px) {
 
 body {
@@ -681,6 +703,10 @@ body {
   text-align: center;
 }
 
+.tours-info-text h4 {
+  font-size: 20px;
+}
+
 
 
 //  --- ツアー情報 ---
@@ -746,19 +772,9 @@ body {
 
 
 
-@media screen and (max-width:992px) {
-  .hm-icon{
-    position: fixed;
-    right: 15px;
-    top: 15px;
-    z-index: 10;
-    background-color: rgb(250, 250, 250);
-    border-radius: 20px;
-    width: 130px;
-    padding: 3px 9px 0 20px;
-  }
 
-  .tours-info-text h4 {
-    font-size: 40px;
-  }
-}
+
+
+
+
+
