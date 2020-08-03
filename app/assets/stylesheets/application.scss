@@ -536,7 +536,7 @@ footer {
 
 
   //  ----------   レスポンシブ（タブレット）   ---------------
-  @media screen and (max-width:992px) {
+@media screen and (max-width:992px) {
     .hm-icon{
       position: fixed;
       right: 15px;
@@ -547,7 +547,7 @@ footer {
       width: 130px;
       padding: 3px 9px 0 20px;
     }
-  
+
     .tours-info-text h4 {
       font-size: 40px;
     }
@@ -560,7 +560,7 @@ footer {
       right: 10px;
       top: 20px;
     }
-  }
+}
 
 
 

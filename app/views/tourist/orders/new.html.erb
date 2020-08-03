@@ -1,6 +1,6 @@
 <div class = "container">
 	<div class = "row">
-		<h1>ツアー同行者人数入力</h1>
+		<h1 class = "order-new-headline">ツアー同行者人数入力</h1>
 		<h3 class = "flash"><%= flash[:danger] %></h3>
 
         <%# ----- 注文フォーム ----- %>
@@ -32,12 +32,9 @@
 				<%= f.hidden_field :tour_genre, :value => @tour.genre.name %>
 				<%= f.hidden_field :tour_price, :value => @tour.price %>
 
-				<div class = "row">
-					<div class = "col-xs-7">
-						<%= f.submit '予約内容確認へ', class: "btn btn-success btn-lg order-new-btn" %>
-					</div>
-				</div>
-
+        <div class= "order-form-group">
+				  <%= f.submit '予約内容確認へ', class: "btn btn-success btn-lg order-new-btn" %>
+        </div>
 			<% end %>
 		</div>
 
@@ -45,37 +42,39 @@
 
 	<%# ----- ツアー内容確認表 ----- %>
 		<div class = "col-md-4 col-xs-12">
-			<div class="panel panel-default">
-				<div class="panel-heading text-center">
-			    	<h3 class="panel-title">ツアー内容</h3>
-				</div>
-				<div class="panel-body">
-				    <p>
-				    	ツアー名：<strong class = "text-right"><%= @tour.title %></strong>
-				    </p>
-				    <p>
-				    	ツアー都市：<strong class = "text-right"><%= @tour.city.name %></strong>
-				    </p>
-				    <p>
-				    	定員：<strong class = "text-right"><%= @tour.capacity %>名</strong>
-				    </p>
-				    <p>
-				    	所要時間：<strong class = "text-right"><%= @tour.time %></strong>
-				    </p>
-				    <p class = "order-confirm">
-				    	ホスト：<strong><%= @tour.guide.family_name %> <%= @tour.guide.name %></strong>
-				    </p>
-				</div>
-				<div class="panel-body">
-				    <p class = "order-confirm">
-				    	価格に含まれるサービス<br/>
-				    	<strong><%= @tour.contents_of_price %></strong>
-				    </p>
-				</div><div class="panel-body">
-				    <p class = "order-confirm">
-				    	価格 × 1人：<strong>¥<%= number_with_delimiter(@tour.price) %></strong>
-				    </p>
-				</div>
+      <div class = "orde-new-confirm-panel">
+        <div class="panel panel-default">
+          <div class="panel-heading text-center">
+            <h3 class="panel-title">ツアー内容</h3>
+          </div>
+          <div class="panel-body">
+            <p>
+              ツアー名：<strong class = "text-right"><%= @tour.title %></strong>
+            </p>
+            <p>
+              ツアー都市：<strong class = "text-right"><%= @tour.city.name %></strong>
+            </p>
+            <p>
+              定員：<strong class = "text-right"><%= @tour.capacity %>名</strong>
+            </p>
+            <p>
+              所要時間：<strong class = "text-right"><%= @tour.time %></strong>
+            </p>
+            <p class = "order-confirm">
+              ホスト：<strong><%= @tour.guide.family_name %> <%= @tour.guide.name %></strong>
+            </p>
+          </div>
+          <div class="panel-body">
+            <p class = "order-confirm">
+              価格に含まれるサービス<br/>
+              <strong><%= @tour.contents_of_price %></strong>
+            </p>
+          </div><div class="panel-body">
+            <p class = "order-confirm">
+              価格 × 1人：<strong>¥<%= number_with_delimiter(@tour.price) %></strong>
+            </p>
+          </div>
+        </div>
 			</div>
 		</div>
 	</div>
