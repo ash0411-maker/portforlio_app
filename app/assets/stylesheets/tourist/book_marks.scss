@@ -57,6 +57,13 @@
 
   //  ----------   レスポンシブ（タブレット）   ---------------
 @media screen and (max-width:992px) {
+  .book-marks{
+    position: absolute;
+    top: 80px;
+    left: 90px;
+    font-size: 30px;
+  }
+
   .book-mark-tour {
     height: 600px;
     width: 90%;
