@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.tour-new-headline {
+  text-align: center;
+}
 
 .guide-tour-page {
   margin: 20px 0 60px;
@@ -51,8 +54,18 @@
 
 
 
+  //  ----------   レスポンシブ（タブレット）   ---------------
+@media screen and (max-width:992px) {
+  .tour-photos-example-wrapper {
+    display: none;
+  }
+}
 
-@media screen and (max-width:480px) {
+
+
+
+
+@media screen and (max-width:767px) {
 .tour-photos-example-wrapper {
 	display: none;
 }
