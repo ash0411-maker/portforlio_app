@@ -94,6 +94,19 @@
 
 
 
+  //  ----------   レスポンシブ（タブレット）   ---------------
+@media screen and (max-width:992px) {
+  .book_mark{
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 90px;
+    z-index: 500;
+  }
+}
+
+
+
 
 
 
@@ -103,7 +116,7 @@
     color: white;
     position: absolute;
     top: 10px;
-    right: 20px;
+    right: 50px;
     z-index: 500;
   }
 

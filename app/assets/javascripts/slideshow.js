@@ -1,28 +1,29 @@
 $(function() {
     $('.slick-box').slick({
         dots: true,
+        autoplay: true,
         centerMode: true,
         centerPadding: '10%',
-        autoplay: true,
         autoplaySpeed: 2000,
         responsive: [
             {
                 breakpoint: 992,
                 settings: {
-                arrows: false,
-                centerMode: false,
-                centerPadding: '0px',
-                slidesToShow: 1
+                    fade: true,
+                    dots: false,
+                    autoplay: true,
+                    centerMode: false,
+                    centerPadding: '100%'
             }
             },
             {
                 breakpoint: 768,
                 settings: {
+                    fade: true,
                     dots: false,
                     autoplay: true,
-                    fade: true,
                     centerMode: false,
-                    centerPadding: '0px'
+                    centerPadding: '100%'
                 }
             }
         ]

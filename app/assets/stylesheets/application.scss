@@ -337,9 +337,7 @@ li{
 
 
 // -----  ツアー詳細ページ -------
-.tour-img {
-  object-fit: cover;
-}
+
 
 .tour-top-wrapper {
 	height: 600px;
@@ -347,7 +345,6 @@ li{
 	color: white;
 	position: relative;
 }
-
 
 .guide_book_marks {
 	position: absolute;
@@ -545,6 +542,18 @@ footer {
     float: none;
     font-size: 30px;
   }
+
+  .tour-images-width-phone {
+    display: block;
+    margin: 0 auto;
+    height: 300px;
+    width: 80%;
+  }
+
+  .tour-images-width-laptop {
+    display: none;
+  }
+
 }
 
 
@@ -664,6 +673,10 @@ body {
 	position: relative;
 }
 
+.tour-img {
+  object-fit: cover;
+}
+
 
 //  --- ツアー写真 ---
 .tour-images-width-laptop {
@@ -674,6 +687,7 @@ body {
   display: block;
   margin: 0 auto;
   height: 300px;
+  width: 80%;
 }
 
 .tour-link-title {
