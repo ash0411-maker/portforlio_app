@@ -63,7 +63,6 @@
           <%# ---- Adminログイン時のheader ---- %>
           <% if admin_signed_in? %>
             <div class = "sp-menu">
-              <h2>MENU</h2>
               <div class = "guide-hm-menu-box clearfix">
                 <ul>
                   <li>
@@ -87,7 +86,6 @@
           <%# ---- Guideログイン時のheader ---- %>
           <% elsif guide_signed_in? %>
             <div class = "sp-menu">
-              <h2>MENU</h2>
               <div class = "guide-hm-menu-box clearfix">
                 <ul>
                   <div class = "guide-hm-menu clearfix">
@@ -139,7 +137,6 @@
           <%# ---- Touristログイン時のheader ---- %>
           <% elsif tourist_signed_in? %>
             <div class = "sp-menu">
-              <h2>MENU</h2>
               <div class = "tourist-hm-menu-box clearfix">
                 <span class = "header-city-search-phone-width">
                   <%= form_tag(tourist_tourist_searches_city_path(current_tourist), method: :get) do %>
@@ -198,7 +195,6 @@
           <%# ---- 非ログイン時のheader ---- %>
           <% else %>
             <div class = "sp-menu">
-              <h2>MENU</h2>
               <div class = "tourist-hm-menu-box clearfix">
                 <ul class = "header-login">
                   <li>
