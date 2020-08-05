@@ -1,5 +1,5 @@
 <div class = "tours-info-box clearfix">
-  <%= attachment_image_tag tour.tour_photos[0], :image, :fill, 300, 280, format: 'jpeg', class: "tours-image" %>
+  <%= attachment_image_tag tour.tour_photos[0], :image, size: "300x280", format: 'jpeg', class: "tours-image" %>
   <div class = "tours-info-text">
     <h4><%= tour.title %></h4>
     <h4><%= tour.city.name %></h4>
