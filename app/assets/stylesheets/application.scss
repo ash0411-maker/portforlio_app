@@ -338,8 +338,6 @@ li{
 
 // -----  ツアー詳細ページ -------
 .tour-img {
-  border-radius: 3%;
-  box-shadow: 0 3px 5px gray;
   object-fit: cover;
 }
 
@@ -366,42 +364,16 @@ li{
 }
 
 // ----- ツアー写真 -----
+.tour-images-width-laptop {
+	margin: 0 auto;
+	width: 80%;
+}
+
 .tour-image-wrapper {
 	height: 400px;
-	padding: 30px 0 0 110px;
+	padding-top: 20px;
 	background-color: black;
 	position: relative;
-}
-
-.tour-img-1 {
-	float: left;
-  margin-right: 20px;
-}
-
-.tour-img-2-4 {
-  float: left;
-}
-
-.tour-img-2 {
-	float: left;
-	margin-right: 15px;
-}
-
-.tour-img-3 {
-	float: left;
-}
-
-.tour-img-2-3 {
-	margin-bottom: 10px;
-}
-
-.tour-img-4 {
-	float: left;
-}
-
-.tour-img-5 {
-	float: left;
-	padding-left: 15px;
 }
 
 .tour-images-width-phone {

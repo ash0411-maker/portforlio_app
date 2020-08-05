@@ -1,32 +1,25 @@
 <%# ----- ツアー詳細ページの写真 ----- %>
-
 <div class = "tour-images-width-laptop">
-	<div class = "tour-img-1">
-		<%= attachment_image_tag tour_photos[0], :image, :fill, 370, 440, format: 'jpeg', class: "tour-img" %>
-	</div>
-
-	<div class = "tour-img-2-4">
-		<div class = "tour-img-2-3 clearfix">
-			<div class = "tour-img-2">
-				<%= attachment_image_tag tour_photos[1], :image, :fill, 240, 210, format: 'jpeg', class: "tour-img" %>
-			</div>
-			<div class = "tour-img-3">
-				<%= attachment_image_tag tour_photos[2], :image, :fill, 240, 210, format: 'jpeg', class: "tour-img" %>
-			</div>
+	<div class = "slick-box">
+		<div class = "slick-img">
+			<%= attachment_image_tag tour_photos[0], :image, :fill, 900, 460, format: 'jpeg', class: "tour-img" %>
 		</div>
-		<div class = "tour-img-4">
-			<%= attachment_image_tag tour_photos[3], :image, :fill, 495, 220, format: 'jpeg', class: "tour-img" %>
+		<div class = "slick-img">
+			<%= attachment_image_tag tour_photos[1], :image, :fill, 900, 460, format: 'jpeg', class: "tour-img" %>
 		</div>
-	</div>
-
-	<div class = "tour-img-5">
-		<%= attachment_image_tag tour_photos[4], :image, :fill, 280, 440, format: 'jpeg', class: "tour-img" %>
+		<div class = "slick-img">
+			<%= attachment_image_tag tour_photos[2], :image, :fill, 900, 460, format: 'jpeg', class: "tour-img" %>
+		</div>
+		<div class = "slick-img">
+			<%= attachment_image_tag tour_photos[3], :image, :fill, 900, 460, format: 'jpeg', class: "tour-img" %>
+		</div>
+		<div class = "slick-img">
+			<%= attachment_image_tag tour_photos[4], :image, :fill, 900, 460, format: 'jpeg', class: "tour-img" %>
+		</div>
 	</div>
 </div>
-
-
 <div class = "tour-images-width-phone">
-	<div class = "slick">
+	<div class = "slick-box">
 		<%= attachment_image_tag tour_photos[0], :image, :fill, 320, 300, format: 'jpeg', class: "tour-img" %>
 		<%= attachment_image_tag tour_photos[1], :image, :fill, 320, 300, format: 'jpeg', class: "tour-img" %>
 		<%= attachment_image_tag tour_photos[2], :image, :fill, 320, 300, format: 'jpeg', class: "tour-img" %>
