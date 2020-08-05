@@ -554,6 +554,126 @@ footer {
     display: none;
   }
 
+
+  .tour-images-width-laptop {
+    display: none;
+  }
+  
+  .tour-images-width-phone {
+    display: block;
+    margin: 0 auto;
+    height: 300px;
+    width: 80%;
+  }
+
+
+  .info-responsive-tour-title {
+    float: left;
+  }
+
+  .tour-info-icons-box {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .tour-info-icon-div {
+    margin: 10px 0 0 50px;
+  }
+
+  .tour-info-icon {
+    float: left;
+  }
+
+  .tour-info-icon-text {
+    float: left;
+    padding-left: 10px;
+  }
+
+
+
+  
+  .tour-link-title {
+    text-align: center;
+  }
+  
+  .tour-link-title {
+    text-align: center;
+  }
+  
+  .tour-link-info {
+    text-align: center;
+  }
+  
+  .tours-info-text h4 {
+    font-size: 20px;
+  }
+
+
+
+  //  --- ツアー情報 ---
+  .tour-info-width-phone {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+  }
+  
+  .tour-info-width-laptop {
+    display: none;
+  }
+  
+  .tour-info-wrapper {
+    padding-top: 50px;
+    background-color: black;
+    color: white;
+    height: 350px;
+  }
+  
+  .tour-city-name {
+    float: none;
+    font-size: 30px;
+    padding-bottom: 20px;
+    display: block;
+    text-align: center;
+  }
+  
+  .tour-genre-name {
+    float: none;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+  }
+  
+  .contents-of-price-text {
+    font-size: 18px;
+  }
+
+  .order-btn{
+    text-align: center;
+    font-weight: bold;
+  }
+
+  //  --- ツアー情報詳細 ---
+.guide-tour-title {
+  text-align: center;
+}
+
+.guide-body-title{
+  margin-left: 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 1s;
+}
+
+.order-btn{
+  text-align: center;
+  font-weight: bold;
+}
+
+.edit-tour-btn{
+	margin: 30px 0 0 40px;
+}
+
 }
 
 
@@ -563,7 +683,7 @@ footer {
 
 
   //  ----------   レスポンシブ（スマホ）   ---------------
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
 
 body {
 	width: 100%;
@@ -677,6 +797,10 @@ body {
   object-fit: cover;
 }
 
+.info-responsive-tour-title {
+  float: none;
+}
+
 
 //  --- ツアー写真 ---
 .tour-images-width-laptop {
@@ -727,7 +851,7 @@ body {
 .tour-city-name {
   float: none;
   font-size: 20px;
-  padding-left: 70px;
+  padding: 10px 0 0 0;
   display: block;
   text-align: center;
 }
@@ -735,7 +859,7 @@ body {
 .tour-genre-name {
   float: none;
   font-size: 20px;
-  padding-left: 70px;
+  padding: 10px 0 0 0;
   display: block;
   text-align: center;
 }
@@ -759,7 +883,7 @@ body {
 }
 
 .order-btn{
-  margin: 30px auto 20px;
+  text-align: center;
   font-weight: bold;
 }
 
