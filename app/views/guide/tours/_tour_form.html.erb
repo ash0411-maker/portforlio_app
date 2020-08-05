@@ -49,8 +49,8 @@
   </div>
   <div class = "col-md-3 col-xs-12">
     <div id = "tour_photos">
+      <h4><span class = "tour-photo-alert-text">横向き</span>の写真５枚を選択<br/>（jpeg推奨）</h4>
       <%= f.fields_for :tour_photos do |tour_photo| %>
-        <h4><span class = "tour-photo-alert-text">横向き</span>の写真５枚を選択<br/>（jpeg推奨）</h4>
         <%= render 'tour_photo_fields', f: tour_photo %>
       <% end %>
       <div id = "links">
