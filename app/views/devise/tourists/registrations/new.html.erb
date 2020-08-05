@@ -1,6 +1,6 @@
 <div class = "container">
   <div class = "row">
-    <div class = "col-md-8 col-md-offset-4 col-xs-12">
+    <div class = "col-md-8 col-md-offset-4 col-xs-10 col-xs-offset-2 col-sm-10 col-sm-offset-2">
       <h3>ツーリスト登録</h3>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -8,14 +8,14 @@
 
         <div class = "row">
             <div class="guest-login">
-              <%= link_to 'ゲストログイン（閲覧用）', guest_tourist_path, method: :post, class: "btn btn-primary col-md-6 col-xs-10 devise-login-text " %>
+              <%= link_to 'ゲストログイン（閲覧用）', guest_tourist_path, method: :post, class: "btn btn-primary col-md-6 col-xs-10 col-sm-10 devise-login-text " %>
             </div>
         </div>
 
         <div class = "row">
           <div class="devise-field">
             <%= f.label :メールアドレス %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: " col-md-6 col-xs-10 devise-login-text" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: " col-md-6 col-xs-10 col-sm-10 devise-login-text" %>
           </div>
         </div>
 
@@ -25,7 +25,7 @@
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %>文字以上)</em>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password", class: " col-md-6 col-xs-10 devise-login-text" %>
+            <%= f.password_field :password, autocomplete: "new-password", class: " col-md-6 col-xs-10 col-sm-10 devise-login-text" %>
           </div>
         </div>
 
@@ -33,7 +33,7 @@
           <div class="devise-field">
             <div class="field">
               <%= f.label :確認用パスワード %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: " col-md-6 col-xs-10 devise-login-text" %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: " col-md-6 col-xs-10 col-sm-10 devise-login-text" %>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
         <div class = "row">
           <div class="devise-field">
             <div class="actions">
-              <%= f.submit "新規登録", class: "btn btn-warning col-md-6 col-xs-10 devise-login-text" %>
+              <%= f.submit "新規登録", class: "btn btn-warning col-md-6 col-xs-10 col-sm-10 devise-login-text" %>
             </div>
           </div>
         </div>

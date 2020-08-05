@@ -2,7 +2,7 @@
 	<% if @orders.count == 0 %>
 		<div class = "container">
 			<div class = "row">
-				<div class = "col-xs-9 col-xs-offset-1">
+				<div class = "col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
 					<h1>まだ予約はありません。</h1>
 					<h3 class = "flash"><%= flash[:notice] %></h3>
 				</div>
@@ -11,25 +11,28 @@
 	<% else %>
 		<div class = "container">
 			<div class = "row">
-				<div class = "col-xs-9 col-xs-offset-1">
+				<div class = "col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
 					<h3 class = "flash"><%= flash[:notice] %></h3>
 				</div>
 			</div>
 
-     <%# ---- タブ ---- %>
+    <%# ---- タブ ---- %>
 			<ul class = "order-tab clearfix">
 				<li class = "order-active current-order-tab">今後の予約</li>
 				<li class = "finished-order-tab">過去の予約</li>
-				<h3 class = "push-to-review">ガイドの応援のために過去の予約からレビューを投稿しましょう！</h3>
-				<h3 class = "push-to-review-phoen-width">ガイドの応援のために</br>過去の予約からレビューを</br>投稿しましょう！</h3>
 			</ul>
+
+      <div class = "order-index-title">
+        <h3 class = "push-to-review">ガイドの応援のために過去の予約からレビューを投稿しましょう！</h3>
+				<h3 class = "push-to-review-phoen-width">ガイドの応援のために</br>過去の予約からレビューを</br>投稿しましょう！</h3>
+      </div>
 
     <%# ---- 今後のツアー ---- %>
 			<div class = "current_order">
 				<div class = "row">
 					<% @orders.each do |order| %>
 						<% unless order.status == "ツアー終了" or order.status == "レビュー済み" %>
-              				<%= render 'partial/tourist_order_index', order: order %>
+              <%= render 'partial/tourist_order_index', order: order %>
 						<% end %>
 					<% end %>
 				</div>

@@ -1,9 +1,32 @@
 $(function() {
-    $('.theTarget').slick({
+    $('.slick-box').slick({
         dots: true,
         autoplay: true,
-        fade: true,
-        autoplaySpeed: 3000
+        centerMode: true,
+        centerPadding: '10%',
+        autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    fade: true,
+                    dots: false,
+                    autoplay: true,
+                    centerMode: false,
+                    centerPadding: '100%'
+            }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    fade: true,
+                    dots: false,
+                    autoplay: true,
+                    centerMode: false,
+                    centerPadding: '100%'
+                }
+            }
+        ]
     });
 })
 

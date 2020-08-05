@@ -45,8 +45,17 @@
 
 
 
+  //  ----------   レスポンシブ（タブレット）   ---------------
+@media screen and (max-width:992px) {
+  .btn-to-rooms {
+    display: none;
+  }
+}
 
-@media screen and (max-width:480px) {
+
+
+
+@media screen and (max-width:768px) {
   .chat-index-box {
     border: solid 3px gray;
     height: 90px;

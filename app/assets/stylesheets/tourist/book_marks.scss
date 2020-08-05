@@ -21,22 +21,25 @@
 	display: block;
 }
 
+
+
+
+// ------  ブックマーク一覧  ---------
+.book-mark-index-headline {
+  text-align: center;
+}
+
 .book-mark-tour {
-	height: 450px;
+	height: 500px;
 	box-shadow: 0 15px 15px #666666;
 	border: solid 0.1px gray;
 	border-radius: 8px;
 	margin: 30px 0 0 30px;
-  }
-
-
-// ------  ブックマーク一覧  ---------
-.book-mark-tour-image {
-	padding: 12px;
 }
 
-.book-mark-tour-text {
-	float: left;
+.book-mark-tour-image {
+	padding: 12px;
+	width: 100%;
 }
 
 .book-mark-tour-text h4 {
@@ -44,18 +47,83 @@
 }
 
 .book-mark-tour-link {
-	float: left;
-	padding-left: 60px;
+	margin: 30px 0 0 30px;
 }
 
 
 
-@media screen and (max-width:480px) {
+
+
+
+  //  ----------   レスポンシブ（タブレット）   ---------------
+@media screen and (max-width:992px) {
+  .book-marks{
+    position: absolute;
+    top: 80px;
+    left: 90px;
+    font-size: 30px;
+  }
+
+  .book-mark-tour {
+    height: 600px;
+    width: 90%;
+    box-shadow: 0 15px 15px #666666;
+    border: solid 0.1px gray;
+    border-radius: 8px;
+    margin: 30px 0 60px 30px;
+  }
+
+  .book-mark-tour-image {
+    padding: 12px;
+    width: 100%;
+    height: 400px;
+  }
+
+  .book-mark-tour-text h4 {
+    padding: 20px 0 0 30px;
+    text-align: center;
+    font-size: 25px;
+  }
+  
+  .book-mark-tour-link {
+    margin: 30px 0 0 30px;
+    text-align: center;
+    font-size: 20px;
+  }
+}
+
+
+
+  //  ----------   レスポンシブ（タブレット）   ---------------
+@media screen and (max-width:992px) {
+  .book_mark{
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 90px;
+    z-index: 500;
+  }
+}
+
+
+
+
+
+
+
+@media screen and (max-width:768px) {
   .book_mark{
     color: white;
     position: absolute;
     top: 10px;
-    right: 20px;
+    right: 50px;
     z-index: 500;
+  }
+
+  .book-marks{
+    position: absolute;
+    top: 60px;
+    left: 70px;
+    font-size: 17px;
   }
 }

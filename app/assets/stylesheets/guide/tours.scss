@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.tour-new-headline {
+  text-align: center;
+}
 
 .guide-tour-page {
   margin: 20px 0 60px;
@@ -48,21 +51,21 @@
   margin-top: 10px;
 }
 
-.tours-image {
-  margin-bottom: 20px;
-  border-radius: 5%;
-  box-shadow: 0 10px 10px #666666;
+
+
+
+  //  ----------   レスポンシブ（タブレット）   ---------------
+@media screen and (max-width:992px) {
+  .tour-photos-example-wrapper {
+    display: none;
+  }
 }
 
-.tours-image:hover {
-  transform: scale(1.1, 1.1);
-  transition: 0.5s;
-}
 
 
 
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:767px) {
 .tour-photos-example-wrapper {
 	display: none;
 }

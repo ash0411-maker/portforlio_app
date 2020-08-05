@@ -80,7 +80,58 @@
 
 
 
-@media screen and (max-width:480px) {
+  //  ----------   レスポンシブ（タブレット）   ---------------
+@media screen and (max-width:992px) {
+  .guide-top {
+    padding-top: 50px;
+    text-align: center;
+    background-image: image-url("IMG_8651.JPG");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba( 0, 0, 0, 1);
+    backdrop-filter: blur(10px);
+    height: 500px;
+    text-align: center;
+    position: relative;
+  }
+
+  .guide-top-text {
+    font-size: 33px;
+  }
+
+  .guide-images-wrapper-laptop-width {
+    display: none;
+  }
+
+  .about-guide-icon {
+    padding: 15px;
+    width: 80%;
+    margin: 30px auto 0;
+    color: white;
+    background-color: limegreen;
+    border-radius: 10%;
+  }
+
+  .guide-images-wrapper-phone-width {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .about-guide-image {
+    border-radius: 20px;
+    box-shadow: 0 20px 20px gray;
+    width: 100%;
+    height: 600px;
+  }
+}
+
+
+
+
+
+  //  ----------   レスポンシブ（スマホ）   ---------------
+@media screen and (max-width:768px) {
   .guide-top {
     padding-top: 50px;
     text-align: center;

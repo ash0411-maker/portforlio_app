@@ -22,7 +22,11 @@
 
 
 
-@media screen and (max-width:480px) {
+
+
+
+  //  ----------   レスポンシブ（タブレット）   ---------------
+@media screen and (max-width:992px) {
   .guide-btn-to-rooms {
     display: none;
   }
@@ -30,7 +34,31 @@
   .guide-chat-form-field {
     z-index: 100px;
     position: fixed;
-    top: 660px;
+    top: 800px;
+    left: 200px;
+    width: 100%;
+    height: 90px;
+  }
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:767px) {
+  .guide-btn-to-rooms {
+    display: none;
+  }
+
+  .guide-chat-form-field {
+    z-index: 100px;
+    position: fixed;
+    top: 500px;
+    left: 20px;
     width: 100%;
     height: 90px;
   }

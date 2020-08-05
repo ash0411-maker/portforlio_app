@@ -43,6 +43,7 @@
 
 .your-tour-photo {
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .guide-show-new-tour-btn {
@@ -73,9 +74,8 @@
 
 
 
-
-@media screen and (max-width:480px) {
-
+  //  ----------   レスポンシブ（タブレット）   ---------------
+@media screen and (max-width:992px) {
   // -------  ガイド詳細ページ  ---------
 	.guide-show-laptop-width {
     display: none;
@@ -86,7 +86,7 @@
     width: 90%;
     margin: 20px auto 0;
   }
-  
+
   .guide-info-text {
     border-bottom: dotted 0.1px gray;
     margin-bottom: 20px;
@@ -94,6 +94,7 @@
 
   .guide-phone-selfy-image {
     border-radius: 40%;
+    margin: 0 auto;
   }
 
   .guide-button-to-edit {
@@ -110,6 +111,11 @@
     box-shadow: 0 15px 15px #666666;
     margin-bottom: 100px;
     padding: 15px;
+    text-align: center;
+  }
+
+  .guide-tour-info-box h4 {
+    font-size: 30px;
   }
 
   .guide-tour-btn {
@@ -134,5 +140,86 @@
   .guide-edit-text-area {
     height: 200px;
     width: 100%;
+  }
+
+  .guide-edit-btn {
+    margin :30px 0 30px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+  //  ----------   レスポンシブ（スマホ）   ---------------
+@media screen and (max-width:768px) {
+  // -------  ガイド詳細ページ  ---------
+	.guide-show-laptop-width {
+    display: none;
+  }
+
+  .guide-show-phone-width {
+    display: block;
+    width: 90%;
+    margin: 20px auto 0;
+  }
+
+  .guide-info-text {
+    border-bottom: dotted 0.1px gray;
+    margin-bottom: 20px;
+  }
+
+  .guide-phone-selfy-image {
+    border-radius: 40%;
+  }
+
+  .guide-button-to-edit {
+    text-align: center;
+  }
+
+  .your-tour-phone-width {
+    margin: 50px auto 50px;
+  }
+
+  .guide-tour-info-box {
+    border: solid 0.1px gray;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px #666666;
+    margin-bottom: 100px;
+    padding: 15px;
+    text-align: left;
+  }
+
+  .guide-tour-btn {
+    margin-right: 20px;
+  }
+
+  .your-tour-photo {
+    margin-bottom: 20px;
+  }
+
+  .guide-to-edit-btn {
+    margin: 20px auto;
+  }
+
+
+  // -------- ガイド編集  --------
+
+  .guide-edit-title {
+    font-size: 20px;
+  }
+
+  .guide-edit-text-area {
+    height: 200px;
+    width: 100%;
+  }
+
+  .guide-edit-btn {
+    margin :30px 0 30px;
   }
 }

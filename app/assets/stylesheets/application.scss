@@ -22,13 +22,13 @@
  @import "slick";
 
 
- .clearfix::after {
+.clearfix::after {
 	content: "";
 	display: block;
 	clear: both;
   }
 
- .flash {
+.flash {
 	color: lime;
 }
 
@@ -40,6 +40,9 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	width: 100%;
+  overflow: hidden;
+  padding-top: 75px;
 }
 
 body {
@@ -48,16 +51,16 @@ body {
 	width: 100%;
 }
 
-
  /* header */
  header {
 	background-color: black;
 	width: 100%;
 	height: 75px;
-	position: relative;
+  position: relative;
   position: sticky;
+  position: fixed;
 	top: 0;
-	z-index: 1000;
+  z-index: 1000;
 }
 
 .application-wrapper {
@@ -83,7 +86,8 @@ body {
 
 // ハンバーガーメニュー
 .hm-icon-box {
-	position: relative;
+  position: relative;
+  margin-right: 5px;
 }
 
 .hm-icon{
@@ -93,8 +97,8 @@ body {
 	z-index: 10;
 	background-color: rgb(250, 250, 250);
 	border-radius: 20px;
-	width: 9%;
-	padding: 3px 9px 0 20px;
+	width: 130px;
+  padding: 3px 9px 0 20px;
 }
 
 .non-login-hm-icon {
@@ -105,7 +109,7 @@ body {
 
 .header-notice a {
 	position: absolute;
-	right: 10px;
+	right: 15px;
 	color: black;
 }
 
@@ -163,7 +167,7 @@ body {
 
 // ハンバーガーsp
 .sp-menu {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	background: #000;
@@ -223,16 +227,17 @@ li{
 .header-city-search {
 	height: 40px;
 	float: right;
-	position: absolute;
-	right: 540px;
-	top: 20px;
+	position: fixed;
+  left: 540px;
+  right: 10px;
+  top: 20px;
 }
 
 .header-city-search-phone-width {
 	display: none;
 }
 
-// 
+
 .admin_search {
 	height: 40px;
 	float: right;
@@ -301,12 +306,6 @@ li{
 
 
 //---  ツアー一覧ページ ---
-.tours-first-wrapper {
-	background-color: black;
-	height: 640px;
-	color: white;
-}
-
 .tours-phots-box {
 	margin-bottom: 50px;
 	padding-bottom: 10px;
@@ -322,14 +321,23 @@ li{
 	transform: scale(1.1, 1.1);
 }
 
+.tours-image {
+  margin-bottom: 20px;
+  border-radius: 5%;
+  box-shadow: 0 10px 10px #666666;
+  width: 100%;
+}
+
+.tours-image:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.5s;
+}
+
 
 
 
 // -----  ツアー詳細ページ -------
-.tour-img {
-	border-radius: 3%;
-	box-shadow: 0 3px 5px gray; 
-}
+
 
 .tour-top-wrapper {
 	height: 600px;
@@ -353,42 +361,16 @@ li{
 }
 
 // ----- ツアー写真 -----
+.tour-images-width-laptop {
+	margin: 0 auto;
+	width: 80%;
+}
+
 .tour-image-wrapper {
 	height: 400px;
-	padding: 30px 0 0 110px;
+	padding-top: 20px;
 	background-color: black;
 	position: relative;
-}
-
-.tour-img-1 {
-	float: left;
-  margin-right: 20px;
-}
-
-.tour-img-2-4 {
-    float: left;
-}
-
-.tour-img-2 {
-	float: left;
-	margin-right: 15px;
-}
-
-.tour-img-3 {
-	float: left;
-}
-
-.tour-img-2-3 {
-	margin-bottom: 10px;
-}
-
-.tour-img-4 {
-	float: left;
-}
-
-.tour-img-5 {
-	float: left;
-	padding-left: 15px;
 }
 
 .tour-images-width-phone {
@@ -405,6 +387,10 @@ li{
 	height: 250px;
 }
 
+.tour-info-responsive-width {
+	display: none;
+}
+
 .tour-info-width-phone {
   display: none;
 }
@@ -412,10 +398,6 @@ li{
 .tour-info-width-laptop {
 	padding: 40px 0 0;
   }
-
-.left-bar{
-	
-}
 
 .order-btn{
 	margin: 30px auto 20px;
@@ -458,8 +440,8 @@ li{
 }
 
 .guide-body-title.tour-scrollin {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
@@ -510,21 +492,198 @@ footer {
 	color: black;
   }
 
-  .pagination>.active>a {
+.pagination>.active>a {
 	background: limegreen;
 	border-radius: 15px;
+}
+
+.pagination>li>a:hover {
+	border-radius: 15px;
+	background: limegreen;
+}
+
+
+
+
+
+
+
+  //  ----------   レスポンシブ（タブレット）   ---------------
+@media screen and (max-width:992px) {
+  .hm-icon{
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 10;
+    background-color: rgb(250, 250, 250);
+    border-radius: 20px;
+    width: 130px;
+    padding: 3px 9px 0 20px;
+  }
+
+  .tours-info-text h4 {
+    font-size: 40px;
+  }
+
+  .header-city-search {
+    height: 40px;
+    float: right;
+    position: fixed;
+    left: 300px;
+    right: 10px;
+    top: 20px;
+  }
+
+  .tourist-hm-menu li {
+    float: none;
+  }
+
+  .guide-hm-menu li {
+    float: none;
+    font-size: 30px;
+  }
+
+  .tour-images-width-phone {
+    display: block;
+    margin: 0 auto;
+    height: 300px;
+    width: 80%;
+  }
+
+  .tour-images-width-laptop {
+    display: none;
+  }
+
+
+  .tour-images-width-laptop {
+    display: none;
   }
   
-  .pagination>li>a:hover {
-	border-radius: 15px;
-	background: limegreen;
+  .tour-images-width-phone {
+    display: block;
+    margin: 0 auto;
+    height: 300px;
+    width: 80%;
+  }
+
+
+  .info-responsive-tour-title {
+    float: left;
+  }
+
+  .tour-info-icons-box {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .tour-info-icon-div {
+    margin: 10px 0 0 50px;
+  }
+
+  .tour-info-icon {
+    float: left;
+  }
+
+  .tour-info-icon-text {
+    float: left;
+    padding-left: 10px;
   }
 
 
 
+  
+  .tour-link-title {
+    text-align: center;
+  }
+  
+  .tour-link-title {
+    text-align: center;
+  }
+  
+  .tour-link-info {
+    text-align: center;
+  }
+  
+  .tours-info-text h4 {
+    font-size: 20px;
+  }
 
-  //  ----------   レスポンシブ   ---------------
-@media screen and (max-width:480px) {
+
+
+  //  --- ツアー情報 ---
+  .tour-info-width-phone {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+  }
+  
+  .tour-info-width-laptop {
+    display: none;
+  }
+  
+  .tour-info-wrapper {
+    padding-top: 50px;
+    background-color: black;
+    color: white;
+    height: 350px;
+  }
+  
+  .tour-city-name {
+    float: none;
+    font-size: 30px;
+    padding-bottom: 20px;
+    display: block;
+    text-align: center;
+  }
+  
+  .tour-genre-name {
+    float: none;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+  }
+  
+  .contents-of-price-text {
+    font-size: 18px;
+  }
+
+  .order-btn{
+    text-align: center;
+    font-weight: bold;
+  }
+
+  //  --- ツアー情報詳細 ---
+.guide-tour-title {
+  text-align: center;
+}
+
+.guide-body-title{
+  margin-left: 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 1s;
+}
+
+.order-btn{
+  text-align: center;
+  font-weight: bold;
+}
+
+.edit-tour-btn{
+	margin: 30px 0 0 40px;
+}
+
+}
+
+
+
+
+
+
+
+  //  ----------   レスポンシブ（スマホ）   ---------------
+@media screen and (max-width:767px) {
 
 body {
 	width: 100%;
@@ -539,6 +698,14 @@ body {
   display: none;
 }
 
+.logo {
+	line-height: 70px;
+  color: #FAFAFA;
+  padding-left: 15px;
+	font-size: 35px;
+	float: left;
+}
+
 
 // ハンバーガーメニュー
 .hm-icon-box {
@@ -547,12 +714,12 @@ body {
 
 .hm-icon{
 	position: fixed;
-	right: 40px;
+	right: 15px;
 	top: 15px;
 	z-index: 10;
 	background-color: rgb(250, 250, 250);
 	border-radius: 20px;
-	width: 35%;
+	width: 130px;
 	padding: 3px 9px 0 20px;
 }
 
@@ -569,7 +736,6 @@ body {
 
 .tourist-hm-menu li {
 	float: none;
-
 }
 
 .guide-hm-menu-box {
@@ -584,7 +750,8 @@ body {
 
 .header-city-search-phone-width {
 	display: block;
-	margin: 20px 0 40px 20px;
+  margin: 20px 0 40px;
+  text-align: center;
 }
 
 .guide-mypage-link {
@@ -611,6 +778,10 @@ body {
 }
 
 
+.tours-phots-box {
+	margin-bottom: 50px;
+	padding-bottom: 10px;
+}
 
 
 
@@ -622,35 +793,47 @@ body {
 	position: relative;
 }
 
+.tour-img {
+  object-fit: cover;
+}
+
+.info-responsive-tour-title {
+  float: none;
+}
+
 
 //  --- ツアー写真 ---
- .tour-images-width-laptop {
+.tour-images-width-laptop {
   display: none;
- }
+}
 
- .tour-images-width-phone {
+.tour-images-width-phone {
   display: block;
   margin: 0 auto;
-  height: 50px;
- }
+  height: 300px;
+  width: 80%;
+}
 
- #theTarget {
-   margin: 20px auto 0;
-   width: 80%;
- }
-
- .tour-link-title {
-   text-align: center;
- }
-
- .tour-link-info {
+.tour-link-title {
   text-align: center;
+}
+
+.tour-link-title {
+  text-align: center;
+}
+
+.tour-link-info {
+  text-align: center;
+}
+
+.tours-info-text h4 {
+  font-size: 20px;
 }
 
 
 
 //  --- ツアー情報 ---
- .tour-info-width-phone {
+.tour-info-width-phone {
   display: block;
 }
 
@@ -668,7 +851,7 @@ body {
 .tour-city-name {
   float: none;
   font-size: 20px;
-  padding-left: 70px;
+  padding: 10px 0 0 0;
   display: block;
   text-align: center;
 }
@@ -676,7 +859,7 @@ body {
 .tour-genre-name {
   float: none;
   font-size: 20px;
-  padding-left: 70px;
+  padding: 10px 0 0 0;
   display: block;
   text-align: center;
 }
@@ -691,16 +874,16 @@ body {
   text-align: center;
 }
 
- .guide-body-title{
+.guide-body-title{
   margin-left: 0;
   text-align: center;
-	opacity: 0;
+  opacity: 0;
   transform: translateX(-60px);
   transition: all 1s;
 }
 
 .order-btn{
-  margin: 30px auto 20px;
+  text-align: center;
   font-weight: bold;
 }
 
@@ -708,4 +891,13 @@ body {
 	margin: 30px 0 0 40px;
 }
 }
+
+
+
+
+
+
+
+
+
 
