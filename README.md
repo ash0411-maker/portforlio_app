@@ -2,6 +2,8 @@
 https://fantra.net/  
 かんたんログイン機能がありますので、新規登録・ログイン画面の「ゲストログイン」ボタンから閲覧できます。  
 
+![fantra (1)](https://user-images.githubusercontent.com/59913383/89490322-91196800-d7e7-11ea-95f2-3b75fd545397.gif)
+
 
 
 ## サイト概要
@@ -11,7 +13,7 @@ https://fantra.net/
 
 <img width="1440" alt="スクリーンショット 2020-07-31 14 37 51" src="https://user-images.githubusercontent.com/59913383/89003798-adc32500-d33b-11ea-9a80-a981491d7a41.png">
 
-<img width="1440" alt="スクリーンショット 2020-07-31 14 39 18" src="https://user-images.githubusercontent.com/59913383/89003805-b0be1580-d33b-11ea-8cca-b77c1d4e9523.png">
+<img width="1440" alt="スクリーンショット 2020-08-06 10 42 02" src="https://user-images.githubusercontent.com/59913383/89480918-894ec900-d7d1-11ea-95d6-e43627854204.png">
 
 
 
@@ -83,6 +85,7 @@ https://fantra.net/
    ・予約番号・ユーザー番号検索  
   
 ◆その他  
-  　・集合場所の住所をGoogleMapで表示（googlemap API、Geocoding API）  
-  　・テスト（Rsepc）
+  　・集合場所の住所をGoogleMapで表示（googlemap API、Geocoding API）   
+  　・スライドショー（slick）    
+  　・テスト（Rsepc）  
    
