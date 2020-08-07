@@ -745,7 +745,11 @@ body {
 
 .guide-hm-menu li {
 	float: none;
-	font-size: 20px;
+	font-size: 18px;
+}
+
+.guide-hm-menu li:first-child {
+	padding-top: 35px;
 }
 
 .header-city-search-phone-width {
