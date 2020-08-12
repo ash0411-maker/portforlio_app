@@ -17,18 +17,17 @@
 					<div class = "book-mark-tour-box">
 						<div class = "row">
 							<% @book_marks.each do |book_mark| %>
-								<div class = "col-md-4 col-xs-12 col-sm-12">
-									<div class = "book-mark-tour clearfix">
-										<% tour = Tour.find_by(id: book_mark.tour_id) %>
-										<%= attachment_image_tag book_mark.tour.tour_photos[0], :image, :fill, 300, 280, format: 'jpeg', class: "book-mark-tour-image" %>
-										<div class = "book-mark-tour-text">
-											<h4><%= book_mark.tour.city.name %></h4>
-											<h4><%= book_mark.tour.time %></h4>
+								<div class = "col-md-4 col-xs-12">
+									<%= link_to tourist_tourist_tour_path(current_tourist, book_mark.tour) do %>
+										<div class = "tours-info-box clearfix">
+											<%= attachment_image_tag book_mark.tour.tour_photos[0], :image, size: "300x280", format: 'jpeg', class: "tours-image" %>
+											<div class = "tours-info-text">
+												<h4><%= book_mark.tour.title %></h4>
+												<h4><%= book_mark.tour.city.name %></h4>
+												<h4>￥<%= number_with_delimiter(book_mark.tour.price) %></h4>
+											</div>
 										</div>
-										<div class = "book-mark-tour-link">
-											<h3><%= link_to "ツアー詳細へ", tourist_tourist_tour_path(current_tourist, book_mark.tour_id), class: "btn btn-default btn-warning" %></h3>
-										</div>
-									</div>
+									<% end %>
 								</div>
 							<% end %>
 						</div>
@@ -38,3 +37,5 @@
 		<% end %>
 	</div>
 </div>
+
+
