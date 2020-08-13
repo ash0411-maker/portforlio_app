@@ -48,7 +48,7 @@
                     <% end %>
                 <% elsif @order.status == "レビュー済み" %>
                     <h2>レビュー編集</br>（400文字以内）</h2>
-                    <%= form_for(@review, url: tourist_tourist_tour_review_path(current_tourist, @order.tour_id, @review, order_id: @order.id)) do |f| %>
+                    <%= form_for(@review, url: tourist_tourist_tour_review_path(current_tourist, @order.tour_id, @review, order_id: @order.id, review_id: @review.id)) do |f| %>
                         <%= f.text_area :comment, class: "review-text-field" %>
                         <%= f.submit  "レビュー投稿", class: "btn btn-success btn-lg" %>
                     <% end %>
