@@ -41,7 +41,7 @@ Rails.application.routes.draw do
     get 'searches/result'
     get 'contacts/thanks' => 'contacts#thanks', as: 'contact_thanks'
     resources :reviews, only: [:destroy]
-    resources :orders, only: %i[index show]
+    resources :orders, only: %i[index show update]
     resources :rooms, only: %i[index show destroy]
     resources :guides, only: %i[show index update destroy]
     resources :tourists, only: %i[show index update destroy]

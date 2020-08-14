@@ -70,6 +70,7 @@ GEM
     ast (2.4.1)
     autoprefixer-rails (9.8.4)
       execjs
+    awesome_print (1.8.0)
     aws-eventstream (1.1.0)
     aws-sdk (2.11.545)
       aws-sdk-resources (= 2.11.545)
@@ -344,6 +345,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   bootsnap (>= 1.4.2)
   bootstrap-sass
   byebug
