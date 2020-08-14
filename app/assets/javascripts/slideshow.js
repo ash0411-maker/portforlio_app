@@ -14,6 +14,7 @@ $(function() {
                     dots: false,
                     centerMode: false,
                     centerPadding: '100%',
+                    variableWidth: false
             }
             },
             {
@@ -23,9 +24,9 @@ $(function() {
                     dots: false,
                     centerMode: false,
                     centerPadding: '100%',
+                    variableWidth: false
                 }
             }
         ]
     });
 })
-
