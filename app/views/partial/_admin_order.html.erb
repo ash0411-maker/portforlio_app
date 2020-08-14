@@ -5,7 +5,16 @@
 				予約者：<strong><%= order.tourist.family_name %> <%= order.tourist.name %></strong> 様<br/>
 				ガイド：<strong><%= order.guide.family_name %> <%= order.guide.name %></strong> 様<br/>
 			</h2>
-			<h2>注文詳細画面</h2>
+			<h2>
+				予約ステータス
+			</h2>
+			<h3 class = "flash"><%= flash[:notice] %></h3>
+			<div>
+				<%= form_for(@order, url: admin_order_path(@order)) do |f| %>
+					<%= f.select :status, Order.statuses.keys.to_a, data: { confirm: "本当に更新しますか?" } %>
+					<%= f.submit "更新", class: "btn btn-warning" %>
+                <% end %>
+			</div>
 		</div>
 		<div class = "col-xs-2">
 			<div class = "admin_sales_box">
