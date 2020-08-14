@@ -5,15 +5,15 @@ $(function() {
         centerMode: true,
         centerPadding: '10%',
         autoplaySpeed: 2000,
+        variableWidth: true,
         responsive: [
             {
                 breakpoint: 992,
                 settings: {
                     fade: true,
                     dots: false,
-                    autoplay: true,
                     centerMode: false,
-                    centerPadding: '100%'
+                    centerPadding: '100%',
             }
             },
             {
@@ -21,9 +21,8 @@ $(function() {
                 settings: {
                     fade: true,
                     dots: false,
-                    autoplay: true,
                     centerMode: false,
-                    centerPadding: '100%'
+                    centerPadding: '100%',
                 }
             }
         ]
