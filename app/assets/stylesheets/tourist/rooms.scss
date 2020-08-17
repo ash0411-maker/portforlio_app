@@ -4,8 +4,14 @@
 
 
 .chat-index-box {
-  border: solid 3px gray;
-  height: 60px;
+  border-bottom: solid 4px black;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.chat-index-notice-ball {
+  position: absolute;
+  left: 10px;
 }
 
 .chat-index-box h4 {
@@ -57,9 +63,12 @@
 
 @media screen and (max-width:768px) {
   .chat-index-box {
-    border: solid 3px gray;
-    height: 90px;
     width: 100%;
+  }
+
+  .chat-index-notice-ball {
+    position: absolute;
+    left: 0px;
   }
 
   .chat-index-box h4 {

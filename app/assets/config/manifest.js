@@ -8,3 +8,4 @@
  //= link slideshow.js
  //= link slick.min.js
  //= link tourist_order.js
+ //= link application.css
