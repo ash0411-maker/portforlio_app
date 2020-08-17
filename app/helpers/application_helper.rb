@@ -7,27 +7,27 @@ module ApplicationHelper
 
   def unchecked_tourist_chat_notices
     rooms = current_tourist.rooms
-    notifications = []
+    notices = []
     rooms.each do |room|
       room.chats.each do |chat|
-        next if chat.is_tourist == true
+        next if chat.is_tourist
 
-        notifications << chat.chat_notices.where(checked: false, visited_id: current_tourist.id) unless chat.chat_notices.where(checked: false, visited_id: current_tourist.id).empty?
+        notices << chat.chat_notices.where(checked: false, visited_id: current_tourist.id) unless chat.chat_notices.where(checked: false, visited_id: current_tourist.id).empty?
       end
     end
-    notifications
+    notices
   end
 
   def unchecked_guide_chat_notices
     rooms = current_guide.rooms
-    notifications = []
+    notices = []
     rooms.each do |room|
       room.chats.each do |chat|
-        next if chat.is_tourist == false
+        next unless chat.is_tourist
 
-        notifications << chat.chat_notices.where(checked: false, visited_id: current_guide.id) unless chat.chat_notices.where(checked: false, visited_id: current_guide.id).empty?
+        notices << chat.chat_notices.where(checked: false, visited_id: current_guide.id) unless chat.chat_notices.where(checked: false, visited_id: current_guide.id).empty?
       end
     end
-    notifications
+    notices
   end
 end

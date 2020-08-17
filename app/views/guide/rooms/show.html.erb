@@ -4,9 +4,9 @@
 			<div class = "col-md-8 col-md-offset-1 col-xs-12">
 				<% if @room.chats.count == 0 %>
 					<h3>まだメッセージはありません。</h3>
-					<h3><%= @tourist.name %>さんとのチャットルーム</h3>
+					<%= render "tourist_name", room: @room, tourist: @tourist %>
 				<% else %>
-					<h3><%= @tourist.name %>さんとのチャットルーム</h3>
+					<%= render "tourist_name", room: @room, tourist: @tourist %>
 				<% end %>
 
 		<!------- メッセージ ------->
@@ -16,16 +16,18 @@
 				    <% unless chat.is_tourist %>
 					    <div class = "text-right bg-info">
 							<h4><%= current_guide.name %>さん</h4>
-					    	<h4 class = "chat"><%= chat.message %></h4>
-					    	<span class = "chat-time">（<%= chat.created_at.to_s(:datetime_jp) %>）</span>
+					    	<%= render "partial/chat_message_text", chat: chat %>
 					    </div>
 
         <!-- メッセージがtouristによるものだったら、メッセージを左に寄せる -->
 					<% else %>
 				    	<div class = "text-left bg-warning">
-							<h4><%= @tourist.name %>さん</h4>
-				    		<h4 class = "chat"><%= chat.message %></h4>
-				    		<span class = "chat-time">（<%= chat.created_at.to_s(:datetime_jp) %>）</span>
+							<% if @tourist.name.nil? %>
+                <h4>名無しさん</h4>
+              <% else %>
+							  	<h4><%= @tourist.name %>さん</h4>
+							<% end %>
+				    		<%= render "partial/chat_message_text", chat: chat %>
 				    	</div>
 				    <% end %>
 				  <% end %>

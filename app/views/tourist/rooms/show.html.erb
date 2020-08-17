@@ -8,24 +8,26 @@
 					<h3><%= @guide %>さんとのチャットルーム</h3>
 				<% end %>
 				<div class = "chat-field">
-          <% @chats.each do |chat| %>
-          <%# ------- メッセージがtouristによるものだったら、メッセージを右に寄せる -------- %>
-            <% if chat.is_tourist %>
-              <div class = "text-right  bg-info">
-                <h4><%= current_tourist.name %>さん</h4>
-                <h4 class = "chat"><%= chat.message %></h4>
-                <span class = "chat-time">（<%= chat.created_at.to_s(:datetime_jp) %>）</span>
-              </div>
+			<% @chats.each do |chat| %>
+			<%# ------- メッセージがtouristによるものだったら、メッセージを右に寄せる -------- %>
+				<% if chat.is_tourist %>
+				<div class = "text-right  bg-info">
+					<% if current_tourist.name.nil? or current_tourist.family_name.nil? %>
+						<h4>名無しさん</h4>
+					<% else %>
+						<h4><%= current_tourist.name %>さん</h4>
+					<% end %>
+					<%= render "partial/chat_message_text", chat: chat %>
+				</div>
 
-          <%# ------- メッセージがguideによるものだったら、メッセージを左に寄せる -------- %>
-            <% else %>
-              <div class = "text-left  bg-warning">
-                <h4><%= @guide %>さん</h4>
-                <h4 class = "chat"><%= chat.message %></h4>
-                <span class = "chat-time">（<%= chat.created_at.to_s(:datetime_jp) %>）</span>
-              </div>
-            <% end %>
-				  <% end %>
+			<%# ------- メッセージがguideによるものだったら、メッセージを左に寄せる -------- %>
+				<% else %>
+				<div class = "text-left  bg-warning">
+					<h4><%= @guide %>さん</h4>
+					<%= render "partial/chat_message_text", chat: chat %>
+				</div>
+				<% end %>
+					<% end %>
 				</div>
 			</div>
 		</div>
