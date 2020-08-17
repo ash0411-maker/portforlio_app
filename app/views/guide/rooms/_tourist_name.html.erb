@@ -1,0 +1,5 @@
+<% if room.tourist.family_name.nil? or room.tourist.name.nil? %>
+	<h3>名無しさんとのチャットルーム</h3>
+<% else %>
+	<h3><%= tourist.name %>さんとのチャットルーム</h3>
+<% end %>

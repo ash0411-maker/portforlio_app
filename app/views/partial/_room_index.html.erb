@@ -21,7 +21,11 @@
             <%= link_to guide_guide_room_path(current_guide, room) do %>
               <%= render "partial/room_chat_notice", room: room %>
               <div class = "col-md-4 col-xs-12">
-                <h4><%= room.guide.family_name %> <%= room.guide.name %>さん</h4>
+                <% if room.tourist.family_name.nil? or room.tourist.name.nil? %>
+                  <h4>名無しさん</h4>
+                <% else %>
+                  <h4><%= room.tourist.family_name %> <%= room.tourist.name %>さん</h4>
+                <% end %>
               </div>
               <%= render "partial/room_latest_chat", room: room %>
             <% end %>
