@@ -12,18 +12,12 @@
 			<%# ------- メッセージがtouristによるものだったら、メッセージを右に寄せる -------- %>
 				<% if chat.is_tourist %>
 				<div class = "text-right  bg-info">
-					<% if current_tourist.name.nil? or current_tourist.family_name.nil? %>
-						<h4>名無しさん</h4>
-					<% else %>
-						<h4><%= current_tourist.name %>さん</h4>
-					<% end %>
 					<%= render "partial/chat_message_text", chat: chat %>
 				</div>
 
 			<%# ------- メッセージがguideによるものだったら、メッセージを左に寄せる -------- %>
 				<% else %>
 				<div class = "text-left  bg-warning">
-					<h4><%= @guide %>さん</h4>
 					<%= render "partial/chat_message_text", chat: chat %>
 				</div>
 				<% end %>
