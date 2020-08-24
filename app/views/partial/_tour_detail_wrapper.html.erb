@@ -66,7 +66,8 @@
 					</div>
 				</div>
 			<%# ------- チャットルーム -------- %>
-				<% if tourist_signed_in? %>
+				<% if guide_signed_in? %>
+				<% elsif tourist_signed_in? %>
 					<div class = "chat-room-btn">
 						<% if guide_ids.include?(tour.guide.id) %>
 							<%= link_to "質問しましょう！", tourist_tourist_room_path(current_tourist, current_tourist.rooms.find_by(guide_id: tour.guide.id)), class: "btn btn-lg btn-warning" %>
