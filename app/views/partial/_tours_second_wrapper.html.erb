@@ -14,21 +14,21 @@
 						<%= news.guide.name %>さんが
 						<%= render 'partial/news_text', news: news %>
 						を更新しました
-						<span class = "news-created-at"><%= time_ago_in_words(news.created_at) %> 前</span>
+						<span class = "news-created-at"><%= time_ago_in_words(news.created_at) %>前</span>
 					</h2>
 				<% elsif news.action == "create" %>
 					<h2 class = "news-text">
 						<%= news.guide.name %>さんが
 						<%= render 'partial/news_text', news: news %>
 						を新しく始めました
-						<span class = "news-created-at"><%= time_ago_in_words(news.created_at) %> 前</span>
+						<span class = "news-created-at"><%= time_ago_in_words(news.created_at) %>前</span>
 					</h2>
 				<% elsif news.action == "review" %>
 					<h2 class = "news-text">
 						<%= news.tourist.name %>さんが
 						<%= render 'partial/news_text', news: news %>
 						のレビューをしました
-						<span class = "news-created-at"><%= time_ago_in_words(news.created_at) %> 前</span>
+						<span class = "news-created-at"><%= time_ago_in_words(news.created_at) %>前</span>
 					</h2>
 				<% end %>
 			<% end %>
