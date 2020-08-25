@@ -1,10 +1,74 @@
 <div class = "container">
 	<div class = "row">
-			<% if @genre %>
-				<h1 class = "col-md-4 col-md-offset-1 genre_name"><%= @genre.name %></h1>
-			<% else %>
-				<h1 class = "col-md-4 col-md-offset-1 genre_name"></h1>
+		<% if @genre %>
+			<h1 class = "col-md-4 col-md-offset-1 genre_name"><%= @genre.name %></h1>
+		<% else %>
+			<h1 class = "col-md-4 col-md-offset-1 genre_name"></h1>
+		<% end %>
+	</div>
+	<div class = "row">
+		<div class = "news-slick">
+			<% news.each do |news| %>
+				<% if news.action == "update" %>
+					<h2 class = "news-text">
+						<%= news.guide.name %>さんが
+						<% if tourist_signed_in? %>
+							<%= link_to tourist_tourist_tour_path(current_tourist, tour) do %>
+								<%= news.tour.title %>
+							<% end %>
+						<% elsif guide_signed_in? %>
+							<%= link_to guide_guide_tour_path(current_guide, tour) do %>
+								<%= news.tour.title %>
+							<% end %>
+						<% elsif admin_signed_in? %>
+						<% else %>
+							<%= link_to home_tour_path(news.tour) do %>
+								<%= news.tour.title %>
+							<% end %>
+						<% end %>
+						を更新しました。
+					</h2>
+				<% elsif news.action == "create" %>
+					<h2 class = "news-text">
+						<%= news.guide.name %>さんが
+						<% if tourist_signed_in? %>
+							<%= link_to tourist_tourist_tour_path(current_tourist, tour) do %>
+								<%= news.tour.title %>
+							<% end %>
+						<% elsif guide_signed_in? %>
+							<%= link_to guide_guide_tour_path(current_guide, tour) do %>
+								<%= news.tour.title %>
+							<% end %>
+						<% elsif admin_signed_in? %>
+						<% else %>
+							<%= link_to home_tour_path(news.tour) do %>
+								<%= news.tour.title %>
+							<% end %>
+						<% end %>
+						を新しく始めました。
+					</h2>
+				<% elsif news.action == "review" %>
+					<h2 class = "news-text">
+						<%= news.tourist.name %>さんが
+						<% if tourist_signed_in? %>
+							<%= link_to tourist_tourist_tour_path(current_tourist, news.tour) do %>
+								<%= news.tour.title %>
+							<% end %>
+						<% elsif guide_signed_in? %>
+							<%= link_to guide_guide_tour_path(current_guide, news.tour) do %>
+								<%= news.tour.title %>
+							<% end %>
+						<% elsif admin_signed_in? %>
+						<% else %>
+							<%= link_to home_tour_path(news.tour) do %>
+								<%= news.tour.title %>
+							<% end %>
+						<% end %>
+						のレビューをしました。
+					</h2>
+				<% end %>
 			<% end %>
+		</div>
 	</div>
 	<div class = "row">
 	<%# ----- ツアー写真一覧 ----- %>
@@ -37,3 +101,5 @@
 	</div>
 	<%= paginate tours, class: "paginate" %>
 </div>
+
+<%= javascript_include_tag 'news_slick.js' %>

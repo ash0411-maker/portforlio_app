@@ -6,11 +6,12 @@ class Guide < ApplicationRecord
   acts_as_paranoid
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+        :recoverable, :rememberable, :validatable
 
   has_many :orders, dependent: :destroy
   has_many :rooms, dependent: :destroy
   has_many :tours, dependent: :destroy
+  has_many :news, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_many :guide_active_notices, class_name: 'ChatNotice', foreign_key: 'visitor_id', dependent: :destroy
   has_many :guide_passive_notices, class_name: 'ChatNotice', foreign_key: 'visited_id', dependent: :destroy
