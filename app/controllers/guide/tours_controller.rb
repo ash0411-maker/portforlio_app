@@ -13,6 +13,7 @@ class Guide::ToursController < ApplicationController
 
   def index
     @genres = Genre.all
+    @news = News.first(7)
     if params[:genre_id]
       @genre = Genre.find(params[:genre_id])
       @tours = @genre.tours.order(created_at: :desc).page(params[:page]).per(9)
@@ -36,6 +37,7 @@ class Guide::ToursController < ApplicationController
     @tour = Tour.new(tour_params)
     @tour.guide_id = current_guide.id
     if @tour.save
+      news_params(@tour.id, @tour.guide.id, "create")
       redirect_to guide_guide_tour_path(current_guide, @tour)
     else
       render 'new'
@@ -49,6 +51,7 @@ class Guide::ToursController < ApplicationController
   def update
     @tour = Tour.find(params[:id])
     if @tour.update(tour_params)
+      news_params(@tour.id, @tour.guide.id, "update")
       redirect_to guide_guide_tour_path(current_guide, @tour)
     else
       render 'edit'
@@ -66,7 +69,16 @@ class Guide::ToursController < ApplicationController
 
   def tour_params
     params.require(:tour).permit(:genre_id, :city_id, :title, :body, :capacity, :time, :price,
-                                 :contents_of_price, :meetingpoint_address, :meetingpoint_introduction, :is_active, tour_photos_attributes: %i[id image tour_id _destroy])
+      :contents_of_price, :meetingpoint_address, :meetingpoint_introduction, :is_active, tour_photos_attributes: %i[id image tour_id _destroy])
+  end
+
+  def news_params(tour_id, guide_id, action)
+    news = News.new(
+      tour_id: tour_id,
+      guide_id: guide_id,
+      action: action
+    )
+    news.save
   end
 
   def correct_guide

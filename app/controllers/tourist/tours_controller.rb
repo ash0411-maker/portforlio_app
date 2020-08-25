@@ -6,6 +6,7 @@ class Tourist::ToursController < ApplicationController
 
   def index
     @genres = Genre.all
+    @news = News.first(7)
     if params[:genre_id]
       @genre = Genre.find(params[:genre_id])
       @tours = @genre.tours.order(created_at: :desc).page(params[:page]).per(9)
@@ -21,9 +22,9 @@ class Tourist::ToursController < ApplicationController
 
     # チャット相手のidを入れる。
     rooms = current_tourist.rooms
-    @guide_ids = []
+    @chat_guide_ids = []
     rooms.each do |room|
-      @guide_ids << room.guide_id
+      @chat_guide_ids << room.guide_id
     end
   end
 

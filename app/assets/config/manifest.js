@@ -7,5 +7,6 @@
  //= link tour_show.js
  //= link slideshow.js
  //= link slick.min.js
+ //= link news_slick.js
  //= link tourist_order.js
  //= link application.css

@@ -10,6 +10,7 @@ class Tourist < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :orders
+  has_many :news, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :rooms, dependent: :destroy
