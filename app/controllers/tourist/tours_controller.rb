@@ -6,7 +6,7 @@ class Tourist::ToursController < ApplicationController
 
   def index
     @genres = Genre.all
-    @news = News.first(8)
+    @news = News.first(7)
     if params[:genre_id]
       @genre = Genre.find(params[:genre_id])
       @tours = @genre.tours.order(created_at: :desc).page(params[:page]).per(9)
