@@ -12,59 +12,23 @@
 				<% if news.action == "update" %>
 					<h2 class = "news-text">
 						<%= news.guide.name %>さんが
-						<% if tourist_signed_in? %>
-							<%= link_to tourist_tourist_tour_path(current_tourist, news.tour) do %>
-								<%= news.tour.title %>
-							<% end %>
-						<% elsif guide_signed_in? %>
-							<%= link_to guide_guide_tour_path(current_guide, news.tour) do %>
-								<%= news.tour.title %>
-							<% end %>
-						<% elsif admin_signed_in? %>
-						<% else %>
-							<%= link_to home_tour_path(news.tour) do %>
-								<%= news.tour.title %>
-							<% end %>
-						<% end %>
-						を更新しました。
+						<%= render 'partial/news_text', news: news %>
+						を更新しました
+						<span class = "news-created-at"><%= time_ago_in_words(news.created_at) %> 前</span>
 					</h2>
 				<% elsif news.action == "create" %>
 					<h2 class = "news-text">
 						<%= news.guide.name %>さんが
-						<% if tourist_signed_in? %>
-							<%= link_to tourist_tourist_tour_path(current_tourist, news.tour) do %>
-								<%= news.tour.title %>
-							<% end %>
-						<% elsif guide_signed_in? %>
-							<%= link_to guide_guide_tour_path(current_guide, news.tour) do %>
-								<%= news.tour.title %>
-							<% end %>
-						<% elsif admin_signed_in? %>
-						<% else %>
-							<%= link_to home_tour_path(news.tour) do %>
-								<%= news.tour.title %>
-							<% end %>
-						<% end %>
-						を新しく始めました。
+						<%= render 'partial/news_text', news: news %>
+						を新しく始めました
+						<span class = "news-created-at"><%= time_ago_in_words(news.created_at) %> 前</span>
 					</h2>
 				<% elsif news.action == "review" %>
 					<h2 class = "news-text">
 						<%= news.tourist.name %>さんが
-						<% if tourist_signed_in? %>
-							<%= link_to tourist_tourist_tour_path(current_tourist, news.tour) do %>
-								<%= news.tour.title %>
-							<% end %>
-						<% elsif guide_signed_in? %>
-							<%= link_to guide_guide_tour_path(current_guide, news.tour) do %>
-								<%= news.tour.title %>
-							<% end %>
-						<% elsif admin_signed_in? %>
-						<% else %>
-							<%= link_to home_tour_path(news.tour) do %>
-								<%= news.tour.title %>
-							<% end %>
-						<% end %>
-						のレビューをしました。
+						<%= render 'partial/news_text', news: news %>
+						のレビューをしました
+						<span class = "news-created-at"><%= time_ago_in_words(news.created_at) %> 前</span>
 					</h2>
 				<% end %>
 			<% end %>

@@ -1,0 +1,14 @@
+<% if tourist_signed_in? %>
+	<%= link_to tourist_tourist_tour_path(current_tourist, news.tour) do %>
+		<%= news.tour.title %>
+	<% end %>
+<% elsif guide_signed_in? %>
+	<%= link_to guide_guide_tour_path(current_guide, news.tour) do %>
+		<%= news.tour.title %>
+	<% end %>
+<% elsif admin_signed_in? %>
+<% else %>
+	<%= link_to home_tour_path(news.tour) do %>
+		<%= news.tour.title %>
+	<% end %>
+<% end %>
