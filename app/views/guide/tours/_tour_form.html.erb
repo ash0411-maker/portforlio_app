@@ -2,7 +2,8 @@
   <div class = "col-md-7 col-xs-12">
     <div class = "guide-tour-info-text">
       <h4>ツアーの題名（20文字以内）</h4>
-      <%= f.text_field :title, class: "guide-tour-text-field" %>
+      <%= f.text_field :title, class: "guide-tour-text-field guide-tour-title-text-field" %>
+      <div class="guide-tour-text-field-count"></div>
     </div>
     <div class = "guide-tour-info-text">
       <h4>ジャンル</h4>
@@ -38,13 +39,15 @@
     </div>
     <div class = "guide-tour-info-text">
       <h4>集合場所の詳細説明(400文字以内）</h4>
-      <%= f.text_area :meetingpoint_introduction, class: "guide-tour-text-area",
-					placeholder: "集合場所の説明・詳細を入力しましょう！この土地は平安時代より貴族や天皇の行楽地として使われいました。現在でも歴史風土保存地区として保存されております。そんな場所にある広沢池にある観音様の前で集合します。この辺りで	目立つ人工物はこれしかありませんので、目立った物があれば集合場所と思ってもらって構いません。" %>
+      <%= f.text_area :meetingpoint_introduction, class: "guide-tour-text-area meeting-point-text-area",
+					placeholder: "集合場所の説明・詳細を入力しましょう！この土地は平安時代より貴族や天皇の行楽地として使われいました。現在でも歴史風土保存地区として保存されております。そんな場所にある広沢池にある観音様の前で集合します。この辺りで目立つ人工物はこれしかありませんので、目立った物があれば集合場所と思ってもらって構いません。" %>
+      <div class="meeting-point-text-area-count"></div>
     </div>
     <div class = "guide-tour-info-text">
       <h4>ツアー内容の説明(800文字以内）</h4>
-      <%= f.text_area :body, class: "guide-tour-text-area",
-					placeholder: "旅程や行うアクティビティーの説明を入力しましょう！あなたのツアーにはどんな魅力がありますか？このツアーをなぜやりたいのか、思いなどを書いて観光客に新たな経験をプレゼントしてあげましょう。他にあなたのツアーでは何を	するのか説明をして何をするのか明確にした上で観光客を喜ばせましょう。時にはツアー説明に乗っていないサプライズをするのもいいかも？ツアーガイドという経験を提供する仕事を楽しんでください。" %>
+      <%= f.text_area :body, class: "guide-tour-text-area tour-info-text-area",
+					placeholder: "旅程や行うアクティビティーの説明を入力しましょう！あなたのツアーにはどんな魅力がありますか？このツアーをなぜやりたいのか、思いなどを書いて観光客に新たな経験をプレゼントしてあげましょう。他にあなたのツアーでは何をするのか説明をして何をするのか明確にした上で観光客を喜ばせましょう。時にはツアー説明に乗っていないサプライズをするのもいいかも？ツアーガイドという経験を提供する仕事を楽しんでください。" %>
+      <div class="tour-info-text-area-count"></div>
     </div>
   </div>
   <div class = "col-md-3 col-xs-12">
