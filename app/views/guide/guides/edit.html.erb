@@ -61,7 +61,8 @@
           </div>
           <div class = "guide-info-text">
             <h4>自己紹介（400文字）</h4>
-            <%= f.text_area :introduction, class: "guide-edit-text-area" %>
+            <%= f.text_area :introduction, class: "GuideEditTextArea" %>
+            <div class="GuideEditTextAreaCount"></div>
             <%= f.submit  "編集", class: "btn btn-success btn-lg guide-edit-btn", data: {confirm:'こちらの内容で更新しますか？'} %>
           </div>
         </div>
@@ -69,3 +70,5 @@
     <% end %>
   </div>
 </div>
+
+<%= javascript_include_tag 'guide_edit_text.js' %>

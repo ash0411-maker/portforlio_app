@@ -10,3 +10,4 @@
  //= link news_slick.js
  //= link tourist_order.js
  //= link application.css
+ //= link guide_edit_text.js
