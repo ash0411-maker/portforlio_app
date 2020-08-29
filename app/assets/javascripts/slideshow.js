@@ -1,5 +1,5 @@
 $(function() {
-    $('.slick-box').slick({
+    $('.slick-box').not('.slick-initialized').slick({
         dots: true,
         autoplay: true,
         centerMode: true,
