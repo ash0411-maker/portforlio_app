@@ -1,7 +1,7 @@
 $(function() {
     $('.order-tab li').click(function() {
         console.log("hello");
-        var index = $('.order-tab li').index(this);
+        let index = $('.order-tab li').index(this);
         $('.order-tab li').removeClass('order-active');
         $(this).addClass('order-active');
         if (index == 0) {
