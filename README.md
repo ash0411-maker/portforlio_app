@@ -23,7 +23,7 @@ https://fantra.net/
 ## 使用技術
 ・MySQL  
 ・nginx,puma  
-・Javascript・jQuery
+・Javascript・jQuery  
 ・Ruby 2.6.6, Rails 6.0.3.2  
 ・CircleCi（テスト・デプロイ）  
 ・RSpec（テストフレームワーク）  
