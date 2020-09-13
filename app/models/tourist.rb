@@ -7,7 +7,7 @@ class Tourist < ApplicationRecord
   acts_as_paranoid
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+        :recoverable, :rememberable, :validatable
 
   has_many :orders
   has_many :news, dependent: :destroy
