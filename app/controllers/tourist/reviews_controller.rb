@@ -14,7 +14,7 @@ class Tourist::ReviewsController < ApplicationController
       # -------- 通知機能（レビューコメント）--------
       save_review_notification(review.id, @tour.guide.id, @tour.id)
       # -------- 通知機能（レビューコメント）--------
-      news_params(order.tour_id, current_tourist.id, "review")
+      news_params(order.tour_id, current_tourist.id, 'review')
       redirect_to tourist_tourist_tour_path(current_tourist, @tour)
     else
       flash[:notice] = 'レビューコメントを正しく入力してください'
@@ -28,7 +28,7 @@ class Tourist::ReviewsController < ApplicationController
     order = Order.find(params[:order_id])
     tour = Tour.find(params[:tour_id])
     if review.update(review_params)
-      news_params(order.tour_id, current_tourist.id, "review")
+      news_params(order.tour_id, current_tourist.id, 'review')
       redirect_to tourist_tourist_tour_path(current_tourist, tour)
     else
       flash[:notice] = 'レビューコメントを正しく入力してください'
