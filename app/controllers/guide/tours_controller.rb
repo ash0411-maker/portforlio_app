@@ -73,12 +73,11 @@ class Guide::ToursController < ApplicationController
   end
 
   def news_params(tour_id, guide_id, action)
-    news = News.new(
+    news = News.create(
       tour_id: tour_id,
       guide_id: guide_id,
       action: action
     )
-    news.save
   end
 
   def correct_guide
