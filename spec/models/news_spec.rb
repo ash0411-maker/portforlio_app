@@ -3,6 +3,16 @@
 require 'rails_helper'
 
 RSpec.describe News, type: :model do
+  let(:news) { create(:news) }
+
+  describe 'News保存のテスト' do
+    context 'newsが正しく保存される' do
+      it '全て入力されているので保存' do
+        expect(news).to be_valid
+      end
+    end
+  end
+
   describe 'newsアソシエーションのテスト' do
     context 'guideモデルとの関係' do
       it 'N:1となっている' do
