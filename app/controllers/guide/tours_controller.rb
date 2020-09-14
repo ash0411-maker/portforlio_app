@@ -37,7 +37,7 @@ class Guide::ToursController < ApplicationController
     @tour = Tour.new(tour_params)
     @tour.guide_id = current_guide.id
     if @tour.save
-      news_params(@tour.id, @tour.guide.id, 'create')
+      news_create(@tour.id, @tour.guide.id, 'create')
       redirect_to guide_guide_tour_path(current_guide, @tour)
     else
       render 'new'
@@ -51,7 +51,7 @@ class Guide::ToursController < ApplicationController
   def update
     @tour = Tour.find(params[:id])
     if @tour.update(tour_params)
-      news_params(@tour.id, @tour.guide.id, 'update')
+      news_create(@tour.id, @tour.guide.id, 'update')
       redirect_to guide_guide_tour_path(current_guide, @tour)
     else
       render 'edit'
@@ -72,7 +72,7 @@ class Guide::ToursController < ApplicationController
                                 :contents_of_price, :meetingpoint_address, :meetingpoint_introduction, :is_active, tour_photos_attributes: %i[id image tour_id _destroy])
   end
 
-  def news_params(tour_id, guide_id, action)
+  def news_create(tour_id, guide_id, action)
     news = News.create(
       tour_id: tour_id,
       guide_id: guide_id,
