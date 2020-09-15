@@ -16,14 +16,12 @@ module ApplicationHelper
   end
 
   def unchecked_guide_chat_notices
-    rooms = current_guide.rooms
+    chats = current_guide.chats
     notices = []
-    rooms.each do |room|
-      room.chats.each do |chat|
-        next unless chat.is_tourist
+    chats.each do |chat|
+      next unless chat.is_tourist
 
-        notices << chat.chat_notices.where(checked: false, visited_id: current_guide.id) unless chat.chat_notices.where(checked: false, visited_id: current_guide.id).empty?
-      end
+      notices << chat.chat_notices.where(checked: false, visited_id: current_guide.id) unless chat.chat_notices.where(checked: false, visited_id: current_guide.id).empty?
     end
     notices
   end

@@ -17,6 +17,7 @@ class Guide::ChatsController < ApplicationController
       flash[:warning] = 'メッセージを入力してください'
       redirect_to guide_guide_room_path(current_guide, @room)
     end
+    binding.pry
   end
 
   private
