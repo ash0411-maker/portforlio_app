@@ -10,6 +10,8 @@ class Tourist::ChatsController < ApplicationController
     # メッセージがtouristによるものだったらis_tourist = true, guideによるものだったらis_tourist = false
     @chat.is_tourist = true
     @chat.room_id = @room.id
+    @chat.tourist_id = current_tourist.id
+    @chat.guide_id = @room.guide_id
     if @chat.save
       save_chat_notice!(@chat.id, @room.guide.id)
       redirect_to tourist_tourist_room_path(current_tourist, @room)

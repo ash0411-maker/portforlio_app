@@ -11,20 +11,20 @@
 
 		<!------- メッセージ ------->
 				<div class = "chat-field">
-				  <% @chats.each do |chat| %>
-				<!-- メッセージがguideだったら、メッセージを右に寄せる -->
-				    <% unless chat.is_tourist %>
-					    <div class = "text-right bg-info">
-					    	<%= render "partial/chat_message_text", chat: chat %>
-					    </div>
+					<% @chats.each do |chat| %>
+					<!-- メッセージがguideだったら、メッセージを右に寄せる -->
+						<% unless chat.is_tourist %>
+							<div class = "text-right bg-info">
+								<%= render "partial/chat_message_text", chat: chat %>
+							</div>
 
-        <!-- メッセージがtouristによるものだったら、メッセージを左に寄せる -->
-					<% else %>
-				    	<div class = "text-left bg-warning">
-				    		<%= render "partial/chat_message_text", chat: chat %>
-				    	</div>
-				    <% end %>
-				  <% end %>
+					<!-- メッセージがtouristによるものだったら、メッセージを左に寄せる -->
+						<% else %>
+							<div class = "text-left bg-warning">
+								<%= render "partial/chat_message_text", chat: chat %>
+							</div>
+						<% end %>
+					<% end %>
 				</div>
 			</div>
 		</div>
