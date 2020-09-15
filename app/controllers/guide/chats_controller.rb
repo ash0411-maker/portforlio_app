@@ -10,6 +10,8 @@ class Guide::ChatsController < ApplicationController
     # メッセージがguideによるものだったらis_tourist = false
     @chat.is_tourist = false
     @chat.room_id = @room.id
+    @chat.tourist_id = @room.tourist_id
+    @chat.guide_id = current_guide.id
     if @chat.save
       save_chat_notice!(@chat.id, @room.tourist.id)
       redirect_to guide_guide_room_path(current_guide, @room)
@@ -17,7 +19,6 @@ class Guide::ChatsController < ApplicationController
       flash[:warning] = 'メッセージを入力してください'
       redirect_to guide_guide_room_path(current_guide, @room)
     end
-    binding.pry
   end
 
   private
