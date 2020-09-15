@@ -6,14 +6,11 @@ module ApplicationHelper
   end
 
   def unchecked_tourist_chat_notices
-    rooms = current_tourist.rooms
+    chats = current_tourist.chats
     notices = []
-    rooms.each do |room|
-      room.chats.each do |chat|
-        next if chat.is_tourist
-
-        notices << chat.chat_notices.where(checked: false, visited_id: current_tourist.id) unless chat.chat_notices.where(checked: false, visited_id: current_tourist.id).empty?
-      end
+    chats.each do |chat|
+      next if chat.is_tourist
+      notices << chat.chat_notices.where(checked: false, visited_id: current_tourist.id) unless chat.chat_notices.where(checked: false, visited_id: current_tourist.id).empty?
     end
     notices
   end
