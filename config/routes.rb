@@ -77,7 +77,7 @@ Rails.application.routes.draw do
     resources :tourists, only: %i[edit update destroy] do
       get 'searches/city'
       get 'orders/confirm' => 'orders#confirm', as: 'order_confirm'
-      get 'book_marks/index' => 'book_marks#index', as: 'book_marks'
+      get 'book_marks' => 'book_marks#index', as: 'book_marks'
       get 'tourists/delete' => 'tourists#delete', as: 'tourist_delete'
       get 'tourists/cannnot_delete' => 'tourists#cannot_delete', as: 'cannot_tourist_delete'
       resources :chat_notices, only: %i[index]
