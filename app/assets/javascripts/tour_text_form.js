@@ -3,22 +3,21 @@ $(function (){
     console.log(count);
     //残りの入力できる文字数を計算
     let now_count = 20 - count;
-    console.log(now_count);
     //残りの入力できる文字数を表示
     $(".guide-tour-text-field-count").text( "残り" + now_count + "文字");
 
     $(".guide-tour-title-text-field").on("keyup", function() {
-        let KeyUpCount = $(this).val().length;
-        let KeyUpNowCount = 20 - KeyUpCount;
+        let count = $(this).val().length;
+        let now_count = 20 - count;
 
-        if (keyUpCount > 20) {
+        if (count > 20) {
             $(".guide-tour-text-field-count").css("color","red");
             $(".guide-tour-title-text-field").css("background-color","red");
         } else {
             $(".guide-tour-text-field-count").css("color","black");
             $(".guide-tour-title-text-field").css("background-color","white");
         }
-        $(".guide-tour-text-field-count").text( "残り" + KeyUpNowCount + "文字");
+        $(".guide-tour-text-field-count").text( "残り" + now_count + "文字");
     });
 });
 
