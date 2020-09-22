@@ -2,10 +2,10 @@
 
 class Guide::ToursController < ApplicationController
   before_action :authenticate_guide!
+  before_action :set_tour, only: %i[show edit update destroy]
   before_action :correct_guide, only: %i[index show new create edit update destroy]
 
   def show
-    @tour = Tour.find(params[:id])
     @tour_photos = @tour.tour_photos
     @reviews = @tour.reviews
     @book_marks = @tour.book_marks
@@ -45,11 +45,9 @@ class Guide::ToursController < ApplicationController
   end
 
   def edit
-    @tour = Tour.find(params[:id])
   end
 
   def update
-    @tour = Tour.find(params[:id])
     if @tour.update(tour_params)
       news_create(@tour.id, @tour.guide.id, 'update')
       redirect_to guide_guide_tour_path(current_guide, @tour)
@@ -59,7 +57,6 @@ class Guide::ToursController < ApplicationController
   end
 
   def destroy
-    @tour = Tour.find(params[:id])
     @tour.destroy
     flash[:notice] = 'ツアーを削除しました。'
     redirect_to guide_guide_path(current_guide)
@@ -83,5 +80,9 @@ class Guide::ToursController < ApplicationController
   def correct_guide
     guide = Guide.find(params[:guide_id])
     redirect_to guide_guide_path(current_guide) if current_guide != guide
+  end
+
+  def set_tour
+    @tour = Tour.find(params[:id])
   end
 end

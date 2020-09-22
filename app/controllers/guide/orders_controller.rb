@@ -2,6 +2,7 @@
 
 class Guide::OrdersController < ApplicationController
   before_action :authenticate_guide!
+  before_action :set_order, only: %i[show update]
   before_action :correct_guide, only: %i[index show update]
 
   def index
@@ -25,12 +26,10 @@ class Guide::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
     @tour = Tour.find_by(id: @order.tour_id)
   end
 
   def update
-    @order = Order.find(params[:id])
     if @order.update(order_params)
       flash[:notice] = '予約ステータスを更新しました'
       redirect_to guide_guide_orders_path(current_guide, order_status: 'just_in_orders')
@@ -41,6 +40,10 @@ class Guide::OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:status)
+  end
+
+  def set_order
+    @order = Order.find(params[:id])
   end
 
   def correct_guide
