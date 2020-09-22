@@ -2,6 +2,7 @@
 
 class Tourist::OrdersController < ApplicationController
   before_action :authenticate_tourist!
+  before_action :set_order, only: %i[]
   before_action :correct_tourist, only: %i[new confirm create destroy index]
 
   def index
@@ -9,7 +10,6 @@ class Tourist::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
     rooms = current_tourist.rooms
     @review_new = current_tourist.reviews.new
     @review = Review.find_by(tourist_id: current_tourist, tour_id: @order.tour_id)
@@ -49,7 +49,6 @@ class Tourist::OrdersController < ApplicationController
   end
 
   def destroy
-    @order = Order.find(params[:id])
     @tourist = @order.tourist
     if @order.status == 'ツアー開始前'
       @order.destroy
@@ -67,6 +66,10 @@ class Tourist::OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:tour_date, :tourist_id, :tour_id, :guide_id, :tour_title, :tour_body, :tour_price, :tour_contents_of_price, :tour_capacity, :total_people, :total_price, :tour_time, :tour_city, :admin_sales, :guide_sales, :tour_genre, :tour_price)
+  end
+
+  def set_order
+    @order = Order.find(params[:id])
   end
 
   def correct_tourist
