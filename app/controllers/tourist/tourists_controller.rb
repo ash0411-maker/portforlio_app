@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 
 class Tourist::TouristsController < ApplicationController
+  before_action :set_tourist, only: %i[edit update destroy]
   before_action :authenticate_tourist!, only: %i[edit update destroy]
   before_action :correct_tourist, only: %i[edit update destroy]
 
   def edit
-    @tourist = Tourist.find(params[:id])
   end
 
   def update
-    @tourist = Tourist.find(params[:id])
     if @tourist.update(tourist_params)
       redirect_to edit_tourist_tourist_path(@tourist)
       flash[:notice] = '個人情報を更新しました。'
@@ -19,7 +18,6 @@ class Tourist::TouristsController < ApplicationController
   end
 
   def destroy
-    @tourist = Tourist.find(params[:id])
     if @tourist.id == 1
       redirect_to tourist_tourist_cannot_tourist_delete_path(current_tourist)
     else
@@ -34,6 +32,10 @@ class Tourist::TouristsController < ApplicationController
 
   def tourist_params
     params.require(:tourist).permit(:family_name, :name, :nationality, :birth_year, :address, :postal_code, :email, :phone_number, :sex)
+  end
+
+  def set_tourist
+    @tourist = Tourist.find(params[:id])
   end
 
   def correct_tourist
