@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'GuideGuide', type: :system, js: true do
   let(:news) { create(:news) }
-  let(:another_news) { News.create(tour_id: 1, guide_id: 1, action: "") }
+  let(:another_news) { News.create(tour_id: 1, guide_id: 1, action: '') }
 
   describe 'News' do
     context 'Newsのデータ登録' do

@@ -5,6 +5,6 @@ FactoryBot.define do
     association :tour
     association :tourist
     association :guide
-    action { "update" }
+    action { 'update' }
   end
 end

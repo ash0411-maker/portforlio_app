@@ -10,6 +10,7 @@ module ApplicationHelper
     notices = []
     chats.each do |chat|
       next if chat.is_tourist
+
       notices << chat.chat_notices.where(checked: false, visited_id: current_tourist.id) unless chat.chat_notices.where(checked: false, visited_id: current_tourist.id).empty?
     end
     notices

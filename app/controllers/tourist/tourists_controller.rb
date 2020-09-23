@@ -5,8 +5,7 @@ class Tourist::TouristsController < ApplicationController
   before_action :authenticate_tourist!, only: %i[edit update destroy]
   before_action :correct_tourist, only: %i[edit update destroy]
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @tourist.update(tourist_params)
