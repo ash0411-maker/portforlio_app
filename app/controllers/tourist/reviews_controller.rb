@@ -43,7 +43,7 @@ class Tourist::ReviewsController < ApplicationController
   end
 
   def news_create(tour_id, tourist_id, action)
-    news = News.create(
+    News.create(
       tour_id: tour_id,
       tourist_id: tourist_id,
       action: action

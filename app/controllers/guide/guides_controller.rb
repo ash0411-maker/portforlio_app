@@ -9,9 +9,6 @@ class Guide::GuidesController < ApplicationController
     @tours = @guide.tours
   end
 
-  def edit
-  end
-
   def update
     if @guide.update(guide_params)
       redirect_to guide_guide_path(@guide)
@@ -28,6 +25,8 @@ class Guide::GuidesController < ApplicationController
       redirect_to guide_thanks_path
     end
   end
+
+  def edit; end
 
   def to_guide_edit; end
 
