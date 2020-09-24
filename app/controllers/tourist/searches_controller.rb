@@ -7,6 +7,7 @@ class Tourist::SearchesController < ApplicationController
     if params['search']['city']
       @city = params['search']['city']
       city_search_result = City.match(@city)
+      @news = News.first(7)
       if @city == ''
         @city_tours = Tour.all.page(params[:page]).per(9)
         @genres = Genre.all
