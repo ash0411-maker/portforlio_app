@@ -2,7 +2,7 @@
 
 class Tourist::OrdersController < ApplicationController
   before_action :authenticate_tourist!
-  before_action :set_order, only: %i[]
+  before_action :set_order, only: %i[show]
   before_action :correct_tourist, only: %i[new confirm create destroy index]
 
   def index
