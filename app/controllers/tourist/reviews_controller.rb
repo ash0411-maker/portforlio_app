@@ -15,6 +15,7 @@ class Tourist::ReviewsController < ApplicationController
       save_review_notification(review.id, @tour.guide.id, @tour.id)
       # -------- 通知機能（レビューコメント）--------
       news_create(order.tour_id, current_tourist.id, 'review')
+      destroy_oldest_news
       redirect_to tourist_tourist_tour_path(current_tourist, @tour)
     else
       flash[:notice] = 'レビューコメントを正しく入力してください'
@@ -29,6 +30,7 @@ class Tourist::ReviewsController < ApplicationController
     tour = Tour.find(params[:tour_id])
     if review.update(review_params)
       news_create(order.tour_id, current_tourist.id, 'review')
+      destroy_oldest_news
       redirect_to tourist_tourist_tour_path(current_tourist, tour)
     else
       flash[:notice] = 'レビューコメントを正しく入力してください'
@@ -53,6 +55,14 @@ class Tourist::ReviewsController < ApplicationController
   def correct_tourist
     tourist = Tourist.find(params[:tourist_id])
     redirect_to eidt_tourist_tourist_path(current_tourist) if current_tourist != tourist
+  end
+
+  def destroy_oldest_news
+    news = News.all
+    if news.count > 7
+      n = news.last
+      n.destroy
+    end
   end
 
   # -------- 通知機能（レビューコメント）--------
