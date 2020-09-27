@@ -22,4 +22,8 @@ class Tourist < ApplicationRecord
   def self.match(model, tourist_id)
     Tourist.find_by(id: tourist_id) if model == 'tourist'
   end
+
+  def full_name
+    "#{family_name} #{name}"
+  end
 end
