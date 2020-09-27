@@ -25,4 +25,8 @@ class Guide < ApplicationRecord
   def self.match(model, guide_id)
     Guide.find_by(id: guide_id) if model == 'guide'
   end
+
+  def full_name
+    "#{family_name} #{name}"
+  end
 end
