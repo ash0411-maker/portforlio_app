@@ -22,7 +22,9 @@ class Tourist::OrdersController < ApplicationController
   def new
     @tour = Tour.find_by(id: params[:tour_id])
     @tourist = Tourist.find_by(id: params[:tourist_id])
-    redirect_to edit_tourist_tourist_path(current_tourist) if @tourist.name.blank? || @tourist.family_name.blank? || @tourist.sex.blank? || @tourist.birth_year.blank? || @tourist.nationality.blank? || @tourist.phone_number.blank? || @tourist.address.blank? || @tourist.postal_code.blank?
+
+    #個人情報が入力できていなければ、個人編集画面へ遷移
+    redirect_to edit_tourist_tourist_path(current_tourist) if current_tourist.tourist_info_not_filled
     @order = Order.new
   end
 
