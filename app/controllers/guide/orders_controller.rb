@@ -51,21 +51,18 @@ class Guide::OrdersController < ApplicationController
     redirect_to guide_guide_path(current_guide) if current_guide != guide
   end
 
-  def order_status_params(order_status_params)
-    if order_status_params == 'just_in_orders'
-      @order_status = 'just_in_orders'
+  def order_status_params(order_status)
+    @order_status = order_status
+    case @order_status
+    when 'just_in_orders'
       @just_in_orders = current_guide.orders.where(created_at: Time.zone.now.all_day)
-    elsif order_status_params == 'current_orders'
-      @order_status = 'current_orders'
+    when 'current_orders'
       @current_orders = current_guide.orders.where(status: 'ツアー開始前')
-    elsif order_status_params == 'day_before_orders'
-      @order_status = 'day_before_orders'
+    when 'day_before_orders'
       @day_before_orders = current_guide.orders.where(status: 'ツアー前日')
-    elsif  order_status_params == 'the_day_orders'
-      @order_status = 'the_day_orders'
+    when 'the_day_orders'
       @the_day_orders = current_guide.orders.where(status: 'ツアー当日')
-    elsif  order_status_params == 'finished_orders'
-      @order_status = 'finished_orders'
+    when 'finished_orders'
       @finished_orders = current_guide.orders.where(status: 'ツアー終了')
       @reviewed_orders = current_guide.orders.where(status: 'レビュー済み')
     end
