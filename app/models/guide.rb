@@ -29,4 +29,10 @@ class Guide < ApplicationRecord
   def full_name
     "#{family_name} #{name}"
   end
+
+  def personal_info_not_filled
+    family_name.blank? || name.blank? || nationality.blank? ||
+        identification_image_id.blank? || postal_code.blank? || address.blank? ||
+        phone_number.blank? || introduction.blank? || selfy_image_id.blank?
+  end
 end
