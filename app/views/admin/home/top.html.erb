@@ -12,10 +12,11 @@
 			<h2 class = "admin-home-text">
 				本日入った予約数
 				<%= link_to admin_orders_path do %>
-					<%= Order.where(created_at: Time.zone.now.all_day).count %> 件
+					<%= @day_of_orders_count  %> 件
 				<% end %>
 			</h2>
 			<%= render 'admin/orders/index', day_of_orders: @day_of_orders, total_sales: @total_sales, day_of_total_sales: @day_of_total_sales  %>
 		</div>
   	</div>
 </div>
+
