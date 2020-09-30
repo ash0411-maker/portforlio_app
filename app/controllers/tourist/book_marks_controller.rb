@@ -13,8 +13,8 @@ class Tourist::BookMarksController < ApplicationController
     book_mark = current_tourist.book_marks.new(tour_id: @tour.id)
     if book_mark.save
       # -------- 通知機能　---------
-      temp = Notification.where(['tourist_id = ? and guide_id = ? and tour_id = ? and action = ? ', current_tourist.id, @tour.guide.id, @tour.id, 'book_mark'])
-      book_mark_params(@tour.id, current_tourist.id, @tour.guide.id, book_mark) if temp.blank?
+      notificatoin = Notification.where(['tour_id = ? and action = ? ', @tour.id, 'book_mark'])
+      save_notification(@tour.id, current_tourist.id, @tour.guide.id, book_mark) if notificatoin.blank?
     end
   end
 
@@ -31,7 +31,7 @@ class Tourist::BookMarksController < ApplicationController
     redirect_to edit_tourist_tourist_path(current_tourist) if current_tourist != tourist
   end
 
-  def book_mark_params(tour_id, tourist_id, guide_id, _action)
+  def save_notification(tour_id, tourist_id, guide_id, _action)
     notification = Notification.new(
       tour_id: tour_id,
       tourist_id: tourist_id,
