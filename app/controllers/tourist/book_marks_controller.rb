@@ -12,9 +12,7 @@ class Tourist::BookMarksController < ApplicationController
     @tour = Tour.find(params[:tour_id])
     book_mark = current_tourist.book_marks.new(tour_id: @tour.id)
     if book_mark.save
-      # -------- 通知機能　---------
-      notification = Notification.where(['tour_id = ? and action = ? ', @tour.id, 'book_mark'])
-      notification_save(@tour.id, current_tourist.id, @tour.guide.id, book_mark) if notification.blank?
+      notification_save(@tour.id, current_tourist.id, @tour.guide.id, book_mark) if ever_bookmarked?(@tour.id)
     end
   end
 
