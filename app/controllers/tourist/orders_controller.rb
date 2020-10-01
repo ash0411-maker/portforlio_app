@@ -13,10 +13,7 @@ class Tourist::OrdersController < ApplicationController
     rooms = current_tourist.rooms
     @review_new = current_tourist.reviews.new
     @review = Review.find_by(tourist_id: current_tourist, tour_id: @order.tour_id)
-    @guide_ids = []
-    rooms.each do |room|
-      @guide_ids << room.guide_id
-    end
+    @guide_ids = rooms.map{|room|room.guide_id}
   end
 
   def new
