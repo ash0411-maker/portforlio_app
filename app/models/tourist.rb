@@ -27,7 +27,7 @@ class Tourist < ApplicationRecord
     "#{family_name} #{name}"
   end
 
-  def tourist_info_not_filled
+  def tourist_info_not_filled?
     name.blank? || family_name.blank? || 
     sex.blank? || birth_year.blank? || 
     nationality.blank? || phone_number.blank? || 

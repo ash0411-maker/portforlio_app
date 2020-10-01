@@ -24,7 +24,7 @@ class Tourist::OrdersController < ApplicationController
     @tourist = Tourist.find_by(id: params[:tourist_id])
 
     #個人情報が入力できていなければ、個人編集画面へ遷移
-    redirect_to edit_tourist_tourist_path(current_tourist) if current_tourist.tourist_info_not_filled
+    redirect_to edit_tourist_tourist_path(current_tourist) if current_tourist.tourist_info_not_filled?
     @order = Order.new
   end
 
