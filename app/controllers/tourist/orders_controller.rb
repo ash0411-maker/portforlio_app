@@ -13,10 +13,7 @@ class Tourist::OrdersController < ApplicationController
     rooms = current_tourist.rooms
     @review_new = current_tourist.reviews.new
     @review = Review.find_by(tourist_id: current_tourist, tour_id: @order.tour_id)
-    @guide_ids = []
-    rooms.each do |room|
-      @guide_ids << room.guide_id
-    end
+    @guide_ids = rooms.map{|room|room.guide_id}
   end
 
   def new
@@ -24,7 +21,7 @@ class Tourist::OrdersController < ApplicationController
     @tourist = Tourist.find_by(id: params[:tourist_id])
 
     #個人情報が入力できていなければ、個人編集画面へ遷移
-    redirect_to edit_tourist_tourist_path(current_tourist) if current_tourist.tourist_info_not_filled
+    redirect_to edit_tourist_tourist_path(current_tourist) if current_tourist.tourist_info_not_filled?
     @order = Order.new
   end
 
