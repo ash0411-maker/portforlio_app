@@ -19,10 +19,7 @@ class Guide::OrdersController < ApplicationController
 
     # チャット相手のidを入れる。
     rooms = current_guide.rooms
-    @tourist_ids = []
-    rooms.each do |room|
-      @tourist_ids << room.tourist_id
-    end
+    @tourist_ids = rooms.map{|room|room.tourist_id}
   end
 
   def show
