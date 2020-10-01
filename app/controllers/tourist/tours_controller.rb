@@ -22,10 +22,7 @@ class Tourist::ToursController < ApplicationController
 
     # チャット相手のidを入れる。
     rooms = current_tourist.rooms
-    @chat_guide_ids = []
-    rooms.each do |room|
-      @chat_guide_ids << room.guide_id
-    end
+    @chat_guide_ids = rooms.map{|room|room.guide_id}
   end
 
   private
