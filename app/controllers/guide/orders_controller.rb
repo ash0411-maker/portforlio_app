@@ -7,10 +7,7 @@ class Guide::OrdersController < ApplicationController
 
   def index
     @orders = current_guide.orders
-    guide_total_sales = []
-    @orders.each do |order|
-      guide_total_sales << order.guide_sales
-    end
+    guide_total_sales = @orders.map{|order| order.guide_sales}
     guide_total_sales_sum = guide_total_sales.sum
     @guide_total_sales = guide_total_sales_sum.floor
 
