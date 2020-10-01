@@ -33,4 +33,8 @@ class Tourist < ApplicationRecord
     nationality.blank? || phone_number.blank? || 
     address.blank? || postal_code.blank?
   end
+
+  def ever_bookmarked?(tour)
+    Notification.where(tour_id: tour.tour_id, action: 'book_mark')
+  end
 end
