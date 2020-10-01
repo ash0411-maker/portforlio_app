@@ -15,7 +15,7 @@ class Guide::OrdersController < ApplicationController
     @guide_total_sales = guide_total_sales_sum.floor
 
     # ステータス毎に画面切替
-    order_status_params(params[:order_status])
+    get_order_status(params[:order_status])
 
     # チャット相手のidを入れる。
     rooms = current_guide.rooms
@@ -48,7 +48,7 @@ class Guide::OrdersController < ApplicationController
     redirect_to guide_guide_path(current_guide) if current_guide != guide
   end
 
-  def order_status_params(order_status)
+  def get_order_status(order_status)
     @order_status = order_status
     case @order_status
     when 'just_in_orders'
