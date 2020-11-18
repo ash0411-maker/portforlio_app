@@ -1,5 +1,5 @@
 ## リンク
-https://fantra.net/  
+~~https://fantra.net/~~ （公開を停止しました）
 ガイドとツーリスト両方にかんたんログイン機能がありますので、新規登録・ログイン画面の「ゲストログイン」ボタンから閲覧できます。  
 
 ![fantra (1)](https://user-images.githubusercontent.com/59913383/89490322-91196800-d7e7-11ea-95f2-3b75fd545397.gif)
