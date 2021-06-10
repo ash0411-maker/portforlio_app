@@ -169,7 +169,9 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.0512)
-    mimemagic (0.3.5)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -179,7 +181,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     mysql2 (0.5.3)
     netrc (0.11.0)
-    nio4r (2.5.4)
+    nio4r (2.5.7)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
@@ -195,7 +197,7 @@ GEM
       byebug (~> 11.0)
       pry (~> 0.13.0)
     public_suffix (4.0.5)
-    puma (4.3.5)
+    puma (4.3.8)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-protection (2.0.8.1)
@@ -364,7 +366,7 @@ DEPENDENCIES
   mysql2 (>= 0.4.4)
   paranoia
   pry-byebug
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.0.3, >= 6.0.3.2)
   refile!
   refile-mini_magick
